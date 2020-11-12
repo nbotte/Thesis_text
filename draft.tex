@@ -1,0 +1,65 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\usepackage[dutch]{babel}     	
+\usepackage{graphicx}                   % om afbeeldingen in te kunnen laden   
+\usepackage{tikz,tikz-3dplot}                       % om afbeeldingen te kunnen maken
+\usetikzlibrary{calc}                   % meer opties in tikz (oa coordinaten bepalen)
+
+\usepackage{wrapfig}              % meer controle over figuren
+\usepackage{floatrow}
+\usepackage[format=hang]{caption}
+\usepackage{listings}                   % voor mooie code
+\usepackage{amsmath, amssymb, amsfonts} % om wiskunde te typen
+\usepackage{scalerel}                   % om symbolen te schalen
+\let\proof\relax
+\let\endproof\relax
+\usepackage{amsthm}
+\usepackage{bm}                         % Wiskundesymbolen vet met commando \bm{}
+\usepackage{libertine}                  % lettertype
+\usepackage{inconsolata}                % lettertype code
+\usepackage[T1]{fontenc}                % betere lettertype encodering voor talen met accenten
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{units}
+\usepackage{multicol}
+\usepackage{appendix}
+\usepackage{titlesec}
+\usepackage{algorithm}
+\usepackage{physics}
+\usepackage[noend]{algpseudocode}
+\usepackage{tikz-feynman}
+\usepackage{subcaption}
+\usepackage{xfrac}
+\tikzfeynmanset{compat=1.0.0}
+\floatname{algorithm}{Algoritme}
+
+\title{Thesis: draft}
+\author{Nina Botte }
+\date{November 2020}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+The past decade social media has become ever more important in our daily lives. Nowadays most of us have, beside a real world life, a virtual life on social media. However this increased engagement on social media may have a huge impact, not only on the individual scale, but also on a broader, societal, scale. It is known that individuals not only form their opinions through self-reflection, but also through interactions with other people and with their surroundings. The broad range of interactions people undergo on social media with people from all over the world can thus not be underestimated in the process of opinion formation. It is also known that some people change their opinions more easily than others, that is once in a while you encounter somebody that is really stubborn and persistent towards its own opinion. The understanding of the role of social media on the emergence of polarization and extremism in society is of uttermost importance. The aim of this thesis is thus to design toy models of opinion dynamics with stubborn actors on theoretical and real-world social networks to analyze the interplay between individual resistance to change and the network structure in the evolution of two competing opinions.\\
+These opinion dynamics models have two important layers. On one hand, we introduce social networks to describe the underlying structure of social interactions, while on the other hand we need appropriate opinion dynamic models to reproduce the opinion dynamics and opinion formation in real life. 
+
+\subsection{Complex networks}
+
+Complex networks have become more and more popular for analyzing complex, dynamical systems. They are used in fields such as physics, economics, social sciences, biology, etc. These different fields are very diverge, but they have at least one common ground: they often deal with a large number of variables/components that interact with each other. Or in other words, in all these fields one encounters complex systems, systems where it is not possible to predict collective behavior based on the individual components. %(maybe check cursus compl en crit?)
+One of the tools to deal with these complex systems and to give us more insight in the possible underlying structures are complex networks. A network, also often called a graph, is a structure composed of nodes or vertices and a set of links (edges) that indicate the interactions between the nodes. Representing/modeling a complex system as a graph makes the system appear more simple and tractable, while it still includes the non-linearity of these systems. One can find the language to describe networks in mathematical graph theory. However, complex systems in real life situations often deal with a huge number of components, so the use of statistical and high-performance computing tools is inevitable. The advantage of working with network models is that they reduce the level of complexity encountered in the real world, so that one can treat these systems in a more practical way. However we do want our models to display properties similar to the ones seen in real systems. Since many real systems are not static but evolve in time, this means that we don't only need to deal with static networks but also with temporal networks. Static networks have been widely studied and are often convenient for their analytic tractability, whereas temporal networks are, in some cases, more realistic. Some other important concepts in network theory are the degree distribution, clustering/community structure, connectivity, etc. These concepts will be explained in depth in section \ref{sec2}, but let us already anticipate a bit on the case of social networks. It is found that many real life social systems have a power law degree distribution. This heterogeneous or scale free degree distribution represents one of the three general properties of social networks. The other two are short distances, also referred to as small-world phenomenon, and high clustering. %https://www.nature.com/articles/srep01783
+Ideally, our theoretical network should exhibit these three properties. Some theoretical networks, that are thoroughly studied, may not have all of these three properties. However, they might still be used, because of their simplicity and ability to reproduce analytic results. When using these models one must always bear in mind their limitations to reproduce some properties encountered in real social systems.
+% to do: read links 19, 21, 22, 23, 24 of https://arxiv.org/pdf/0711.3199.pdf
+
+% maybe also talk about degree distributions (poisson, power law), power law behavior of many real systems, clustering + maybe talk about networks that will be used in this thesis?
+
+\subsection{Opinion dynamics}
+
+% biblio: https://arxiv.org/pdf/0711.3199.pdf
+% biblio: https://link.springer.com/article/10.1007/s13538-020-00772-9
+
+\section{'section2'}
+\label{sec2}
+\end{document}
