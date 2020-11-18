@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  12 NOV 2020 10:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  18 NOV 2020 12:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2443,7 +2443,7 @@ Package: xfrac 2017/07/19 L3 Experimental split-level fractions
 . Defining command \sfrac with sig. 'omom' on line 419.
 .................................................
 )
-No file draft.aux.
+(./draft.aux)
 \openout1 = `draft.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 41.
@@ -2460,7 +2460,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 41.
 LaTeX Font Info:    ... okay on input line 41.
 LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 41.
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 41.
-(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    ... okay on input line 41.
@@ -2578,39 +2578,27 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 14.4pt on input line 45.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 49.
-LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 52.
+(Font)              scaled to size 12.0pt on input line 51.
+ [1
 
-
-LaTeX Warning: Reference `sec2' on page 1 undefined on input line 52.
-
-[1
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./draft.aux)
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] (./draft.bbl) [3] (./d
+raft.aux) ) 
 Here is how much of TeX's memory you used:
- 32214 strings out of 492990
- 641936 string characters out of 6135004
- 694712 words of memory out of 5000000
- 35237 multiletter control sequences out of 15000+600000
- 574855 words of font info for 63 fonts, out of 8000000 for 9000
+ 32222 strings out of 492990
+ 641983 string characters out of 6135004
+ 695724 words of memory out of 5000000
+ 35241 multiletter control sequences out of 15000+600000
+ 569600 words of font info for 61 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,6n,78p,10414b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/us
-r/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}</usr/shar
-e/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share
-/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb>
-Output written on draft.pdf (2 pages, 172568 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq
+.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}<
+/usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb>
+Output written on draft.pdf (3 pages, 181481 bytes).
 PDF statistics:
- 24 PDF objects out of 1000 (max. 8388607)
- 17 compressed objects within 1 object stream
+ 27 PDF objects out of 1000 (max. 8388607)
+ 19 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
