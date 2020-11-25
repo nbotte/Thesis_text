@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  20 NOV 2020 12:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  25 NOV 2020 11:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2614,7 +2614,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 Here is how much of TeX's memory you used:
  32221 strings out of 492990
  642123 string characters out of 6135004
- 694802 words of memory out of 5000000
+ 693802 words of memory out of 5000000
  35237 multiletter control sequences out of 15000+600000
  589162 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2628,7 +2628,7 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pf
 b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on draft.pdf (9 pages, 261865 bytes).
+Output written on draft.pdf (9 pages, 268369 bytes).
 PDF statistics:
  64 PDF objects out of 1000 (max. 8388607)
  46 compressed objects within 1 object stream
