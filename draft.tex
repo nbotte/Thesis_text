@@ -31,7 +31,7 @@
 \usepackage{tikz-feynman}
 \usepackage{subcaption}
 \usepackage{xfrac}
-\tikzfeynmanset{compat=1.0.0}
+\tikzfeynmanset{compat=1.1.0}
 \floatname{algorithm}{Algoritme}
 
 \begin{document}
@@ -79,9 +79,9 @@ Another important tool in the study of opinion dynamics/formations in large grou
 
 %https://www.nature.com/articles/s42005-020-0359-6
 
-\section{Definition and measurements}
+\section{Definition and network measurements}
 
-Networks or graphs are conceptually very simple and flexible objects that are made of a set of nodes/vertices $V$ and a set of edges/links $E$ where the element of $E$ determine connections between elements of $V$
+Networks or graphs are conceptually very simple and flexible objects that are made of a set of nodes/vertices $V$ and a set of edges/links $E$ where the element of $E$ determine connections between elements of $V$ \cite{Costa2018}
 \begin{equation}
 	E \subseteq \{\{x, y\}| x, y \in V \}.
 \end{equation}
@@ -89,6 +89,44 @@ If self-loops are not allowed, we need the following condition on the elements o
 \begin{equation}
 	E \subseteq \{\{x, y\}| x, y \in V \text{and\ } x \neq y \}.
 \end{equation}
+A graph with no self-loops is a simple graph. The nodes $x$ and $y$ of an edge $\{x, y\}$ are called the endpoints of the edge. It is possible that nodes are not joined by any edge, such nodes are called isolated. If two or more edges have the same pair of endpoints, the graph is called a multi-graph. This thesis is not concerned with multi-graphs, nor are self-loops allowed. Graphs in which the edges have an orientation are called directed graphs. If the edges have weights $w_{ij}$, one speaks of a weighted graph.\\
+A graph can be represented in different ways. One of the most common ways is by use of the adjacency matrix.\\
+
+\subsection{Adjacency matrix}
+
+The adjacency matrix \textbf{A} is a $N \times N$ matrix (for a graph with $N$ nodes) where the elements indicate whether two nodes are connected by an edge or not \cite{Mata2020}
+\begin{equation}
+	A_{ij} = 
+	\begin{cases}
+		1 & \text{if nodes $i$ and $j$ are connected}\\
+		0 & \text{otherwise}
+	\end{cases}
+\end{equation}
+For a simple, undirected graph, the adjacency matrix is symmetric ($A_{ij} = A_{ji}$) with zeros on the diagonal ($A_{ii} = 0$). Directed graphs have asymmetric adjacency matrices. If we are dealing with weighted graphs, the elements of the adjacency matrix are the weights $w_{ij}$ of the edges
+\begin{equation}
+	A_{ij} = 
+	\begin{cases}
+		w_{ij} & \text{if nodes $i$ and $j$ are connected}\\
+		0 & \text{otherwise}
+	\end{cases}
+\end{equation}
+with, generally, $0 \leqslant w_{ij} \leqslant 1$ \cite{Mata2020}. \\
+\subsection{Degree and degree distribution}
+
+The adjacency matrix contains a lot of information such as the degree of a node. The degree $k_i$ of a node $i$ is the number of edges attached to the node $i$ or, in others words, $k_i$ represents the number of nearest neighbors of the node $i$. The degree can be obtained from the adjacency matrix in the following way \cite{Mata2020}
+\begin{equation}
+	k_i = \sum_{j=1}^N A_{ij}.
+\end{equation}
+In the case of a directed graph one can differentiate between the number of incoming edges $k_i^{\text{in}}$ and the number of outgoing edges $k_i^{\text{out}}$ of the node $i$. These are called the in-degree and out-degree respectively and are defined as \cite{Mata2020}
+\begin{equation}
+	k_i^{\text{in}} = \sum_{j=1}^N A_{ji} \quad \text{and} \quad k_i^{\text{out}} = \sum_{j=1}^N A_{ij}.
+\end{equation}
+The total degree of node $i$ is then $k_i = k_i^{\text{in}} + k_i^{\text{out}}$. For weighted graphs the degree is easily generalized to the weighted degree $s_i$, also often called strength \cite{Ioannis2007}
+\begin{equation}
+	s_i = \sum_{j=1}^N w_{ij}.
+\end{equation}
+%start talking about degree distribution (global, degree = local)
+  
 
 % talk about what is a graph, talk about degree distribution, clustereing, average path length, etc (in different subsections)
 
