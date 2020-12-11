@@ -59,7 +59,7 @@ One of the goals of this thesis is to investigate/determine the role of the unde
 
 As stated before, the formation of an individual's opinion is the result of the interplay of many factors such as self-reflection, peer pressure, the individual's personality (eg. stubbornness), the information someone is exposed to, etc.  Opinion dynamics models should try to capture these complex processes in a simplified way. Several models have been developed ranging from simple binary models to more complex, continuous approaches \cite{Sirbu2016}. The basic idea of all opinion dynamic models is that the nodes or agents in a social network have a variable that represents their opinion and that is updated according to some predefined rules. These models are obviously a simplification of real world opinion dynamics. It is however shown that they do display a lot of aspects of real opinion formation such as agreement, transitions between order (consensus) en disorder (fragmentation), polarization, formation of echo chambers (clusters of people with the same opinion), etc \cite{Sirbu2016}. \\
 The opinion of the agents in the model can be either discrete or continuous. This thesis deals with models where each agent can have one of the two opinions A or B and thus only deals with the case of discrete opinions. This might come across as a huge simplification of the real world complexity of opinion formation, but also in real life people often have to choose between two competing opinions (eg. republicans or democrats, being left-minded or right-minded, cat or dog, renting or buying a house,...). \\
-The rules that determine how an agent updates his or her opinion can include many different aspects. They can, for example, be as simple as a majority rule (i.e. the majority model) or can include a more probabilistic way of updating. One can also include a resistance parameter that determines the hesitation of an agent to change to a new opinion and/or a parameter that determines the influence of a node on others.
+The rules that determine how an agent updates his or her opinion can include many different aspects. They can, for example, be as simple as a majority rule (i.e. the majority model) or can include a more probabilistic way of updating. One can also include a resistance parameter that determines the hesitation of an agent to change to a new opinion and/or a parameter that determines the influence of a node on others. % add reference to chapter 2
 %The rules that determine how an agent updates his or her opinion can include many different aspect, such as the higher or lower influence somebody can have on others, the resistance to change to a new opinion, peer pressure,... The structure of social networks plays an important role in aspects as peer pressure, whereas the algorithmic personalization used on social media platforms may interfere with the information someone is exposed to. Algorithmic personalization is the individualized way in which social media platforms show posts/information to each of its users.
 
 % not finished, describe different models
@@ -122,14 +122,42 @@ In the case of a directed graph one can differentiate between the number of inco
 \begin{equation}
 	k_i^{\text{in}} = \sum_{j=1}^N A_{ji} \quad \text{and} \quad k_i^{\text{out}} = \sum_{j=1}^N A_{ij}.
 \end{equation}
-The total degree of node $i$ is then $k_i = k_i^{\text{in}} + k_i^{\text{out}}$. For weighted graphs the degree is easily generalized to the weighted degree $s_i$, also often called strength \cite{Ioannis2007}
+The total degree of node $i$ is then $k_i = k_i^{\text{in}} + k_i^{\text{out}}$. For weighted graphs the degree is easily generalized to the weighted degree $s_i$, often called strength \cite{Ioannis2007}
 \begin{equation}
 	s_i = \sum_{j=1}^N w_{ij}.
 \end{equation}
-%start talking about degree distribution (global, degree = local)
-  
+From the degree of the nodes in the network one can construct the degree distribution. The degree distribution $P(k)$ represent the fraction of nodes with a degree $k$ or, in other words, the degree distribution gives the probability that a randomly selected node has a degree $k$. The average degree can be obtained from the degree distribution \cite{Mata2020}
+\begin{equation}
+	\left<k\right> = \frac{1}{N} \sum_{i=1}^N k_i = \sum_k k P(k)
+\end{equation}
+where $N$ is the total number of nodes in the network. The degree distribution also allows us to classify networks. The two most important classes are homogeneous and heterogeneous networks. Homogeneous networks have a bell curved degree distribution, eg. a Poisson distribution. In this case, most of the nodes have a degree closed to the average degree $k$. Heterogeneous networks, on the other hand, have a power-law degree distribution, $P(k) \sim k^{-\gamma}$. % explain differences  more, consequences of power-law + need to include figure?
+They are also referred to as scale-free networks, since they do not posses a characteristic length scale or, in this case, the average degree isn't a characteristic scale for the network. % correct statement?
+%maybe explain why we care about degree, centrality measure etc
 
-% talk about what is a graph, talk about degree distribution, clustereing, average path length, etc (in different subsections)
+
+\subsection{Clustering coefficient and transitivity}
+
+The clustering coefficient is another important measure of network topology. It is a measure for the number of triangles in a network and determines the connectivity in the neighborhood of a node $i$: if a node $i$ has a high clustering coefficient, its neighbors are likely to be directly connected to each other \cite{Li2017}. Here a triangle is defined as a loop of length three, this is a sequence of nodes $x, y, z, x$ such that $\{x, y\}, \{y, z\}$ and $\{z, x\}$ are edges of the network. The clustering coefficient is thus a way to measure the degree to which nodes in a network tend to cluster \cite{Li2017}. The local clustering coefficient of a node $i$ is defined as
+\begin{equation}
+	C_i = \frac{2n_i}{k_i(k_i-1)}
+\end{equation}
+where $n_i$ is the number of edges that actually exist between the nodes in the neighborhood of $i$ and $k_i(k_i-1)/2$ is the maximum number of edges that could exist between them (note that this expression is only valid for an undirected graph, since for a directed graph $e_{ij} \neq e_{ji}$ and we have $k_i(k_i-1)$ possible edges between the neighbors of node i). % should give more mathimatical expression for n_i?
+The average clustering coefficient is then given as the average of the local clustering coefficients
+\begin{equation}
+	\bar{C} = \frac{1}{N}\sum_{i = 1}^N C_i
+\end{equation}
+where $N$ denotes, once again, the number of nodes in the network. The clustering coefficient is, beside a measure for the connectivity in the network, also linked to the robustness, or resilience against random damage,  of the network \cite{Li2017} \cite{Iyer2013}. \\
+A measure that is closely related to the clustering coefficient is the transitivity $T$, defined as \cite{F.Costa2007}
+\begin{equation}
+	T = \frac{3 \times \text{number of triangles in the network}}{\text{number of connected triples of nodes in the network}}.
+\end{equation}
+A connected triple is defined as a set of three nodes with at least two or three edges between them. The factor three arises from the fact that each triangle contributes to three different connected triples in the network: one centered at each node in the triangle \cite{F.Costa2007}. 
+% talk about difference transitivity and clustering + read https://arxiv.org/pdf/cond-mat/0505185.pdf
+ 
+\cite{Albert2002} % not used yet, explains statistical mechanics in complex networks
+
+% talk about what is a graph, talk about degree distribution, clustereing, average path length, etc (in different subsections), maybe things like assortativity, page rank,...
+% explain small-world (milgram), high clustering, power-law
 
 \section{Network models}
 % different subsections where you talk about different graph models: erdos-renyi, clustered random, wats strogatz, barabasi albert, etc...
