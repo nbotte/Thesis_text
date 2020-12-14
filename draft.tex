@@ -39,15 +39,15 @@
 \chapter{Introduction}
 
 The past decade social media has become ever more important in our daily lives. Nowadays most of us have, beside a real world life, a virtual life on social media. However, this increased engagement on social media may have a huge impact on the formation of opinions, not only on the individual scale, but also on a broader, societal, scale. It is known that individuals not only form their opinions through self-reflection, but also through interactions with other people and with their surroundings. The broad range of interactions people undergo on social media with people from all over the world can thus not be underestimated in the process of opinion formation. The understanding of the role of social media on the emergence of polarization and extremism in society is of uttermost importance.\\
- It is also known that some people change their opinions more easily than others, that is once in a while you encounter somebody that is really stubborn and persistent towards its own opinion. The aim of this thesis is to design toy models of opinion dynamics with stubborn actors on theoretical and real-world social networks to analyze the interplay between individual resistance to change and the network structure in the evolution of two competing opinions.\\
+ It is also known that some people change their opinions more easily than others, that is, once in a while you encounter somebody that is really stubborn and persistent towards its own opinion. The aim of this thesis is to design toy models of opinion dynamics with stubborn actors on theoretical and real-world social networks to analyze the interplay between individual resistance to change and the network structure in the evolution of two competing opinions.\\
 Opinion dynamics models have two important layers. On one hand, we introduce social networks to describe the underlying structure of social interactions, while on the other hand we need appropriate opinion dynamics/formation models to reproduce the opinion dynamics and opinion formation processes found in real life. 
 
 \section{Complex networks}
 
 Complex networks have become more and more popular for analyzing complex, dynamical systems. They are used in fields such as physics, economics, social sciences, biology, etc \cite{Costa2008}. These different fields are very diverge, but they have at least one common ground: they often deal with a large number of variables/components that interact with each other. In other words, in all these fields one encounters complex systems, systems where it is not possible to predict collective behavior based on the properties of the individual components alone \cite{Mata2020}. Complex systems often display phenomena such as non-linearity, emergence, spontaneous order,... %(maybe check cursus compl en crit?)
-One of the tools to deal with these complex systems and to give us more insight in the possible underlying structures are complex networks. A network, also often called a graph, is a structure composed of nodes or vertices and a set of links (edges) that indicate the interactions between the nodes \cite{Mata2020}. Representing/modeling a complex system as a graph makes the system appear more simple and tractable, while it still includes the non-linearity of these systems. One can find the language to describe networks in mathematical graph theory. However, complex systems in real life situations often deal with a huge number of components, so the use of statistical and high-performance computing tools is inevitable \cite{Mata2020}.\\
+One of the tools to deal with these complex systems and to give us more insight in the possible underlying structures are complex networks. A network, also often called a graph, is a structure composed of nodes or vertices and a set of links (edges) that indicate the interactions between the nodes \cite{Mata2020}. Representing/modeling a complex system as a graph makes the system appear more simple and tractable, while it still includes the non-linearity of these systems. One can find the language to describe networks in mathematical graph theory. However, complex systems in real life situations often deal with a huge number of components, so the use of statistical and high-performance computing tools is inevitable \cite{Mata2020}. One could argue that the study of complex networks lies somewhere at the intersection of mathematical graph theory and statistical physics \cite{F.Costa2007}.\\
 The advantage of working with network models is that they reduce the level of complexity encountered in the real world, so that one can treat these systems in a more practical way. However we do want our models to display properties similar to the ones seen in real systems \cite{Mata2020}. Since many real systems are not static but evolve in time, this means that we don't only need to deal with static networks but also with temporal networks. %maybe give definition of temporal network
-Static networks have been widely studied and are often convenient for their analytic tractability, whereas temporal networks are, in some cases, more realistic \cite{Mata2020}. Some other important concepts in network theory are the degree distribution, clustering/community structure, connectivity, etc. These concepts will be explained in depth in section \ref{sec2}, but let us already anticipate a bit on the case of social networks. It is found that many real life social systems have a power law degree distribution \cite{Muchnik2013}. This heterogeneous or scale free degree distribution represents one of the three general properties of social networks. The other two are short distances, also referred to as small-world phenomenon, and high clustering \cite{Muchnik2013}. Ideally, our theoretical network should exhibit these three properties. Some theoretical networks, that are thoroughly studied, do not possess all of these three properties. However, they might still be used, because of their simplicity and ability to reproduce analytic results. When using these models one must always bear in mind their limitations to reproduce some properties encountered in real social systems. \\
+Static networks have been widely studied and are often convenient for their analytic tractability, whereas temporal networks are, in some cases, more realistic \cite{Mata2020}. Some other important concepts in network theory are the degree distribution, clustering/community structure, connectivity, etc. These concepts will be explained in depth in section \ref{sec2}, but let us already anticipate a bit on the case of social networks. It is found that many real life social systems have a power law degree distribution \cite{Muchnik2013}. This heterogeneous or scale free degree distribution represents one of the three general properties of social networks. The other two are short distances, also referred to as small-world phenomenon, and high clustering \cite{Muchnik2013}. Ideally, our theoretical network should exhibit these three properties. Some theoretical networks, that are thoroughly studied, do not possess all of these three properties. However, they might still be used, because of their simplicity and ability to produce analytic results. When using these models one must always bear in mind their limitations to reproduce some properties encountered in real social systems. \\
 One of the goals of this thesis is to investigate/determine the role of the underlying network structure on the formation and dynamics of opinions in the system. Some examples of theoretical network models used in this thesis are the Erd\H{o}s-R\'{e}nyi network, a clustered random network, the Watts-Strogatz model, etc. These will be explained thoroughly in section \ref{sec2}. %references to chapter 2 need to be adapted
 % to do: read links 19, 21, 22, 23, 24 of https://arxiv.org/pdf/0711.3199.pdf
 
@@ -177,7 +177,7 @@ In order to study the topological structures of real-world networks, several the
 
 \subsection{The Erd\H{o}s-R\'{e}nyi network}
 
-In 1959 the two mathematicians Paul Erd\H{o}s and Alfr\'{e}d R\'{e}nyi proposed a model to generate random networks \cite{F.Costa2007}. Idependently of them, Solomonoff and Rapoport already proposed the model in 1951. The model constructs random networks with $N$ nodes in the following way \cite{Albert2002}
+In 1959 the two mathematicians Paul Erd\H{o}s and Alfr\'{e}d R\'{e}nyi proposed a model to generate random networks \cite{F.Costa2007}. Independently of them, Solomonoff and Rapoport already proposed the model in 1951. The model constructs random networks with $N$ nodes in the following way \cite{Albert2002}
 \begin{enumerate}
 	\item Start with $N$ disconnected nodes,
 	\item For each pair of nodes, connect them with a predefined probability $p$.
@@ -191,10 +191,39 @@ The number of ways to choose the $k$ nodes among the $N-1$ possible candidates i
 \begin{equation}
 	\binom{N-1}{k} = \frac{(N-1)!}{k!(N-1-k)!}
 \end{equation}
-and thus the probability of being connected to $k$ other nodes becomes
+and the probability of being connected to exactly $k$ other nodes becomes
 \begin{equation}
 	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k}.
 \end{equation}
+We thus derived the degree distribution of a random network. From this we can calculate the average degree of the network. The expected mean degree is given by \cite{Hopcroft2006}
+\begin{equation}\label{avDeg}
+\begin{split}
+	\left<k\right> &= \sum_{k=0}^{N-1} k\  p_k  \\
+&= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k}.
+\end{split}
+\end{equation}
+In order to simplify this equation we can make use of the following formula \cite{Hopcroft2006}
+\begin{equation} 
+	(p+q)^n = \sum_{k=0}^n \binom{n}{k} p^k q^{n-k}.
+\end{equation}
+Differentiating both sides of this equation gives us \cite{Hopcroft2006}
+\begin{equation}
+\begin{split}
+	n(p+q)^{n-1} &= \sum_{k=0}^n \binom{n}{k} k p^{k-1} q^{n-k} \\
+	&= \frac{1}{p} \sum_{k=0}^n \binom{n}{k} k p^{k} q^{n-k}.
+\end{split}
+\end{equation}
+Finally, by substituting $q = 1-p$, we get \cite{Hopcroft2006}
+\begin{equation}
+\begin{split}
+	n (p+(1-p))^{n-1} &= \frac{1}{p} \sum_{k=0}^n \binom{n}{k} k p^{k} (1-p)^{n-k} \\
+	np &= \sum_{k=0}^n \binom{n}{k} k p^{k} (1-p)^{n-k}
+\end{split}
+\end{equation}
+where the right hand side is equal to Equation (\ref{avDeg}) with $n = N-1$ and we thus obtain $\left<k\right> = (N-1)p$.
+% derivation for large k https://barabasi.com/f/624.pdf
+\cite{Albert2014} large N
+
 % continue expression for large N
 
 % different subsections where you talk about different graph models: erdos-renyi, clustered random, wats strogatz, barabasi albert, etc...
