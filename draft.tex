@@ -61,8 +61,8 @@ One of the goals of this thesis is to investigate/determine the role of the unde
 \section{Opinion dynamics}
 
 As stated before, the formation of an individual's opinion is the result of the interplay of many factors such as self-reflection, peer pressure, the individual's personality (eg. stubbornness), the information someone is exposed to, etc.  Opinion dynamics models should try to capture these complex processes in a simplified way. Several models have been developed ranging from simple binary models to more complex, continuous approaches \cite{Sirbu2016}. The basic idea of all opinion dynamic models is that the nodes or agents in a social network have a variable that represents their opinion and that is updated according to some predefined rules. These models are obviously a simplification of real world opinion dynamics. It is however shown that they do display a lot of aspects of real opinion formation such as agreement, transitions between order (consensus) and disorder (fragmentation), polarization, formation of echo chambers (clusters of people with the same opinion), etc \cite{Sirbu2016}. \\
-The opinion of the agents in the model can be either discrete or continuous. This thesis deals with models where each agent can have one of the two opinions A or B and thus only deals with the case of discrete opinions. This might come across as a huge simplification of the real world complexity of opinion formation, but also in real life people often have to choose between two competing opinions (eg. republicans or democrats, being left-minded or right-minded, cat or dog, renting or buying a house,...). \\
-The rules that determine how an agent updates his or her opinion can include many different aspects. They can, for example, be as simple as a majority rule (i.e. the majority model: if the majority of your neighbors have a certain opinion, you adopt that opinion as well) or can include a more probabilistic way of updating. One can also include a resistance parameter that determines the hesitation of an agent to change to a new opinion and/or a parameter that determines the influence of a node on others. \\
+The opinion of the agents in the model can be either discrete or continuous. This thesis deals with models where each agent can have one of the two opinions A or B and thus only deals with the case of discrete opinions. This might come across as a huge simplification of the real world complexity of opinion formation, but also in real life people often have to choose between two competing opinions (eg. republicans or democrats, cat or dog, renting or buying a house,...). \\
+The rules that determine how an agent updates his or her opinion can include many different aspects. They can, for example, be as simple as a majority rule (i.e. the majority model: if the majority of your neighbors have a certain opinion, you adopt that opinion as well) or can include a more probabilistic way of updating. One can also include a resistance parameter that determines the hesitation of an agent to change to a new opinion and/or a parameter that determines the influence of an agent on others. \\
 Since this thesis deals with the particular case of opinion dynamics on on-line social platforms, it is important to define/set up different filtering algorithms. The filtering algorithms that real social media companies use, are corporate secrets, but we know that there are three main principles of content curation: popularity, semantic and collaborative filtering \cite{Perra2019}. Here popularity filtering refers to the practice of promoting content that is popular across the platform; semantic filtering means that post similar to previous consumed posts are recommended and collaborative filtering suggests posts that are similar to the ones our friends consume \cite{Perra2019}. In Chapter \ref{chap3} %also give section
 a detailed description of the filtering algorithms used in  this thesis will be given.
 % add reference to chapter 2
@@ -147,12 +147,14 @@ From the degree of the nodes in the network one can construct the degree distrib
 \begin{equation}
 	\left<k\right> = \frac{1}{N} \sum_{i=1}^N k_i = \sum_k k P(k)
 \end{equation}
-where $N$ is the total number of nodes in the network. The degree distribution also allows us to classify networks. The two most important classes are homogeneous and heterogeneous networks. Homogeneous networks have a bell curved degree distribution, eg. a Poisson distribution. In this case, most of the nodes have a degree closed to the average degree $k$. Heterogeneous networks, on the other hand, have a power-law degree distribution, $P(k) \sim k^{-\gamma}$. % explain differences  more, consequences of power-law + need to include figure?
+where $N$ is the total number of nodes in the network. The degree distribution also allows us to classify networks. The two most important classes are homogeneous and heterogeneous networks. Homogeneous networks have a bell curved degree distribution, eg. a Poisson distribution. In this case, most of the nodes have a degree closed to the average degree $\left<k\right>$. Heterogeneous networks, on the other hand, have a power-law degree distribution, $P(k) \sim k^{-\gamma}$. % explain differences  more, consequences of power-law + need to include figure?
 They are also referred to as scale free networks, since they do not posses a characteristic length scale or, in this case, the average degree isn't a characteristic scale for the network \cite{Mata2020}. % correct statement?
 %maybe explain why we care about degree, centrality measure etc
 
 \subsection{Connectivity}
-% explain connectivity before network communities and also before clustering!
+In physics literature, the degree of a node is often called the connectivity \cite{F.Costa2007}\cite{Mendes2002}. This is different from the mathematical/graph definition of connectivity, where connectivity refers to the minimum number of nodes or edges that need to be removed to separate the remaining nodes in isolated subgraphs. Two nodes $u$ and $v$ of a graph are connected if there exist a path between them. If the two nodes are connected by a path that contains only one edge, the two nodes are called adjacent.\\
+The average degree $\left<k\right>$ is a global measurement of the connectivity of the network \cite{Costa2008}. If the average connectivity $\left<k\right>$ is too small (this is, if there are too few edges), there will be many isolated edges and only a few clusters with a small number of nodes. If more and more edges are added to the network, the small clusters will grow and will be connected to each other to form larger clusters. At some critical value of the connectivity, most nodes will be connected into a giant cluster, which characterizes the percolation of the network \cite{F.Costa2007}.
+% NOT finished; add this as a subsection in the degree section?? 
 
 \subsection{Clustering coefficient and transitivity}
 
@@ -184,7 +186,7 @@ where $N_{\Delta}(i)$ represents the number of triangles that involve node $i$ a
 	N_{\Delta}(i) &= \sum_{k > j} a_{ij}a_{ik}a_{jk} \\
 	N_3(i) &= \sum_{k > j} a_{ij}a_{ik}
 \end{align}
-It is not to hard to see that $N_{\Delta}(i)$ counts the number of edges between the neighbors of $i$ and that $N_3(i)$ is equal to $k_i(k_i-1)/2$, where $k_i$ is the degree of node $i$. It is thus obvious that the local clustering coefficient $C_i$ (Eq. (\ref{clus})) of a node and the transitivity $T_i$ (Eq. (\ref{trans})) of a node define the same quantity \cite{F.Costa2007}. In the case of the average clustering coefficient $\bar{C}$ and the global transitivity $T$ this is however not the case. The difference between the two definitions is that the average of Equation (\ref{globalTrans}) gives the same weight to each triangle in the network, whereas Equation (\ref{avClus}) gives the same weight to each node. This may lead to slightly different values since nodes with a higher degree may possibly be involved in a higher number of triangles than nodes with a lower degree \cite{F.Costa2007}.
+It is not too hard to see that $N_{\Delta}(i)$ counts the number of edges between the neighbors of $i$ and that $N_3(i)$ is equal to $k_i(k_i-1)/2$, where $k_i$ is the degree of node $i$. It is thus obvious that the local clustering coefficient $C_i$ (Eq. (\ref{clus})) of a node and the transitivity $T_i$ (Eq. (\ref{trans})) of a node define the same quantity \cite{F.Costa2007}. In the case of the average clustering coefficient $\bar{C}$ and the global transitivity $T$ this is however not the case. The difference between the two definitions is that the average of Equation (\ref{globalTrans}) gives the same weight to each triangle in the network, whereas Equation (\ref{avClus}) gives the same weight to each node. This may lead to slightly different values since nodes with a higher degree may possibly be involved in a higher number of triangles than nodes with a lower degree \cite{F.Costa2007}.
 	
 \subsection{Network communities}
 
@@ -194,7 +196,7 @@ Network communities is another feature that (complex) networks may posses. A com
 \newline
 \textbf{Maximum cliques}\\
 \newline
-A clique is a complete subgraph, where a complete subgraph is defined as a set of nodes of the network where each node in the set is directly connected to all the others nodes in the same set \cite{Albert2016}. A community based on this definition would then be the largest clique in the network. This definition of community might, however, be to restrictive and, beside that, large cliques don't appear very frequent in networks \cite{Albert2016}.\\   
+A clique is a complete subgraph, where a complete subgraph is defined as a set of nodes of the network where each node in the set is directly connected to all the others nodes in the same set \cite{Albert2016}. A community based on this definition would then be the largest clique in the network. This definition of community might, however, be too restrictive and, beside that, large cliques don't appear very frequent in networks \cite{Albert2016}.\\   
 \newline
 \textbf{Strong communities}\\
 \newline
@@ -214,8 +216,7 @@ A weak community is a community where the sum of the internal degree of all the 
 
 % talk about what is a graph, talk about degree distribution, clustereing, average path length, etc (in different subsections), maybe things like assortativity, page rank,...
 % explain small-world (milgram), high clustering, power-law
-% explain community structure + difference with clustering!!
-
+% explain modularity!! + diameter, shortest path, etc...!
 
 \section{Network models}
 \label{netModel}
@@ -239,10 +240,11 @@ The number of ways to choose the $k$ nodes among the $N-1$ possible candidates i
 	\binom{N-1}{k} = \frac{(N-1)!}{k!(N-1-k)!}
 \end{equation}
 and the probability of being connected to exactly $k$ other nodes becomes
-\begin{equation}
+\begin{equation}\label{degDistRan}
 	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k}.
 \end{equation}
 We thus derived the degree distribution of a random network. From this we can calculate the average degree of the network. The expected mean degree is given by \cite{Hopcroft2006}
+% maybe put calculations in appendix?
 \begin{equation}\label{avDeg}
 \begin{split}
 	\left<k\right> &= \sum_{k=0}^{N-1} k\  p_k  \\
@@ -267,11 +269,42 @@ Finally, by substituting $q = 1-p$, we get \cite{Hopcroft2006}
 	np &= \sum_{k=0}^n \binom{n}{k} k p^{k} (1-p)^{n-k}
 \end{split}
 \end{equation}
-where the right hand side is equal to Equation (\ref{avDeg}) with $n = N-1$ and we thus obtain $\left<k\right> = (N-1)p$.
-% derivation for large k https://barabasi.com/f/624.pdf
-\cite{Albert2014} large N
+where the right hand side is equal to Equation (\ref{avDeg}) with $n = N-1$ and we thus obtain $\left<k\right> = (N-1)p$.\\
+Most real networks are however sparse, which means that $\left<k\right> \ll N$. In this case the degree distribution is well approximated by a Poisson distribution \cite{Albert2014} 
+\begin{equation}
+	p_k = \mathrm{e}^{-\left<k\right>} \frac{\left<k\right>^k}{k!}
+\end{equation}
+% In appendix??
+The derivation goes as follows. We begin with the exact binomial distribution (Eq.(\ref{degDistRan})) which characterizes a random graph. In the case $k \ll N$, we can simplify the binomial in the following way \cite{Albert2014}
+\begin{equation}\label{bin}
+	\binom{N-1}{k} = \frac{(N-1)(N-1-1)...(N-1-k+1)}{k!} \approx \frac{(N-1)^k}{k!}.
+\end{equation}
+We also note the following equality \cite{Albert2014}
+\begin{equation}
+	\ln[(1-p)^{N-1-k}] = (N-1-k)\ln\bigg(1 - \frac{\left<k\right>}{N-1} \bigg).
+\end{equation}
+Using the series expansion \cite{Albert2014}
+\begin{equation}
+	\ln(1+x) = \sum_{n=1}^{\inf}\frac{(-1)^{n+1}}{n}x^n = x - \frac{x^2}{2} + \frac{x^3}{3} - ...  \qquad \forall \ |x| \leq 1
+\end{equation}
+we get \cite{Albert2014}
+\begin{equation}
+	\ln[(1-p)^{N-1-k}] \approx (N-1-k) \frac{\left<k\right>}{N-1} = - \left<k\right>\bigg(1 - \frac{\left<k\right>}{N-1} \bigg) \approx - \left<k\right>
+\end{equation}
+which is valid if $k \ll N$. We thus find \cite{Albert2014}
+\begin{equation}\label{e}
+	(1-p)^{N-1-k} = \mathrm{e}^{-\left<k\right>}.
+\end{equation}
+Substituting Eq. (\ref{e}) and Eq. (\ref{bin}) in Eq. (\ref{degDistRan}) and using $\left<k\right> = (N-1)p$, we finally obtain the Poisson form of the degree distribution \cite{Albert2014}
+\begin{equation}
+\begin{split}
+	p_k &= \binom{N-1}{k}p^k (1-p)^{N-1-k} = \frac{(N-1)^k}{k!} p^k \mathrm{e}^{-\left<k\right>} \\
+&= \frac{(N-1)^k}{k!} \bigg(\frac{\left<k\right>}{N-1} \bigg)^k \mathrm{e}^{-\left<k\right>}\\
+&= \mathrm{e}^{-\left<k\right>}\frac{\left<k\right>^k}{k!}.
+\end{split}
+\end{equation}
 
-% continue expression for large N
+
 
 % different subsections where you talk about different graph models: erdos-renyi, clustered random, wats strogatz, barabasi albert, etc...
 

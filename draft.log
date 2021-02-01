@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  18 JAN 2021 08:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  1 FEB 2021 14:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2583,11 +2583,7 @@ t available
 nput line 56.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 10.95pt on input line 56.
- [2] [3]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
-[5] [6
+ [2] [3] [4] [5] [6
 
 ]
 Chapter 2.
@@ -2624,53 +2620,53 @@ Underfull \hbox (badness 10000) in paragraph at lines 130--132
  []
 
 [8] [9] [10]
-Underfull \hbox (badness 10000) in paragraph at lines 193--202
+Underfull \hbox (badness 10000) in paragraph at lines 195--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--202
+Underfull \hbox (badness 10000) in paragraph at lines 195--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--202
+Underfull \hbox (badness 10000) in paragraph at lines 195--204
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 193--202
+Underfull \hbox (badness 10000) in paragraph at lines 195--204
+
+ []
+
+[11]
+Underfull \hbox (badness 10000) in paragraph at lines 206--212
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 204--210
+Underfull \hbox (badness 10000) in paragraph at lines 206--212
 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 204--210
-
- []
-
-[11] [12] [13] [14
+[12] [13] [14] [15] [16
 
 ]
 Chapter 3.
-[15] (./draft.bbl [16
+[17] (./draft.bbl [18
 
 ]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 24.88pt on input line 1.
- [17]) [18] (./draft.aux) ) 
+ [19]) [20] (./draft.aux) ) 
 Here is how much of TeX's memory you used:
- 32270 strings out of 492990
- 642790 string characters out of 6135004
- 693944 words of memory out of 5000000
- 35278 multiletter control sequences out of 15000+600000
+ 32274 strings out of 492990
+ 642822 string characters out of 6135004
+ 693987 words of memory out of 5000000
+ 35282 multiletter control sequences out of 15000+600000
  606496 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,16n,78p,10414b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,19n,78p,10414b,275s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/liber
 tine/lbtn_7grukw.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/l
 btn_76gpa5.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh
@@ -2685,10 +2681,10 @@ e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-
 dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (18 pages, 355564 bytes).
+Output written on draft.pdf (20 pages, 363006 bytes).
 PDF statistics:
- 112 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
+ 119 PDF objects out of 1000 (max. 8388607)
+ 85 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
