@@ -35,7 +35,11 @@
 \floatname{algorithm}{Algoritme}
 
 \begin{document}
+\frontmatter
+\tableofcontents
+%\listoffigures
 
+\mainmatter
 \chapter{Introduction}
 
 % add research question and hypotheses!!
@@ -153,8 +157,33 @@ They are also referred to as scale free networks, since they do not posses a cha
 
 \subsection{Connectivity}
 In physics literature, the degree of a node is often called the connectivity \cite{F.Costa2007}\cite{Mendes2002}. This is different from the mathematical/graph definition of connectivity, where connectivity refers to the minimum number of nodes or edges that need to be removed to separate the remaining nodes in isolated subgraphs. Two nodes $u$ and $v$ of a graph are connected if there exist a path between them. If the two nodes are connected by a path that contains only one edge, the two nodes are called adjacent.\\
-The average degree $\left<k\right>$ is a global measurement of the connectivity of the network \cite{Costa2008}. If the average connectivity $\left<k\right>$ is too small (this is, if there are too few edges), there will be many isolated edges and only a few clusters with a small number of nodes. If more and more edges are added to the network, the small clusters will grow and will be connected to each other to form larger clusters. At some critical value of the connectivity, most nodes will be connected into a giant cluster, which characterizes the percolation of the network \cite{F.Costa2007}.
+The average degree $\left<k\right>$ is a global measurement of the connectivity of the network \cite{Costa2008}. If the average connectivity $\left<k\right>$ is too small (this is, if there are too few edges), there will be many isolated nodes and only a few clusters with a small number of nodes. If more and more edges are added to the network, the small clusters will grow and will be connected to each other to form larger clusters. At some critical value of the connectivity, most nodes will be connected into a giant cluster, which characterizes the percolation of the network \cite{F.Costa2007}.
 % NOT finished; add this as a subsection in the degree section?? 
+
+\subsection{Network distances}
+
+% explain length, diameter, average length,...
+Several very useful measurements quantify the notion of length and distance in a network/graph. We start with the definition of a path: a path is a sequence of distinct nodes, such that adjacent nodes in the sequent are adjacent nodes in the network \cite{Goddard2010}. The length of a path is then defined as the number of edges in the path \cite{Goddard2010}. A geodesic path, often called the shortest path, between two nodes is the path between two nodes $i$ and $j$ with minimum length (note that the geodesic path is not necessarily unique) \cite{F.Costa2007}. The length of the geodesic path between the two nodes $i$ and $j$ is called the geodesic distance or shortest distance $d_{ij}$ \cite{F.Costa2007}. Geodesic distance is often just called distance \cite{Goddard2010}. The notion of distance enables to define several network measurements such as average distance, diameter and radius.\\  
+\newline
+\textbf{Average distance}\\
+\newline
+The average distance is the mean value of the geodesic distance $d_{ij}$ \cite{F.Costa2007}
+\begin{equation}
+	l = \frac{1}{N(N-1)} \sum_{i \neq j} d_{ij}.
+\end{equation}
+This definition, however, diverges if there are unconnected nodes in the network (unconnected nodes have by definition a distance equal to infinity) \cite{F.Costa2007}. This problem could be avoided by only including connected pairs in the sum, but this introduces a distortion for network with a lot of unconnected pairs of nodes. These networks will then have a small average distance, which is only expected for networks with lots of connections \cite{F.Costa2007}. Instead, another definition of average distance is used: the global efficiency \cite{F.Costa2007}
+\begin{equation}
+	E = \frac{1}{N(N-1)} \sum_{i \neq j} \frac{1}{d_{ij}}.
+\end{equation}
+This measurement quantifies the efficiency of the network in sending information between nodes \cite{F.Costa2007}. This assumes that the efficiency of sending information between two nodes is reciprocal to their distance \cite{F.Costa2007}. The harmonic mean of the geodesic distances is now defined as the reciprocal of the global efficiency
+\begin{equation}
+ 	h = \frac{1}{E}
+\end{equation}
+\newline
+\textbf{Diameter and radius}\\
+\newline
+The diameter $diam(G)$ of a network $G$ is the maximum distance between two nodes \cite{Goddard2010}. The eccentricity of a node is the maximum distance from that node to any other node. The radius $rad(G)$ is the minimum eccentricity among all nodes of $G$. Note that the diameter is the maximum eccentricity among all nodes in $G$ \cite{Goddard2010}.
+% finished?
 
 \subsection{Clustering coefficient and transitivity}
 
@@ -244,7 +273,39 @@ and the probability of being connected to exactly $k$ other nodes becomes
 	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k}.
 \end{equation}
 We thus derived the degree distribution of a random network. From this we can calculate the average degree of the network. The expected mean degree is given by \cite{Hopcroft2006}
-% maybe put calculations in appendix?
+\begin{equation}\label{avDeg}
+\begin{split}
+	\left<k\right> &= \sum_{k=0}^{N-1} k\  p_k  \\
+&= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k}.
+\end{split}
+\end{equation}
+This equation can be simplified to $\left<k\right> = (N-1)p$, for $N \gg 1$ this approximately becomes $\left<k\right> = Np$. The derivation of this result can be found in Appendix \ref{ER}, Section \ref{degree}.\\
+Most real networks are however sparse, which means that $\left<k\right> \ll N$. In this case the degree distribution of the random network is well approximated by a Poisson distribution \cite{Albert2014} 
+\begin{equation}
+	p_k = \mathrm{e}^{-\left<k\right>} \frac{\left<k\right>^k}{k!}
+\end{equation}
+The derivation can be found in Appendix \ref{ER}, Section \ref{poiss}. \\
+The average clustering coefficient (Eq. (\ref{globalTrans})) of the Erd\H{o}s-R\'{e}nyi network is given by \cite{Clauset2011}
+\begin{equation}
+	\bar{C} = \frac{\binom{N}{3}p^3}{\binom{N}{3}p^2} = p = \frac{\left<k\right>}{N-1}.
+\end{equation}
+This can be easily understood since the choosing three nodes out of $N$ is given by $\binom{N}{3}$. The chance that they are connected by three edges is given by $p^3$, this than gives the number of triangles; the chance that the are connected by two edges is $p^2$, which determines the number of connected triples. If the average degree $\left<k\right>$ is constant, the average clustering constant goes as $\bar{C} \sim \mathcal{O}(1/N)$, which becomes very small for large networks \cite{Clauset2011}. 
+
+% also discuss average clustering and distance of ER
+
+% different subsections where you talk about different graph models: erdos-renyi, clustered random, wats strogatz, barabasi albert, etc...
+
+\chapter{Opinion dynamics}
+\label{chap3}
+% talk about opinion dynamics, different models, resistance, etc
+
+\newpage
+
+\appendix
+\chapter{Network models: derivations}
+\section{Derivations of the Erd\H{o}s-R\'{e}nyi network}\label{ER}
+\subsection{Average degree}\label{degree}
+The expected mean degree is given by \cite{Hopcroft2006}
 \begin{equation}\label{avDeg}
 \begin{split}
 	\left<k\right> &= \sum_{k=0}^{N-1} k\  p_k  \\
@@ -269,13 +330,14 @@ Finally, by substituting $q = 1-p$, we get \cite{Hopcroft2006}
 	np &= \sum_{k=0}^n \binom{n}{k} k p^{k} (1-p)^{n-k}
 \end{split}
 \end{equation}
-where the right hand side is equal to Equation (\ref{avDeg}) with $n = N-1$ and we thus obtain $\left<k\right> = (N-1)p$.\\
-Most real networks are however sparse, which means that $\left<k\right> \ll N$. In this case the degree distribution is well approximated by a Poisson distribution \cite{Albert2014} 
+where the right hand side is equal to Equation (\ref{avDeg}) with $n = N-1$ and we thus obtain $\left<k\right> = (N-1)p$.
+
+\subsection{Poisson form of the degree distribution}\label{poiss}
+We begin with the exact binomial distribution (Eq.(\ref{degDistRan}))
 \begin{equation}
-	p_k = \mathrm{e}^{-\left<k\right>} \frac{\left<k\right>^k}{k!}
+	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k}
 \end{equation}
-% In appendix??
-The derivation goes as follows. We begin with the exact binomial distribution (Eq.(\ref{degDistRan})) which characterizes a random graph. In the case $k \ll N$, we can simplify the binomial in the following way \cite{Albert2014}
+which characterizes a random graph. In the case $k \ll N$, we can simplify the binomial in the following way \cite{Albert2014}
 \begin{equation}\label{bin}
 	\binom{N-1}{k} = \frac{(N-1)(N-1-1)...(N-1-k+1)}{k!} \approx \frac{(N-1)^k}{k!}.
 \end{equation}
@@ -285,7 +347,7 @@ We also note the following equality \cite{Albert2014}
 \end{equation}
 Using the series expansion \cite{Albert2014}
 \begin{equation}
-	\ln(1+x) = \sum_{n=1}^{\inf}\frac{(-1)^{n+1}}{n}x^n = x - \frac{x^2}{2} + \frac{x^3}{3} - ...  \qquad \forall \ |x| \leq 1
+	\ln(1+x) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}x^n = x - \frac{x^2}{2} + \frac{x^3}{3} - ...  \qquad \forall \ |x| \leq 1
 \end{equation}
 we get \cite{Albert2014}
 \begin{equation}
@@ -305,15 +367,8 @@ Substituting Eq. (\ref{e}) and Eq. (\ref{bin}) in Eq. (\ref{degDistRan}) and usi
 \end{equation}
 
 
-
-% different subsections where you talk about different graph models: erdos-renyi, clustered random, wats strogatz, barabasi albert, etc...
-
-\chapter{Opinion dynamics}
-\label{chap3}
-% talk about opinion dynamics, different models, resistance, etc
-
-
 \newpage
+\backmatter
 % bibliography
 \bibliographystyle{abbrv} % can change this style
 \bibliography{references}
