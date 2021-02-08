@@ -54,7 +54,7 @@ Opinion dynamics models have two important layers. On one hand, we introduce soc
 
 Complex networks have become more and more popular for analyzing complex, dynamical systems. They are used in fields such as physics, economics, social sciences, biology, etc \cite{Costa2008}. These different fields are very diverge, but they have at least one common ground: they often deal with a large number of variables/components that interact with each other. In other words, in all these fields one encounters complex systems, systems where it is not possible to predict collective behavior based on the properties of the individual components alone \cite{Mata2020}. Complex systems often display phenomena such as non-linearity, emergence, spontaneous order,... %(maybe check cursus compl en crit?)
 One of the tools to deal with these complex systems and to give us more insight in the possible underlying structures are complex networks. A network, also often called a graph, is a structure composed of nodes or vertices and a set of links (edges) that indicate the interactions between the nodes \cite{Mata2020}. Representing/modeling a complex system as a graph makes the system appear more simple and tractable, while it still includes the non-linearity of these systems. One can find the language to describe networks in mathematical graph theory. However, complex systems in real life situations often deal with a huge number of components, so the use of statistical and high-performance computing tools is inevitable \cite{Mata2020}. One could argue that the study of complex networks lies somewhere at the intersection of mathematical graph theory and statistical physics \cite{F.Costa2007}.\\
-The advantage of working with network models is that they reduce the level of complexity encountered in the real world, so that one can treat these systems in a more practical way. However we do want our models to display properties similar to the ones seen in real systems \cite{Mata2020}. Since many real systems are not static but evolve in time, this means that we don't only need to deal with static networks but also with temporal networks. Temporal networks are networks where the edges are not always active, but instead become active for some periods of time \cite{Holme2012}. In temporal networks time becomes an explicit element in the network representation \cite{Holme2012}. Static networks have been widely studied and are often convenient for their analytic tractability, whereas temporal networks are, in some cases, more realistic \cite{Mata2020}. Some other important concepts in network theory are the degree distribution, clustering/community structure, connectivity, etc. These concepts will be explained in depth in Chapter \ref{chap2}, Section \ref{netDef}, but let us already anticipate a bit on the case of social networks. It is found that many real life social systems have a power law degree distribution \cite{Muchnik2013}. This heterogeneous or scale free degree distribution represents one of the three general properties of social networks. The other two are short distances, also referred to as small-world phenomenon, and high clustering \cite{Muchnik2013}. Ideally, our theoretical network should exhibit these three properties. Some theoretical networks, that are thoroughly studied, do not possess all of these three properties. However, they might still be used, because of their simplicity and ability to produce analytic results. When using these models one must always bear in mind their limitations to reproduce some properties encountered in real social systems. \\
+The advantage of working with network models is that they reduce the level of complexity encountered in the real world, so that one can treat these systems in a more practical way. However we do want our models to display properties similar to the ones seen in real systems \cite{Mata2020}. Since many real systems are not static but evolve in time, this means that we don't only need to deal with static networks but also with temporal networks. Temporal networks are networks where the edges are not always active, but instead become active for some periods of time \cite{Holme2012}. In temporal networks time becomes an explicit element in the network representation \cite{Holme2012}. Static networks have been widely studied and are often convenient for their analytic tractability, whereas temporal networks are, in some cases, more realistic \cite{Mata2020}. Some other important concepts in network theory are the degree distribution, clustering/community structure, connectivity, etc. These concepts will be explained in depth in Chapter \ref{chap2}, Section \ref{netDef}, but let us already anticipate a bit on the case of social networks. It is found that many real life social systems have a power law degree distribution \cite{Muchnik2013}. This heterogeneous or scale free degree distribution represents one of the three general properties of social networks. The other two are short distances, also referred to as "small world phenomenon", and high clustering \cite{Muchnik2013}. Ideally, our theoretical network should exhibit these three properties. Some theoretical networks, that are thoroughly studied, do not possess all of these three properties. However, they might still be used, because of their simplicity and ability to produce analytic results. When using these models one must always bear in mind their limitations to reproduce some properties encountered in real social systems. \\
 One of the goals of this thesis is to investigate/determine the role of the underlying network structure on the formation and dynamics of opinions in the system. Some examples of theoretical network models used in this thesis are the Erd\H{o}s-R\'{e}nyi network, the stochastic block model, the Watts-Strogatz model, etc. These will be explained thoroughly in Chapter \ref{chap2}, Section \ref{netModel}. %references to chapter 2 need to be adapted
 % to do: read links 19, 21, 22, 23, 24 of https://arxiv.org/pdf/0711.3199.pdf
 
@@ -105,11 +105,11 @@ In one of their previous papers (\cite{Perra2019}) prof. Nicola Perra and prof. 
 
 Networks or graphs are conceptually very simple and flexible objects that are made of a set of nodes/vertices $V$ and a set of edges/links $E$, where the elements of $E$ determine connections between elements of $V$ \cite{Costa2018}
 \begin{equation}
-	E \subseteq \{\{x, y\}| x, y \in V \}.
+	E \subseteq \{\{x, y\}| x, y \in V \}
 \end{equation}
 If self-loops are not allowed, we need the following condition on the elements of $E$
 \begin{equation}
-	E \subseteq \{\{x, y\}| x, y \in V \text{and\ } x \neq y \}.
+	E \subseteq \{\{x, y\}| x, y \in V \text{and\ } x \neq y \}
 \end{equation}
 A graph with no self-loops is a simple graph. The nodes $x$ and $y$ of an edge $\{x, y\}$ are called the endpoints of the edge. It is possible that nodes are not joined by any edge, such nodes are called isolated. If two or more edges have the same pair of endpoints, the graph is called a multi-graph. This thesis is not concerned with multi-graphs, nor are self-loops allowed. Graphs in which the edges have an orientation are called directed graphs. If the edges have weights $w_{ij}$, one speaks of a weighted graph.\\
 A graph can be represented in different ways. One of the most common ways is by use of the adjacency matrix.\\
@@ -137,15 +137,15 @@ with, generally, $0 \leqslant w_{ij} \leqslant 1$ \cite{Mata2020}. \\
 
 The adjacency matrix contains a lot of information such as the degree of a node. The degree $k_i$ of a node $i$ is the number of edges attached to the node $i$ or, in others words, $k_i$ represents the number of nearest neighbors of the node $i$. The degree can be obtained from the adjacency matrix in the following way \cite{Mata2020}
 \begin{equation}
-	k_i = \sum_{j=1}^N A_{ij}.
+	k_i = \sum_{j=1}^N A_{ij}
 \end{equation}
 In the case of a directed graph one can differentiate between the number of incoming edges $k_i^{\text{in}}$ and the number of outgoing edges $k_i^{\text{out}}$ of the node $i$. These are called the in-degree and out-degree respectively and are defined as \cite{Mata2020}
 \begin{equation}
-	k_i^{\text{in}} = \sum_{j=1}^N A_{ji} \quad \text{and} \quad k_i^{\text{out}} = \sum_{j=1}^N A_{ij}.
+	k_i^{\text{in}} = \sum_{j=1}^N A_{ji} \quad \text{and} \quad k_i^{\text{out}} = \sum_{j=1}^N A_{ij}
 \end{equation}
 The total degree of node $i$ is then $k_i = k_i^{\text{in}} + k_i^{\text{out}}$. For weighted graphs the degree is easily generalized to the weighted degree $s_i$, often called strength \cite{Ioannis2007}
 \begin{equation}
-	s_i = \sum_{j=1}^N w_{ij}.
+	s_i = \sum_{j=1}^N w_{ij}
 \end{equation}
 From the degree of the nodes in the network one can construct the degree distribution. The degree distribution $P(k)$ represents the fraction of nodes with a degree $k$ or, in other words, the degree distribution gives the probability that a randomly selected node has a degree $k$. The average degree can be obtained from the degree distribution \cite{Mata2020}
 \begin{equation}
@@ -169,11 +169,11 @@ Several very useful measurements quantify the notion of length and distance in a
 \newline
 The average distance is the mean value of the geodesic distance $d_{ij}$ \cite{F.Costa2007}
 \begin{equation}
-	l = \frac{1}{N(N-1)} \sum_{i \neq j} d_{ij}.
+	l = \frac{1}{N(N-1)} \sum_{i \neq j} d_{ij}
 \end{equation}
 This definition, however, diverges if there are unconnected nodes in the network (unconnected nodes have by definition a distance equal to infinity) \cite{F.Costa2007}. This problem could be avoided by only including connected pairs in the sum, but this introduces a distortion for network with a lot of unconnected pairs of nodes. These networks will then have a small average distance, which is only expected for networks with lots of connections \cite{F.Costa2007}. Instead, another definition of average distance is used: the global efficiency \cite{F.Costa2007}
 \begin{equation}
-	E = \frac{1}{N(N-1)} \sum_{i \neq j} \frac{1}{d_{ij}}.
+	E = \frac{1}{N(N-1)} \sum_{i \neq j} \frac{1}{d_{ij}}
 \end{equation}
 This measurement quantifies the efficiency of the network in sending information between nodes \cite{F.Costa2007}. This assumes that the efficiency of sending information between two nodes is reciprocal to their distance \cite{F.Costa2007}. The harmonic mean of the geodesic distances is now defined as the reciprocal of the global efficiency
 \begin{equation}
@@ -182,7 +182,7 @@ This measurement quantifies the efficiency of the network in sending information
 \newline
 \textbf{Diameter and radius}\\
 \newline
-The diameter $diam(G)$ of a network $G$ is the maximum distance between two nodes \cite{Goddard2010}. The eccentricity of a node is the maximum distance from that node to any other node. The radius $rad(G)$ is the minimum eccentricity among all nodes of $G$. Note that the diameter is the maximum eccentricity among all nodes in $G$ \cite{Goddard2010}.
+The diameter $diam(G)$ of a network $G$ is the maximum distance between any pair of nodes \cite{Goddard2010}. The eccentricity of a node is the maximum distance from that node to any other node. The radius $rad(G)$ is the minimum eccentricity among all nodes of $G$. Note that the diameter is the maximum eccentricity among all nodes in $G$ \cite{Goddard2010}.
 % finished?
 
 \subsection{Clustering coefficient and transitivity}
@@ -199,7 +199,7 @@ The average clustering coefficient is then given as the average of the local clu
 where $N$ denotes, once again, the number of nodes in the network. The clustering coefficient is, beside a measure for the connectivity in the network, also linked to the robustness, or resilience against random damage,  of the network \cite{Iyer2013} \cite{Li2017}. \\
 A measure that is closely related to the clustering coefficient is the transitivity $T$, defined as (valid for undirected, unweighted networks) \cite{F.Costa2007}
 \begin{equation}\label{globalTrans}
-	T = \frac{3 \times \text{number of triangles in the network}}{\text{number of connected triples of nodes in the network}}.
+	T = \frac{3 \times \text{number of triangles in the network}}{\text{number of connected triples of nodes in the network}}
 \end{equation}
 A connected triple is defined as a set of three nodes with at least two edges between them, so that each node can be reached from the other two (either directly or indirectly). The factor three arises from the fact that each triangle contributes to three different connected triples in the network: one centered at each node in the triangle \cite{F.Costa2007}. Let us denote the number of triangles as $N_{\Delta}$ and the number of connected triples as $N_3$. These two numbers can be obtained from the adjacency matrix in the following way \cite{F.Costa2007}
 \begin{align}
@@ -231,15 +231,14 @@ A clique is a complete subgraph, where a complete subgraph is defined as a set o
 \newline
 A strong community is defined such that each node inside the community has more links to other nodes inside the same community than to nodes outside the community \cite{Albert2016}. Let us denote a community as $C$ and let $i$ be a node inside the community $C$. If we define the internal degree $k_i^{int}(C)$ as the number of links of node $i$ with other nodes in $C$ and the external degree $k_i^{ext}(C)$ as the number of links of node $i$ with nodes outside $C$, then we have the following condition for $C$ to be a strong community \cite{Albert2016}
 \begin{equation}
-	k_i^{int}(C) > k_i^{ext}(C) \qquad \forall i \in C.
+	k_i^{int}(C) > k_i^{ext}(C) \qquad \forall i \in C
 \end{equation}
-\\
 \newline
 \textbf{Weak communities}\\
 \newline
 A weak community is a community where the sum of the internal degree of all the nodes in the community exceeds the sum of the external degree of all the nodes in the community \cite{Albert2016}. We thus have the following condition for a weak community $C$ \cite{Albert2016}
 \begin{equation}
-	\sum_{i \in C} k_i^{int}(C) > \sum_{i \in C}k_i^{ext}(C).
+	\sum_{i \in C} k_i^{int}(C) > \sum_{i \in C}k_i^{ext}(C)
 \end{equation}
 
 
@@ -252,7 +251,7 @@ A weak community is a community where the sum of the internal degree of all the 
 
 In order to study the topological structures of real-world networks, several theoretical network models have been developed. These theoretical models usually have a simpler representation and well known properties that can be derived mathematically. They are widely studied and used extensively. The study of complex networks relies heavily on the knowledge and understanding of these models. In this section we will review some of the most important ones.
 
-\subsection{The Erd\H{o}s-R\'{e}nyi network}
+\subsection{The Erd\H{o}s-R\'{e}nyi model}
 
 In 1959 the two mathematicians Paul Erd\H{o}s and Alfr\'{e}d R\'{e}nyi proposed a model to generate random networks \cite{F.Costa2007}. Independently of them, Solomonoff and Rapoport already proposed the model in 1951. The model constructs random networks with $N$ nodes in the following way \cite{Albert2002}
 \begin{enumerate}
@@ -260,9 +259,12 @@ In 1959 the two mathematicians Paul Erd\H{o}s and Alfr\'{e}d R\'{e}nyi proposed 
 	\item For each pair of nodes, connect them with a predefined probability $p$.
 \end{enumerate} 
 If $p=1$, we obtain a network with the maximum number of edges $N(N-1)/2$. This is called the fully connected network.\\
+\newline
+\textbf{Degree distribution and average degree}\\
+\newline
 The probability that a node is connected to $k$ other nodes and not to $N-k$ others is given by
 \begin{equation}
-	p^k (1-p)^{N-1-k}.
+	p^k (1-p)^{N-1-k}
 \end{equation}
 The number of ways to choose the $k$ nodes among the $N-1$ possible candidates is given by the binomial coefficient
 \begin{equation}
@@ -270,13 +272,13 @@ The number of ways to choose the $k$ nodes among the $N-1$ possible candidates i
 \end{equation}
 and the probability of being connected to exactly $k$ other nodes becomes
 \begin{equation}\label{degDistRan}
-	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k}.
+	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k}
 \end{equation}
 We thus derived the degree distribution of a random network. From this we can calculate the average degree of the network. The expected mean degree is given by \cite{Hopcroft2006}
 \begin{equation}\label{avDeg}
 \begin{split}
 	\left<k\right> &= \sum_{k=0}^{N-1} k\  p_k  \\
-&= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k}.
+&= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k}
 \end{split}
 \end{equation}
 This equation can be simplified to $\left<k\right> = (N-1)p$, for $N \gg 1$ this approximately becomes $\left<k\right> = Np$. The derivation of this result can be found in Appendix \ref{ER}, Section \ref{degree}.\\
@@ -285,13 +287,74 @@ Most real networks are however sparse, which means that $\left<k\right> \ll N$. 
 	p_k = \mathrm{e}^{-\left<k\right>} \frac{\left<k\right>^k}{k!}
 \end{equation}
 The derivation can be found in Appendix \ref{ER}, Section \ref{poiss}. \\
+\newline
+\textbf{Average clustering coefficient}\\
+\newline
 The average clustering coefficient (Eq. (\ref{globalTrans})) of the Erd\H{o}s-R\'{e}nyi network is given by \cite{Clauset2011}
 \begin{equation}
-	\bar{C} = \frac{\binom{N}{3}p^3}{\binom{N}{3}p^2} = p = \frac{\left<k\right>}{N-1}.
+	\bar{C} = \frac{\binom{N}{3}p^3}{\binom{N}{3}p^2} = p = \frac{\left<k\right>}{N-1}
 \end{equation}
-This can be easily understood since the choosing three nodes out of $N$ is given by $\binom{N}{3}$. The chance that they are connected by three edges is given by $p^3$, this than gives the number of triangles; the chance that the are connected by two edges is $p^2$, which determines the number of connected triples. If the average degree $\left<k\right>$ is constant, the average clustering constant goes as $\bar{C} \sim \mathcal{O}(1/N)$, which becomes very small for large networks \cite{Clauset2011}. 
+This can be easily understood since the choosing three nodes out of $N$ is given by $\binom{N}{3}$. The chance that they are connected by three edges is given by $p^3$, this than gives the number of triangles; the chance that the are connected by two edges is $p^2$, which determines the number of connected triples. If the average degree $\left<k\right>$ is constant, the average clustering constant goes as $\bar{C} \sim \mathcal{O}(1/N)$, which becomes very small for large networks \cite{Clauset2011}. \\
+\newline
+\textbf{Diameter and average distance}\\
+\newline
+A heuristic derivation of the diameter of a random network goes as follows. Consider a random network with average degree $\left<k\right>$, then a node in this network has on average \cite{Albert2014}
+\begin{itemize}
+	\item $\left<k\right>$ nodes at distance one $(d=1)$
+	\item $\left<k\right>^2$ nodes at distance two $(d=2)$
+	\item $\left<k\right>^3$ nodes at distance three $(d=3)$
+	\item ...
+	\item $\left<k\right>^d$ nodes at distance $d$
+\end{itemize}
+The number of nodes at a distance $d$ cannot exceed the number of nodes $N$ in the network. We thus obtain the following equation from which the maximum distance or diameter $d_{max}$ can be obtained
+\begin{equation}
+	N \approx \left<k\right>^{d_{max}}
+\end{equation}
+or 
+\begin{equation}\label{diameter}
+	d_{max} \approx \frac{\ln{N}}{\ln{\left<k\right>}}
+\end{equation}
+A more precise calculation can be found in Appendix \ref{ER}, Section \ref{ERdist}. Equation (\ref{diameter}) is, however, a better approximation to the average distance $\left<d\right>$ between two randomly chosen nodes \cite{Albert2014}. This is because $d_{max}$ is often dominated by a few extreme paths, where $\left<d\right>$ instead is average over all node pairs and thus suppresses these fluctuations \cite{Albert2014}. Thus the average distance of a random network is defined by \cite{Albert2014}
+\begin{equation}
+	\left<d\right> \approx \frac{\ln{N}}{\ln{\left<k\right>}}
+\end{equation}
+Since for large $N$ $\ln{N} \ll N$, we find that the average distance is a lot smaller than the size of the network. Generally, the logarithmic dependence of the average distance $\left<d\right>$ on the network size $N$ is one of the two defining properties of what is referred to as the "small world phenomenon"; the other property is a high clustering coefficient \cite{Easley2010}.  \\
+\\
+To summarize: the random Erd\H{o}s-R\'{e}nyi network has a bell shaped degree distribution which approximates a Poisson distribution for $N \gg 1$; the average clustering coefficient becomes small for large networks and the average distance depends logarithmic on the system sizes. The Erd\H{o}s-R\'{e}nyi network thus possesses one of the two properties of the "small world phenomenon" (namely short average distance).\\
+Real social networks, however, usually posses the "small world phenomenon" and thus have both a short average distance and a high clustering coefficient. The question then rises: can we construct a model that has both of these properties. The answer is yes and this is exactly what Duncan Watts and Steve Strogatz did.
 
-% also discuss average clustering and distance of ER
+\subsection{The Watts-Strogatz model}
+
+In 1998, Duncan Watts and Steve Strogatz constructed a network model that generates random networks with small world properties, such as high clustering as short average distances. Their model achieves this by interpolating between a regular ring lattice and a random network \cite{Watts1998}. The construction goes as follows \cite{Watts1998}
+\begin{enumerate}
+	\item Start with a regular ring lattice with $N$ nodes, each connected to $K = 2m$ neighbors ($m$ on each side)
+	\item For each node $i$, rewire each edge that connects $i$ with its $K/2$ rightmost neighbors with a probability $p$. Rewiring is done is such a way that self-loops and edge duplication are avoided
+\end{enumerate}
+The probability $p$ allows us to tune the graph between a regular lattice ($p = 0$) and a random network ($p = 1$) \cite{Watts1998}. Usually, the following condition is required for the number of neighbors $K$: $N \gg K \gg \ln{N} \gg 1$. The first inequality assures sparse networks, whereas the second inequality guarantees that a random graph will be connected \cite{Watts1998}.\\
+The regular ring lattice ($p=0$) has an average clustering coefficient $\bar{C}(0)$ and an average path length $\left<d(0)\right>$ equal to \cite{Watts1998}
+\begin{align}\label{C0}
+	\bar{C}(0) = \frac{3(K-2)}{4(K-1)} \approx \frac{3}{4} \ \text{for}\ K \gg 1 && \left<d(0)\right> \approx \frac{N}{2K}
+\end{align}
+% derivations?? http://www.pitt.edu/~kpele/Materials15/module8.pdf put in appendix!! --> to do
+The regular ring lattice thus has a high clustering coefficient and an average path length that grows linearly with the system size $N$. \\
+The random network ($p = 1$) on the other hand has a low clustering coefficient $\bar{C}(1)$ and a small average path length $\left<d(1)\right>$ \cite{Watts1998}
+\begin{align}
+	\bar{C}(1) \approx \frac{K}{N} \ll 1 && \left<d(1)\right> \approx \frac{\ln{N}}{\ln{K}}
+\end{align}
+Watts and Strogatz then showed by numerical simulation that the average distance for the networks with $0 < p < 1$ is comparable with the average distance of a random graph, even for small $p$ \cite{Newman2000}. The clustering coefficient is approximately given by   \cite{Barrat1999}
+\begin{equation}
+	\bar{C} \approx \bar{C}(0)(1-p)^3
+\end{equation} 
+where $\bar{C}(0)$ is given by Equation (\ref{C0}). This can be seen in the following way
+\begin{itemize}
+	\item The probability that none of the three edges of the original triangles in the regular lattice are rewired is $(1-p)^3$
+	\item The probability that edges are rewired back to each other is negligible
+\end{itemize}
+For rather small values of $p$, the clustering coefficient remains high. The model of Watts and Strogatz is thus able to generate random networks with a high clustering coefficient and short average distances.
+
+% also discuss case where edges are added instead of rewired??
+
+
 
 % different subsections where you talk about different graph models: erdos-renyi, clustered random, wats strogatz, barabasi albert, etc...
 
@@ -309,18 +372,18 @@ The expected mean degree is given by \cite{Hopcroft2006}
 \begin{equation}\label{avDeg}
 \begin{split}
 	\left<k\right> &= \sum_{k=0}^{N-1} k\  p_k  \\
-&= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k}.
+&= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k}
 \end{split}
 \end{equation}
 In order to simplify this equation we can make use of the following formula \cite{Hopcroft2006}
 \begin{equation} 
-	(p+q)^n = \sum_{k=0}^n \binom{n}{k} p^k q^{n-k}.
+	(p+q)^n = \sum_{k=0}^n \binom{n}{k} p^k q^{n-k}
 \end{equation}
 Differentiating both sides of this equation gives us \cite{Hopcroft2006}
 \begin{equation}
 \begin{split}
 	n(p+q)^{n-1} &= \sum_{k=0}^n \binom{n}{k} k p^{k-1} q^{n-k} \\
-	&= \frac{1}{p} \sum_{k=0}^n \binom{n}{k} k p^{k} q^{n-k}.
+	&= \frac{1}{p} \sum_{k=0}^n \binom{n}{k} k p^{k} q^{n-k}
 \end{split}
 \end{equation}
 Finally, by substituting $q = 1-p$, we get \cite{Hopcroft2006}
@@ -339,11 +402,11 @@ We begin with the exact binomial distribution (Eq.(\ref{degDistRan}))
 \end{equation}
 which characterizes a random graph. In the case $k \ll N$, we can simplify the binomial in the following way \cite{Albert2014}
 \begin{equation}\label{bin}
-	\binom{N-1}{k} = \frac{(N-1)(N-1-1)...(N-1-k+1)}{k!} \approx \frac{(N-1)^k}{k!}.
+	\binom{N-1}{k} = \frac{(N-1)(N-1-1)...(N-1-k+1)}{k!} \approx \frac{(N-1)^k}{k!}
 \end{equation}
 We also note the following equality \cite{Albert2014}
 \begin{equation}
-	\ln[(1-p)^{N-1-k}] = (N-1-k)\ln\bigg(1 - \frac{\left<k\right>}{N-1} \bigg).
+	\ln[(1-p)^{N-1-k}] = (N-1-k)\ln\bigg(1 - \frac{\left<k\right>}{N-1} \bigg)
 \end{equation}
 Using the series expansion \cite{Albert2014}
 \begin{equation}
@@ -355,18 +418,34 @@ we get \cite{Albert2014}
 \end{equation}
 which is valid if $k \ll N$. We thus find \cite{Albert2014}
 \begin{equation}\label{e}
-	(1-p)^{N-1-k} = \mathrm{e}^{-\left<k\right>}.
+	(1-p)^{N-1-k} = \mathrm{e}^{-\left<k\right>}
 \end{equation}
 Substituting Eq. (\ref{e}) and Eq. (\ref{bin}) in Eq. (\ref{degDistRan}) and using $\left<k\right> = (N-1)p$, we finally obtain the Poisson form of the degree distribution \cite{Albert2014}
 \begin{equation}
 \begin{split}
 	p_k &= \binom{N-1}{k}p^k (1-p)^{N-1-k} = \frac{(N-1)^k}{k!} p^k \mathrm{e}^{-\left<k\right>} \\
 &= \frac{(N-1)^k}{k!} \bigg(\frac{\left<k\right>}{N-1} \bigg)^k \mathrm{e}^{-\left<k\right>}\\
-&= \mathrm{e}^{-\left<k\right>}\frac{\left<k\right>^k}{k!}.
+&= \mathrm{e}^{-\left<k\right>}\frac{\left<k\right>^k}{k!}
 \end{split}
 \end{equation}
 
-
+\subsection{Diameter}\label{ERdist}
+The expected number of nodes at a distance $d$ from a starting node is \cite{Albert2014}
+\begin{equation}\label{dist}
+	N(d) = 1 + \left<k\right> + \left<k\right>^2 + ... + \left<k\right>^d = \frac{\left<k\right>^{d+1} - 1}{\left<k\right> - 1}
+\end{equation}
+$N(d)$ cannot exceed the number of nodes $N$ in the network. The maximum distance or diameter $d_{max}$ of the network can thus be found by setting \cite{Albert2014}
+\begin{equation}
+	N(d_{max}) \approx N
+\end{equation}
+If $\left<k\right> \gg 1$, we can neglect the $-1$ terms in Eq. (\ref{dist}), which gives \cite{Albert2014}
+\begin{equation}
+	N \approx \left<k\right>^{d_{max}}
+\end{equation}
+and thus the diameter of a random network becomes \cite{Albert2014}
+\begin{equation}
+	d_{max} \approx \frac{\ln{N}}{\ln{\left<k\right>}}
+\end{equation}
 \newpage
 \backmatter
 % bibliography
