@@ -160,6 +160,22 @@ In physics literature, the degree of a node is often called the connectivity \ci
 The average degree $\left<k\right>$ is a global measurement of the connectivity of the network \cite{Costa2008}. If the average connectivity $\left<k\right>$ is too small (this is, if there are too few edges), there will be many isolated nodes and only a few clusters with a small number of nodes. If more and more edges are added to the network, the small clusters will grow and will be connected to each other to form larger clusters. At some critical value of the connectivity, most nodes will be connected into a giant cluster, which characterizes the percolation of the network \cite{F.Costa2007}.
 % NOT finished; add this as a subsection in the degree section?? 
 
+\subsection{Assortative and disassortative networks}
+
+Another concept that is closely related to the degree of a node is the notion of assortative and disassortative networks. More precisely, the notion of assortativity and disassortativity has to do with degree correlations. The joint degree distribution $P(k, k')$ is the probability that an arbitrary edge connects a node with degree $k$ to a node with degree $k'$ \cite{F.Costa2007}. The conditional probability $P(k|k')$, which is another way to express dependencies between node degrees, is the probability that an arbitrary neighbor of a node with degree $k$ has a degree $k'$ \cite{F.Costa2007}
+\begin{equation}
+	P(k|k') = \frac{\left<k\right>P(k, k')}{kP(k)}
+\end{equation}
+The average degree of the nearest neighbors of nodes with degree $k$ can be computed as \cite{F.Costa2007}
+\begin{equation}
+	k_{nn}(k) = \sum_{k'} k'P(k'|k)
+\end{equation}
+If there are no correlations $k_{nn}$ is independent of $k$ \cite{F.Costa2007}. If $k_{nn}(k)$ is an increasing function of $k$, then nodes with a high degree tend to connect to nodes with a high degree and the network is classified as assortative. If instead $k_{nn}(k)$ is a decreasing function of $k$, nodes with a high degree tend to connect to nodes with a low degree and the network is called disassortative \cite{F.Costa2007}.\\
+However, the terms assortativity and disassortativity are also often used without taking degree correlations into account. Instead, one may look at a particular node property to define assortative and disassortative network \cite{Thed2014}. In this way, an assortative network is a network where nodes tend to connect to other nodes with similar properties as themselves, whereas in a disassortative network nodes tend to connect to nodes with different properties \cite{Thed2014}.
+
+% talk about assortativity of social networks?? + talk about node assortativity instead of global assortativity, see Thed2014?
+
+
 \subsection{Network distances}
 
 % explain length, diameter, average length,...
@@ -168,7 +184,7 @@ Several very useful measurements quantify the notion of length and distance in a
 \textbf{Average distance}\\
 \newline
 The average distance is the mean value of the geodesic distance $d_{ij}$ \cite{F.Costa2007}
-\begin{equation}
+\begin{equation}\label{avdist}
 	l = \frac{1}{N(N-1)} \sum_{i \neq j} d_{ij}
 \end{equation}
 This definition, however, diverges if there are unconnected nodes in the network (unconnected nodes have by definition a distance equal to infinity) \cite{F.Costa2007}. This problem could be avoided by only including connected pairs in the sum, but this introduces a distortion for network with a lot of unconnected pairs of nodes. These networks will then have a small average distance, which is only expected for networks with lots of connections \cite{F.Costa2007}. Instead, another definition of average distance is used: the global efficiency \cite{F.Costa2007}
@@ -241,10 +257,35 @@ A weak community is a community where the sum of the internal degree of all the 
 	\sum_{i \in C} k_i^{int}(C) > \sum_{i \in C}k_i^{ext}(C)
 \end{equation}
 
+\subsection{Modularity}
+
+The modularity $Q$ is a measurement that represents the quality of a particular division of a network into different communities \cite{F.Costa2007}. It was proposed after the fundamental problem arised for real networks concerning how to best divide the network into its constituent communities \cite{F.Costa2007}. Generally, no a priori information is available about the number of existing communities in real networks \cite{F.Costa2007}.\\
+The modularity for a network with $N$ nodes and $L$ edges and a partition into $n_c$ communities is calculated as follows. Each community has $N_c$ nodes and $L_c$ edges ($c = 1,..., n_c$) \cite{Albert2016}. The modularity of a community $Q_c$ is then calculated by measuring the difference between the network real wiring diagram (which is given by the adjacency matrix $A_{ij}$) and the expected number of edges between $i$ and $j$ if the network is randomly wired \cite{Albert2016}. This last quantity is given by $p_{ij}$ which is obtained by randomizing the original network while keeping the expected degree of each node unchanged \cite{Albert2016}. Hence, the modularity of a community $Q_c$ becomes \cite{Albert2016}
+\begin{equation}
+	Q_c = \frac{1}{2L}\sum_{(i,j) \in C_c} (A_{ij} - p_{ij})
+\end{equation}
+Using \cite{Albert2016}
+\begin{equation}
+	p_{ij} = \frac{k_ik_j}{2L}
+\end{equation}
+we can derive a simpler form for $Q_c$ \cite{Albert2016}
+% derivation in appendix, see albert2016
+\begin{equation}\label{Qc}
+	Q_c = \frac{L_c}{L} - \bigg(\frac{k_c}{2L}\bigg)^2
+\end{equation}
+where $L_c$ is the total number of links in the community $C_c$ and $k_c$ is the total degree of the nodes in this community \cite{Albert2016}.\\
+To generalize this idea to the whole network, we sum Eq. (\ref{Qc}) over all $n_c$ communities \cite{Albert2016}
+\begin{equation}
+	Q = \sum_{c = 1}^{n_c}\bigg[\frac{L_c}{L} - \bigg(\frac{k_c}{2L}\bigg)^2 \bigg]
+\end{equation}
+% properties of modularity albert2016
+% NOT FINISHED
+
+
 
 % talk about what is a graph, talk about degree distribution, clustereing, average path length, etc (in different subsections), maybe things like assortativity, page rank,...
 % explain small-world (milgram), high clustering, power-law
-% explain modularity!! + diameter, shortest path, etc...!
+% explain modularity!!
 
 \section{Network models}
 \label{netModel}
@@ -294,7 +335,7 @@ The average clustering coefficient (Eq. (\ref{globalTrans})) of the Erd\H{o}s-R\
 \begin{equation}
 	\bar{C} = \frac{\binom{N}{3}p^3}{\binom{N}{3}p^2} = p = \frac{\left<k\right>}{N-1}
 \end{equation}
-This can be easily understood since the choosing three nodes out of $N$ is given by $\binom{N}{3}$. The chance that they are connected by three edges is given by $p^3$, this than gives the number of triangles; the chance that the are connected by two edges is $p^2$, which determines the number of connected triples. If the average degree $\left<k\right>$ is constant, the average clustering constant goes as $\bar{C} \sim \mathcal{O}(1/N)$, which becomes very small for large networks \cite{Clauset2011}. \\
+This can be easily understood since choosing three nodes out of $N$ is given by $\binom{N}{3}$. The chance that they are connected by three edges is given by $p^3$, which gives the number of triangles; the chance that the are connected by two edges is $p^2$, which determines the number of connected triples. If the average degree $\left<k\right>$ is constant, the average clustering constant goes as $\bar{C} \sim \mathcal{O}(1/N)$, which becomes very small for large networks \cite{Clauset2011}. \\
 \newline
 \textbf{Diameter and average distance}\\
 \newline
@@ -314,18 +355,19 @@ or
 \begin{equation}\label{diameter}
 	d_{max} \approx \frac{\ln{N}}{\ln{\left<k\right>}}
 \end{equation}
-A more precise calculation can be found in Appendix \ref{ER}, Section \ref{ERdist}. Equation (\ref{diameter}) is, however, a better approximation to the average distance $\left<d\right>$ between two randomly chosen nodes \cite{Albert2014}. This is because $d_{max}$ is often dominated by a few extreme paths, where $\left<d\right>$ instead is average over all node pairs and thus suppresses these fluctuations \cite{Albert2014}. Thus the average distance of a random network is defined by \cite{Albert2014}
+A more precise calculation can be found in Appendix \ref{ER}, Section \ref{ERdist}. Equation (\ref{diameter}) is, however, a better approximation to the average distance $\left<d\right>$ between two randomly chosen nodes \cite{Albert2014}. This is because $d_{max}$ is often dominated by a few extreme paths, where $\left<d\right>$ instead is averaged over all node pairs and thus suppresses these fluctuations \cite{Albert2014}. Thus the average distance of a random network is defined by \cite{Albert2014}
 \begin{equation}
 	\left<d\right> \approx \frac{\ln{N}}{\ln{\left<k\right>}}
 \end{equation}
-Since for large $N$ $\ln{N} \ll N$, we find that the average distance is a lot smaller than the size of the network. Generally, the logarithmic dependence of the average distance $\left<d\right>$ on the network size $N$ is one of the two defining properties of what is referred to as the "small world phenomenon"; the other property is a high clustering coefficient \cite{Easley2010}.  \\
+Since for large $N$, $\ln{N} \ll N$, we find that the average distance is a lot smaller than the size of the network. Generally, the logarithmic dependence of the average distance $\left<d\right>$ on the network size $N$ is one of the two defining properties of what is referred to as the "small world phenomenon"; the other property is a high clustering coefficient \cite{Easley2010}.  \\
 \\
 To summarize: the random Erd\H{o}s-R\'{e}nyi network has a bell shaped degree distribution which approximates a Poisson distribution for $N \gg 1$; the average clustering coefficient becomes small for large networks and the average distance depends logarithmic on the system sizes. The Erd\H{o}s-R\'{e}nyi network thus possesses one of the two properties of the "small world phenomenon" (namely short average distance).\\
-Real social networks, however, usually posses the "small world phenomenon" and thus have both a short average distance and a high clustering coefficient. The question then rises: can we construct a model that has both of these properties. The answer is yes and this is exactly what Duncan Watts and Steve Strogatz did.
+Real social networks, however, usually display the "small world phenomenon" and thus have both a short average distance and a high clustering coefficient. The question then rises: can we construct a model that has both of these properties. The answer is yes and this is exactly what Duncan Watts and Steve Strogatz did.
+% also take about the giant cluster, critical probability??
 
 \subsection{The Watts-Strogatz model}
 
-In 1998, Duncan Watts and Steve Strogatz constructed a network model that generates random networks with small world properties, such as high clustering as short average distances. Their model achieves this by interpolating between a regular ring lattice and a random network \cite{Watts1998}. The construction goes as follows \cite{Watts1998}
+In 1998, Duncan Watts and Steve Strogatz constructed a network model that generates random networks with small world properties, such as high clustering and short average distances. Their model achieves this by interpolating between a regular ring lattice and a random network \cite{Watts1998}. The construction goes as follows \cite{Watts1998}
 \begin{enumerate}
 	\item Start with a regular ring lattice with $N$ nodes, each connected to $K = 2m$ neighbors ($m$ on each side)
 	\item For each node $i$, rewire each edge that connects $i$ with its $K/2$ rightmost neighbors with a probability $p$. Rewiring is done is such a way that self-loops and edge duplication are avoided
@@ -335,8 +377,7 @@ The regular ring lattice ($p=0$) has an average clustering coefficient $\bar{C}(
 \begin{align}\label{C0}
 	\bar{C}(0) = \frac{3(K-2)}{4(K-1)} \approx \frac{3}{4} \ \text{for}\ K \gg 1 && \left<d(0)\right> \approx \frac{N}{2K}
 \end{align}
-% derivations?? http://www.pitt.edu/~kpele/Materials15/module8.pdf put in appendix!! --> to do
-The regular ring lattice thus has a high clustering coefficient and an average path length that grows linearly with the system size $N$. \\
+The derivations of these formulas can be found in Appendix \ref{WS}, Section \ref{ringclus}. The regular ring lattice thus has a high clustering coefficient and an average path length that grows linearly with the system size $N$. \\
 The random network ($p = 1$) on the other hand has a low clustering coefficient $\bar{C}(1)$ and a small average path length $\left<d(1)\right>$ \cite{Watts1998}
 \begin{align}
 	\bar{C}(1) \approx \frac{K}{N} \ll 1 && \left<d(1)\right> \approx \frac{\ln{N}}{\ln{K}}
@@ -354,6 +395,11 @@ For rather small values of $p$, the clustering coefficient remains high. The mod
 
 % also discuss case where edges are added instead of rewired??
 
+\subsection{The stochastic block model}
+
+Another random graph model that produces networks containing communities is the stochastic block model (SBM). The stochastic block model originates in social sciences and was developed to describe group structures in friendship networks \cite{Funke2019}. The idea behind the development of this model is that often in real networks, there are groups of nodes that are more densely interconnected than with the rest of the network \cite{F.Costa2007}. Hence, these networks posses a modular/community structure and this exactly the structure that is easily modeled by the stochastic block model.
+% NOT FINISHED
+
 
 
 % different subsections where you talk about different graph models: erdos-renyi, clustered random, wats strogatz, barabasi albert, etc...
@@ -365,8 +411,8 @@ For rather small values of $p$, the clustering coefficient remains high. The mod
 \newpage
 
 \appendix
-\chapter{Network models: derivations}
-\section{Derivations of the Erd\H{o}s-R\'{e}nyi network}\label{ER}
+\chapter{Network models: Derivations}
+\section{The Erd\H{o}s-R\'{e}nyi model}\label{ER}
 \subsection{Average degree}\label{degree}
 The expected mean degree is given by \cite{Hopcroft2006}
 \begin{equation}\label{avDeg}
@@ -445,7 +491,57 @@ If $\left<k\right> \gg 1$, we can neglect the $-1$ terms in Eq. (\ref{dist}), wh
 and thus the diameter of a random network becomes \cite{Albert2014}
 \begin{equation}
 	d_{max} \approx \frac{\ln{N}}{\ln{\left<k\right>}}
+\end{equation} 
+
+\section{The Watts-Strogatz model}\label{WS}
+\subsection{The regular ring lattice}\label{ringclus}
+
+\textbf{Clustering coefficient}\\
+\newline
+A triangle in the regular ring lattice requires two edge traversals in the same direction and one in the opposite direction \cite{Pele2015}. In the regular ring lattice every node has a fixed degree $K$, this means that each node is connected to $K/2$ neighbors on its left and $K/2$ neighbors on its right. It is then clear that the final, backwards step can span at most $K/2$ nodes \cite{Pele2015}; otherwise we would end up at a different node from which we started, which would definitely not form a triangle.\\
+Hence, the number of triangles for a given node is given by choosing the two forward target nodes from the $K/2$ possibilities \cite{Pele2015}
+\begin{equation}\label{triangle}
+	\binom{\frac{K}{2}}{2} = \frac{1}{4} K \bigg(\frac{K}{2} - 1 \bigg)
 \end{equation}
+The number of connected triples per node is given by choosing two nodes out of the $K$ neighbors \cite{Pele2015}
+\begin{equation}\label{triple}
+	\binom{K}{2} = \frac{1}{2} K (K-1)
+\end{equation}
+Since every node in the regular ring lattice we can easily find the total number of triangles and connected triples in the network by multiplying Eq. (\ref{triangle}) and Eq. (\ref{triple}) with the number of nodes $N$. We then obtain the final result for the clustering coefficient in the regular ring lattice \cite{Pele2015}
+\begin{equation}
+	\bar{C} = \frac{3\cdot N \frac{1}{4} K \bigg(\frac{K}{2} - 1 \bigg)}{N \frac{1}{2} K (K-1)} = \frac{3(K-2)}{4(K-1)}
+\end{equation}
+\newline
+\textbf{Average distance}\\
+\newline
+The general formula for the average distance is given by Eq. (\ref{avdist})
+\begin{equation}
+	l = \frac{1}{N(N-1)} \sum_{i \neq j} d_{ij}
+\end{equation}
+where the sum runs over the shortest path between every pair of nodes. Assume we have a regular ring lattice with $N$ nodes and each node has $K$ neighbors. Now we can calculate the distance between node $i$ and every other node in the ring lattice
+\begin{itemize}
+	\item There are $K$ nodes adjacent to node $i$, so there are $K$ nodes with a distance $d_{ij} = 1$
+	\item There are $K$ nodes that are neighbors of neighbors of node $i$, so there are $K$ nodes with a distance $d_{ij} = 2$
+	\item ...
+	\item There are $K$ nodes that have a distance $d_{ij} = \frac{N}{K}$ between them and node $i$; its easy to see that these are the nodes that are the furthest away from node $i$ 
+\end{itemize}  
+So the average distance for node $i$ becomes \cite{chap9}
+\begin{equation}
+	l_i = \frac{1}{N-1} K \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg) \approx \frac{K}{N} \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg)
+\end{equation}
+where the last approximation holds for $N \gg 1$. Since every node in the regular ring lattice is identical we can easily find the average distance of the network \cite{chap9}
+\begin{equation}
+	l = \frac{1}{N} \sum_i l_i = \frac{1}{N} N l_i \approx \frac{K}{N} \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg)
+\end{equation}
+Using \cite{chap9}
+\begin{equation}
+	1 + 2+ 3 +...+ x = \sum_{i = 1}^x i = \frac{x(x+1)}{2} \approx \frac{x^2}{2}
+\end{equation}
+where the last approximation again holds for $x \gg 1$; we finally obtain \cite{chap9}
+\begin{equation}
+	l \approx \frac{K}{N} \frac{\frac{N^2}{K^2}}{2} = \frac{N}{2K}
+\end{equation}
+
 \newpage
 \backmatter
 % bibliography
