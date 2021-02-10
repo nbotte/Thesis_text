@@ -27,6 +27,7 @@
 \usepackage{titlesec}
 \usepackage{algorithm}
 \usepackage{physics}
+\usepackage{interval}
 \usepackage[noend]{algpseudocode}
 \usepackage{tikz-feynman}
 \usepackage{subcaption}
@@ -187,7 +188,7 @@ The average distance is the mean value of the geodesic distance $d_{ij}$ \cite{F
 \begin{equation}\label{avdist}
 	l = \frac{1}{N(N-1)} \sum_{i \neq j} d_{ij}
 \end{equation}
-This definition, however, diverges if there are unconnected nodes in the network (unconnected nodes have by definition a distance equal to infinity) \cite{F.Costa2007}. This problem could be avoided by only including connected pairs in the sum, but this introduces a distortion for network with a lot of unconnected pairs of nodes. These networks will then have a small average distance, which is only expected for networks with lots of connections \cite{F.Costa2007}. Instead, another definition of average distance is used: the global efficiency \cite{F.Costa2007}
+This definition, however, diverges if there are unconnected nodes in the network (unconnected nodes have by definition a distance equal to infinity) \cite{F.Costa2007}. This problem could be avoided by only including connected pairs in the sum, but this introduces a distortion for networks with a lot of unconnected pairs of nodes. These networks will then have a small average distance, which is only expected for networks with lots of connections \cite{F.Costa2007}. Instead, another definition of average distance is used: the global efficiency \cite{F.Costa2007}
 \begin{equation}
 	E = \frac{1}{N(N-1)} \sum_{i \neq j} \frac{1}{d_{ij}}
 \end{equation}
@@ -245,7 +246,7 @@ A clique is a complete subgraph, where a complete subgraph is defined as a set o
 \newline
 \textbf{Strong communities}\\
 \newline
-A strong community is defined such that each node inside the community has more links to other nodes inside the same community than to nodes outside the community \cite{Albert2016}. Let us denote a community as $C$ and let $i$ be a node inside the community $C$. If we define the internal degree $k_i^{int}(C)$ as the number of links of node $i$ with other nodes in $C$ and the external degree $k_i^{ext}(C)$ as the number of links of node $i$ with nodes outside $C$, then we have the following condition for $C$ to be a strong community \cite{Albert2016}
+A strong community is defined such that each node inside the community has more edges to other nodes inside the same community than to nodes outside the community \cite{Albert2016}. Let us denote a community as $C$ and let $i$ be a node inside the community $C$. If we define the internal degree $k_i^{int}(C)$ as the number of edges of node $i$ with other nodes in $C$ and the external degree $k_i^{ext}(C)$ as the number of edges of node $i$ with nodes outside $C$, then we have the following condition for $C$ to be a strong community \cite{Albert2016}
 \begin{equation}
 	k_i^{int}(C) > k_i^{ext}(C) \qquad \forall i \in C
 \end{equation}
@@ -260,32 +261,43 @@ A weak community is a community where the sum of the internal degree of all the 
 \subsection{Modularity}
 
 The modularity $Q$ is a measurement that represents the quality of a particular division of a network into different communities \cite{F.Costa2007}. It was proposed after the fundamental problem arised for real networks concerning how to best divide the network into its constituent communities \cite{F.Costa2007}. Generally, no a priori information is available about the number of existing communities in real networks \cite{F.Costa2007}.\\
-The modularity for a network with $N$ nodes and $L$ edges and a partition into $n_c$ communities is calculated as follows. Each community has $N_c$ nodes and $L_c$ edges ($c = 1,..., n_c$) \cite{Albert2016}. The modularity of a community $Q_c$ is then calculated by measuring the difference between the network real wiring diagram (which is given by the adjacency matrix $A_{ij}$) and the expected number of edges between $i$ and $j$ if the network is randomly wired \cite{Albert2016}. This last quantity is given by $p_{ij}$ which is obtained by randomizing the original network while keeping the expected degree of each node unchanged \cite{Albert2016}. Hence, the modularity of a community $Q_c$ becomes \cite{Albert2016}
+The modularity for a network with $N$ nodes and $L$ edges and partitioned into $n_c$ communities is calculated as follows. Each community has $N_c$ nodes and $L_c$ edges ($c = 1,..., n_c$) \cite{Albert2016}. The modularity of a community $Q_c$ is then calculated by measuring the difference between the network real wiring diagram (which is given by the adjacency matrix $A_{ij}$) and the expected number of edges between $i$ and $j$ if the network is randomly wired (where $i$ and $j$ are two nodes that lie in the same community $C_c$) \cite{Albert2016}. This last quantity is given by $p_{ij}$ which is obtained by randomizing the original network while keeping the expected degree of each node unchanged \cite{Albert2016}. Hence, the modularity of a community $Q_c$ becomes \cite{Albert2016}
 \begin{equation}
 	Q_c = \frac{1}{2L}\sum_{(i,j) \in C_c} (A_{ij} - p_{ij})
 \end{equation}
-Using \cite{Albert2016}
+where the factor $\frac{1}{2L}$ is just a normalization factor. Using \cite{Albert2016}
 \begin{equation}
 	p_{ij} = \frac{k_ik_j}{2L}
 \end{equation}
 we can derive a simpler form for $Q_c$ \cite{Albert2016}
-% derivation in appendix, see albert2016
 \begin{equation}\label{Qc}
 	Q_c = \frac{L_c}{L} - \bigg(\frac{k_c}{2L}\bigg)^2
 \end{equation}
-where $L_c$ is the total number of links in the community $C_c$ and $k_c$ is the total degree of the nodes in this community \cite{Albert2016}.\\
+where $L_c$ is the total number of edges in the community $C_c$ and $k_c$ is the total degree of the nodes in this community \cite{Albert2016}.\\
 To generalize this idea to the whole network, we sum Eq. (\ref{Qc}) over all $n_c$ communities \cite{Albert2016}
-\begin{equation}
+\begin{equation}\label{mod}
 	Q = \sum_{c = 1}^{n_c}\bigg[\frac{L_c}{L} - \bigg(\frac{k_c}{2L}\bigg)^2 \bigg]
 \end{equation}
-% properties of modularity albert2016
-% NOT FINISHED
+The derivation of this formula and thus of Eq. (\ref{Qc}) can be found in Appendix \ref{modul}, Section \ref{simplemod}. The modularity $Q$ can have values in the interval $\interval{-1}{1}$ and has the following properties \cite{Albert2016}
+\begin{itemize}
+	\item The higher the value of $Q$ is for a partition, the better is the corresponding community structure. This idea is used in community detection algorithms, where modularity is maximized in order to find the optimal community structure.
+	\item A modularity $Q$ equal to zero corresponds to the situation where all nodes are put in the same community, this is if the whole network is put into a single community. Then the two terms in Eq. (\ref{mod}) become equal and $Q$ vanishes.
+	\item If every node is put into a separate community, the first term in Eq. (\ref{mod}) vanishes and we are left with $n_c$ negative terms. Hence, this situation corresponds to a negative modularity.
+\end{itemize}
+As said before, modularity is often used in community detection algorithms. It is thus important to be aware of the limitations of modularity. One of the biggest shortcomings of modularity maximization as community detection is its resolution limit. Modularity maximization forces small communities into larger ones \cite{Albert2016}. If two communities $A$ and $B$ are merged the modularity changes by \cite{Albert2016}
+\begin{equation}
+	\Delta Q_{AB} = \frac{l_{AB}}{L} - \frac{k_Ak_B}{2L^2}
+\end{equation}
+where $l_{AB}$ is the number of direct edges that connect nodes in community $A$ with nodes in community $B$; $k_A$ and $k_B$ are the total degree of nodes in communities $A$ and $B$ respectively. The derivation of this formula is found in Appendix \ref{modul}, Section \ref{modchange}. If $A$ and $B$ are distinct communities, they should remain distinct when $Q$ is maximized \cite{Albert2016}. This is however not always the case. Consider the case where $\frac{k_Ak_B}{2L} < 1$ and there is at least one edge between $A$ and $B$ ($l_{AB} \geqslant 1$), then $\Delta Q_{AB} \geqslant 0$ and the modularity increases by merging the two communities \cite{Albert2016}. Assume for simplicity that $k_A = k_B = k$, then modularity is increased by merging $A$ and $B$ if
+\begin{equation}\label{reslim}
+	k \leqslant \sqrt{2L}
+\end{equation}
+and if there is at least one edge between the two communities; even if $A$ and $B$ are distinct communities \cite{Albert2016}! Equation (\ref{reslim}) is called the resolution limit: communities that are smaller than this limit will not be detected by modularity maximization \cite{Albert2016}.
 
 
 
 % talk about what is a graph, talk about degree distribution, clustereing, average path length, etc (in different subsections), maybe things like assortativity, page rank,...
 % explain small-world (milgram), high clustering, power-law
-% explain modularity!!
 
 \section{Network models}
 \label{netModel}
@@ -322,7 +334,7 @@ We thus derived the degree distribution of a random network. From this we can ca
 &= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k}
 \end{split}
 \end{equation}
-This equation can be simplified to $\left<k\right> = (N-1)p$, for $N \gg 1$ this approximately becomes $\left<k\right> = Np$. The derivation of this result can be found in Appendix \ref{ER}, Section \ref{degree}.\\
+This equation can be simplified to $\left<k\right> = (N-1)p$, and for $N \gg 1$ this approximately becomes $\left<k\right> = Np$. The derivation of this result can be found in Appendix \ref{ER}, Section \ref{degree}.\\
 Most real networks are however sparse, which means that $\left<k\right> \ll N$. In this case the degree distribution of the random network is well approximated by a Poisson distribution \cite{Albert2014} 
 \begin{equation}
 	p_k = \mathrm{e}^{-\left<k\right>} \frac{\left<k\right>^k}{k!}
@@ -397,8 +409,16 @@ For rather small values of $p$, the clustering coefficient remains high. The mod
 
 \subsection{The stochastic block model}
 
-Another random graph model that produces networks containing communities is the stochastic block model (SBM). The stochastic block model originates in social sciences and was developed to describe group structures in friendship networks \cite{Funke2019}. The idea behind the development of this model is that often in real networks, there are groups of nodes that are more densely interconnected than with the rest of the network \cite{F.Costa2007}. Hence, these networks posses a modular/community structure and this exactly the structure that is easily modeled by the stochastic block model.
+Another random graph model that produces networks containing communities is the stochastic block model (SBM). The stochastic block model originates in social sciences and was developed to describe group structures in friendship networks \cite{Funke2019}. The idea behind the development of this model is that often in real networks, there are groups of nodes that are more densely interconnected than with the rest of the network \cite{F.Costa2007}. Hence, these networks posses a modular/community structure and this exactly the structure that is easily modeled by the stochastic block model. The stochastic block model is often used as a benchmark for community detection algorithms.\\
+The stochastic block model in its most simple form is defined by the following parameters \cite{Clauset2017}
+\begin{itemize}
+	\item The number of nodes $N$ 
+	\item A partition of the node set $\{1, 2, ..., N\}$ into disjoint subsets $C_1, ..., C_k$, these are the communities
+	\item A symmetric $k\times k$ matrix $M$; the diagonal elements $M_{ii}$, $i = 1, ..., k$ represent the edge probabilities inside the community $C_i$ and the other elements $M_{ij}$, $i, j = 1, ..., k$ and $i \neq j$, give the edge probabilities between nodes in community $C_i$ and nodes in community $C_j$
+\end{itemize}
+% discuss case where probailities on diag are bigger than off-diag --> assortative SBM
 % NOT FINISHED
+% clauset2017 http://tuvalu.santafe.edu/~aaronc/courses/5352/csci5352_2017_L6.pdf
 
 
 
@@ -411,11 +431,51 @@ Another random graph model that produces networks containing communities is the 
 \newpage
 
 \appendix
+\chapter{Network measurements: Derivations}
+\section{Modularity}\label{modul}
+\subsection{Simple form of network modularity}\label{simplemod}
+
+Using \cite{Albert2016}
+\begin{equation}
+	Q_c = \frac{1}{2L}\sum_{(i,j) \in C_c} (A_{ij} - p_{ij})
+\end{equation}
+and \cite{Albert2016}
+\begin{equation}
+	p_{ij} = \frac{k_ik_j}{2L}
+\end{equation}
+we can write the modularity of the whole network as \cite{Albert2016}
+\begin{equation}\label{modnetw}
+	Q = \frac{1}{2L}\sum_{i, j = 1}^N \bigg(A_{ij} - \frac{k_ik_j}{2L}\bigg) \delta_{c_i, c_j}
+\end{equation}
+where $c_i$ represents the community to which node $i$ belongs and where the Dirac-delta function $\delta_{c_i, c_j}$ expresses that only pairs of nodes that belong to the same community are taken into account. We can then rewrite the first term as a sum over communities \cite{Albert2016}
+\begin{equation}\label{1}
+	\frac{1}{2L}\sum_{i, j = 1}^N A_{ij}\delta_{c_i, c_j} = \sum_{c=1}^{n_c}\frac{1}{2L}\sum_{i, j \in C_c} A_{ij} = \sum_{c=1}^{n_c}\frac{L_c}{L}
+\end{equation}
+where $L_c$ is the number of edges in community $C_c$ and the factor 2 disappears because each edge is counted twice in $A_{ij}$. Similarly, the second term in Eq. (\ref{modnetw}) can be rewritten as \cite{Albert2016}
+\begin{equation}\label{2}
+	\frac{1}{2L}\sum_{i, j = 1}^N \frac{k_ik_j}{2L} \delta_{c_i, c_j} = \sum_{c=1}^{n_c}\frac{1}{(2L)^2}\sum_{i, j \in C_c} k_ik_j = \sum_{c=1}^{n_c}\frac{k_c^2}{4L^2}
+\end{equation}
+where $k_c$ is the total degree of the nodes in community $C_c$. Combining Eq. (\ref{1}) and Eq. (\ref{2}) gives the final result \cite{Albert2016}
+\begin{equation}\label{Qfin}
+	Q = \sum_{c = 1}^{n_c}\bigg[\frac{L_c}{L} - \bigg(\frac{k_c}{2L}\bigg)^2 \bigg]
+\end{equation}
+
+\subsection{Modularity change after merging two communities}\label{modchange}
+
+Consider two communities $A$ and $B$ and denote with $k_A$ and $k_B$ the total degree of communities $A$ and $B$ respectively \cite{Albert2016}. The change in modularity after merging the two communities is calculated as follows (using Eq. (\ref{Qfin})) \cite{Albert2016}
+\begin{equation}\label{Q_AB}
+	\Delta Q_{AB} = \bigg[\frac{L_{AB}}{L} - \bigg(\frac{k_{AB}}{2L} \bigg)^2 \bigg] - \bigg[\frac{L_A}{L} - \bigg(\frac{k_A}{2L} \bigg)^2 + \frac{L_B}{2L} - \bigg(\frac{k_B}{2L} \bigg)^2 \bigg]
+\end{equation}
+where $L_{AB} = L_A + L_B + l_{AB}$ is the total number of edges in the merged community; $L_A$ and $L_B$ are the number of edges in communities $A$ and $B$ respectively and $l_{AB}$ is the number of direct edges between communities $A$ and $B$ \cite{Albert2016}. $k_{AB} = k_A + k_B$ is the total degree of nodes in the merged community \cite{Albert2016}. Inserting the formulas for $L_{AB}$ and $k_{AB}$ in Eq. (\ref{Q_AB}) gives
+\begin{equation}
+	\Delta Q_{AB} = \frac{l_{AB}}{L} - \frac{k_Ak_B}{2L^2}
+\end{equation}
+
 \chapter{Network models: Derivations}
 \section{The Erd\H{o}s-R\'{e}nyi model}\label{ER}
 \subsection{Average degree}\label{degree}
 The expected mean degree is given by \cite{Hopcroft2006}
-\begin{equation}\label{avDeg}
+\begin{equation}\label{avDegr}
 \begin{split}
 	\left<k\right> &= \sum_{k=0}^{N-1} k\  p_k  \\
 &= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k}
@@ -439,11 +499,11 @@ Finally, by substituting $q = 1-p$, we get \cite{Hopcroft2006}
 	np &= \sum_{k=0}^n \binom{n}{k} k p^{k} (1-p)^{n-k}
 \end{split}
 \end{equation}
-where the right hand side is equal to Equation (\ref{avDeg}) with $n = N-1$ and we thus obtain $\left<k\right> = (N-1)p$.
+where the right hand side is equal to Equation (\ref{avDegr}) with $n = N-1$ and we thus obtain $\left<k\right> = (N-1)p$.
 
 \subsection{Poisson form of the degree distribution}\label{poiss}
 We begin with the exact binomial distribution (Eq.(\ref{degDistRan}))
-\begin{equation}
+\begin{equation}\label{pk}
 	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k}
 \end{equation}
 which characterizes a random graph. In the case $k \ll N$, we can simplify the binomial in the following way \cite{Albert2014}
@@ -454,9 +514,9 @@ We also note the following equality \cite{Albert2014}
 \begin{equation}
 	\ln[(1-p)^{N-1-k}] = (N-1-k)\ln\bigg(1 - \frac{\left<k\right>}{N-1} \bigg)
 \end{equation}
-Using the series expansion \cite{Albert2014}
+where we made use of the fact that $\left<k\right> = (N-1)p$. Using the series expansion \cite{Albert2014}
 \begin{equation}
-	\ln(1+x) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}x^n = x - \frac{x^2}{2} + \frac{x^3}{3} - ...  \qquad \forall \ |x| \leq 1
+	\ln(1+x) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}x^n = x - \frac{x^2}{2} + \frac{x^3}{3} - ...  \qquad \forall \ |x| \leqslant 1
 \end{equation}
 we get \cite{Albert2014}
 \begin{equation}
@@ -466,7 +526,7 @@ which is valid if $k \ll N$. We thus find \cite{Albert2014}
 \begin{equation}\label{e}
 	(1-p)^{N-1-k} = \mathrm{e}^{-\left<k\right>}
 \end{equation}
-Substituting Eq. (\ref{e}) and Eq. (\ref{bin}) in Eq. (\ref{degDistRan}) and using $\left<k\right> = (N-1)p$, we finally obtain the Poisson form of the degree distribution \cite{Albert2014}
+Substituting Eq. (\ref{e}) and Eq. (\ref{bin}) in Eq. (\ref{pk}) and using $\left<k\right> = (N-1)p$, we finally obtain the Poisson form of the degree distribution \cite{Albert2014}
 \begin{equation}
 \begin{split}
 	p_k &= \binom{N-1}{k}p^k (1-p)^{N-1-k} = \frac{(N-1)^k}{k!} p^k \mathrm{e}^{-\left<k\right>} \\
@@ -507,7 +567,7 @@ The number of connected triples per node is given by choosing two nodes out of t
 \begin{equation}\label{triple}
 	\binom{K}{2} = \frac{1}{2} K (K-1)
 \end{equation}
-Since every node in the regular ring lattice we can easily find the total number of triangles and connected triples in the network by multiplying Eq. (\ref{triangle}) and Eq. (\ref{triple}) with the number of nodes $N$. We then obtain the final result for the clustering coefficient in the regular ring lattice \cite{Pele2015}
+Since every node in the regular ring lattice is identical, we can easily find the total number of triangles and connected triples in the network by multiplying Eq. (\ref{triangle}) and Eq. (\ref{triple}) with the number of nodes $N$. We then obtain the final result for the clustering coefficient in the regular ring lattice \cite{Pele2015}
 \begin{equation}
 	\bar{C} = \frac{3\cdot N \frac{1}{4} K \bigg(\frac{K}{2} - 1 \bigg)}{N \frac{1}{2} K (K-1)} = \frac{3(K-2)}{4(K-1)}
 \end{equation}
@@ -521,7 +581,7 @@ The general formula for the average distance is given by Eq. (\ref{avdist})
 where the sum runs over the shortest path between every pair of nodes. Assume we have a regular ring lattice with $N$ nodes and each node has $K$ neighbors. Now we can calculate the distance between node $i$ and every other node in the ring lattice
 \begin{itemize}
 	\item There are $K$ nodes adjacent to node $i$, so there are $K$ nodes with a distance $d_{ij} = 1$
-	\item There are $K$ nodes that are neighbors of neighbors of node $i$, so there are $K$ nodes with a distance $d_{ij} = 2$
+	\item There are $K$ nodes that are neighbors of the neighbors of node $i$, so there are $K$ nodes with a distance $d_{ij} = 2$
 	\item ...
 	\item There are $K$ nodes that have a distance $d_{ij} = \frac{N}{K}$ between them and node $i$; its easy to see that these are the nodes that are the furthest away from node $i$ 
 \end{itemize}  
