@@ -302,11 +302,11 @@ and if there is at least one edge between the two communities; even if $A$ and $
 \section{Network models}
 \label{netModel}
 
-In order to study the topological structures of real-world networks, several theoretical network models have been developed. These theoretical models usually have a simpler representation and well known properties that can be derived mathematically. They are widely studied and used extensively. The study of complex networks relies heavily on the knowledge and understanding of these models. In this section we will review some of the most important ones.
+In order to study the topological structures of real-world networks, several theoretical network models have been developed. These theoretical models usually have a simpler representation and well known properties that can be derived analytically. They are widely studied and used extensively. The study of complex networks relies heavily on the knowledge and understanding of these models. In this section we will review some of the most important ones.
 
 \subsection{The Erd\H{o}s-R\'{e}nyi model}
 
-In 1959 the two mathematicians Paul Erd\H{o}s and Alfr\'{e}d R\'{e}nyi proposed a model to generate random networks \cite{F.Costa2007}. Independently of them, Solomonoff and Rapoport already proposed the model in 1951. The model constructs random networks with $N$ nodes in the following way \cite{Albert2002}
+In 1959 the two mathematicians Paul Erd\H{o}s and Alfr\'{e}d R\'{e}nyi proposed a model to generate simple random networks \cite{F.Costa2007}. Independently of them, Solomonoff and Rapoport already proposed the model in 1951. The model constructs random networks with $N$ nodes in the following way \cite{Albert2002}
 \begin{enumerate}
 	\item Start with $N$ disconnected nodes,
 	\item For each pair of nodes, connect them with a predefined probability $p$.
@@ -335,7 +335,7 @@ We thus derived the degree distribution of a random network. From this we can ca
 \end{split}
 \end{equation}
 This equation can be simplified to $\left<k\right> = (N-1)p$, and for $N \gg 1$ this approximately becomes $\left<k\right> = Np$. The derivation of this result can be found in Appendix \ref{ER}, Section \ref{degree}.\\
-Most real networks are however sparse, which means that $\left<k\right> \ll N$. In this case the degree distribution of the random network is well approximated by a Poisson distribution \cite{Albert2014} 
+Most real networks are sparse, which means that $\left<k\right> \ll N$. In this case the degree distribution of the random network is well approximated by a Poisson distribution \cite{Albert2014} 
 \begin{equation}
 	p_k = \mathrm{e}^{-\left<k\right>} \frac{\left<k\right>^k}{k!}
 \end{equation}
@@ -344,7 +344,7 @@ The derivation can be found in Appendix \ref{ER}, Section \ref{poiss}. \\
 \textbf{Average clustering coefficient}\\
 \newline
 The average clustering coefficient (Eq. (\ref{globalTrans})) of the Erd\H{o}s-R\'{e}nyi network is given by \cite{Clauset2011}
-\begin{equation}
+\begin{equation}\label{C}
 	\bar{C} = \frac{\binom{N}{3}p^3}{\binom{N}{3}p^2} = p = \frac{\left<k\right>}{N-1}
 \end{equation}
 This can be easily understood since choosing three nodes out of $N$ is given by $\binom{N}{3}$. The chance that they are connected by three edges is given by $p^3$, which gives the number of triangles; the chance that the are connected by two edges is $p^2$, which determines the number of connected triples. If the average degree $\left<k\right>$ is constant, the average clustering constant goes as $\bar{C} \sim \mathcal{O}(1/N)$, which becomes very small for large networks \cite{Clauset2011}. \\
@@ -367,14 +367,14 @@ or
 \begin{equation}\label{diameter}
 	d_{max} \approx \frac{\ln{N}}{\ln{\left<k\right>}}
 \end{equation}
-A more precise calculation can be found in Appendix \ref{ER}, Section \ref{ERdist}. Equation (\ref{diameter}) is, however, a better approximation to the average distance $\left<d\right>$ between two randomly chosen nodes \cite{Albert2014}. This is because $d_{max}$ is often dominated by a few extreme paths, where $\left<d\right>$ instead is averaged over all node pairs and thus suppresses these fluctuations \cite{Albert2014}. Thus the average distance of a random network is defined by \cite{Albert2014}
-\begin{equation}
+A more precise calculation can be found in Appendix \ref{ER}, Section \ref{ERdist}. Equation (\ref{diameter}) might, however, be a better approximation to the average distance $\left<d\right>$ between two randomly chosen nodes \cite{Albert2014}. This is because $d_{max}$ is often dominated by a few extreme paths, where $\left<d\right>$ instead is averaged over all node pairs and thus suppresses these fluctuations \cite{Albert2014}. Hence, the average distance of a random network is defined by \cite{Albert2014}
+\begin{equation}\label{d}
 	\left<d\right> \approx \frac{\ln{N}}{\ln{\left<k\right>}}
 \end{equation}
-Since for large $N$, $\ln{N} \ll N$, we find that the average distance is a lot smaller than the size of the network. Generally, the logarithmic dependence of the average distance $\left<d\right>$ on the network size $N$ is one of the two defining properties of what is referred to as the "small world phenomenon"; the other property is a high clustering coefficient \cite{Easley2010}.  \\
+Since for large $N$, $\ln{N} \ll N$, and we find that the average distance is a lot smaller than the size of the network. Generally, the logarithmic dependence of the average distance $\left<d\right>$ on the network size $N$ is one of the two defining properties of what is referred to as the "small world phenomenon"; the other property is a high clustering coefficient \cite{Easley2010}.  \\
 \\
 To summarize: the random Erd\H{o}s-R\'{e}nyi network has a bell shaped degree distribution which approximates a Poisson distribution for $N \gg 1$; the average clustering coefficient becomes small for large networks and the average distance depends logarithmic on the system sizes. The Erd\H{o}s-R\'{e}nyi network thus possesses one of the two properties of the "small world phenomenon" (namely short average distance).\\
-Real social networks, however, usually display the "small world phenomenon" and thus have both a short average distance and a high clustering coefficient. The question then rises: can we construct a model that has both of these properties. The answer is yes and this is exactly what Duncan Watts and Steve Strogatz did.
+Real social networks, however, usually display the "small world phenomenon" and thus have both a short average distance and a high clustering coefficient. The question then rises: can we construct a model that has both of these properties? The answer is yes and this is exactly what Duncan Watts and Steve Strogatz did.
 % also take about the giant cluster, critical probability??
 
 \subsection{The Watts-Strogatz model}
@@ -382,7 +382,7 @@ Real social networks, however, usually display the "small world phenomenon" and 
 In 1998, Duncan Watts and Steve Strogatz constructed a network model that generates random networks with small world properties, such as high clustering and short average distances. Their model achieves this by interpolating between a regular ring lattice and a random network \cite{Watts1998}. The construction goes as follows \cite{Watts1998}
 \begin{enumerate}
 	\item Start with a regular ring lattice with $N$ nodes, each connected to $K = 2m$ neighbors ($m$ on each side)
-	\item For each node $i$, rewire each edge that connects $i$ with its $K/2$ rightmost neighbors with a probability $p$. Rewiring is done is such a way that self-loops and edge duplication are avoided
+	\item For each node $i$, rewire each edge that connects $i$ with its $K/2$ rightmost neighbors with a probability $p$. Rewiring is done in such a way that self-loops and edge duplication are avoided
 \end{enumerate}
 The probability $p$ allows us to tune the graph between a regular lattice ($p = 0$) and a random network ($p = 1$) \cite{Watts1998}. Usually, the following condition is required for the number of neighbors $K$: $N \gg K \gg \ln{N} \gg 1$. The first inequality assures sparse networks, whereas the second inequality guarantees that a random graph will be connected \cite{Watts1998}.\\
 The regular ring lattice ($p=0$) has an average clustering coefficient $\bar{C}(0)$ and an average path length $\left<d(0)\right>$ equal to \cite{Watts1998}
@@ -390,7 +390,7 @@ The regular ring lattice ($p=0$) has an average clustering coefficient $\bar{C}(
 	\bar{C}(0) = \frac{3(K-2)}{4(K-1)} \approx \frac{3}{4} \ \text{for}\ K \gg 1 && \left<d(0)\right> \approx \frac{N}{2K}
 \end{align}
 The derivations of these formulas can be found in Appendix \ref{WS}, Section \ref{ringclus}. The regular ring lattice thus has a high clustering coefficient and an average path length that grows linearly with the system size $N$. \\
-The random network ($p = 1$) on the other hand has a low clustering coefficient $\bar{C}(1)$ and a small average path length $\left<d(1)\right>$ \cite{Watts1998}
+The random network ($p = 1$) on the other hand has a low clustering coefficient $\bar{C}(1)$ and a small average path length $\left<d(1)\right>$ (see Eq. (\ref{C}) and Eq. (\ref{d})) \cite{Watts1998}
 \begin{align}
 	\bar{C}(1) \approx \frac{K}{N} \ll 1 && \left<d(1)\right> \approx \frac{\ln{N}}{\ln{K}}
 \end{align}
@@ -409,16 +409,19 @@ For rather small values of $p$, the clustering coefficient remains high. The mod
 
 \subsection{The stochastic block model}
 
-Another random graph model that produces networks containing communities is the stochastic block model (SBM). The stochastic block model originates in social sciences and was developed to describe group structures in friendship networks \cite{Funke2019}. The idea behind the development of this model is that often in real networks, there are groups of nodes that are more densely interconnected than with the rest of the network \cite{F.Costa2007}. Hence, these networks posses a modular/community structure and this exactly the structure that is easily modeled by the stochastic block model. The stochastic block model is often used as a benchmark for community detection algorithms.\\
+Another random graph model is one that produces networks containing a community structure, namely the stochastic block model (SBM). The stochastic block model originates in social sciences and was developed to describe group structures in friendship networks \cite{Funke2019}. The idea behind the development of this model is that often in real networks, there are groups of nodes that are more densely interconnected with each other than with the rest of the network \cite{F.Costa2007}. Hence, these networks posses a modular/community structure and this is exactly the structure that is easily modeled by the stochastic block model. The stochastic block model is also often used as a benchmark for community detection algorithms.\\
 The stochastic block model in its most simple form is defined by the following parameters \cite{Clauset2017}
 \begin{itemize}
 	\item The number of nodes $N$ 
-	\item A partition of the node set $\{1, 2, ..., N\}$ into disjoint subsets $C_1, ..., C_k$, these are the communities
-	\item A symmetric $k\times k$ matrix $M$; the diagonal elements $M_{ii}$, $i = 1, ..., k$ represent the edge probabilities inside the community $C_i$ and the other elements $M_{ij}$, $i, j = 1, ..., k$ and $i \neq j$, give the edge probabilities between nodes in community $C_i$ and nodes in community $C_j$
+	\item A partition of the node set $\{1, 2, ..., N\}$ into disjoint subsets $C_1, ..., C_k$; these groups are the communities
+	\item A symmetric $k\times k$ matrix $M$; the diagonal elements $M_{ii}$, $i = 1, ..., k$ represent the edge probabilities inside the community $C_i$ and the off-diagonal elements $M_{ij}$, $i, j = 1, ..., k$ with $i \neq j$, give the edge probabilities between nodes in community $C_i$ and nodes in community $C_j$
 \end{itemize}
-% discuss case where probailities on diag are bigger than off-diag --> assortative SBM
+There are no real restrictions to the edge probabilities, which makes the stochastic block model a very general model that is capable of reproducing many different network structures. However, the edge probabilities inside a community are often taken to be bigger than the probabilities between communities ($M_{ii} > M_{ij}$, $i \neq j$). In this way, the stochastic block model generates a network with a clear community structure. A stochastic block model that fulfills this condition is called an assortative SBM \cite{Lee2019}. A disassortative stochastic block model refers to the case where the edge probabilities between the communities are higher than those inside the communities ($M_{ii} < M_{ij}$, $i \neq j$) \cite{Gribel2020}.\\
+The stochastic block model includes the Erd\H{o}s-R\'{e}nyi model \cite{Clauset2017}. This can be seen in the two different ways. First, consider the case where $k = 1$, thus we only have one group. The matrix $M$ then reduces to one number $p$ and we are left with the parameters $N$ and $p$ of the Erd\H{o}s-R\'{e}nyi model \cite{Clauset2017}. Second, assume we have more than one group or community, $k > 1$, and assume that every element of the matrix $M$ is the same, $M_{ij} = p$ \cite{Clauset2017}. Again, we are left with the parameters $N$ and $p$ of the Erd\H{o}s-R\'{e}nyi model. In both cases, the mathematical properties of the Erd\H{o}s-R\'{e}nyi model are obtained: a Poisson degree distribution, an average distance that is logarithmic with the system size $N$, vanishing clustering coefficient for large $N$, etc \cite{Clauset2017}. The structure within the groups or communities of the stochastic block model is that of a random graph, while the structure between the communities is that of a random bipartite graph \cite{Clauset2017}.\\
+In this thesis, the stochastic block model is generated in the following way. First, the parameters of the model are specified. Then, for each community $C_i$ an Erd\H{o}s-R\'{e}nyi network is constructed, where the number of nodes equals the size of the community $C_i$ and the edge probability $p$ is given by $M_{ii}$. Finally, edges are added between communities $C_i$ and $C_j$ with probability $p = M_{ij}$.\\
+The stochastic block model can be fitted to data \cite{Clauset2017}. Given a choice of the number of communities $k$ and an observed network $G$, the stochastic block model can be used to infer the latent community structure and the edge probability matrix $M$ \cite{Clauset2017}. One of the shortcomings of fitting the SBM to infer the community structure, is that real-world networks often have a heterogeneous or power law degree distribution. Since the SBM is made of random networks inside each group and random bipartite networks between each pair of groups, the degree distribution of the full network is always a mixture of Poisson distributions \cite{Clauset2017}. The consequence of this is that if a network possesses a more skewed degree distribution, the SBM will put the nodes with a high degree in a small group, together with a high probability of connecting to other, larger groups \cite{Clauset2017}. The reason behind this is one of the main assumptions of the stochastic block model, namely the fact that the edge probabilities only depend  on which group the node belongs to \cite{Clauset2017}. In other words, nodes that belong to the same group are stochastically  equivalent, meaning that they have equivalent connectivity patterns to other nodes \cite{Clauset2017}. However, a network with a skewed degree distribution violates this assumption of edge independence and the SBM seeks to explain this over other kinds of latent group structures that we might care about \cite{Clauset2017}. Karrer and Newman proposed a variation of the SBM, the degree corrected SBM, that deals with this limitation \cite{Karrer2011}. 
+% talk about community sizes from power law??
 % NOT FINISHED
-% clauset2017 http://tuvalu.santafe.edu/~aaronc/courses/5352/csci5352_2017_L6.pdf
 
 
 
