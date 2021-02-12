@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  11 FEB 2021 12:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  12 FEB 2021 16:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2724,38 +2724,73 @@ Underfull \hbox (badness 10000) in paragraph at lines 373--379
 
  []
 
-[18] [19] [20] [21] [22]
-Chapter 3.
-[23
+[18] [19] [20] [21]
+Underfull \hbox (badness 10000) in paragraph at lines 428--443
 
-] [24
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--443
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--443
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--443
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--443
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 428--443
+
+ []
+
+[22]
+Underfull \hbox (badness 10000) in paragraph at lines 445--450
+
+ []
+
+[23] [24]
+Chapter 3.
+[25
+
+] [26
 
 ]
 Appendix A.
-[25] [26]
+[27] [28]
 Appendix B.
-[27
+[29
 
-] [28]
-Underfull \hbox (badness 10000) in paragraph at lines 562--566
-
- []
-
-[29]
-Underfull \hbox (badness 10000) in paragraph at lines 576--581
+] [30]
+Underfull \hbox (badness 10000) in paragraph at lines 584--588
 
  []
 
-[30] [31] [32
+[31]
+Underfull \hbox (badness 10000) in paragraph at lines 598--603
 
-] (./draft.bbl [33
+ []
 
-] [34]) [35] (./draft.aux) ) 
+[32] [33] [34
+
+] (./draft.bbl [35
+
+] [36]) [37] (./draft.aux) ) 
 Here is how much of TeX's memory you used:
- 32395 strings out of 492990
- 645193 string characters out of 6135004
- 695210 words of memory out of 5000000
- 35390 multiletter control sequences out of 15000+600000
+ 32403 strings out of 492990
+ 645288 string characters out of 6135004
+ 696245 words of memory out of 5000000
+ 35398 multiletter control sequences out of 15000+600000
  607199 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,19n,78p,10402b,303s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2777,10 +2812,10 @@ lic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols
 /msam10.pfb>
-Output written on draft.pdf (37 pages, 433262 bytes).
+Output written on draft.pdf (39 pages, 440877 bytes).
 PDF statistics:
- 191 PDF objects out of 1000 (max. 8388607)
- 136 compressed objects within 2 object streams
+ 197 PDF objects out of 1000 (max. 8388607)
+ 140 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
