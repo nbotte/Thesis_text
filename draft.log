@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  15 FEB 2021 15:43
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  16 FEB 2021 16:18
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2696,6 +2696,21 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 20.74pt on input line 45.
 
+Underfull \hbox (badness 10000) in paragraph at lines 50--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--58
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--58
+
+ []
+
+
 Underfull \vbox (badness 6078) has occurred while \output is active []
 
  [1
@@ -2703,224 +2718,248 @@ Underfull \vbox (badness 6078) has occurred while \output is active []
 
 ]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 14.4pt on input line 55.
+(Font)              scaled to size 14.4pt on input line 60.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 14.4pt on input line 55.
+(Font)              scaled to size 14.4pt on input line 60.
 
-Underfull \hbox (badness 10000) in paragraph at lines 57--64
+Underfull \hbox (badness 10000) in paragraph at lines 62--71
 
  []
 
-[2] [3]
-Underfull \hbox (badness 10000) in paragraph at lines 85--91
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--71
+
+ []
+
+[2]
+Underfull \hbox (badness 10000) in paragraph at lines 78--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--89
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--89
+
+ []
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 96--102
 
  []
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 97--101
+Underfull \hbox (badness 10000) in paragraph at lines 108--112
 
  []
 
-[5] [6]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+[6]
 Chapter 2.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 8.0pt on input line 122.
+(Font)              scaled to size 8.0pt on input line 133.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 6.0pt on input line 122.
+(Font)              scaled to size 6.0pt on input line 133.
 
-Underfull \hbox (badness 10000) in paragraph at lines 123--126
+Underfull \hbox (badness 10000) in paragraph at lines 134--137
 
  []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 12.0pt on input line 127.
+(Font)              scaled to size 12.0pt on input line 138.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 12.0pt on input line 127.
+(Font)              scaled to size 12.0pt on input line 138.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [7
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 144--146
+Underfull \hbox (badness 10000) in paragraph at lines 155--157
 
  []
 
 [8] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 194--200
+Underfull \hbox (badness 10000) in paragraph at lines 205--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--200
+Underfull \hbox (badness 10000) in paragraph at lines 205--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 194--200
+Underfull \hbox (badness 10000) in paragraph at lines 205--211
 
  []
 
 [10]
-Underfull \hbox (badness 10000) in paragraph at lines 210--216
+Underfull \hbox (badness 10000) in paragraph at lines 221--227
 
  []
 
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 227--231
+Underfull \hbox (badness 10000) in paragraph at lines 238--242
 
  []
 
 [12]
-Underfull \hbox (badness 10000) in paragraph at lines 254--263
+Underfull \hbox (badness 10000) in paragraph at lines 265--274
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--263
+Underfull \hbox (badness 10000) in paragraph at lines 265--274
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--263
+Underfull \hbox (badness 10000) in paragraph at lines 265--274
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 254--263
+Underfull \hbox (badness 10000) in paragraph at lines 265--274
 
  []
 
 [13]
-Underfull \hbox (badness 10000) in paragraph at lines 265--270
+Underfull \hbox (badness 10000) in paragraph at lines 276--281
 
  []
 
 [14]
 LaTeX Font Info:    Try loading font information for TS1+LinuxLibertineT-TLF on
- input line 296.
+ input line 307.
 
 (/usr/share/texlive/texmf-dist/tex/latex/libertine/TS1LinuxLibertineT-TLF.fd
 File: TS1LinuxLibertineT-TLF.fd 2017/03/20 (autoinst) Font definitions for TS1/
 LinuxLibertineT-TLF.
 )
 LaTeX Font Info:    Font shape `TS1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.95pt on input line 296.
+(Font)              scaled to size 10.95pt on input line 307.
 
 [15]
-Underfull \hbox (badness 10000) in paragraph at lines 327--332
+Underfull \hbox (badness 10000) in paragraph at lines 338--343
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 327--332
+Underfull \hbox (badness 10000) in paragraph at lines 338--343
 
  []
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 354--362
+Underfull \hbox (badness 10000) in paragraph at lines 365--373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--362
+Underfull \hbox (badness 10000) in paragraph at lines 365--373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--362
+Underfull \hbox (badness 10000) in paragraph at lines 365--373
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 354--362
+Underfull \hbox (badness 10000) in paragraph at lines 365--373
 
  []
 
 [17]
-Underfull \hbox (badness 10000) in paragraph at lines 364--371
+Underfull \hbox (badness 10000) in paragraph at lines 375--382
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--371
+Underfull \hbox (badness 10000) in paragraph at lines 375--382
 
  []
 
 [18]
-Underfull \hbox (badness 10000) in paragraph at lines 388--394
+Underfull \hbox (badness 10000) in paragraph at lines 399--405
 
  []
 
 [19]
-Underfull \hbox (badness 10000) in paragraph at lines 427--431
+Underfull \hbox (badness 10000) in paragraph at lines 438--442
 
  []
 
 [20]
-Underfull \hbox (badness 10000) in paragraph at lines 435--444
+Underfull \hbox (badness 10000) in paragraph at lines 446--455
 
  []
 
 [21]
-Underfull \hbox (badness 10000) in paragraph at lines 446--463
+Underfull \hbox (badness 10000) in paragraph at lines 457--474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 446--463
+Underfull \hbox (badness 10000) in paragraph at lines 457--474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 446--463
+Underfull \hbox (badness 10000) in paragraph at lines 457--474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 446--463
+Underfull \hbox (badness 10000) in paragraph at lines 457--474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 446--463
+Underfull \hbox (badness 10000) in paragraph at lines 457--474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 446--463
+Underfull \hbox (badness 10000) in paragraph at lines 457--474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 446--463
+Underfull \hbox (badness 10000) in paragraph at lines 457--474
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 446--463
+Underfull \hbox (badness 10000) in paragraph at lines 457--474
 
  []
 
 [22]
-Underfull \hbox (badness 10000) in paragraph at lines 465--471
+Underfull \hbox (badness 10000) in paragraph at lines 476--482
 
  []
 
 [23] [24]
 Chapter 3.
 
-Underfull \hbox (badness 10000) in paragraph at lines 474--482
+Underfull \hbox (badness 10000) in paragraph at lines 485--493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 474--482
+Underfull \hbox (badness 10000) in paragraph at lines 485--493
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 474--482
+Underfull \hbox (badness 10000) in paragraph at lines 485--493
 
  []
 
@@ -2930,13 +2969,17 @@ Underfull \vbox (badness 6078) has occurred while \output is active []
  [25
 
 ]
+Underfull \hbox (badness 10000) in paragraph at lines 501--507
+
+ []
+
 [26]
-Underfull \hbox (badness 10000) in paragraph at lines 513--518
+Underfull \hbox (badness 10000) in paragraph at lines 526--531
 
  []
 
 [27]
-Underfull \hbox (badness 10000) in paragraph at lines 522--526
+Underfull \hbox (badness 10000) in paragraph at lines 535--539
 
  []
 
@@ -2949,12 +2992,12 @@ Appendix B.
 [33
 
 ] [34]
-Underfull \hbox (badness 10000) in paragraph at lines 670--674
+Underfull \hbox (badness 10000) in paragraph at lines 683--687
 
  []
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 684--689
+Underfull \hbox (badness 10000) in paragraph at lines 697--702
 
  []
 
@@ -2963,11 +3006,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 684--689
 ] (./draft.bbl [39
 
 ] [40] [41]) [42]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 722.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 722.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 735.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 735.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 722.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 722.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 735.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 735.
  ) 
 Here is how much of TeX's memory you used:
  35990 strings out of 492990
@@ -2994,10 +3037,10 @@ r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
 ></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/t
 exlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (44 pages, 471860 bytes).
+Output written on draft.pdf (44 pages, 472529 bytes).
 PDF statistics:
- 787 PDF objects out of 1000 (max. 8388607)
- 719 compressed objects within 8 object streams
+ 796 PDF objects out of 1000 (max. 8388607)
+ 728 compressed objects within 8 object streams
  208 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
