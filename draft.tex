@@ -25,6 +25,7 @@
 \usepackage{multicol}
 \usepackage{appendix}
 \usepackage{titlesec}
+\usepackage{bbold}
 \usepackage{algorithm}
 \usepackage{physics}
 \usepackage{interval}
@@ -62,7 +63,7 @@ Opinion dynamics models have two important layers. On one hand, we introduce soc
 Complex networks have become more and more popular for analyzing complex, dynamical systems. They are used in fields such as physics, economics, social sciences, biology, etc \cite{Costa2008}. These different fields are very diverge, but they have at least one common ground: they often deal with a large number of variables/components that interact with each other. In other words, in all these fields one encounters complex systems, systems where it is not possible to predict collective behavior based on the properties of the individual components alone \cite{Mata2020}. Complex systems often display phenomena such as non-linearity, emergence, spontaneous order,... %(maybe check cursus compl en crit?)
 \\
 \newline
-One of the tools to deal with these complex systems and to give us more insight in the possible underlying structures are complex networks. A network, also often called a graph, is a structure composed of nodes or vertices and a set of links or edges that indicate the interactions between the nodes \cite{Mata2020}. Representing/modeling a complex system as a graph makes the system appear more simple and tractable, while it still includes the non-linearity of these systems. One can find the language to describe networks in mathematical graph theory. However, complex systems in real life situations often deal with a huge number of components, so the use of statistical and high-performance computing tools is inevitable \cite{Mata2020}. One could argue that the study of complex networks lies somewhere at the intersection of mathematical graph theory and statistical physics \cite{F.Costa2007}.\\
+One of the tools to deal with these complex systems and to give us more insight in the possible underlying structures are complex networks. A network, also often called a graph, is a structure composed of nodes or vertices and a set of links or edges that indicate the interactions between the nodes (in this thesis terms like agent, actor, user, individual, people etc will be interchangebly used to denote the nodes; edges will usually just be called edges) \cite{Mata2020}. Representing/modeling a complex system as a graph makes the system appear more simple and tractable, while it still includes the non-linearity of these systems. One can find the language to describe networks in mathematical graph theory. However, complex systems in real life situations often deal with a huge number of components, so the use of statistical and high-performance computing tools is inevitable \cite{Mata2020}. One could argue that the study of complex networks lies somewhere at the intersection of mathematical graph theory and statistical physics \cite{F.Costa2007}.\\
 The advantage of working with network models is that they reduce the level of complexity encountered in the real world, so that one can treat these systems in a more practical way. However, we do want our models to display properties similar to the ones seen in real systems \cite{Mata2020}. Since many real systems are not static but evolve in time, this means that we don't only need to deal with static networks but also with temporal networks. Temporal networks are networks where the edges are not always active, but instead become active for some periods of time \cite{Holme2012}. In temporal networks time becomes an explicit element in the network representation \cite{Holme2012}. Static networks have been widely studied and are often convenient for their analytic tractability, whereas temporal networks are, in some cases, more realistic \cite{Mata2020}.\\
 Some other important concepts in network theory are the degree distribution, clustering/community structure, connectivity, etc. These concepts will be explained in depth in Chapter \ref{chap2}, Section \ref{netDef}, but let us already anticipate a bit on the case of social networks. It is found that many real-life social systems have a power law degree distribution \cite{Muchnik2013}. This heterogeneous or scale free degree distribution represents one of the three general properties of social networks. The other two are short distances and high clustering, these two are also referred to as "small world phenomenon" (note that in the literature the term "small world" sometimes only refers to the property of short distances, however, in this thesis, we will use it to indicate both a high clustering and short distances) \cite{Muchnik2013}. Ideally, our theoretical network should exhibit these three properties. Some theoretical networks, that are thoroughly studied, do not possess all of these three properties. However, they might still be used, because of their simplicity and ability to produce analytic results. When using these models one must always bear in mind their limitations to reproduce some properties encountered in real social systems. \\
 \newline
@@ -482,7 +483,7 @@ There are, however, some properties that are different between on-line and off-l
 
 \chapter{Opinion dynamics}
 \label{chap3}
-The study of opinion dynamics in a group of people, as already mentioned in the introduction, has two major layers: a network layer and an opinion dynamics layer. The network layer, which describes the underlying structure and correlations between the agents/people, is intensively described in the previous chapter, Chapter \ref{chap2}. This chapter focuses on the second important layer, namely that of the opinion dynamics models. These models need to describe, in a simplified way, how opinions are formed and how they evolve in a group of people that interact in a certain way. Hence, these opinion dynamics are the dynamics that run on the underlying network structure. Several models have been proposed; here we will review some of the most important ones, with the main focus on the models used in this thesis.\\
+The study of opinion dynamics in a group of people, as already mentioned in the introduction, has two major layers: a network layer and an opinion dynamics layer. The network layer, which describes the underlying structure and correlations between the agents/people, is intensively described in the previous chapter, Chapter \ref{chap2}. The current chapter focuses on the second important layer, namely that of the opinion dynamics models. These models need to describe, in a simplified way, how opinions are formed and how they evolve in a group of people that interact in a certain way. Hence, these opinion dynamics are the dynamics that run on the underlying network structure. Several models have been proposed; here we will review some of the most important ones, with the main focus on the models used in this thesis.\\
 Some major attention will also be given to the content curation/filtering algorithms used by social media companies (see Section \ref{filter}). This is needed because this thesis deals with opinion dynamics on on-line social media, so the aspect of filtering cannot be ignored in the formation and evolution of opinions.\\
 \newline
 There will also be some attention on the activation mechanism (see Section \ref{actMech}). This is the mechanism that describes the timings in which content/information is exchanged between users \cite{Perra2019}. Such a mechanism may change the network from a static one to a more temporal one, where nodes become active and inactive over time. \\
@@ -494,14 +495,15 @@ Finally, in Section \ref{stubb}, the introduction of stubborn people is discusse
 \section{Binary models}\label{Bin}
 % Talk about Ising model???
 
-Binary models are models where each agent can have one of the two opinions A or B (or, equivalently, 0 or 1). A binary model could reflect real-life cases where there exist two competing opinions, such as a vote in an election system with two competing candidates or choosing between Windows and Linux \cite{Nguyen2020}.
+Binary models are models where each agent can have one of the two opinions A or B (or, equivalently, 0 or 1). A binary model could reflect real-life cases where there exist two competing opinions, such as a vote in an election system with two competing candidates or choosing between Windows and Linux \cite{Nguyen2020}.\\
+In this section, some binary models will be discussed; note, however, that the models described here are far from all the models that currently exist.
 
 \subsection{The majority model}
 
 One of the simplest opinion dynamics models is the binary majority model. In this model each agent has one of the two opinions A or B (or 0 or 1). Initially, these opinions can be equally distributed or not. If the distribution is not equal, but instead eg. 80/20, there is a predominant opinion and a minority opinion.\\
-The following updating rule is then imposed on the network: each agent/individual adopts the majority opinion of his/her nearest neighbors \cite{Nguyen2020}. Thus, initially each agent has an opinion, then the opinions are evolved in time: each individual iteratively updates his/her opinion according to the majority opinion of his/her direct neighbors \cite{Nguyen2020}.\\
+The following updating rule is then imposed on the network: each agent/individual adopts the majority opinion of his/her nearest neighbors \cite{Nguyen2020}. Thus, initially each agent is assigned an opinion; then the opinions are evolved in time: each individual iteratively updates his/her opinion according to the majority opinion of his/her direct neighbors \cite{Nguyen2020}.\\
 \newline
-Several studies have been performed on this kind of model, searching for answers on several questions such as: what are the conditions that drive such a system to converge to unanimity; and, does an opinion, that is initially a majority opinion, remain a majority opinion in the final state \cite{Nguyen2020}? \\
+Several studies have been performed on this kind of model, searching for answers on several questions such as: what are the conditions that drive the system to converge to unanimity; and, does an opinion, that is initially a majority opinion, remain a majority opinion in the final state \cite{Nguyen2020}? \\
 Most of these studies conclude that, at the end of the opinion evolution, a complete consensus state is obtained where all the agents adopt the same opinion \cite{Nguyen2020}. This is even the case when the opinions are equally and randomly distributed in an Erd\H{o}s-R\'{e}nyi network (with the side note that the degree needs to be high enough), as was shown by Benjamini, Chan, O'Donnell, Tamuz and Tan (also note that even when the opinions are equally distributed, there may still be a slight imbalance due to the random assignement of an opinion to each node; instead of a perfect 50/50 distribution, one may end up with a eg. 49.8/50.2 distribution; in this sense there is still some kind of notion of `minority' and `majority' opinion) \cite{Benjamini2016}. It is also found that the rate of convergence increases with increasing edge density and that if the network is sparse enough, consensus will not be reached and the two opinions coexist \cite{Nguyen2020}.
 % https://arxiv.org/pdf/0710.3256.pdf Contains a mean field mathimatical description, interesting?
 
@@ -512,10 +514,71 @@ For example, if $70\%$ of the neighbors of user $i$ have an opinion A (and thus 
 This model is no longer deterministic, but has a level of randomness, which is an important component of opinion dynamics \cite{Perra2019}. 
 % https://arxiv.org/pdf/0710.3256.pdf read this (overview, discusses several models)!!
 
-\subsection{The Voter model}
+\subsection{The voter model}
+
+Another extremely simple binary model, maybe even simpler than the majority model, is the voter model. The model works as follows: each agent in the network has a binary opinion (A or B); at each time step, an agent is randomly selected along with one of its neighbors and, subsequently, the agent adopts the opinion of this neighbor \cite{Castellano2009}. The agent thus mimics its neighbor \cite{Castellano2009}. \\
+The pressure of the majority in only felt in an averaged way, in the sense a neighbor that carries the majority opinion has more chance to be randomly selected \cite{Castellano2009}.\\
+Lots of studies have been performed on this model. In this thesis, however, we will not make use of the voter model. Hence, we will not go into further detail. 
 % https://arxiv.org/pdf/0710.3256.pdf
 
 \section{Continuous models}\label{Con}
+
+In continuous opinion dynamics models, the opinion variable of the agents in the network is no longer discrete, in contrast to binary or discrete models, but takes real values (often in the interval $\interval{0}{1}$ or $\interval{-1}{1}$).\\
+In continuous opinion dynamics models, some concepts that are valid for the discrete models no longer apply (eg. the concept of a majority/minority opinion or the concept of equality of opinions); hence, they require a bit of a different framework \cite{Castellano2009}. \\
+The basis of most continuous models is a set of $N$ nodes or agents, each having an opinion $x_i$ represented by a real number that takes values in some interval \cite{Castellano2009}. In contrast to discrete/binary models, all agents usually start with  different opinions \cite{Castellano2009}. The possible outcomes are more complex than in the discrete models and often has opinion clusters emerging in the final states (where opinion clusters refer to clusters of nodes with the same opinion) \cite{Castellano2009}. The number of opinion clusters can be one (consensus), two (polarization) or more (fragmentation) \cite{Castellano2009}. \\
+Several models have been proposed, we will only discuss a fraction of them.
+
+\subsection{The classical models}
+
+In the classical model, there are $N$ nodes/agents, each with an opinion $x_i$ and each node $i$ gives a weight $w_{ij}$ to all its neighbors (with $w_{ij} \geqslant 0$) \cite{Krause2002}. The most simple model has fixed weights $w$ and the updating rule is \cite{Krause2002}
+\begin{equation}\label{refMod}
+	x(t+1) = W x(t)
+\end{equation}
+where $W$ is the fixed stochastic matrix, $x(t)$ is the opinion profile at time $t$ (this is a $N$-dimensional vector containing the opinions $x_i$ of each node at time $t$) and $x(t+1)$ is the opinion profile at time $t+1$.\\
+Friedkin and Johnsen proposed a variation of this model \cite{Friedkin1990}\cite{Friedkin1999}. The model they proposed assumes that an agent $i$ adheres to its initial opinion to a certain degree $g_i$ and is influenced by others by a susceptibility of $1-g_i$ \cite{Krause2002}. Thus this variation has the following updating rule (in matrix notation) \cite{Krause2002}
+\begin{equation}
+	x(t+1) = Gx(0) + (\mathbb{1}-G)Wx(t)
+\end{equation}
+where $G$ is the diagonal matrix which contains the $g_i$ and $\mathbb{1}$ is the identity matrix. If all the $g_i$ are equal to zero, we obtain the model of Eq. (\ref{refMod}) \cite{Krause2002}.\\
+A possible time variant extension is \cite{Krause2002}
+\begin{equation}
+	x(t+1) = W(t)x(t)
+\end{equation}
+where now the weights are time dependent. This model can be used for situations in which so called "hardening of positions" occur \cite{Krause2002}. This means that, over time, the agents put more and more weight on their own opinion and less weight on the opinion of others \cite{Krause2002}. 
+% talk about extension http://jasss.soc.surrey.ac.uk/5/3/2/2.pdf
+
+\subsection{Bounded confidence models}
+
+In bounded confidence models, each node has, beside an opinion, a threshold $\epsilon$, also called an uncertainty or tolerance (note that $\epsilon$ can be the same for all nodes or can be different for each node) \cite{Castellano2009}\cite{Deffuant2006}. This threshold determines which opinions of neighbors are close enough to the agent's opinion in order to influence that agent; opinions that are beyond this threshold are then ignored \cite{Deffuant2006}. In other words, an agent with opinion $x_i$ is only affected/influenced by those neighbors which have an opinion in the interval $\interval{x_i-\epsilon}{x_i+\epsilon}$ \cite{Castellano2009}. The two most popular bounded confidence models are the Deffuant model and the Hegselmann-Krause model \cite{Castellano2009}. \\
+\newline
+\textbf{The Deffuant model}\\
+\newline
+Assume we have a population of $N$ agents, each with an opinion $x_i$ that takes real values in the interval $\interval{0}{1}$ \cite{Castellano2009}. Furthermore, the threshold $\epsilon$ is the same for all the agents. At each time step, an agent $i$ is randomly selected together with one of its neighbors $j$ (which is also randomly selected) \cite{Castellano2009}. If the opinions of the two nodes $i$ and $j$ are too far apart nothing happens; this is the case if $\abs{x_i(t) - x_j(t)} \geqslant \epsilon$. If instead $\abs{x_i(t) - x_j(t)} < \epsilon$, then the opinions are updated to \cite{Castellano2009}
+\begin{equation}
+\begin{split}
+	x_i(t+1) &= x_i(t) + \mu [x_j(t) - x_i(t)]\\
+	x_j(t+1) &= x_j(t) + \mu [x_i(t) - x_j(t)]
+\end{split}
+\end{equation}
+The parameter $\mu$ is called the convergence parameter; its value lies in the interval $\interval{0}{1/2}$ \cite{Castellano2009}. \\
+The model is based on a compromise strategy: after some discussion and a constructive debate, the opinions of the two agents move closer to each other \cite{Castellano2009}. \\
+The final state is a situation where several opinion clusters coexist. This is because the opinions move closer and closer to each other in several clusters; once each cluster is sufficiently far apart from the others (so the difference in opinions between all agents in the two clusters is larger than $\epsilon$), they no longer interact with each other \cite{Castellano2009}. Only agents inside the same cluster keep on interacting with each other, which makes the opinion inside a cluster converge to a single value \cite{Castellano2009}. Usually, the number and sizes of the clusters depends in the threshold $\epsilon$, whereas $\mu$ determines the convergence rate \cite{Castellano2009}.\\
+\newline
+\textbf{The Hegselmann-Krause model}\\
+\newline
+The Hegselmann-Krause model is very similar to the Deffuant model. Again, there are $N$ agents, each with an opinion $x_i$ and a constant threshold $\epsilon$ \cite{Castellano2009}. Each agent interacts with those neighbors with an opinion in the interval $\interval{x_i-\epsilon}{x_i+\epsilon}$ \cite{Castellano2009}. The difference with the Deffuant model lies in the updating rule \cite{Castellano2009}. In the Deffuant model, only the opinion of one randomly selected neighbor is taken into account, whereas the Hegselmann-Krause model considers all compatible neighbors \cite{Castellano2009}. The updating rule becomes \cite{Castellano2009}
+\begin{equation}
+	x_i(t+1) = \frac{\sum_{j:\abs{x_i(t) - x_j(t)}<\epsilon}A_{ij}x_j(t)}{\sum_{j:\abs{x_i(t) - x_j(t)}<\epsilon}A_{ij}}
+\end{equation}
+where $A_{ij}$ are the elements of the adjacency matrix. This model thus takes the average opinion of the compatible neighbors into account \cite{Castellano2009}.\\
+The dynamics of this model is similar to the Deffuant model and the final state is also characterized by a number of stationary states \cite{Castellano2009}. The number of clusters decreases if $\epsilon$ increased and above a critical value $\epsilon_c$ of the threshold, there can only be one cluster \cite{Castellano2009}.\\
+\newline
+There are, of course, many other variations of the bounded confidence model. As mentioned earlier, the threshold $\epsilon$ can be different for each node, so that each node has an opinion $x_i$ and a threshold $\epsilon_i$ or the confidence interval can be made asymmetric $\interval{x_i - \epsilon_l}{x_i + \epsilon_r}$ with $\epsilon_l \neq
+\epsilon_r$ \cite{Krause2002}.
+% talk about relative agreement model?? http://jasss.soc.surrey.ac.uk/9/3/8.html and http://jasss.soc.surrey.ac.uk/5/4/1.html
+
+
+
 % https://arxiv.org/pdf/0710.3256.pdf, bounded confidence methods
 % https://www.researchgate.net/publication/235737446_Mixing_Beliefs_Among_Interacting_Agents defuant model
 % http://jasss.soc.surrey.ac.uk/5/3/2/2.pdf
