@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  2 MAR 2021 14:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  2 MAR 2021 17:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3020,6 +3020,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 601--605
 
  []
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 614--619
+
+ []
+
 [31] [32]
 Appendix A.
 [33
@@ -3029,12 +3034,12 @@ Appendix B.
 [35
 
 ] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 750--754
+Underfull \hbox (badness 10000) in paragraph at lines 759--763
 
  []
 
 [37]
-Underfull \hbox (badness 10000) in paragraph at lines 764--769
+Underfull \hbox (badness 10000) in paragraph at lines 773--778
 
  []
 
@@ -3043,11 +3048,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 764--769
 ] (./draft.bbl [41
 
 ] [42] [43]) [44]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 802.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 802.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 811.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 811.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 802.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 802.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 811.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 811.
  ) 
 Here is how much of TeX's memory you used:
  36030 strings out of 492990
@@ -3075,10 +3080,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (46 pages, 487551 bytes).
+Output written on draft.pdf (46 pages, 490552 bytes).
 PDF statistics:
- 867 PDF objects out of 1000 (max. 8388607)
- 796 compressed objects within 8 object streams
+ 873 PDF objects out of 1000 (max. 8388607)
+ 801 compressed objects within 9 object streams
  221 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

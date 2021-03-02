@@ -600,7 +600,7 @@ It is thus important to know and be aware of the possible impacts of algorithmic
 \end{itemize} 
 The following paragraph briefly reviews the filtering algorithms that prof. Nicola Perra and prof. Luis E.C. Rocha proposed. \\
 \newline
-At every time $t$ each platform user has a hidden list $L_i(t)$ that contains all the opinions/posts that he/she received from his/her friends \cite{Perra2019}. The filtering algorithm then selects $Q$ items from this list and shows them on the user's time line; the following selection methods are used \cite{Perra2019}
+At every time $t$ each platform user has a hidden list $L_i(t)$ that contains all the opinions/posts that he/she received from his/her friends \cite{Perra2019}. The filtering algorithm then selects $Q$ items from this list and shows them on the user's time line (this is the fundamental idea behind algorithmic personalization: only showing a fraction of the possible posts \cite{Perra2019}); the following selection methods are used \cite{Perra2019}
 \begin{itemize}
 	\item The reference method (REF): this method randomly selects $Q$ items from the list $L_i(t)$
 	\item The old method (OLD): the $Q$ oldest post in $L_i(t)$ are displayed on the time line of the user
@@ -610,6 +610,15 @@ At every time $t$ each platform user has a hidden list $L_i(t)$ that contains al
 Prof. Nicola Perra and prof. Luis E.C. Rocha showed that the REF, OLD and REC methods behave similar in many cases and that the PR method often displays different behavior (such as a larger formation of echo chambers compared to the other three methods) \cite{Perra2019}. In this thesis the REC and REF methods are mainly used as a reference/benchmark method and the PR method is used as the main filtering algorithm.
 
 \section{The activation mechanism}\label{actMech}
+
+In the most simple opinion dynamics models, which makes use of a static network, users are always active and thus always exchanging opinions/posts with each other. In this kind of model the opinion dynamics might go as follows: each time step a random user is selected after which his/her opinion is updated according to the opinion dynamics model that is implemented. \\
+It might, however, be a more realistic situation if nodes/users become active/inactive over time. This would be a better representation of real social media platforms, where user are active for some periods of time and then become inactive again. This kind of activation mechanism of the user gives the network a more temporal character. The underlying network structure doesn't change, but by making users active and inactive the exchange of information between users becomes time dependent and depends on which users are active and which aren't.\\
+\newline
+In this thesis we follow the same activation mechanism as was proposed in the paper of prof. Nicola Perra and prof. Luis E.C. Rocha (see reference \cite{Perra2019}). Every time step users are made active with some probability $p_i$ (thus, every time step, each node becomes active with a probability $p_i$). In this thesis the activation probability is set equal to $p = 0.1$, which is constant for all the nodes. Prof. Nicola Perra and prof. Luis E.C. Rocha choose, in their paper, activation probabilities that are extracted from a power-law ($F(p) \sim p^{-1.5}$, with $p \in \interval{0.01}{1}$) \cite{Perra2019}. They did this based on the analyses of real social networks that shows that the propensity of users to start an on-line social interaction follows a heterogeneous distribution \cite{Perra2019}. However, they also showed that using a constant activation probability $p$ over the entire population yields results that are qualitatively similar (at least in their case) \cite{Perra2019}. \\
+Hence, for simplicity, this thesis implements the constant activation probability variant. It might however be an interesting extension to switch to the heterogeneous activation probabilities and investigate the possible impacts on the dynamics. 
+
+% not finished, read this https://www.nature.com/articles/srep00469 and https://www.nature.com/articles/srep03006, might contain useful info
+
 
 \section{The presence of stubborn people}\label{stubb}
 % maybe also mention here the model with the threshold!!
