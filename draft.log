@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  2 MAR 2021 17:33
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  6 MAR 2021 12:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3021,44 +3021,44 @@ Underfull \hbox (badness 10000) in paragraph at lines 601--605
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 614--619
+Underfull \hbox (badness 10000) in paragraph at lines 614--621
 
  []
 
-[31] [32]
+[31] [32] [33] [34
+
+]
 Appendix A.
-[33
-
-] [34]
+[35] [36]
 Appendix B.
-[35
+[37
 
-] [36]
-Underfull \hbox (badness 10000) in paragraph at lines 759--763
-
- []
-
-[37]
-Underfull \hbox (badness 10000) in paragraph at lines 773--778
+] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 764--768
 
  []
 
-[38] [39] [40
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 778--783
 
-] (./draft.bbl [41
+ []
 
-] [42] [43]) [44]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 811.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 811.
+[40] [41] [42
+
+] (./draft.bbl [43
+
+] [44] [45]) [46]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 816.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 816.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 811.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 811.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 816.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 816.
  ) 
 Here is how much of TeX's memory you used:
- 36030 strings out of 492990
- 700482 string characters out of 6135004
- 780165 words of memory out of 5000000
- 38781 multiletter control sequences out of 15000+600000
+ 36034 strings out of 492990
+ 700521 string characters out of 6135004
+ 781217 words of memory out of 5000000
+ 38782 multiletter control sequences out of 15000+600000
  607755 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,19n,78p,10402b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3080,10 +3080,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (46 pages, 490552 bytes).
+Output written on draft.pdf (48 pages, 493906 bytes).
 PDF statistics:
- 873 PDF objects out of 1000 (max. 8388607)
- 801 compressed objects within 9 object streams
- 221 named destinations out of 1000 (max. 500000)
+ 889 PDF objects out of 1000 (max. 8388607)
+ 815 compressed objects within 9 object streams
+ 224 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
