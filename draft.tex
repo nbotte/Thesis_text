@@ -550,7 +550,7 @@ A possible time variant extension is \cite{Krause2002}
 where now the weights are time dependent. This model can be used for situations in which so called "hardening of positions" occur \cite{Krause2002}. This means that, over time, the agents put more and more weight on their own opinion and less weight on the opinion of others \cite{Krause2002}. 
 % talk about extension http://jasss.soc.surrey.ac.uk/5/3/2/2.pdf
 
-\subsection{Bounded confidence models}
+\subsection{Bounded confidence models}\label{bounded}
 
 In bounded confidence models, each node has, beside an opinion, a threshold $\epsilon$, also called an uncertainty or tolerance (note that $\epsilon$ can be the same for all nodes or can be different for each node) \cite{Castellano2009}\cite{Deffuant2006}. This threshold determines which opinions of neighbors are close enough to the agent's opinion in order to influence that agent; opinions that are beyond this threshold are then ignored \cite{Deffuant2006}. In other words, an agent with opinion $x_i$ is only affected/influenced by those neighbors which have an opinion in the interval $\interval{x_i-\epsilon}{x_i+\epsilon}$ \cite{Castellano2009}. The two most popular bounded confidence models are the Deffuant model and the Hegselmann-Krause model \cite{Castellano2009}. \\
 \newline
@@ -624,6 +624,40 @@ It is important to note that what somebody sees on his/her time line is the cons
 
 
 \section{The presence of stubborn people}\label{stubb}
+
+It is well known that in real-life, you can find people that are really persistent towards their own opinion and that are not open to opinions of others. They are convinced that they carry the truth with them and that the other people, with different world-views, are not capable of giving them any new and useful insights. They are close-minded in contrast to people with an open-mind that are willing to learn from others and to reconsider their beliefs. Of course this is put a bit simplistic and there are many shades of gray between this black and white statement. However, there are groups in society, often with more extreme opinions, that are know to be really inflexible towards changing that (extreme) opinion (note here that being stubborn and being extreme doesn't need to go hand in hand, you can obviously be stubborn without being extreme and vice versa; however, it is often widely accepted that there is a tendency that people with extreme opinions are more persistent towards these opinions than people with more moderate beliefs; this idea of correlating extreme people with a more stubborn character is also often used in models, see for example \cite{Deffuant2006}\cite{Turner}).\\ 
+Knowing the impact of such stubborn groups on the opinions of others is of great importance, especially with the rise of social media which makes the reach of such extreme and persistent groups a lot bigger. Before the era of social media, one could maybe argue that these extreme and stubborn groups are often isolated and therefore wouldn't reach too many people. So their impact could only be of a minor nature (note that this is only a statement that could have been given, there are of course plenty of examples throughout human history that contradict this argument). Today, this possible argument is no longer valid; social media enables the contact with all sorts of beliefs and all sorts of people with almost no constraints. Extreme and stubborn groups that may have been isolated before no longer need to be so and this may have huge impacts. \\
+What is the impact of having stubborn/extreme people in your society? Does it matter if the stubborn people are grouped together or if they are distributed evenly throughout your system? Are there ways to reduce the possible impacts of stubbornness and/or extremism? Can these stubborn groups lead to polarization or even overtake the opinions in the system? To answer these questions, several models have been proposed to include some kind of stubbornness/resistance in the system under study.
+
+\subsection{Stubbornness in bounded confidence models}
+
+The bounded confidence models, discussed in Section \ref{bounded}, can be easily extended to included some notion of stubbornness. Guillaume Deffuant proposed such an extension where stubbornness is correlated to extremism \cite{Deffuant2006}. The model he proposed goes as follows. Remember that in the bounded confidence models, the agents have an opinion $x_i$ (which is a real number, often between $\interval{0}{1}$ or between $\interval{-1}{1}$) and a threshold $\epsilon_i$, which determines the range of opinions that can influence agent $i$ (agents with opinions between $\interval{x_i - \epsilon_i}{x_i + \epsilon_i}$ are capable of influencing agent $i$). Guillaume Deffuant then introduced a fraction of extremists, $f_e$, which can have either the extreme opinion $-1$ or the extreme opinion $1$ \cite{Deffuant2006}. These extremists are given a threshold equal to $\epsilon_e$ \cite{Deffuant2006}. The other agents are considered to be moderate and can have opinions between $-1$ and $1$. The moderates are given a threshold $\epsilon$, with $\epsilon > \epsilon_e$ \cite{Deffuant2006}. This last condition implicitly denotes the resistance of the extremes towards other opinions in contrast to the more flexible nature of the moderates, which is again based on the idea that people with extreme opinions will be more convinced of that opinion and will be less likely to change it. 
+% talk about results here??
+
+\subsection{Stubbornness in binary models}
+% not finished!!
+Playing around with the threshold $\epsilon_i$ of the agents to include a notion of stubbornness, such as one can do for the bounded confidence models, is obviously not possible for binary/discrete models. There are, however, many other ways to include some kind of stubborn people in these models. In the following, two different possibilities will be discussed. One small remark must be made here: previously, the link between stubbornness and extremism was often made and it was often assumed that the more extreme somebodies opinions are, the more persistent that somebody is towards those opinions. In binary models, however, there are only two possible opinions that can be taken on and in that sense it is less useful to talk about extreme and moderate opinions. However, we can still have people that rather keep their own opinion than be convinced by friends to switch to the other opinion.\\
+\newline
+\textbf{Including a stubbornness parameter}\\
+\newline
+One way of creating those stubborn people in the binary model is by giving each node $i$ a stubbornness/resistance parameter $r_i$. This resistance parameters can have values between 0 and 1, $0 \leqslant r_i \leqslant 1$. 
+\begin{itemize}
+	\item If $r_i = 0$, the node is not stubborn and can be easily convinced of the value of the other opinion (according to which opinion dynamics model that is implemented: majority, probabilistic majority,...)
+	\item If $r_i = 1$, the node is completely stubborn and there is no change of convincing him/here of the other idea
+	\item If $0 < r_i < 1$, the node has some resistance but can still be convinced to switch to the other opinion
+\end{itemize}
+The resistance parameter $r_i$ can be different for all nodes or can be the same. One can also play around with the fraction of nodes that is stubborn, for example, there can be a fraction of nodes that is completely stubborn ($r = 1$) and a remaining fraction that is not stubborn at all ($r = 0$). Many other possibilities can be found according to how the stubborn people are distributed and according to how stubborn they are made. This makes the model very flexible.\\
+\newline
+\textbf{The threshold model}
+\newline
+% NOT FINISHED!!
+
+
+
+Note that the above examples are only a handful of the possible ways to include some notion of stubbornness in the model under study.
+ 
+% talk about epsilon parameter in deffuant model to implement stubbornness + talk about model thesis, binary so no real extreme/moderate distinction
+
 % maybe also mention here the model with the threshold!!
 
 \section{The opinion dynamics model used in this thesis}\label{thesisOp}

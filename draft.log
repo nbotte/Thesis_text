@@ -1,8 +1,8 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  6 MAR 2021 12:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  12 MAR 2021 14:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**draft.tex
+**draft
 (./draft.tex
 LaTeX2e <2017-04-15>
 Babel <3.12> and hyphenation patterns for 84 language(s) loaded.
@@ -3025,43 +3025,63 @@ Underfull \hbox (badness 10000) in paragraph at lines 614--621
 
  []
 
-[31] [32] [33] [34
+[31] [32] [33]
+Underfull \hbox (badness 10000) in paragraph at lines 639--645
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 639--645
+
+ []
+
+[34]
+Underfull \hbox (badness 10000) in paragraph at lines 649--654
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 649--654
+
+ []
+
+[35] [36
 
 ]
 Appendix A.
-[35] [36]
+[37] [38]
 Appendix B.
-[37
+[39
 
-] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 764--768
-
- []
-
-[39]
-Underfull \hbox (badness 10000) in paragraph at lines 778--783
+] [40]
+Underfull \hbox (badness 10000) in paragraph at lines 798--802
 
  []
 
-[40] [41] [42
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 812--817
 
-] (./draft.bbl [43
+ []
 
-] [44] [45]) [46]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 816.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 816.
+[42] [43] [44
+
+] (./draft.bbl [45
+
+] [46] [47]) [48]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 850.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 850.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 816.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 816.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 850.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 850.
  ) 
 Here is how much of TeX's memory you used:
- 36034 strings out of 492990
- 700521 string characters out of 6135004
- 781217 words of memory out of 5000000
- 38782 multiletter control sequences out of 15000+600000
+ 36041 strings out of 492990
+ 700595 string characters out of 6135004
+ 781306 words of memory out of 5000000
+ 38784 multiletter control sequences out of 15000+600000
  607755 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 55i,19n,78p,10402b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,19n,78p,10398b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/us
 r/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/shar
 e/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/usr/share/texl
@@ -3080,10 +3100,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (48 pages, 493906 bytes).
+Output written on draft.pdf (50 pages, 501154 bytes).
 PDF statistics:
- 889 PDF objects out of 1000 (max. 8388607)
- 815 compressed objects within 9 object streams
- 224 named destinations out of 1000 (max. 500000)
+ 911 PDF objects out of 1000 (max. 8388607)
+ 835 compressed objects within 9 object streams
+ 229 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
