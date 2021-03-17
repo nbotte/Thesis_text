@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  16 MAR 2021 15:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  17 MAR 2021 13:52
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3034,23 +3034,48 @@ Underfull \hbox (badness 10000) in paragraph at lines 607--614
 
  []
 
-[31] [32] [33]
-Underfull \hbox (badness 10000) in paragraph at lines 632--638
+[31] [32]
+Underfull \hbox (badness 10000) in paragraph at lines 621--626
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 632--638
+Underfull \hbox (badness 10000) in paragraph at lines 621--626
+
+ []
+
+[33]
+Underfull \hbox (badness 10000) in paragraph at lines 629--633
 
  []
 
 [34]
-Underfull \hbox (badness 10000) in paragraph at lines 642--649
+Underfull \hbox (badness 10000) in paragraph at lines 636--642
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 636--642
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 646--647
 
  []
 
 [35]
-Underfull \hbox (badness 10000) in paragraph at lines 653--657
+Underfull \hbox (badness 10000) in paragraph at lines 648--655
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 648--655
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 659--663
 
  []
 
@@ -3063,12 +3088,12 @@ Appendix B.
 [39
 
 ] [40]
-Underfull \hbox (badness 10000) in paragraph at lines 812--816
+Underfull \hbox (badness 10000) in paragraph at lines 818--822
 
  []
 
 [41]
-Underfull \hbox (badness 10000) in paragraph at lines 826--831
+Underfull \hbox (badness 10000) in paragraph at lines 832--837
 
  []
 
@@ -3077,21 +3102,21 @@ Underfull \hbox (badness 10000) in paragraph at lines 826--831
 ] (./draft.bbl [45
 
 ] [46] [47]) [48]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 864.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 864.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 870.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 870.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 864.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 864.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 870.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 870.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 36047 strings out of 492990
- 700667 string characters out of 6135004
- 781473 words of memory out of 5000000
- 38787 multiletter control sequences out of 15000+600000
+ 36048 strings out of 492990
+ 700677 string characters out of 6135004
+ 781528 words of memory out of 5000000
+ 38788 multiletter control sequences out of 15000+600000
  607755 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  55i,19n,78p,10402b,485s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -3113,10 +3138,10 @@ b></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (50 pages, 505956 bytes).
+Output written on draft.pdf (50 pages, 506504 bytes).
 PDF statistics:
- 919 PDF objects out of 1000 (max. 8388607)
- 843 compressed objects within 9 object streams
+ 921 PDF objects out of 1000 (max. 8388607)
+ 845 compressed objects within 9 object streams
  232 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
