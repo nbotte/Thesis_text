@@ -402,28 +402,28 @@ Real social networks, however, usually display the "small world phenomenon" and 
 In 1998, Duncan Watts and Steve Strogatz constructed a network model that generates random networks with small world properties, such as high clustering and short average distances. Their model achieves this by interpolating between a regular ring lattice and a random network \cite{Watts1998}. The construction goes as follows \cite{Watts1998}
 \begin{enumerate}
 	\item Start with a regular ring lattice with $N$ nodes, each connected to $K = 2m$ neighbors ($m$ on each side)
-	\item For each node $i$, rewire each edge that connects $i$ with its $K/2$ rightmost neighbors with a probability $p$. Rewiring is done in such a way that self-loops and edge duplication are avoided
+	\item For each node $i$, rewire each edge that connects $i$ with its $K/2$ rightmost neighbors with a probability $\beta$. Rewiring is done in such a way that self-loops and edge duplication are avoided
 \end{enumerate}
-The probability $p$ allows us to tune the graph between a regular lattice ($p = 0$) and a random network ($p = 1$) \cite{Watts1998}. Usually, the following condition is required for the number of neighbors $K$: $N \gg K \gg \ln{N} \gg 1$. The first inequality assures sparse networks, whereas the second inequality guarantees that a random graph will be connected (thus the network is not so sparse that it becomes disconnected) \cite{Watts1998}.\\
-The regular ring lattice ($p=0$) has an average clustering coefficient $\bar{C}(0)$ and an average path length $\left<d(0)\right>$ equal to \cite{Watts1998}
+The probability $\beta$ allows us to tune the graph between a regular lattice ($\beta = 0$) and a random network ($\beta = 1$) \cite{Watts1998}. Usually, the following condition is required for the number of neighbors $K$: $N \gg K \gg \ln{N} \gg 1$. The first inequality assures sparse networks, whereas the second inequality guarantees that a random graph will be connected (thus the network is not so sparse that it becomes disconnected) \cite{Watts1998}.\\
+The regular ring lattice ($\beta=0$) has an average clustering coefficient $\bar{C}(0)$ and an average path length $\left<d(0)\right>$ equal to \cite{Watts1998}
 \begin{align}\label{C0}
 	\bar{C}(0) = \frac{3(K-2)}{4(K-1)} \approx \frac{3}{4} \ \text{for}\ K \gg 1 && \left<d(0)\right> \approx \frac{N}{2K}
 \end{align}
 The derivations of these formulas can be found in Appendix \ref{WS}, Section \ref{ringclus}. The regular ring lattice thus has a high clustering coefficient and an average path length that grows linearly with the system size $N$. \\
-The random network ($p = 1$) on the other hand has a low clustering coefficient $\bar{C}(1)$ and a small average path length $\left<d(1)\right>$ (see Eq. (\ref{C}) and Eq. (\ref{d})) \cite{Watts1998}
+The random network ($\beta = 1$) on the other hand has a low clustering coefficient $\bar{C}(1)$ and a small average path length $\left<d(1)\right>$ (see Eq. (\ref{C}) and Eq. (\ref{d})) \cite{Watts1998}
 \begin{align}
 	\bar{C}(1) \approx \frac{K}{N} \ll 1 && \left<d(1)\right> \approx \frac{\ln{N}}{\ln{K}}
 \end{align}
-Watts and Strogatz then showed by numerical simulation that the average distance for the networks with $0 < p < 1$ is comparable with the average distance of a random graph (which is small), even for small $p$ \cite{Newman2000}. The clustering coefficient is approximately given by   \cite{Barrat1999}
+Watts and Strogatz then showed by numerical simulation that the average distance for the networks with $0 < \beta < 1$ is comparable with the average distance of a random graph (which is small), even for small $\beta$ \cite{Newman2000}. The clustering coefficient is approximately given by   \cite{Barrat1999}
 \begin{equation}
-	\bar{C} \approx \bar{C}(0)(1-p)^3
+	\bar{C} \approx \bar{C}(0)(1-\beta)^3
 \end{equation} 
 where $\bar{C}(0)$ is given by Equation (\ref{C0}). This can be seen in the following way
 \begin{itemize}
-	\item The probability that none of the three edges of the original triangles in the regular lattice are rewired is $(1-p)^3$
+	\item The probability that none of the three edges of the original triangles in the regular lattice are rewired is $(1-\beta)^3$
 	\item The probability that edges are rewired back to each other is negligible
 \end{itemize}
-For rather small values of $p$, the clustering coefficient remains high. The model of Watts and Strogatz is thus able to generate random networks with a high clustering coefficient and short average distances.
+For rather small values of $\beta$, the clustering coefficient remains high. The model of Watts and Strogatz is thus able to generate random networks with a high clustering coefficient and short average distances.
 
 % also discuss case where edges are added instead of rewired??
 
@@ -443,10 +443,18 @@ The stochastic block model includes the Erd\H{o}s-R\'{e}nyi model \cite{Clauset2
 In this thesis, the stochastic block model is generated in the following way. First, the parameters of the model are specified. Then, for each community $C_i$ an Erd\H{o}s-R\'{e}nyi network is constructed, where the number of nodes equals the size of the community $C_i$ and the edge probability $p$ is given by $M_{ii}$. Finally, edges are added between communities $C_i$ and $C_j$ with probability $p = M_{ij}$.\\
 \newline
 The stochastic block model can be fitted to data \cite{Clauset2017}. Given a choice of the number of communities $k$ and an observed network $G$, the stochastic block model can be used to infer the latent community structure and the edge probability matrix $M$ \cite{Clauset2017}.\\
-One of the shortcomings of fitting the SBM to infer the community structure, is that real-world networks often have a heterogeneous or power-law degree distribution. Since the SBM is made of random networks inside each group and random bipartite networks between each pair of groups, the degree distribution of the full network is always a mixture of Poisson distributions \cite{Clauset2017}. The consequence of this is that if a network possesses a more skewed degree distribution, the SBM will put the nodes with a high degree in a small group, together with a high probability of connecting to other, larger groups \cite{Clauset2017}. The reason behind this is one of the main assumptions of the stochastic block model, namely the fact that the edge probabilities only depend  on which group the node belongs to \cite{Clauset2017}. In other words, nodes that belong to the same group are stochastically  equivalent, meaning that they have equivalent connectivity patterns to other nodes \cite{Clauset2017}. However, a network with a skewed degree distribution violates this assumption of edge independence and the SBM seeks to explain this over other kinds of latent group structures that we might care about \cite{Clauset2017}. Karrer and Newman proposed a variation of the SBM, the degree corrected SBM, that deals with this limitation. We will not discuss their variation, since that would lead us too far astray, but interested readers can find more detailed information in reference \cite{Karrer2011}. 
+One of the shortcomings of fitting the SBM to infer the community structure, is that real-world networks often have a heterogeneous or power-law degree distribution. Since the SBM is made of random networks inside each group and random bipartite networks between each pair of groups, the degree distribution of the full network is always a mixture of Poisson distributions \cite{Clauset2017}. The consequence of this is that if a network possesses a more skewed degree distribution, the SBM will put the nodes with a high degree in a small group, together with a high probability of connecting to other, larger groups \cite{Clauset2017}. The reason behind this is one of the main assumptions of the stochastic block model, namely the fact that the edge probabilities only depend  on which group the node belongs to \cite{Clauset2017}. In other words, nodes that belong to the same group are stochastically  equivalent, meaning that they have equivalent connectivity patterns to other nodes \cite{Clauset2017}. However, a network with a skewed degree distribution violates this assumption of edge independence and the SBM seeks to explain this over other kinds of latent group structures that we might care about \cite{Clauset2017}. Karrer and Newman proposed a variation of the SBM, the degree corrected SBM, that deals with this limitation. We will not discuss their variation, since that would lead us too far astray, but interested readers can find more detailed information in reference \cite{Karrer2011}. \\
+\newline
+An extension that we are going to explore a bit deeper is the stochastic Watts-Strogatz block model (SBM-WS).\\
+\newline
+\textbf{The stochastic Watts-Strogatz block model (SBM-WS)}\\
+\newline
+As said before, the stochastic block model is a very flexible model and there are many different extensions. One extension that is used in this thesis is a stochastic block model that uses the Watts-Strogatz model instead of the Erd\H{o}s-R\'{e}nyi model to construct the constituent communities. In this way, we obtain a version of the stochastic block model that has both a community structure and a high clustering coefficient.\\
+The construction of the model is very similar as for the regular stochastic block model. For a SBM-WS with $n_c$ communities of specified sizes, we first construct $n_c$ Watts-Strogatz networks (for each constituent Watts-Strogatz network the rewire probability $\beta$ and the mean degree $K$ are specified), then edges are (with some predefined probability) randomly added between the different Watts-Strogatz communities. The result is a network that can be tuned to have both a community structure and a high clustering coefficient. This is different from the regular stochastic block model that can only account for a community structure and lacks a high clustering.
 % talk about community sizes from power law??
+% talk about extention with WS as constituents instead of ER
 % NOT FINISHED
-% different subsections where you talk about different graph models: erdos-renyi, clustered random, wats strogatz, barabasi albert, etc...
+
 
 \section{Real-world social networks}
 The models discussed in the sections above, describe real-world networks in an idealized, simplified way. They may posses some of the characteristics of real-world networks, but they certainly do not always describe real-world networks appropriately. The question then arises: what are the main properties/characteristics of real-world networks, and more specifically of real-world social networks? Another important question that can be asked is whether or not there is a significant difference between off-line social networks and on-line social networks?\\
