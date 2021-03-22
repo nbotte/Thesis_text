@@ -1,7 +1,13 @@
 \documentclass[11 pt , letterpaper , twoside , openright]{book}
+\renewcommand{\baselinestretch}{1.15} 
 \usepackage[utf8]{inputenc}
 
-\usepackage[english]{babel}     	
+\usepackage[english, dutch]{babel} 
+\usepackage{fancyhdr}
+%\pagestyle{empty}
+\newenvironment{abstract}%
+{\cleardoublepage\null \vfill\begin{center}\bfseries \abstractname \end{center}}{\vfill\null}
+	
 \usepackage{graphicx}                   % om afbeeldingen in te kunnen laden   
 \usepackage{tikz,tikz-3dplot}                       % om afbeeldingen te kunnen maken
 \usetikzlibrary{calc}                   % meer opties in tikz (oa coordinaten bepalen)
@@ -31,15 +37,36 @@
 \usepackage{interval}
 \usepackage[colorlinks,citecolor=red,urlcolor=blue,bookmarks=false,hypertexnames=true]{hyperref} 
 \usepackage[noend]{algpseudocode}
-\usepackage{tikz-feynman}
 \usepackage{subcaption}
 \usepackage{xfrac}
-\tikzfeynmanset{compat=1.1.0}
 \floatname{algorithm}{Algoritme}
+
+\addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}
+}
 
 \begin{document}
 \frontmatter
+
+\selectlanguage{english}
+\thispagestyle{empty}
+\begin{abstract}
+The past decade, the rise of social media has become undeniable. More and more people are getting engaged on some type of social media platform and hence, it is probably not wrong to say that nowadays most of us have, beside our real life, a virtual life on social media. This rapidly increased engagement on social media undoubtedly has many advantages. However, every upside has a downside and social media is no different. This thesis deals with the impact of social media on the formation and evolution of opinions in society. Social media allows for the spread of information at a faster pace and at an unprecedented scale. However, people are still bounded by time- and cognitive constraints. In order to handle the information overflow, social media companies design filtering algorithms that can fine-tune and individualize the information someone is exposed to. 
+% definetely not finished!! --> this will be put in summary! (think about how you want lay-out: chapter of abstract style?)
+\end{abstract}
+
+\chapter*{Acknowledgments} 
+\addcontentsline{toc}{chapter}{Acknowledgments}
+
+\chapter*{Summary}
+\addcontentsline{toc}{chapter}{Summary}
+
+\selectlanguage{dutch}
+\chapter*{Nederlandstalige samenvatting}
+\addcontentsline{toc}{chapter}{Nederlandstalige samenvatting}
+
+\selectlanguage{english}
 \tableofcontents
+\addcontentsline{toc}{chapter}{Table of Contents}
 %\listoffigures
 
 \mainmatter
@@ -47,6 +74,7 @@
 
 % add research question and hypotheses!!
 % also talk about algorithmic personalisation!!
+% ADD MORE REFERENCES (previous research, contextualization etc)
 
 The past decade social media has become ever more important in our daily lives. Nowadays most of us have, beside a real-world life, a virtual life on social media. This increased engagement on social media may have a huge impact on the formation of opinions, not only on the individual scale, but also on a broader, societal scale. \\
 It is known that individuals not only form their opinions through self-reflection, but also through interactions with other people and with their surroundings \cite{Perra2019}. The broad range of interactions people undergo on social media with people from all over the world can thus not be underestimated in the process of opinion formation. The understanding of the role of social media on the emergence of polarization and extremism in society is of uttermost importance.\\
@@ -109,8 +137,12 @@ However, the use of statistical physics may also offer a way out. In most situat
 
 As said before, this thesis will try to investigate the interplay between the social network structure and the individual resistance to change in the evolution of two competing opinions. On one hand, we want to determine the influence of different network structures on the formation and evolution of opinions, whereas, on the other hand, we would like to investigate the effect of stubborn agents in the network. Since this thesis deals with opinion dynamics on social media, the effect of filtering algorithms must also be included.\\ 
 \newline
-In one of their previous papers (see reference \cite{Perra2019}) prof. Nicola Perra and prof. Luis E.C. Rocha investigated both the effect of different filtering algorithms and different network topologies on the formation and evolution of two competing opinions. They also considered the effect of nudging (meaning that one opinion is pushed to all agents in the network).\\ Their main findings were that the algorithmic filtering could not break the status quo when the prevalence of opinions was equally distributed in the population and that topological correlations (such as high clustering coefficient) could result in the formation of echo chambers \cite{Perra2019}. On the other hand, a more heterogeneous contact pattern could hamper this formation of echo chambers \cite{Perra2019}. If the two opinions were, initially, not equally distributed, one of the filtering algorithms (namely semantic filtering) caused a further increase in the predominant opinion \cite{Perra2019}. In the case of nudging, they found that the opinions in the population moved to the nudged opinion relatively fast, even in the case of small nudging.\\
-They, however, did not investigate the effect of stubborn agents in the network, nor did they investigate networks with a community structure. This thesis will build on their model and incorporate these new features. We will compare networks that have a community structure and relatively low clustering to networks without community structure, but with a high clustering coefficient (a detailed description of concepts like clustering coefficient and community structure will be given in Chapter \ref{chap2}, Section \ref{netDef}). We want to investigate whether networks with community structure are able to form echo chambers, such as one can observe in networks with a high clustering coefficient and, if so, if one can observe convergence to one opinion inside the communities. On the other hand, we want to determine the impact of stubborn agents on the formation and evolution of opinions in the network.
+In one of their previous papers (\textit{"Modelling opinion dynamics in the age of algorithmic personalization"}, see reference \cite{Perra2019}) prof. Nicola Perra and prof. Luis E.C. Rocha investigated both the effect of different filtering algorithms and different network topologies on the formation and evolution of two competing opinions. They also considered the effect of nudging (meaning that one opinion is pushed to all agents in the network).\\ Their main findings were that the algorithmic filtering could not break the status quo when the prevalence of opinions was equally distributed in the population and that topological correlations (such as high clustering coefficient) could result in the formation of echo chambers \cite{Perra2019}. On the other hand, a more heterogeneous contact pattern could hamper this formation of echo chambers \cite{Perra2019}. If the two opinions were, initially, not equally distributed, one of the filtering algorithms (namely semantic filtering) caused a further increase in the predominant opinion \cite{Perra2019}. In the case of nudging, they found that the opinions in the population moved to the nudged opinion relatively fast, even in the case of small nudging.\\
+They, however, did not investigate the effect of stubborn agents in the network, nor did they investigate networks with a community structure. This thesis will build on their model and incorporate these new features. We will compare networks that have a community structure and relatively low clustering to networks without community structure, but with a high clustering coefficient (a detailed description of concepts like clustering coefficient and community structure will be given in Chapter \ref{chap2}, Section \ref{netDef}). We want to investigate whether networks with community structure are able to form echo chambers, such as one can observe in networks with a high clustering coefficient and, if so, if one can, for example, observe convergence to one opinion inside the communities. We will also pay some attention to networks that have both a high clustering coefficient and a community structure. Can we observe echo chambers in those kinds of networks? If yes, can we determine which property might be the main driver for the formation of echo chambers: high clustering or community structure? \\
+% ALSO mention real-world network??
+\newline
+On the other hand, we want to determine the impact of stubborn agents on the formation and evolution of opinions in the network. Some interesting questions that may come to mind are: Is there an interplay between network structure and stubbornness? What about the possible interplay between the filtering algorithms and the introduction of stubborn people? Does the distribution of stubborn people play a role (eg. randomly distributed versus clustered together inside communities)? \\
+
 
 % talk about goals and hypotheses, what does this thesis wants to investigate, reference paper Rocha --> what did they do, their findings, how does this thesis build on that NOT FINAL YET --> maybe talk about fact that you play around with distributing the opinions over the different communities? + talk about investigating real networks??
 % give reference to sections were community structure etc are explained! (done?)
@@ -353,13 +385,13 @@ The derivation can be found in Appendix \ref{ER}, Section \ref{degdis}. From thi
 \end{split}
 \end{equation}
 This equation can be simplified to $\left<k\right> = (N-1)p$, and for $N \gg 1$ this approximately becomes $\left<k\right> = Np$. The derivation of this result can be found in Appendix \ref{ER}, Section \ref{degree}.\\
+\newpage
+\noindent
 Most real networks are sparse, which means that $\left<k\right> \ll N$. In this case the degree distribution of the random network is well approximated by a Poisson distribution \cite{Albert2014} 
 \begin{equation}
 	p_k = \mathrm{e}^{-\left<k\right>} \frac{\left<k\right>^k}{k!}
 \end{equation}
 The derivation can be found in Appendix \ref{ER}, Section \ref{poiss}. \\
-\newline
-\newline
 \newline
 \textbf{Average clustering coefficient}\\
 \newline
@@ -461,7 +493,6 @@ The models discussed in the sections above, describe real-world networks in an i
 \newline
 As already briefly discussed in the introduction, it is found that real-world networks often posses three characteristic properties. These are the two properties of the "small world phenomenon", namely a short average distance and a high clustering coefficient, and a heterogeneous or power-law degree distribution \cite{RealWorld}. These properties are valid for both off-line and on-line social networks \cite{Zhang2014}. Lets discuss them in a bit more detail.\\
 \newline
-\newline
 \textbf{Short average distance}\\
 \newline
 In the late 1960's Stanley Milgram performed a, what is now famous, experiment. He asked randomly selected people in Boston and Omaha to forward a letter to a distant target person. The letter could, however, only be sent to acquaintances, thought to be closer to the target person \cite{RealWorld}. The remarkable result of this experiment was that the average number of steps between the sender and the target person was only around six. This phenomenon is now often referred to as "six degrees of separation" \cite{RealWorld}.\\
@@ -494,7 +525,7 @@ There will also be some attention on the activation mechanism (see Section \ref{
 \newline
 There are two major groups of opinion dynamics models, namely binary/discrete models and continuous approaches. These will be discussed in Section \ref{Bin} and Section \ref{Con}, respectively. This thesis only deals with binary opinion dynamics models, so these will be thoroughly described; the continuous models will be quickly reviewed in order to give a more complete overview.\\
 \newline
-Finally, in Section \ref{stubb}, the introduction of stubborn people is discussed and, in Section \ref{thesisOp}, a summary of the opinion dynamics model used in this thesis is given.
+Finally, in Section \ref{stubb}, the introduction of stubborn people is discussed.
 
 \section{Binary models}\label{Bin}
 % Talk about Ising model???
@@ -593,7 +624,7 @@ There are, of course, many other variations of the bounded confidence model. As 
 On-line social platforms use algorithms to order and filter the posts that appear on the time line of an individual \cite{Perra2019}. They do this in order to make the experience on their platforms more pleasant, interesting and convenient \cite{Perra2019}. If social media companies woudn't use any kind of filtering, there would be way to many content to handle and process for the social media user \cite{Bozdag2013}. This in turn would make the on-line social experience a lot more unpleasant and inconvenient; the user might feel overwhelmed by the number of information he/she is exposed to \cite{Bozdag2013}. The reason behind this is that people are cognitive and time constrained \cite{Perra2019}; hence, there is only a limited amount of information that humans can process \cite{Bozdag2013}.\\
 \newline
 The backside of such algorithmic filtering is that it fine-tunes the information it shows based on the user. Even two users with the same friends may then be exposed to different content, based on their previous activities and history \cite{Bozdag2013}. This may lead to the formation of echo chambers in which users get `trapped' in content that confirms their own mindset \cite{Bozdag2013}. \\
-It is thus important to know and be aware of the possible impacts of algorithmic personalization on the formation and evolution of opinions. Prof. Nicola Perra and prof. Luis E.C. Rocha already partly investigated the role of such algorithms on the dynamics of opinions in several networks in one of their previous papers, \textit{Modelling opinion dynamics in the age of algorithmic personalization} (see reference \cite{Perra2019}). Since filtering algorithms are often not transparently shared by social media companies, they proposed several personalization algorithms based on three simple ways of filtering \cite{Perra2019}
+It is thus important to know and be aware of the possible impacts of algorithmic personalization on the formation and evolution of opinions. Prof. Nicola Perra and prof. Luis E.C. Rocha already partly investigated the role of such algorithms on the dynamics of opinions in several networks in one of their previous papers, \textit{"Modelling opinion dynamics in the age of algorithmic personalization"} (see reference \cite{Perra2019}). Since filtering algorithms are often not transparently shared by social media companies, they proposed several personalization algorithms based on three simple ways of filtering \cite{Perra2019}
 \begin{itemize}
 	\item Popularity filtering: promoting content that is popular across the platform
 	\item Semantic filtering: promoting posts that are similar to previous consumed posts
@@ -642,7 +673,8 @@ Another example of introducing some kind of persistence towards the own opinion 
 \subsection{Stubbornness in binary models}
 % not finished!!
 Playing around with the threshold $\epsilon_i$ of the agents to include a notion of stubbornness, such as one can do for the bounded confidence models, is obviously not possible for binary/discrete models. There are, however, many other ways to include some kind of stubborn people in these models. In the following, two different possibilities will be discussed. One small remark must be made here: previously, the link between stubbornness and extremism was often made and it was often assumed that the more extreme somebodies opinions are, the more persistent that somebody is towards those opinions. In binary models, however, there are only two possible opinions that can be taken on and in that sense it is less useful to talk about extreme and moderate opinions. However, we can still have people that rather keep their own opinion than be convinced by friends to switch to the other opinion.\\
-\newline
+\newpage
+\noindent
 \textbf{Including a stubbornness parameter}\\
 \newline
 One way of creating those stubborn people in the binary model is by giving each node $i$ a stubbornness/resistance parameter $r_i$. This resistance parameter can have values between 0 and 1, $0 \leqslant r_i \leqslant 1$. 
@@ -652,8 +684,7 @@ One way of creating those stubborn people in the binary model is by giving each 
 	\item If $0 < r_i < 1$, the node has some resistance but can still be convinced to switch to the other opinion, even though he/she will be less likely to do so 
 \end{itemize}
 The resistance parameter $r_i$ can be different or the same for all nodes. One can also play around with the fraction of nodes that is stubborn, for example, there can be a fraction of nodes that is completely stubborn ($r = 1$) and a remaining fraction that is not stubborn at all ($r = 0$). Many other possibilities can be found according to how the stubborn people are distributed and according to how stubborn they are made. This makes the model very flexible.\\
-\newpage
-\noindent
+\newline
 \textbf{The threshold model}\\
 \newline
 In the threshold model one introduces a notion of stubbornness by introducing a threshold parameter $T$. This parameter can be either the same for all the nodes ($T$) or can be made individual ($T_i$). The main idea is that nodes can only change their opinion to the other opinion if the fraction of friends with that opinion ($p$) is bigger than $T$ ($p > T$). The idea behind this threshold model is that people are a bit hesitant to change their opinion, but if they have enough friends with the other opinion, they might be convinced of that opinion as well. The more persistent you are, the more friends you need in order to be convinced of another idea. \\
@@ -673,12 +704,30 @@ Note that the above examples are only a handful of the possible ways to include 
 
 % maybe also mention here the model with the threshold!!
 
-\section{The opinion dynamics model used in this thesis}\label{thesisOp}
+%\section{The opinion dynamics model used in this thesis}\label{thesisOp}
 
 
 % https://arxiv.org/pdf/0710.3256.pdf Talk about agent-based models??
 
 % NOTE: maybe make somewhere in thesis link to real-world examples; for example the election system in USA: formation of echo chambers, different states voting for a different party
+\chapter{Materials and methods in this thesis}
+
+The previous two chapters, Chapter \ref{chap2} and \ref{chap3}, gave a broad introduction/overview of networks and opinion dynamics models respectively. In this chapter we will summarize the specific networks and opinion dynamics models that are used in this thesis. \\
+Section \ref{networkmodel} gives an overview of the network models that are used in this thesis. In chapter \ref{chap2}, Section \ref{netModel} we already discussed their main properties; here we will mainly discuss why we use these networks. Which of their properties are of interest in this thesis? What are there benefits and possible shortcomings regarding to the goals of this thesis?\\
+In section \ref{realnetwork}, we will discuss the real-world networks used in this thesis.\\ % + explain where they come from etc?
+Finally, Section \ref{opinionmodel} discusses the opinion dynamics model used in this thesis. Again we will give some focus on possible advantages and disadvantages of the model.
+
+
+\section{Network models}\label{networkmodel}
+\section{Real-world networks}\label{realnetwork}
+\section{Opinion dynamics models}\label{opinionmodel}
+% use pseudo code here??
+
+\chapter{Results}
+
+\chapter{Discussion}
+
+\chapter{Conclusions and outlook}
 
 \newpage
 
