@@ -69,6 +69,8 @@ The past decade, the rise of social media has become undeniable. More and more p
 \addcontentsline{toc}{chapter}{Table of Contents}
 %\listoffigures
 
+% DON'T FORGET: popular text somewhere!!
+
 \mainmatter
 \chapter{Introduction}
 
@@ -681,7 +683,7 @@ One way of creating those stubborn people in the binary model is by giving each 
 \begin{itemize}
 	\item If $r_i = 0$, the node is not stubborn and can be easily convinced of the value of the other opinion (according to which opinion dynamics model that is implemented: majority, probabilistic majority,...)
 	\item If $r_i = 1$, the node is completely stubborn and there is no chance of convincing him/here of the other idea
-	\item If $0 < r_i < 1$, the node has some resistance but can still be convinced to switch to the other opinion, even though he/she will be less likely to do so 
+	\item If $0 < r_i < 1$, the node has some resistance but can still be convinced to switch to the other opinion, even though he/she will be less likely to do so. A uniform random number $f$ between 0 and 1 is drawn. If $f > r_i$, the node will update his/her opinion; if $f \leqslant r_i$, the node is not convinced and keeps his/her own opinion 
 \end{itemize}
 The resistance parameter $r_i$ can be different or the same for all nodes. One can also play around with the fraction of nodes that is stubborn, for example, there can be a fraction of nodes that is completely stubborn ($r = 1$) and a remaining fraction that is not stubborn at all ($r = 0$). Many other possibilities can be found according to how the stubborn people are distributed and according to how stubborn they are made. This makes the model very flexible.\\
 \newline
