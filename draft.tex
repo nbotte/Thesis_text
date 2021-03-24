@@ -1,16 +1,16 @@
-\documentclass[11 pt , letterpaper , twoside , openright]{book}
+\documentclass[11 pt , letterpaper , oneside , openright]{book}
 \renewcommand{\baselinestretch}{1.15} 
 \usepackage[utf8]{inputenc}
 
 \usepackage[english, dutch]{babel} 
 \usepackage{fancyhdr}
-%\pagestyle{empty}
+
+\setlength{\headheight}{13.6pt}
+
 \newenvironment{abstract}%
 {\cleardoublepage\null \vfill\begin{center}\bfseries \abstractname \end{center}}{\vfill\null}
 	
 \usepackage{graphicx}                   % om afbeeldingen in te kunnen laden   
-\usepackage{tikz,tikz-3dplot}                       % om afbeeldingen te kunnen maken
-\usetikzlibrary{calc}                   % meer opties in tikz (oa coordinaten bepalen)
 
 \usepackage{wrapfig}              % meer controle over figuren
 \usepackage{floatrow}
@@ -44,9 +44,11 @@
 \addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}
 }
 
+
 \begin{document}
 \frontmatter
 
+\pagestyle{plain}
 
 \chapter*{Acknowledgments} 
 \addcontentsline{toc}{chapter}{Acknowledgments}
@@ -64,7 +66,6 @@ In this thesis toy models are designed to investigate the interplay between netw
 \selectlanguage{dutch}
 \begin{abstract}
 \addcontentsline{toc}{chapter}{Samenvatting}
-The past decade, the rise of social media has become undeniable. More and more people are getting engaged on some type of social media platform and hence, it is probably not wrong to say that nowadays most of us have, beside our real life, a virtual life on social media. This rapidly increased engagement on social media undoubtedly has many advantages. However, every upside has a downside and social media is no different. This thesis deals with the impact of social media on the formation and evolution of opinions in society. Social media allows for the spread of information at a faster pace and at an unprecedented scale. However, people are still bounded by time- and cognitive constraints. In order to handle the information overflow, social media companies design filtering algorithms that can fine-tune and individualize the information someone is exposed to. 
 % definetely not finished!! --> this will be put in summary! (think about how you want lay-out: chapter of abstract style?)
 \end{abstract}
 
@@ -76,6 +77,13 @@ The past decade, the rise of social media has become undeniable. More and more p
 % DON'T FORGET: popular text somewhere!!
 
 \mainmatter
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\chaptername \ \thechapter}
+\rhead{\rightmark}
+\cfoot{\thepage}
+
 \chapter{Introduction}
 
 % add research question and hypotheses!!
@@ -737,7 +745,15 @@ Finally, Section \ref{opinionmodel} discusses the opinion dynamics model used in
 
 \newpage
 
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\appendixname \ \thechapter}
+\rhead{\rightmark}
+\cfoot{\thepage}
+
 \appendix
+\addappheadtotoc 
+
 \chapter{Network measurements: Derivations}
 \section{Modularity}\label{modul}
 \subsection{Simple form of network modularity}\label{simplemod}
@@ -926,6 +942,8 @@ where the last approximation again holds for $x \gg 1$; we finally obtain \cite{
 
 \newpage
 \backmatter
+
+\pagestyle{plain}
 % bibliography
 \bibliographystyle{abbrv} % can change this style
 \bibliography{references}
