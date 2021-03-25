@@ -110,7 +110,7 @@
 The past decade, the rise of social media has become undeniable. More and more people are getting engaged on some type of social media platform and hence, it is probably not wrong to say that nowadays most of us have, beside our real life, a virtual life on social media. This rapidly increased engagement on social media undoubtedly has many advantages. However, every upside has a downside and social media is no different. This thesis deals with the impact of social media on the formation and evolution of opinions in society.\\ 
 Social media allows for the spread of information at a faster pace and at an unprecedented scale. However, people are still bounded by time- and cognitive constraints. In order to handle the information overflow, social media companies design filtering algorithms that can fine-tune and individualize the information someone is exposed to. This filtering and individualizing of information may have some potentially dangerous downfalls in the sense that people might get trapped in "echo chambers" that confirm their own beliefs. It is important to know the effects of such algorithmic personalization on the appearance and formation of phenomena such as polarization, spread of extremism, formation of echo chambers, etc.\\
 People are, however, more than sheep that thoughtlessly follow their shepherd (contrary to what some books might lead us to believe). They are capable of critical thinking and may be hesitant to change their current opinion. This aspect of potential stubbornness should not be ignored.\\
-In this thesis toy models are designed to investigate the interplay between network structure, filtering algorithms and individual resistance to change in the evolution of two competing opinions. We will investigate which network properties (eg. community structure, clustering coefficient, etc) may enhance or hamper the formation of echo chambers. We will use some basic filtering algorithms to determine their possible effects on the appearance of echo chambers and we will investigate the impact of individual stubbornness. Beside that, we will also pay some attention to the possible ways of distributing the opinions; we will compare randomly distributed cases to cases where entire communities are given one single opinion.
+In this thesis toy models are designed to investigate the interplay between network structure, filtering algorithms and individual resistance to change in the evolution of two competing opinions. We will investigate whether network properties such as community structure and clustering coefficient may enhance or hamper the formation of echo chambers. We will use some basic filtering algorithms to determine their possible effects on the appearance of echo chambers and we will investigate the impact of individual stubbornness. Beside that, we will also pay some attention to the possible ways of distributing the opinions; we will compare randomly distributed cases to cases where entire communities are given one single opinion.
 % definetely not finished!! --> add some type of conclusions or not? talk about running model on real world networks?
 \end{abstract}
 
@@ -149,11 +149,10 @@ It is also known that some people change their opinions more easily than others,
 \newline
 One important feature of opinion dynamics on social media is the use of algorithmic personalization. Social media allow for simultaneous or asynchronous interactions between people without geographical constraints and thus allow for the spread of information at a faster pace and at an unprecedented scale \cite{Perra2019}. People are, however, still bound by temporal and cognitive constraints. In order to assure a more pleasant/convenient experience on their platforms, social media companies use algorithms to order/filter the posts on an individual's time line according to what might be relevant to that individual \cite{Perra2019}. It is of great importance to know the possible effects of these filtering algorithms on the evolution of opinions in the population.\\  
 \newline
-Opinion dynamics models have two important layers. On one hand, we introduce social networks to describe the underlying structure of social interactions; on the other hand, we need appropriate opinion dynamics/formation models to reproduce the opinion dynamics and opinion formation processes found in real life.
-% refer to relevant sections in introduction?
+Opinion dynamics models have two important layers. On one hand, we introduce social networks to describe the underlying structure of social interactions; on the other hand, we need appropriate opinion dynamics/formation models to reproduce the opinion dynamics and opinion formation processes found in real life.\\ Section \ref{complNet} gives an introduction to the first layer, namely that of complex networks. The second layer, the opinion dynamics layer, is introduced in Section \ref{Opinion}. Section \ref{statPhys} introduces concepts such as statistical and social physics. Finally, in Section \ref{goal}, the hypotheses and goals of this thesis are discussed.
 
 
-\section{Complex networks}
+\section{Complex networks}\label{complNet}
 
 Complex networks have become more and more popular for analyzing complex, dynamical systems. They are used in fields such as physics, economics, social sciences, biology, etc \cite{Costa2008}. These different fields are very diverge, but they have at least one common ground: they often deal with a large number of variables/components that interact with each other. In other words, in all these fields one encounters complex systems, systems where it is not possible to predict collective behavior based on the properties of the individual components alone \cite{Mata2020}. Complex systems often display phenomena such as non-linearity, emergence, spontaneous order,... %(maybe check cursus compl en crit?)
 \\
@@ -171,7 +170,7 @@ One of the goals of this thesis is to investigate/determine the role of the unde
 
 % talk about difference between simple networks and complex network??
 
-\section{Opinion dynamics}
+\section{Opinion dynamics}\label{Opinion}
 
 As stated before, the formation of an individual's opinion is the result of the interplay of many factors such as self-reflection, peer pressure, the individual's personality (eg. stubbornness), the information someone is exposed to, etc.  Opinion dynamics models should try to capture these complex processes in a simplified way. Several models have been developed ranging from simple binary models to more complex, continuous approaches \cite{Sirbu2016}.\\
 The basic idea of all opinion dynamics models is that the nodes or agents in a social network have a variable that represents their opinion and that is updated according to some predefined rules. These models are obviously a simplification of real-world opinion dynamics. It is however shown that they do display a lot of aspects of real opinion formation such as agreement, transitions between order (consensus) and disorder (fragmentation), polarization, formation of echo chambers (clusters of people with the same opinion), etc \cite{Sirbu2016}. \\
@@ -188,7 +187,7 @@ Since this thesis deals with the particular case of opinion dynamics on on-line 
 % talk about updating rules used in thesis + concepts as resistance etc. 
 % biblio: https://link.springer.com/article/10.1007/s13538-020-00772-9
 
-\section{Statistical and social physics}
+\section{Statistical and social physics}\label{statPhys}
 
 Another important tool in the study of opinion dynamics/formations in large groups of people is the use of statistical physics. This branch of physics offers a framework that relates microscopic properties of atoms, molecules,... to macroscopic observed behavior and has a wide field of applications inside and outside the world of physics.\\
 The observation that large number of people display collective, `macroscopic' behavior begged for the use of the concepts and insights developed in statistical physics \cite{Sirbu2016}. The application of the theory of statistical physics on social phenomena is referred to as social physics or sociophysics. The `microscopic' constituents are now individual humans who interact with a limited number of other individuals and in that way form complex, `macroscopic' groups such as human societies. These `macroscopic' groups display stunning regularities, transitions from disorder to order, the emergence of consensus, universality, etc \cite{Buchanan2007}. The statistical physics approach of these social systems tries to explain the found regularities at large scale as collective effects of the interactions among these individuals \cite{Sirbu2016}.\\
@@ -200,11 +199,11 @@ However, the use of statistical physics may also offer a way out. In most situat
 
 % talk somewhere about rise of social physics, the need to use statistical physics (because of macroscopic phenomena as scale invariance, emergence, polarization,...) --> partly done?
 
-\section{This thesis: hypotheses and goals}
+\section{This thesis: hypotheses and goals}\label{goal}
 
 As said before, this thesis will try to investigate the interplay between the social network structure and the individual resistance to change in the evolution of two competing opinions. On one hand, we want to determine the influence of different network structures on the formation and evolution of opinions, whereas, on the other hand, we would like to investigate the effect of stubborn agents in the network. Since this thesis deals with opinion dynamics on social media, the effect of filtering algorithms must also be included.\\ 
 \newline
-In one of their previous papers (\textit{"Modelling opinion dynamics in the age of algorithmic personalization"}, see reference \cite{Perra2019}) prof. Nicola Perra and prof. Luis E.C. Rocha investigated both the effect of different filtering algorithms and different network topologies on the formation and evolution of two competing opinions. They also considered the effect of nudging (meaning that one opinion is pushed to all agents in the network).\\ Their main findings were that the algorithmic filtering could not break the status quo when the prevalence of opinions was equally distributed in the population and that topological correlations (such as high clustering coefficient) could result in the formation of echo chambers \cite{Perra2019}. On the other hand, a more heterogeneous contact pattern could hamper this formation of echo chambers \cite{Perra2019}. If the two opinions were, initially, not equally distributed, one of the filtering algorithms (namely semantic filtering) caused a further increase in the predominant opinion \cite{Perra2019}. In the case of nudging, they found that the opinions in the population moved to the nudged opinion relatively fast, even in the case of small nudging.\\
+In one of their previous papers (\textit{"Modelling opinion dynamics in the age of algorithmic personalization"}, see reference \cite{Perra2019}) prof. Nicola Perra and prof. Luis E.C. Rocha investigated both the effect of different filtering algorithms and different network topologies on the formation and evolution of two competing opinions. They also considered the effect of nudging (meaning that one opinion is pushed to all agents in the network).\\ Their main findings were that the algorithmic filtering could not break the status quo when the prevalence of opinions was equally distributed in the population and that topological correlations (such as high clustering coefficient) could result in the formation of echo chambers \cite{Perra2019}. On the other hand, a more heterogeneous contact pattern could hamper this formation of echo chambers \cite{Perra2019}. If the two opinions were, initially, not equally distributed, one of the filtering algorithms (namely semantic filtering) caused a further increase in the predominant opinion \cite{Perra2019}. In the case of nudging, they found that the opinions in the population moved to the nudged opinion relatively fast, even in the case of small nudging \cite{Perra2019}.\\
 They, however, did not investigate the effect of stubborn agents in the network, nor did they investigate networks with a community structure. This thesis will build on their model and incorporate these new features. We will compare networks that have a community structure and relatively low clustering to networks without community structure, but with a high clustering coefficient (a detailed description of concepts like clustering coefficient and community structure will be given in Chapter \ref{chap2}, Section \ref{netDef}). We want to investigate whether networks with community structure are able to form echo chambers, such as one can observe in networks with a high clustering coefficient and, if so, if one can, for example, observe convergence to one opinion inside the communities. We will also pay some attention to networks that have both a high clustering coefficient and a community structure. Can we observe echo chambers in those kinds of networks? If yes, can we determine which property might be the main driver for the formation of echo chambers: high clustering or community structure? \\
 % ALSO mention real-world network??
 \newline
@@ -550,7 +549,7 @@ An extension that we are going to explore a bit deeper is the stochastic Watts-S
 \textbf{The stochastic Watts-Strogatz block model (SBM-WS)}\\
 \newline
 As said before, the stochastic block model is a very flexible model and there are many different extensions. One extension that is used in this thesis is a stochastic block model that uses the Watts-Strogatz model instead of the Erd\H{o}s-R\'{e}nyi model to construct the constituent communities. In this way, we obtain a version of the stochastic block model that has both a community structure and a high clustering coefficient.\\
-The construction of the model is very similar as for the regular stochastic block model. For a SBM-WS with $n_c$ communities of specified sizes, we first construct $n_c$ Watts-Strogatz networks (for each constituent Watts-Strogatz network the rewire probability $\beta$ and the mean degree $K$ are specified), then edges are (with some predefined probability) randomly added between the different Watts-Strogatz communities. The result is a network that can be tuned to have both a community structure and a high clustering coefficient. This is different from the regular stochastic block model that can only account for a community structure and lacks a high clustering.
+The construction of the model is very similar to that of the regular stochastic block model. For a SBM-WS with $n_c$ communities of specified sizes, we first construct $n_c$ Watts-Strogatz networks (for each constituent Watts-Strogatz network the rewire probability $\beta$ and the mean degree $K$ are specified), then edges are (with some predefined probability) randomly added between the different Watts-Strogatz communities. The result is a network that can be tuned to have both a community structure and a high clustering coefficient. This is different from the regular stochastic block model that can only account for a community structure and lacks a high clustering.
 % talk about community sizes from power law??
 % talk about extention with WS as constituents instead of ER
 % NOT FINISHED
@@ -783,10 +782,45 @@ Note that the above examples are only a handful of the possible ways to include 
 The previous two chapters, Chapter \ref{chap2} and \ref{chap3}, gave a broad introduction/overview of networks and opinion dynamics models respectively. In this chapter we will summarize the specific networks and opinion dynamics models that are used in this thesis. \\
 Section \ref{networkmodel} gives an overview of the network models that are used in this thesis. In chapter \ref{chap2}, Section \ref{netModel} we already discussed their main properties; here we will mainly discuss why we use these networks. Which of their properties are of interest in this thesis? What are there benefits and possible shortcomings regarding to the goals of this thesis?\\
 In section \ref{realnetwork}, we will discuss the real-world networks used in this thesis.\\ % + explain where they come from etc?
-Finally, Section \ref{opinionmodel} discusses the opinion dynamics model used in this thesis. Again we will give some focus on possible advantages and disadvantages of the model.
+Finally, Section \ref{opinionmodel} discusses the opinion dynamics model that is implemented in this thesis. Again we will give some focus on possible advantages and disadvantages of the model.
 
 
 \section{Network models}\label{networkmodel}
+
+This thesis uses three main network models, namely
+\begin{itemize}
+	\item The Erd\H{o}s-R\'{e}nyi model
+	\item The Watts-Strogatz model
+	\item The stochastic block model, of which two types are implemented
+		\begin{itemize}
+			\item[\tiny$\bullet$] The regular stochastic block model (SBM)
+			\item[\tiny$\bullet$] The stochastic Watts-Strogatz block model (SBM-WS)
+		\end{itemize}
+\end{itemize}
+Each of these networks serve specific goals which will shortly be discussed in the following paragraphs.\\
+\newline
+\textbf{The Erd\H{o}s-R\'{e}nyi model}\\
+\newline
+The Erd\H{o}s-R\'{e}nyi model is mainly used as a benchmark model. In this thesis we focus intensively on two network features that may impact the formation of echo chambers, namely a high clustering coefficient and a community structure. It is therefore necessary to have a model that lacks both of these features to compare the results with. The Erd\H{o}s-R\'{e}nyi model is one of the most simple random network models that doesn't display both of these features and is hence the perfect comparison model. \\
+It is expected that the random nature of the model and the lack of a high clustering and a community structure will result in the absence of echo chambers.\\
+The Erd\H{o}s-R\'{e}nyi model is also used in the regular stochastic block model to construct the constituent communities.\\
+% talk about expected behaviour?? 
+\newline
+\textbf{The Watts-Strogatz model}\\
+\newline
+The Watts-Strogatz model is used in this thesis as a general model to investigate the effect of high clustering on the evolution of opinions and the formation of echo chambers.\\
+In the paper \textit{"Modelling opinion dynamics in the age of algorithmic personalization"} Prof. Perra and Prof. Rocha already showed that a high clustering coefficient enhances the formation of echo chambers \cite{Perra2019}. Here, we will use the model to investigate the interplay between high clustering and the presence of stubborn people and, on the other hand, we will use it as a comparison for networks that posses a community structure without having a high clustering coefficient. We will investigate whether a community structure behaves similar to a high clustering regarding the appearance of echo chambers.\\
+Beside the above, the Watts-Strogatz model is also used to build the constituent communities in the stochastic Watts-Strogatz block model.\\
+\newline
+\textbf{The stochastic block model}\\
+\newline
+One of the main features of the stochastic block model is the ability to generate networks with a community structure. We will therefore use this model to investigate the impact of community structure/modularity on the evolution of opinions and the formation of echo chambers.\\
+It is expected that a community structure will enhance the formation of echo chambers compared to the random network case. The question remains, however, whether the influence of a community structure on the formation of echo chambers is of the same caliber as that of a high clustering.\\
+The stochastic Watts-Strogatz block model is used as a model that has both a high clustering and a community structure. We will check if the combination of both features displays any difference in the formation of echo chambers compared to having only a single feature (either community structure or high clustering).\\
+\newline
+All the above models have a homogeneous degree distribution. In this thesis, we didn't focus on network models which generate networks with a heterogeneous degree distribution such as the Barab\'{a}si-Albert model. It might, however, be an interesting extension to investigate such types of models as well.
+% NOT FINISHED: talk about shortcommings --> models, neither of them describes real networks completely accurate, etc
+
 \section{Real-world networks}\label{realnetwork}
 \section{Opinion dynamics models}\label{opinionmodel}
 % use pseudo code here??
