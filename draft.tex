@@ -2,6 +2,8 @@
 \renewcommand{\baselinestretch}{1.15} 
 \usepackage[utf8]{inputenc}
 
+\usepackage[dvipsnames]{xcolor}
+
 \usepackage[english, dutch]{babel} 
 \usepackage{fancyhdr}
 
@@ -35,18 +37,67 @@
 \usepackage{algorithm}
 \usepackage{physics}
 \usepackage{interval}
-\usepackage[colorlinks,citecolor=red,urlcolor=blue,bookmarks=false,hypertexnames=true]{hyperref} 
+\usepackage[colorlinks,citecolor=NavyBlue,linkcolor=NavyBlue% 
+,urlcolor=NavyBlue,linktocpage=true,bookmarks=false,hypertexnames=true]{hyperref} 
 \usepackage[noend]{algpseudocode}
 \usepackage{subcaption}
 \usepackage{xfrac}
 \floatname{algorithm}{Algoritme}
 
+
 \addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}
 }
 
+\usepackage{sectsty}
+
+\chapternumberfont{\color{NavyBlue}}
+\chaptertitlefont{\color{black}\sectionrule{3ex}{3pt}{-1ex}{1pt}}
 
 \begin{document}
+
 \frontmatter
+\selectlanguage{english}
+
+\begin{titlepage}
+\begin{center}
+
+\vspace*{.06\textheight}
+{\scshape\LARGE \textcolor{NavyBlue}{Ghent University}\par}\vspace{1.5cm} % University name
+\textsc{\Large Master Thesis}\\[0.5cm] % Thesis type
+
+\hrule % Horizontal line
+\vspace{0.4cm} 
+{\huge \bfseries Opinion dynamics on social media with stubborn actors\par}\vspace{0.4cm} % Thesis title
+\hrule % Horizontal line
+\vspace{1.5cm} 
+ 
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Author:}\\
+\textcolor{NavyBlue}{Nina \textsc{Botte}} % Author name - remove the \href bracket to remove the link
+\end{flushleft}
+\end{minipage}
+\begin{minipage}[t]{0.4\textwidth}
+\begin{flushright} \large
+\emph{Supervisor:} \\
+\textcolor{NavyBlue}{Prof. Dr. Luis E.C. \textsc{Rocha}} % Supervisor name - remove the \href bracket to remove the link  
+\end{flushright}
+\end{minipage}\\[3cm]
+ 
+\vfill
+
+\large \textit{A thesis submitted in partial fulfillment of the requirements\\ for the degree of Master of Science in Physics and Astronomy}\\[0.3cm] % University requirement text
+\textit{in the}\\[0.4cm]
+\textcolor{NavyBlue}{Faculty of \textsc{Science}}\\\textcolor{NavyBlue}{Department of \textsc{Physics and Astronomy}}\\[2cm] % Research group name and department name
+ 
+\vfill
+
+{\large \today}\\[4cm] % Date
+%\includegraphics[scale=0.7]{ugent_logo.png} % University/department logo - uncomment to place it
+ 
+\vfill
+\end{center}
+\end{titlepage}
 
 \pagestyle{plain}
 
@@ -78,9 +129,10 @@ In this thesis toy models are designed to investigate the interplay between netw
 
 \mainmatter
 
+
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{\chaptername \ \thechapter}
+\lhead{\textcolor{NavyBlue}{\chaptername} \ \textcolor{NavyBlue}{\thechapter}}
 \rhead{\rightmark}
 \cfoot{\thepage}
 
@@ -107,6 +159,7 @@ Complex networks have become more and more popular for analyzing complex, dynami
 \\
 \newline
 One of the tools to deal with these complex systems and to give us more insight in the possible underlying structures are complex networks. A network, also often called a graph (both terms will be used in this thesis), is a structure composed of nodes or vertices and a set of links or edges that indicate the interactions between the nodes (in this thesis terms like agent, actor, user, individual, people, etc will be interchangebly used to denote the nodes; edges will usually just be called edges) \cite{Mata2020}.\\
+\newline
 Representing/modeling a complex system as a graph makes the system appear more simple and tractable, while it still includes the non-linearity of these systems. One can find the language to describe networks in mathematical graph theory. However, complex systems in real-life situations often deal with a huge number of components, so the use of statistical and high-performance computing tools is inevitable \cite{Mata2020}. One could argue that the study of complex networks lies somewhere at the intersection of mathematical graph theory and statistical physics \cite{F.Costa2007}.\\
 The advantage of working with network models is that they reduce the level of complexity encountered in the real world, so that one can treat these systems in a more practical way. However, we still want our models to display properties similar to the ones seen in real systems \cite{Mata2020}. Since many real systems are not static but evolve in time, this means that we don't only need to deal with static networks but also with temporal networks. Temporal networks are networks where the edges are not always active, but instead become active for some periods of time \cite{Holme2012}. In temporal networks time becomes an explicit element in the network representation \cite{Holme2012}. Static networks have been widely studied and are often convenient for their analytic tractability, whereas temporal networks are, in some cases, more realistic \cite{Mata2020}.\\
 Some other important concepts in network theory are the degree distribution, clustering/community structure, connectivity, etc. These concepts will be explained in depth in Chapter \ref{chap2}, Section \ref{netDef}, but let us already anticipate a bit on the case of social networks. It is found that many real-life social systems have a power-law degree distribution \cite{Muchnik2013}. This heterogeneous or scale free degree distribution represents one of the three general properties of social networks. The other two are short distances and high clustering. These two are also referred to as "small world phenomenon" (note that in the literature the term "small world" sometimes only refers to the property of short distances, however, in this thesis, we will use it to indicate both a high clustering and short distances) \cite{Muchnik2013}. Ideally, our theoretical network should exhibit these three properties. Some theoretical networks, that are thoroughly studied, do not possess all of these three properties. However, they might still be used, because of their simplicity and ability to produce analytic results. When using these models one must always bear in mind their limitations to reproduce some properties encountered in real social systems. \\
@@ -354,6 +407,7 @@ The derivation of this formula and thus of Eq. (\ref{Qc}) can be found in Append
 \begin{itemize}
 	\item The higher the value of $Q$ is for a certain partition, the better is the corresponding community structure. This idea is used in community detection algorithms, where modularity is maximized in order to find the optimal community structure.
 	\item A modularity $Q$ equal to zero corresponds to the situation where all nodes are put in the same community, this is if the whole network is put into a single community. Then the two terms in Eq. (\ref{mod}) become equal and $Q$ vanishes.
+	\newline
 	\item If every node is put into a separate community, the first term in Eq. (\ref{mod}) vanishes and we are left with $n_c$ negative terms. Hence, this situation corresponds to a negative modularity.
 \end{itemize}
 As said before, modularity is often used in community detection algorithms. It is thus important to be aware of the limitations of modularity. One of the biggest shortcomings of modularity maximization as community detection is its resolution limit. Modularity maximization forces small communities into larger ones \cite{Albert2016}. If two communities $A$ and $B$ are merged, the modularity changes by \cite{Albert2016}
@@ -747,7 +801,7 @@ Finally, Section \ref{opinionmodel} discusses the opinion dynamics model used in
 
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{\appendixname \ \thechapter}
+\lhead{\textcolor{NavyBlue}{\appendixname} \ \textcolor{NavyBlue}{\thechapter}}
 \rhead{\rightmark}
 \cfoot{\thepage}
 
