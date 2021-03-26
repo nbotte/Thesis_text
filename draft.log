@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  25 MAR 2021 14:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  26 MAR 2021 14:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2875,10 +2875,10 @@ Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1039.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1039.
  ) 
 Here is how much of TeX's memory you used:
- 24052 strings out of 492990
- 413222 string characters out of 6135004
- 509962 words of memory out of 5000000
- 27013 multiletter control sequences out of 15000+600000
+ 24054 strings out of 492990
+ 413245 string characters out of 6135004
+ 509993 words of memory out of 5000000
+ 27014 multiletter control sequences out of 15000+600000
  630275 words of font info for 93 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,19n,43p,10402b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2901,10 +2901,10 @@ r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
 f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (69 pages, 530260 bytes).
+Output written on draft.pdf (69 pages, 530838 bytes).
 PDF statistics:
- 1036 PDF objects out of 1200 (max. 8388607)
- 940 compressed objects within 10 object streams
- 258 named destinations out of 1000 (max. 500000)
+ 1041 PDF objects out of 1200 (max. 8388607)
+ 945 compressed objects within 10 object streams
+ 259 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
