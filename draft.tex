@@ -117,7 +117,7 @@ In this thesis toy models are designed to investigate the interplay between netw
 \selectlanguage{dutch}
 \begin{abstract}
 \addcontentsline{toc}{chapter}{Samenvatting}
-% definetely not finished!! --> this will be put in summary! (think about how you want lay-out: chapter of abstract style?)
+% definetely not finished!!
 \end{abstract}
 
 \selectlanguage{english}
@@ -139,7 +139,6 @@ In this thesis toy models are designed to investigate the interplay between netw
 \chapter{Introduction}
 
 % add research question and hypotheses!!
-% also talk about algorithmic personalisation!!
 % ADD MORE REFERENCES (previous research, contextualization etc)
 
 The past decade social media has become ever more important in our daily lives. Nowadays most of us have, beside a real-world life, a virtual life on social media. This increased engagement on social media may have a huge impact on the formation of opinions, not only on the individual scale, but also on a broader, societal scale. \\
@@ -163,10 +162,8 @@ Representing/modeling a complex system as a graph makes the system appear more s
 The advantage of working with network models is that they reduce the level of complexity encountered in the real world, so that one can treat these systems in a more practical way. However, we still want our models to display properties similar to the ones seen in real systems \cite{Mata2020}. Since many real systems are not static but evolve in time, this means that we don't only need to deal with static networks but also with temporal networks. Temporal networks are networks where the edges are not always active, but instead become active for some periods of time \cite{Holme2012}. In temporal networks time becomes an explicit element in the network representation \cite{Holme2012}. Static networks have been widely studied and are often convenient for their analytic tractability, whereas temporal networks are, in some cases, more realistic \cite{Mata2020}.\\
 Some other important concepts in network theory are the degree distribution, clustering/community structure, connectivity, etc. These concepts will be explained in depth in Chapter \ref{chap2}, Section \ref{netDef}, but let us already anticipate a bit on the case of social networks. It is found that many real-life social systems have a power-law degree distribution \cite{Muchnik2013}. This heterogeneous or scale-free degree distribution represents one of the three general properties of social networks. The other two are short distances and high clustering. These two are also referred to as "small world phenomenon" (note that in the literature the term "small world" sometimes only refers to the property of short distances, however, in this thesis, we will use it to indicate both a high clustering and short distances) \cite{Muchnik2013}. Ideally, our theoretical network should exhibit these three properties. Some theoretical networks, that are thoroughly studied, do not possess all of these three properties. However, they might still be used, because of their simplicity and ability to produce analytic results. When using these models one must always bear in mind their limitations to reproduce some properties encountered in real social systems. \\
 \newline
-One of the goals of this thesis is to investigate/determine the role of the underlying network structure on the formation and dynamics of opinions in the system. Some examples of theoretical network models used in this thesis are the Erd\H{o}s-R\'{e}nyi network, the stochastic block model, the Watts-Strogatz model, etc. These will be explained thoroughly in Chapter \ref{chap2}, Section \ref{netModel}. %references to chapter 2 need to be adapted
+One of the goals of this thesis is to investigate/determine the role of the underlying network structure on the formation and dynamics of opinions in the system. Some examples of theoretical network models used in this thesis are the Erd\H{o}s-R\'{e}nyi network, the stochastic block model, the Watts-Strogatz model, etc. These will be explained thoroughly in Chapter \ref{chap2}, Section \ref{netModel}. 
 % to do: read links 19, 21, 22, 23, 24 of https://arxiv.org/pdf/0711.3199.pdf
-
-% maybe also talk about degree distributions (poisson, power law), power law behavior of many real systems, clustering + maybe talk about networks that will be used in this thesis?
 
 % talk about difference between simple networks and complex network??
 
@@ -181,10 +178,7 @@ The rules that determine how an agent updates his or her opinion can include man
 One can also include a resistance parameter that determines the hesitation of an agent to change to a new opinion and/or a parameter that determines the influence of an agent on others. Furthermore, the agents can have a parameter that determines whether they are active or not. The introduction of stubborn people will be discussed in Chapter \ref{chap3}, Section \ref{stubb}; the activation mechanism of nodes is discussed in Chapter \ref{chap3}, Section \ref{actMech}.\\
 \newline
 Since this thesis deals with the particular case of opinion dynamics on on-line social platforms, it is important to define/set up different filtering algorithms. The filtering algorithms that real social media companies use, are corporate secrets, but we know that there are three main principles of content curation: popularity, semantic and collaborative filtering \cite{Perra2019}. Popularity filtering refers to the practice of promoting content that is popular across the platform; semantic filtering means that post similar to previous consumed posts are recommended and collaborative filtering suggests posts that are similar to the ones our friends consume \cite{Perra2019}. In Chapter \ref{chap3}, Section \ref{filter} a detailed description of the filtering algorithms used in  this thesis will be given.
-% add reference to chapter 2
 
-% not finished, describe different models
-% talk about updating rules used in thesis + concepts as resistance etc. 
 % biblio: https://link.springer.com/article/10.1007/s13538-020-00772-9
 
 \section{Statistical and social physics}\label{statPhys}
@@ -771,10 +765,7 @@ If $T = 0$, this model reduces to the pure majority model described in Section \
 % Talk about probabilistic implementation? + talk about fact that nothing happens for T < 0.5???
 \newline
 Note that the above examples are only a handful of the possible ways to include some notion of stubbornness in the model under study, many more exist or can be invented.
- 
-% talk about epsilon parameter in deffuant model to implement stubbornness + talk about model thesis, binary so no real extreme/moderate distinction
 
-% maybe also mention here the model with the threshold!!
 
 %\section{The opinion dynamics model used in this thesis}\label{thesisOp}
 
@@ -829,7 +820,7 @@ The above models obviously have their added value and benefits. One of their mos
 This plus side is, however, also one of the possible downsides. Real networks aren't simple networks with single, isolated characteristics, but are instead complex networks where many different characteristics and topologies may each play a role. In other words, network models may lack many features of real-world networks. It is thus always a bit tricky, and sometimes even incorrect, to extrapolate the results that are obtained by using network models to real-world networks.\\
 The fact that all the above models have a homogeneous degree distribution may also be a drawback, since most real-world networks have a heterogeneous degree distribution.\\
 The conclusion of this section is that all the network models used in this thesis serve a goal and have specific topologies that are of interest in this thesis. But, it must always be kept in mind that, as the name itself already says, these models are just models of the real world. Results that are obtained from them should not be thoughtlessly extrapolated to real-world networks.
-% NOT FINISHED: talk about shortcommings --> models, neither of them describes real networks completely accurate, etc
+
 
 \section{Real-world networks}\label{realnetwork}
 \section{Opinion dynamics models}\label{opinionmodel}
