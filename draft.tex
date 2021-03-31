@@ -18,7 +18,8 @@
 \usepackage{floatrow}
 \usepackage[format=hang]{caption}
 \usepackage{listings}                   % voor mooie code
-\usepackage{amsmath, amssymb, amsfonts} % om wiskunde te typen
+\usepackage[fleqn]{amsmath} 
+\usepackage{amssymb, amsfonts} % om wiskunde te typen
 \usepackage{scalerel}                   % om symbolen te schalen
 \let\proof\relax
 \let\endproof\relax
@@ -62,6 +63,7 @@
 }
 
 \usepackage{emptypage}
+
 
 \begin{document}
 
@@ -336,7 +338,9 @@ The diameter $diam(G)$ of a network $G$ is the maximum distance between any pair
 \newpage
 \subsection{Clustering coefficient and transitivity}
 
-The clustering coefficient is another important measure of network topology. It is a measure for the number of triangles in a network and determines the connectivity in the neighborhood of a node $i$: if a node $i$ has a high clustering coefficient, its neighbors are likely to be directly connected to each other \cite{Li2017}. \\Here a triangle is defined as a loop of length three, this is a sequence of nodes $x, y, z, x$ such that $\{x, y\}, \{y, z\}$ and $\{z, x\}$ are edges of the network. The clustering coefficient is thus a way to measure the degree to which nodes in a network tend to cluster \cite{Li2017}. The local clustering coefficient of a node $i$ is defined as
+The clustering coefficient is another important measure of network topology. It is a measure for the number of triangles in a network and determines the connectivity in the neighborhood of a node $i$: if a node $i$ has a high clustering coefficient, its neighbors are likely to be directly connected to each other \cite{Li2017}. \\
+\newline
+A triangle is defined as a loop of length three, this is a sequence of nodes $x, y, z, x$ such that $\{x, y\}, \{y, z\}$ and $\{z, x\}$ are edges of the network. The clustering coefficient is thus a way to measure the degree to which nodes in a network tend to cluster \cite{Li2017}. The local clustering coefficient of a node $i$ is defined as
 \begin{equation}\label{clus}
 	C_i = \frac{2n_i}{k_i(k_i-1)}
 \end{equation}
@@ -351,7 +355,10 @@ A measure that is closely related to the clustering coefficient is the transitiv
 \begin{equation}\label{globalTrans}
 	T = \frac{3 \times \text{number of triangles in the network}}{\text{number of connected triples of nodes in the network}}
 \end{equation}
-A connected triple is defined as a set of three nodes with at least two edges between them, so that each node can be reached from the other two (either directly or indirectly). The factor three arises from the fact that each triangle contributes to three different connected triples in the network: one centered at each node in the triangle \cite{F.Costa2007}. Let us denote the number of triangles as $N_{\Delta}$ and the number of connected triples as $N_3$. These two numbers can be obtained from the adjacency matrix in the following way \cite{F.Costa2007}
+\newline
+A connected triple is defined as a set of three nodes with at least two edges between them, so that each node can be reached from the other two (either directly or indirectly). The factor three arises from the fact that each triangle contributes to three different connected triples in the network: one centered at each node in the triangle \cite{F.Costa2007}. \\
+\newline
+Let us denote the number of triangles as $N_{\Delta}$ and the number of connected triples as $N_3$. These two numbers can be obtained from the adjacency matrix in the following way \cite{F.Costa2007}
 \begin{align}
 	N_{\Delta} &= \sum_{k > j > i} A_{ij}A_{ik}A_{jk} \\
 	N_3 &= \sum_{k > j > i} (A_{ij}A_{ik} + A_{ji}A_{jk} + A_{ki}A_{kj})
@@ -376,7 +383,8 @@ Network communities are another feature that (complex) networks may posses. A co
 \textbf{Maximum cliques}\\
 \newline
 A clique is a complete subgraph, where a complete subgraph is defined as a set of nodes of the network where each node in the set is directly connected to all the others nodes in the same set \cite{Albert2016}. A community based on this definition would then be the largest clique in the network. This definition of community might, however, be too restrictive and, beside that, large cliques don't appear very frequent in networks \cite{Albert2016}.\\   
-\newline
+\newpage
+\noindent
 \textbf{Strong communities}\\
 \newline
 A strong community is defined such that each node inside the community has more edges to other nodes inside the same community than to nodes outside the community \cite{Albert2016}. Let us denote a community as $C$ and let $i$ be a node inside the community $C$. If we define the internal degree $k_i^{\textrm{int}}(C)$ as the number of edges that connect node $i$ with other nodes in $C$ and the external degree $k_i^{\textrm{ext}}(C)$ as the number of edges that connect node $i$ with nodes outside $C$, then we have the following condition for $C$ to be a strong community \cite{Albert2016}
@@ -485,15 +493,15 @@ A heuristic derivation of the diameter of a random network goes as follows. Cons
 	\item ...
 	\item $\left<k\right>^d$ nodes at distance $d$
 \end{itemize}
-The number of nodes at a distance $d$ cannot exceed the number of nodes $N$ in the network. We thus obtain the following equation from which the maximum distance or diameter $d_{max}$ can be obtained
+The number of nodes at a distance $d$ cannot exceed the number of nodes $N$ in the network. We thus obtain the following equation from which the maximum distance or diameter $d_{\textrm{max}}$ can be obtained
 \begin{equation}
-	N \approx \left<k\right>^{d_{max}}
+	N \approx \left<k\right>^{d_{\textrm{max}}}
 \end{equation}
 or 
 \begin{equation}\label{diameter}
-	d_{max} \approx \frac{\ln{N}}{\ln{\left<k\right>}}
+	d_{\textrm{max}} \approx \frac{\ln{N}}{\ln{\left<k\right>}}
 \end{equation}
-A more precise calculation can be found in Appendix \ref{ER}, Section \ref{ERdist}. Equation (\ref{diameter}) might, however, be a better approximation to the average distance $\left<d\right>$ between two randomly chosen nodes \cite{Albert2014}. This is because $d_{max}$ is often dominated by a few extreme paths, where $\left<d\right>$ instead is averaged over all node pairs and thus suppresses these fluctuations \cite{Albert2014}. Hence, the average distance of a random network is defined by \cite{Albert2014}
+A more precise calculation can be found in Appendix \ref{ER}, Section \ref{ERdist}. Equation (\ref{diameter}) might, however, be a better approximation to the average distance $\left<d\right>$ between two randomly chosen nodes \cite{Albert2014}. This is because $d_{\textrm{max}}$ is often dominated by a few extreme paths, where $\left<d\right>$ instead is averaged over all node pairs and thus suppresses these fluctuations \cite{Albert2014}. Hence, the average distance of a random network is defined by \cite{Albert2014}
 \begin{equation}\label{d}
 	\left<d\right> \approx \frac{\ln{N}}{\ln{\left<k\right>}}
 \end{equation}
@@ -983,15 +991,15 @@ The expected number of nodes at a distance $d$ from a starting node is \cite{Alb
 \end{equation}
 $N(d)$ cannot exceed the number of nodes $N$ in the network. The maximum distance or diameter $d_{max}$ of the network can thus be found by setting \cite{Albert2014}
 \begin{equation}
-	N(d_{max}) \approx N
+	N(d_{\textrm{max}}) \approx N
 \end{equation}
 If $\left<k\right> \gg 1$, we can neglect the $-1$ terms in Eq. (\ref{dist}), which gives \cite{Albert2014}
 \begin{equation}
-	N \approx \left<k\right>^{d_{max}}
+	N \approx \left<k\right>^{d_{\textrm{max}}}
 \end{equation}
 and thus the diameter of a random network becomes \cite{Albert2014}
 \begin{equation}
-	d_{max} \approx \frac{\ln{N}}{\ln{\left<k\right>}}
+	d_{\textrm{max}} \approx \frac{\ln{N}}{\ln{\left<k\right>}}
 \end{equation} 
 
 \section{The Watts-Strogatz model}\label{WS}
@@ -1010,7 +1018,7 @@ The number of connected triples per node is given by choosing two nodes out of t
 \end{equation}
 Since every node in the regular ring lattice is identical, we can easily find the total number of triangles and connected triples in the network by multiplying Eq. (\ref{triangle}) and Eq. (\ref{triple}) with the number of nodes $N$. We then obtain the final result for the clustering coefficient in the regular ring lattice \cite{Pele2015}
 \begin{equation}
-	\bar{C} = \frac{3\cdot N \frac{1}{4} K \bigg(\frac{K}{2} - 1 \bigg)}{N \frac{1}{2} K (K-1)} = \frac{3(K-2)}{4(K-1)}
+	\left<C\right> = \frac{3\cdot N \frac{1}{4} K \bigg(\frac{K}{2} - 1 \bigg)}{N \frac{1}{2} K (K-1)} = \frac{3(K-2)}{4(K-1)}
 \end{equation}
 \newline
 \textbf{Average distance}\\
