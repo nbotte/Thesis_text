@@ -237,11 +237,11 @@ On the other hand, we want to determine the impact of stubborn agents on the for
 
 Networks or graphs are conceptually very simple and flexible objects that are made of a set of nodes/vertices $V$ and a set of edges/links $E$, where the elements of $E$ determine connections between elements of $V$ \cite{Costa2018}
 \begin{equation}
-	E \subseteq \{\{x, y\}| x, y \in V \}
+	E \subseteq \{\{x, y\}| x, y \in V \}\ .
 \end{equation}
 If self-loops are not allowed, we need the following condition on the elements of $E$
 \begin{equation}
-	E \subseteq \{\{x, y\}| x, y \in V \text{and\ } x \neq y \}
+	E \subseteq \{\{x, y\}| x, y \in V \text{and\ } x \neq y \} \ .
 \end{equation}
 A graph with no self-loops is a simple graph. The nodes $x$ and $y$ of an edge $\{x, y\}$ are called the endpoints of the edge. It is possible that nodes are not joined by any edge, such nodes are called isolated or disconnected. If two or more edges have the same pair of endpoints, the graph is called a multi-graph. This thesis is not concerned with multi-graphs, nor are self-loops allowed. Graphs in which the edges have an orientation are called directed graphs. If the edges have weights $w_{ij}$, one speaks of a weighted graph.\\
 A graph can be represented in different ways. One of the most common ways is by use of the adjacency matrix.\\
@@ -252,16 +252,16 @@ The adjacency matrix \textbf{A} is a $N \times N$ matrix (for a graph with $N$ n
 \begin{equation}
 	A_{ij} = 
 	\begin{cases}
-		1 & \text{if nodes $i$ and $j$ are connected}\\
-		0 & \text{otherwise}
+		1 & \text{if nodes $i$ and $j$ are connected},\\
+		0 & \text{otherwise}.
 	\end{cases}
 \end{equation}
 For a simple, undirected graph, the adjacency matrix is symmetric ($A_{ij} = A_{ji}$) with zeros on the diagonal ($A_{ii} = 0$). Directed graphs can have asymmetric adjacency matrices. If we are dealing with weighted graphs, the elements of the adjacency matrix are the weights $w_{ij}$ of the edges
 \begin{equation}
 	A_{ij} = 
 	\begin{cases}
-		w_{ij} & \text{if nodes $i$ and $j$ are connected}\\
-		0 & \text{otherwise}
+		w_{ij} & \text{if nodes $i$ and $j$ are connected},\\
+		0 & \text{otherwise},
 	\end{cases}
 \end{equation}
 with, generally, $0 \leqslant w_{ij} \leqslant 1$ \cite{Mata2020}. \\
@@ -269,19 +269,19 @@ with, generally, $0 \leqslant w_{ij} \leqslant 1$ \cite{Mata2020}. \\
 
 The adjacency matrix contains a lot of information such as the degree of a node. The degree $k_i$ of a node $i$ is the number of edges attached to node $i$ or, in others words, $k_i$ represents the number of nearest neighbors of node $i$. The degree can be easily obtained from the adjacency matrix \cite{Mata2020}
 \begin{equation}
-	k_i = \sum_{j=1}^N A_{ij}
+	k_i = \sum_{j=1}^N A_{ij}\ .
 \end{equation}
 In the case of a directed graph one can differentiate between the number of incoming edges $k_i^{\textrm{in}}$ and the number of outgoing edges $k_i^{\textrm{out}}$ of node $i$. These are called the in-degree and out-degree respectively and are defined as \cite{Mata2020}
-\begin{equation}
-	k_i^{\text{in}} = \sum_{j=1}^N A_{ji} \quad \text{and} \quad k_i^{\text{out}} = \sum_{j=1}^N A_{ij}
-\end{equation}
+\begin{align}
+	k_i^{\text{in}} = \sum_{j=1}^N A_{ji} \ , && k_i^{\text{out}} = \sum_{j=1}^N A_{ij} \ .
+\end{align}
 The total degree of node $i$ is then $k_i = k_i^{\text{in}} + k_i^{\text{out}}$. For weighted graphs the degree is easily generalized to the weighted degree $s_i$, often called strength \cite{Ioannis2007}
 \begin{equation}
-	s_i = \sum_{j=1}^N w_{ij}
+	s_i = \sum_{j=1}^N w_{ij} \ .
 \end{equation}
 From the degree of the nodes in the network one can construct the degree distribution. The degree distribution $P(k)$ represents the fraction of nodes with a degree $k$ or, in other words, the degree distribution gives the probability that a randomly selected node has a degree $k$. The average degree can be obtained from the degree distribution \cite{Mata2020}
 \begin{equation}
-	\left<k\right> = \frac{1}{N} \sum_{i=1}^N k_i = \sum_k k P(k)
+	\left<k\right> = \frac{1}{N} \sum_{i=1}^N k_i = \sum_k k P(k) \ ,
 \end{equation}
 where $N$ is the total number of nodes in the network. The degree distribution also allows us to classify networks. The two most important classes are homogeneous and heterogeneous networks. Homogeneous networks have a bell curved degree distribution, eg. a Poisson distribution. In this case, most of the nodes have a degree close to the average degree $\left<k\right>$. Heterogeneous networks, on the other hand, have a power-law degree distribution, $P(k) \sim k^{-\gamma}$. % explain differences  more, consequences of power-law + need to include figure?
 They are also referred to as scale-free networks, since they do not posses a characteristic length scale or, in this case, the average degree isn't a characteristic scale for the network \cite{Mata2020}. % correct statement? + talk about fact that av degree can diverge; explain scale free concept a bit more detailed
@@ -298,11 +298,11 @@ The average degree $\left<k\right>$ is a global measurement of the connectivity 
 Another concept that is closely related to the degree of a node is the notion of assortative and disassortative networks. More precisely, the notion of assortativity and disassortativity has to do with degree correlations. \\
 The joint degree distribution $P(k, k')$ is the probability that an arbitrary edge connects a node with degree $k$ to a node with degree $k'$ \cite{F.Costa2007}. The conditional probability $P(k|k')$, which is another way to express dependencies between node degrees, is the probability that an arbitrary neighbor of a node with degree $k$ has a degree $k'$ \cite{F.Costa2007}
 \begin{equation}
-	P(k|k') = \frac{\left<k\right>P(k, k')}{kP(k)}
+	P(k|k') = \frac{\left<k\right>P(k, k')}{kP(k)} \ .
 \end{equation}
 The average degree of the nearest neighbors of nodes with degree $k$ can be computed as \cite{F.Costa2007}
 \begin{equation}
-	k_{nn}(k) = \sum_{k'} k'P(k'|k)
+	k_{nn}(k) = \sum_{k'} k'P(k'|k) \ .
 \end{equation}
 If there are no degree correlations, $k_{nn}$ is independent of $k$. Such a network is called a neutral network \cite{F.Costa2007}. If $k_{nn}(k)$ is an increasing function of $k$, then nodes with a high degree tend to connect to nodes with a high degree and the network is classified as assortative. If instead $k_{nn}(k)$ is a decreasing function of $k$, nodes with a high degree tend to connect to nodes with a low degree and the network is called disassortative \cite{F.Costa2007}.\\
 However, the terms assortativity and disassortativity are also often used without taking degree correlations into account. Instead, one may look at a particular node property to classify networks as either assortative or disassortative \cite{Thed2014}. In this way, an assortative network is a network where nodes tend to connect to other nodes with similar properties as themselves, whereas in a disassortative network nodes tend to connect to nodes with different properties \cite{Thed2014}.
@@ -315,20 +315,19 @@ However, the terms assortativity and disassortativity are also often used withou
 % explain length, diameter, average length,...
 Several very useful measurements quantify the notion of length and distance in a network/graph. We start with the definition of a path: a path is a sequence of distinct nodes, such that adjacent nodes in the sequence are adjacent nodes in the network \cite{Goddard2010}. The length of a path is then defined as the number of edges in the path \cite{Goddard2010}. A geodesic path, often called the shortest path, between two nodes is the path between two nodes $i$ and $j$ with minimum length (note that the geodesic path is not necessarily unique) \cite{F.Costa2007}. The length of the geodesic path between the two nodes $i$ and $j$ is called the geodesic distance or shortest distance $d_{ij}$ \cite{F.Costa2007}. Geodesic distance is often just called distance \cite{Goddard2010}. The notion of distance enables to define several network measurements such as average distance, diameter and radius.\\  
 \newline
-\newline
 \textbf{Average distance}\\
 \newline
 The average distance is the mean value of the geodesic distance $d_{ij}$ \cite{F.Costa2007}
 \begin{equation}\label{avdist}
-	l = \frac{1}{N(N-1)} \sum_{i \neq j} d_{ij}
+	l = \frac{1}{N(N-1)} \sum_{i \neq j} d_{ij} \ .
 \end{equation}
 This definition, however, diverges if there are unconnected nodes in the network (unconnected nodes have, by definition, a distance equal to infinity) \cite{F.Costa2007}. This problem could be avoided by only including connected pairs in the sum, but this introduces a distortion for networks with a lot of unconnected pairs of nodes. These networks will then have a small average distance, which is only expected for networks with lots of connections \cite{F.Costa2007}. Instead, another definition of average distance is used: the global efficiency \cite{F.Costa2007}
 \begin{equation}
-	E = \frac{1}{N(N-1)} \sum_{i \neq j} \frac{1}{d_{ij}}
+	E = \frac{1}{N(N-1)} \sum_{i \neq j} \frac{1}{d_{ij}} \ .
 \end{equation}
 This measurement quantifies the efficiency of the network in sending information between nodes \cite{F.Costa2007}. This assumes that the efficiency of sending information between two nodes is reciprocal to their distance. The harmonic mean of the geodesic distances is now defined as the reciprocal of the global efficiency \cite{F.Costa2007}
 \begin{equation}
- 	h = \frac{1}{E}
+ 	h = \frac{1}{E} \ .
 \end{equation}
 \newline
 \textbf{Diameter and radius}\\
@@ -342,35 +341,35 @@ The clustering coefficient is another important measure of network topology. It 
 \newline
 A triangle is defined as a loop of length three, this is a sequence of nodes $x, y, z, x$ such that $\{x, y\}, \{y, z\}$ and $\{z, x\}$ are edges of the network. The clustering coefficient is thus a way to measure the degree to which nodes in a network tend to cluster \cite{Li2017}. The local clustering coefficient of a node $i$ is defined as
 \begin{equation}\label{clus}
-	C_i = \frac{2n_i}{k_i(k_i-1)}
+	C_i = \frac{2n_i}{k_i(k_i-1)} \ ,
 \end{equation}
 where $n_i$ is the number of edges that actually exist between the nodes in the neighborhood of $i$ and $k_i(k_i-1)/2$ is the maximum number of edges that could exist between them (note that this expression is only valid for an undirected graph, since for a directed graph $e_{ij} \neq e_{ji}$ and we have $k_i(k_i-1)$ possible edges between the neighbors of node i). % should give more mathimatical expression for n_i?
 The average clustering coefficient is then given as the average of the local clustering coefficients
 \begin{equation}\label{avClus}
-	\left<C\right> = \frac{1}{N}\sum_{i = 1}^N C_i
+	\left<C\right> = \frac{1}{N}\sum_{i = 1}^N C_i \ ,
 \end{equation}
 where $N$ denotes, once again, the number of nodes in the network. The clustering coefficient is, beside a measure for the connectivity in the network, also linked to the robustness, or resilience against random damage,  of the network \cite{Heer2020}\cite{Iyer2013} \cite{Li2017}. \\
 \newline
 A measure that is closely related to the clustering coefficient is the transitivity $T$, defined as (valid for undirected, unweighted networks) \cite{F.Costa2007}
 \begin{equation}\label{globalTrans}
-	T = \frac{3 \times \text{number of triangles in the network}}{\text{number of connected triples of nodes in the network}}
+	T = \frac{3 \times \text{number of triangles in the network}}{\text{number of connected triples of nodes in the network}} \ .
 \end{equation}
 \newline
 A connected triple is defined as a set of three nodes with at least two edges between them, so that each node can be reached from the other two (either directly or indirectly). The factor three arises from the fact that each triangle contributes to three different connected triples in the network: one centered at each node in the triangle \cite{F.Costa2007}. \\
 \newline
 Let us denote the number of triangles as $N_{\Delta}$ and the number of connected triples as $N_3$. These two numbers can be obtained from the adjacency matrix in the following way \cite{F.Costa2007}
 \begin{align}
-	N_{\Delta} &= \sum_{k > j > i} A_{ij}A_{ik}A_{jk} \\
-	N_3 &= \sum_{k > j > i} (A_{ij}A_{ik} + A_{ji}A_{jk} + A_{ki}A_{kj})
+	N_{\Delta} &= \sum_{k > j > i} A_{ij}A_{ik}A_{jk} \ , \\
+	N_3 &= \sum_{k > j > i} (A_{ij}A_{ik} + A_{ji}A_{jk} + A_{ki}A_{kj}) \ ,
 \end{align}
 where $A_{ij}$ are the elements of the adjacency matrix. It is possible to define the transitivity of one node as \cite{F.Costa2007}
 \begin{equation}\label{trans}
-	T_i = \frac{N_{\Delta}(i)}{N_3(i)}
+	T_i = \frac{N_{\Delta}(i)}{N_3(i)} \ ,
 \end{equation}
 where $N_{\Delta}(i)$ represents the number of triangles that involve node $i$ and $N_3(i)$ is the number of connected triples with $i$ as the central node \cite{F.Costa2007}
 \begin{align}
-	N_{\Delta}(i) &= \sum_{k > j} A_{ij}A_{ik}A_{jk} \\
-	N_3(i) &= \sum_{k > j} A_{ij}A_{ik}
+	N_{\Delta}(i) &= \sum_{k > j} A_{ij}A_{ik}A_{jk} \ , \\
+	N_3(i) &= \sum_{k > j} A_{ij}A_{ik} \ .
 \end{align}
 It is not too hard to see that $N_{\Delta}(i)$ counts the number of edges between the neighbors of $i$ and that $N_3(i)$ is equal to $k_i(k_i-1)/2$, where $k_i$ is the degree of node $i$. It is then obvious that the local clustering coefficient $C_i$ (Eq. (\ref{clus})) of a node and the transitivity $T_i$ (Eq. (\ref{trans})) of a node define the same quantity \cite{F.Costa2007}. In the case of the average clustering coefficient $\left<C\right>$ and the global transitivity $T$ this is, however, not the case. The difference between the two definitions is that the average of Equation (\ref{globalTrans}) gives the same weight to each triangle in the network, whereas Equation (\ref{avClus}) gives the same weight to each node. This may lead to slightly different values since nodes with a higher degree may possibly be involved in a higher number of triangles than nodes with a lower degree \cite{F.Costa2007}.
 	
@@ -389,14 +388,14 @@ A clique is a complete subgraph, where a complete subgraph is defined as a set o
 \newline
 A strong community is defined such that each node inside the community has more edges to other nodes inside the same community than to nodes outside the community \cite{Albert2016}. Let us denote a community as $C$ and let $i$ be a node inside the community $C$. If we define the internal degree $k_i^{\textrm{int}}(C)$ as the number of edges that connect node $i$ with other nodes in $C$ and the external degree $k_i^{\textrm{ext}}(C)$ as the number of edges that connect node $i$ with nodes outside $C$, then we have the following condition for $C$ to be a strong community \cite{Albert2016}
 \begin{equation}
-	k_i^{\textrm{int}}(C) > k_i^{\textrm{ext}}(C) \qquad \forall i \in C
+	k_i^{\textrm{int}}(C) > k_i^{\textrm{ext}}(C) \ , \qquad \forall i \in C \ .
 \end{equation}
 \newline
 \textbf{Weak communities}\\
 \newline
 A weak community is a community where the sum of the internal degree of all the nodes in the community exceeds the sum of the external degree of all the nodes in the community \cite{Albert2016}. We thus have the following condition for a weak community $C$ \cite{Albert2016}
 \begin{equation}
-	\sum_{i \in C} k_i^{\textrm{int}}(C) > \sum_{i \in C}k_i^{\textrm{ext}}(C)
+	\sum_{i \in C} k_i^{\textrm{int}}(C) > \sum_{i \in C}k_i^{\textrm{ext}}(C) \ .
 \end{equation}
 
 \subsection{Modularity}
@@ -404,20 +403,20 @@ A weak community is a community where the sum of the internal degree of all the 
 The modularity $Q$ is a measurement that represents the quality of a particular division of a network into different communities \cite{F.Costa2007}. It was proposed after the fundamental problem arised for real networks concerning how to best divide the network into its constituent communities \cite{F.Costa2007}. Generally, no a priori information is available about the number of existing communities in real networks \cite{F.Costa2007}.\\
 The modularity for a network with $N$ nodes and $L$ edges and partitioned into $n_c$ communities is calculated as follows. Each community has $N_c$ nodes and $L_c$ edges ($c = 1,..., n_c$) \cite{Albert2016}. The modularity of a community $Q_c$ is then calculated by measuring the difference between the network real wiring diagram (which is given by the adjacency matrix $A_{ij}$) and the expected number of edges between $i$ and $j$ if the network is randomly wired (where $i$ and $j$ are two nodes that lie in the same community $C_c$) \cite{Albert2016}. This last quantity is given by $p_{ij}$, which is obtained by randomizing the original network while keeping the expected degree of each node unchanged \cite{Albert2016}. Hence, the modularity of a community $Q_c$ becomes \cite{Albert2016}
 \begin{equation}
-	Q_c = \frac{1}{2L}\sum_{(i,j) \in C_c} (A_{ij} - p_{ij})
+	Q_c = \frac{1}{2L}\sum_{(i,j) \in C_c} (A_{ij} - p_{ij}) \ ,
 \end{equation}
 where the factor $\frac{1}{2L}$ is just a normalization factor. Using \cite{Albert2016}
 \begin{equation}
-	p_{ij} = \frac{k_ik_j}{2L}
+	p_{ij} = \frac{k_ik_j}{2L} \ ,
 \end{equation}
 we can derive a simpler form for $Q_c$ \cite{Albert2016}
 \begin{equation}\label{Qc}
-	Q_c = \frac{L_c}{L} - \bigg(\frac{k_c}{2L}\bigg)^2
+	Q_c = \frac{L_c}{L} - \bigg(\frac{k_c}{2L}\bigg)^2 \ ,
 \end{equation}
 where $L_c$ is the total number of edges in the community $C_c$ and $k_c$ is the total degree of the nodes in this community \cite{Albert2016}.\\
 To generalize this idea to the whole network, we sum Eq. (\ref{Qc}) over all $n_c$ communities \cite{Albert2016}
 \begin{equation}\label{mod}
-	Q = \sum_{c = 1}^{n_c}\bigg[\frac{L_c}{L} - \bigg(\frac{k_c}{2L}\bigg)^2 \bigg]
+	Q = \sum_{c = 1}^{n_c}\bigg[\frac{L_c}{L} - \bigg(\frac{k_c}{2L}\bigg)^2 \bigg] \ .
 \end{equation}
 The derivation of this formula and thus of Eq. (\ref{Qc}) can be found in Appendix \ref{modul}, Section \ref{simplemod}. The modularity $Q$ can have values in the interval $\interval{-1}{1}$ and has the following properties \cite{Albert2016}
 \begin{itemize}
@@ -427,11 +426,11 @@ The derivation of this formula and thus of Eq. (\ref{Qc}) can be found in Append
 \end{itemize}
 As said before, modularity is often used in community detection algorithms. It is thus important to be aware of the limitations of modularity. One of the biggest shortcomings of modularity maximization as community detection is its resolution limit. Modularity maximization forces small communities into larger ones \cite{Albert2016}. If two communities $A$ and $B$ are merged, the modularity changes by \cite{Albert2016}
 \begin{equation}
-	\Delta Q_{AB} = \frac{l_{AB}}{L} - \frac{k_Ak_B}{2L^2}
+	\Delta Q_{AB} = \frac{l_{AB}}{L} - \frac{k_Ak_B}{2L^2} \ ,
 \end{equation}
 where $l_{AB}$ is the number of direct edges that connect nodes in community $A$ with nodes in community $B$; $k_A$ and $k_B$ are the total degree of nodes in communities $A$ and $B$ respectively. The derivation of this formula is found in Appendix \ref{modul}, Section \ref{modchange}. If $A$ and $B$ are distinct communities, they should remain distinct when $Q$ is maximized \cite{Albert2016}. This is however not always the case. Consider the case where $\frac{k_Ak_B}{2L} < 1$ and there is at least one edge between $A$ and $B$ ($l_{AB} \geqslant 1$), then $\Delta Q_{AB} \geqslant 0$ and the modularity increases by merging the two communities \cite{Albert2016}. Assume for simplicity that $k_A = k_B = k$, then modularity is increased by merging $A$ and $B$ if
 \begin{equation}\label{reslim}
-	k \leqslant \sqrt{2L}
+	k \leqslant \sqrt{2L} \ ,
 \end{equation}
 and if there is at least one edge between the two communities; even if $A$ and $B$ are distinct communities \cite{Albert2016}! Equation (\ref{reslim}) is called the resolution limit: communities that are smaller than this limit will not be detected by modularity maximization \cite{Albert2016}.
 
@@ -458,20 +457,20 @@ If $p=1$, we obtain a network with the maximum number of edges $N(N-1)/2$. This 
 \newline
 The degree distribution of the random network with $N$ nodes is given by
 \begin{equation}\label{degDistRan}
-	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k}
+	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k} \ .
 \end{equation}
 The derivation can be found in Appendix \ref{ER}, Section \ref{degdis}. From this we can calculate the average degree of the network. The expected mean degree is given by \cite{Hopcroft2006}
 \begin{equation}\label{avDeg}
 \begin{split}
 	\left<k\right> &= \sum_{k=0}^{N-1} k\  p_k  \\
-&= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k}
+&= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k} \ .
 \end{split}
 \end{equation}
 This equation can be simplified to $\left<k\right> = (N-1)p$, and for $N \gg 1$ this approximately becomes $\left<k\right> = Np$. The derivation of this result can be found in Appendix \ref{ER}, Section \ref{degree}.\\
 \newline
 Most real networks are sparse, which means that $\left<k\right> \ll N$. In this case the degree distribution of the random network is well approximated by a Poisson distribution \cite{Albert2014} 
 \begin{equation}
-	p_k = \mathrm{e}^{-\left<k\right>} \frac{\left<k\right>^k}{k!}
+	p_k = \mathrm{e}^{-\left<k\right>} \frac{\left<k\right>^k}{k!} \ .
 \end{equation}
 The derivation can be found in Appendix \ref{ER}, Section \ref{poiss}. \\
 \newline
@@ -479,7 +478,7 @@ The derivation can be found in Appendix \ref{ER}, Section \ref{poiss}. \\
 \newline
 The average clustering coefficient (Eq. (\ref{globalTrans})) of the Erd\H{o}s-R\'{e}nyi network is given by \cite{Clauset2011}
 \begin{equation}\label{C}
-	\left<C\right> = \frac{\binom{N}{3}p^3}{\binom{N}{3}p^2} = p = \frac{\left<k\right>}{N-1}
+	\left<C\right> = \frac{\binom{N}{3}p^3}{\binom{N}{3}p^2} = p = \frac{\left<k\right>}{N-1} \ .
 \end{equation}
 This can be easily understood since choosing three nodes out of $N$ is given by $\binom{N}{3}$. The chance that they are connected by three edges is given by $p^3$, which gives the number of triangles; the chance that the are connected by two edges is $p^2$, which determines the number of connected triples (recall that this model creates random networks with no self-loops and no edge duplicates). If the average degree $\left<k\right>$ is constant, the average clustering constant goes as $\left<C\right> \sim \mathcal{O}(1/N)$, which becomes very small for large networks \cite{Clauset2011}. \\
 \newline
@@ -495,15 +494,15 @@ A heuristic derivation of the diameter of a random network goes as follows. Cons
 \end{itemize}
 The number of nodes at a distance $d$ cannot exceed the number of nodes $N$ in the network. We thus obtain the following equation from which the maximum distance or diameter $d_{\textrm{max}}$ can be obtained
 \begin{equation}
-	N \approx \left<k\right>^{d_{\textrm{max}}}
+	N \approx \left<k\right>^{d_{\textrm{max}}} \ ,
 \end{equation}
 or 
 \begin{equation}\label{diameter}
-	d_{\textrm{max}} \approx \frac{\ln{N}}{\ln{\left<k\right>}}
+	d_{\textrm{max}} \approx \frac{\ln{N}}{\ln{\left<k\right>}} \ .
 \end{equation}
 A more precise calculation can be found in Appendix \ref{ER}, Section \ref{ERdist}. Equation (\ref{diameter}) might, however, be a better approximation to the average distance $\left<d\right>$ between two randomly chosen nodes \cite{Albert2014}. This is because $d_{\textrm{max}}$ is often dominated by a few extreme paths, where $\left<d\right>$ instead is averaged over all node pairs and thus suppresses these fluctuations \cite{Albert2014}. Hence, the average distance of a random network is defined by \cite{Albert2014}
 \begin{equation}\label{d}
-	\left<d\right> \approx \frac{\ln{N}}{\ln{\left<k\right>}}
+	\left<d\right> \approx \frac{\ln{N}}{\ln{\left<k\right>}} \ .
 \end{equation}
 Since for large $N$, $\ln{N} \ll N$, we find that the average distance is a lot smaller than the size of the network. Generally, the logarithmic dependence of the average distance $\left<d\right>$ on the network size $N$ is one of the two defining properties of what is referred to as the "small world phenomenon"; the other property is a high clustering coefficient \cite{Easley2010}.  \\
 \\
@@ -521,16 +520,16 @@ In 1998, Duncan Watts and Steve Strogatz constructed a network model that genera
 The probability $\beta$ allows us to tune the graph between a regular lattice ($\beta = 0$) and a random network ($\beta = 1$) \cite{Watts1998}. Usually, the following condition is required for the number of neighbors $K$: $N \gg K \gg \ln{N} \gg 1$. The first inequality assures sparse networks, whereas the second inequality guarantees that a random graph will be connected (thus the network is not so sparse that it becomes disconnected) \cite{Watts1998}.\\
 The regular ring lattice ($\beta=0$) has an average clustering coefficient $\left<C(0)\right>$ and an average path length $\left<d(0)\right>$ equal to \cite{Watts1998}
 \begin{align}\label{C0}
-	\left<C(0)\right> = \frac{3(K-2)}{4(K-1)} \approx \frac{3}{4} \ \text{for}\ K \gg 1 && \left<d(0)\right> \approx \frac{N}{2K}
+	\left<C(0)\right> = \frac{3(K-2)}{4(K-1)} \approx \frac{3}{4} \ \text{for}\ K \gg 1 \ , && \left<d(0)\right> \approx \frac{N}{2K} \ .
 \end{align}
 The derivations of these formulas can be found in Appendix \ref{WS}, Section \ref{ringclus}. The regular ring lattice thus has a high clustering coefficient and an average path length that grows linearly with the system size $N$. \\
 The random network ($\beta = 1$) on the other hand has a low clustering coefficient $\left<C(1)\right>$ and a small average path length $\left<d(1)\right>$ (see Eq. (\ref{C}) and Eq. (\ref{d})) \cite{Watts1998}
 \begin{align}
-	\left<C(1)\right> \approx \frac{K}{N} \ll 1 && \left<d(1)\right> \approx \frac{\ln{N}}{\ln{K}}
+	\left<C(1)\right> \approx \frac{K}{N} \ll 1 \ , && \left<d(1)\right> \approx \frac{\ln{N}}{\ln{K}} \ .
 \end{align}
 Watts and Strogatz then showed by numerical simulation that the average distance for the networks with $0 < \beta < 1$ is comparable with the average distance of a random graph (which is small), even for small $\beta$ \cite{Newman2000}. The clustering coefficient is approximately given by   \cite{Barrat1999}
 \begin{equation}
-	\left<C\right> \approx \left<C(0)\right>(1-\beta)^3
+	\left<C\right> \approx \left<C(0)\right>(1-\beta)^3 \ ,
 \end{equation} 
 where $\left<C(0)\right>$ is given by Equation (\ref{C0}). This can be seen in the following way
 \begin{itemize}
@@ -590,7 +589,7 @@ In real-world social networks, one often observes the pattern that two acquainta
 \newline
 Many real-world networks are found to have a power-law degree distribution \cite{RealWorld}
 \begin{equation}
-	P(k) \sim k^{-\gamma}
+	P(k) \sim k^{-\gamma} \ ,
 \end{equation}
 where the exponent $\gamma$ often lies between 2 and 3. Networks with a power-law degree distribution are also called heterogeneous or scale-free networks. The term scale-free refers to the fact that there is no characteristic scale in the network. Compared to the homogeneous network, where each node has a degree close to the average degree $\left<k\right>$, the heterogeneous network has many nodes with a low degree and a few nodes with a very high degree (these nodes are referred to as hubs). If the exponent $\gamma$ is smaller or equal to two ($\gamma \leqslant 2$), the average degree diverges; if $2 < \gamma < 3$, there is a finite average degree, but a diverging variance \cite{Newman2005}.\\
 \newline
@@ -653,17 +652,17 @@ Several models have been proposed, we will only discuss a fraction of them.
 
 In the classical model, there are $N$ nodes/agents, each with an opinion $x_i$ and each node $i$ gives a weight $w_{ij}$ to all its neighbors (with $w_{ij} \geqslant 0$; this weight may for example represent the importance/influence of the neighbors) \cite{Krause2002}. The most simple model has fixed weights $w$ and the updating rule is \cite{Krause2002}
 \begin{equation}\label{refMod}
-	x(t+1) = W x(t)
+	x(t+1) = W x(t) \ ,
 \end{equation}
 where $W$ is the fixed stochastic matrix which contains the weights $w_{ij}$, $x(t)$ is the opinion profile at time $t$ (this is a $N$-dimensional vector containing the opinions $x_i$ of each node at time $t$) and $x(t+1)$ is the opinion profile at time $t+1$.\\
 Friedkin and Johnsen proposed a variation of this model \cite{Friedkin1990}\cite{Friedkin1999}. The model they proposed assumes that an agent $i$ adheres to its initial opinion to a certain degree $g_i$ and is influenced by others by a susceptibility of $1-g_i$ \cite{Krause2002}. This variation thus has the following updating rule (in matrix notation) \cite{Krause2002}
 \begin{equation}
-	x(t+1) = Gx(0) + (\mathbb{1}-G)Wx(t)
+	x(t+1) = Gx(0) + (\mathbb{1}-G)Wx(t) \ ,
 \end{equation}
 where $G$ is the diagonal matrix which contains the $g_i$ and $\mathbb{1}$ is the identity matrix. If all the $g_i$ are equal to zero, we obtain the model of Eq. (\ref{refMod}) \cite{Krause2002}.\\
 A possible time variant extension is \cite{Krause2002}
 \begin{equation}
-	x(t+1) = W(t)x(t)
+	x(t+1) = W(t)x(t) \ ,
 \end{equation}
 where now the weights are time dependent. This model can be used for situations in which so called "hardening of positions" occur \cite{Krause2002}. This means that, over time, the agents put more and more weight on their own opinion and less weight on the opinion of others \cite{Krause2002}. 
 % talk about extension http://jasss.soc.surrey.ac.uk/5/3/2/2.pdf
@@ -678,8 +677,8 @@ The two most popular bounded confidence models are the Deffuant model and the He
 Assume we have a population of $N$ agents, each with an opinion $x_i$ that takes real values in the interval $\interval{0}{1}$ \cite{Castellano2009}. Furthermore, the threshold $\epsilon$ is the same for all the agents. At each time step, an agent $i$ is randomly selected together with one of its neighbors $j$ (which is also randomly selected) \cite{Castellano2009}. If the opinions of the two nodes $i$ and $j$ are too far apart nothing happens; this is the case if $\abs{x_i(t) - x_j(t)} \geqslant \epsilon$. If instead $\abs{x_i(t) - x_j(t)} < \epsilon$, then the opinions are updated to \cite{Castellano2009}
 \begin{equation}
 \begin{split}
-	x_i(t+1) &= x_i(t) + \mu [x_j(t) - x_i(t)]\\
-	x_j(t+1) &= x_j(t) + \mu [x_i(t) - x_j(t)]
+	x_i(t+1) &= x_i(t) + \mu [x_j(t) - x_i(t)] \ ,\\
+	x_j(t+1) &= x_j(t) + \mu [x_i(t) - x_j(t)] \ .
 \end{split}
 \end{equation}
 The parameter $\mu$ is called the convergence parameter; its value lies in the interval $\interval{0}{1/2}$ \cite{Castellano2009}. \\
@@ -690,7 +689,7 @@ The final state is a situation where several opinion clusters coexist. This is b
 \newline
 The Hegselmann-Krause model is very similar to the Deffuant model. Again, there are $N$ agents, each with an opinion $x_i$ and a constant threshold $\epsilon$ \cite{Castellano2009}. Each agent interacts with those neighbors with an opinion in the interval $\interval{x_i-\epsilon}{x_i+\epsilon}$ \cite{Castellano2009}. The difference with the Deffuant model lies in the updating rule \cite{Castellano2009}. In the Deffuant model, only the opinion of one randomly selected neighbor is taken into account, whereas the Hegselmann-Krause model considers all compatible neighbors \cite{Castellano2009}. The updating rule becomes \cite{Castellano2009}
 \begin{equation}
-	x_i(t+1) = \frac{\sum_{j:\abs{x_i(t) - x_j(t)}<\epsilon}A_{ij}x_j(t)}{\sum_{j:\abs{x_i(t) - x_j(t)}<\epsilon}A_{ij}}
+	x_i(t+1) = \frac{\sum_{j:\abs{x_i(t) - x_j(t)}<\epsilon}A_{ij}x_j(t)}{\sum_{j:\abs{x_i(t) - x_j(t)}<\epsilon}A_{ij}} \ ,
 \end{equation}
 where $A_{ij}$ are the elements of the adjacency matrix. This model thus takes the average opinion of the compatible neighbors into account \cite{Castellano2009}.\\
 The dynamics of this model is similar to the Deffuant model and the final state is also characterized by a number of stationary opinion clusters \cite{Castellano2009}. The number of clusters decreases if $\epsilon$ increased and above a critical value $\epsilon_c$ of the threshold, there can only be one cluster \cite{Castellano2009}.\\
@@ -871,38 +870,38 @@ The conclusion of this section is that all the network models used in this thesi
 
 Using \cite{Albert2016}
 \begin{equation}
-	Q_c = \frac{1}{2L}\sum_{(i,j) \in C_c} (A_{ij} - p_{ij})
+	Q_c = \frac{1}{2L}\sum_{(i,j) \in C_c} (A_{ij} - p_{ij}) \ ,
 \end{equation}
 and \cite{Albert2016}
 \begin{equation}
-	p_{ij} = \frac{k_ik_j}{2L}
+	p_{ij} = \frac{k_ik_j}{2L} \ ,
 \end{equation}
 we can write the modularity of the whole network as \cite{Albert2016}
 \begin{equation}\label{modnetw}
-	Q = \frac{1}{2L}\sum_{i, j = 1}^N \bigg(A_{ij} - \frac{k_ik_j}{2L}\bigg) \delta_{c_i, c_j}
+	Q = \frac{1}{2L}\sum_{i, j = 1}^N \bigg(A_{ij} - \frac{k_ik_j}{2L}\bigg) \delta_{c_i, c_j} \ ,
 \end{equation}
 where $c_i$ represents the community to which node $i$ belongs and where the Dirac-delta function $\delta_{c_i, c_j}$ expresses the fact that only pairs of nodes that belong to the same community are taken into account. We can then rewrite the first term as a sum over communities \cite{Albert2016}
 \begin{equation}\label{1}
-	\frac{1}{2L}\sum_{i, j = 1}^N A_{ij}\delta_{c_i, c_j} = \sum_{c=1}^{n_c}\frac{1}{2L}\sum_{i, j \in C_c} A_{ij} = \sum_{c=1}^{n_c}\frac{L_c}{L}
+	\frac{1}{2L}\sum_{i, j = 1}^N A_{ij}\delta_{c_i, c_j} = \sum_{c=1}^{n_c}\frac{1}{2L}\sum_{i, j \in C_c} A_{ij} = \sum_{c=1}^{n_c}\frac{L_c}{L} \ ,
 \end{equation}
 where $L_c$ is the number of edges in community $C_c$ and the factor 2 disappears because each edge is counted twice in $A_{ij}$. Similarly, the second term in Eq. (\ref{modnetw}) can be rewritten as \cite{Albert2016}
 \begin{equation}\label{2}
-	\frac{1}{2L}\sum_{i, j = 1}^N \frac{k_ik_j}{2L} \delta_{c_i, c_j} = \sum_{c=1}^{n_c}\frac{1}{(2L)^2}\sum_{i, j \in C_c} k_ik_j = \sum_{c=1}^{n_c}\frac{k_c^2}{4L^2}
+	\frac{1}{2L}\sum_{i, j = 1}^N \frac{k_ik_j}{2L} \delta_{c_i, c_j} = \sum_{c=1}^{n_c}\frac{1}{(2L)^2}\sum_{i, j \in C_c} k_ik_j = \sum_{c=1}^{n_c}\frac{k_c^2}{4L^2} \ ,
 \end{equation}
 where $k_c$ is the total degree of the nodes in community $C_c$. Combining Eq. (\ref{1}) and Eq. (\ref{2}) gives the final result \cite{Albert2016}
 \begin{equation}\label{Qfin}
-	Q = \sum_{c = 1}^{n_c}\bigg[\frac{L_c}{L} - \bigg(\frac{k_c}{2L}\bigg)^2 \bigg]
+	Q = \sum_{c = 1}^{n_c}\bigg[\frac{L_c}{L} - \bigg(\frac{k_c}{2L}\bigg)^2 \bigg] \ .
 \end{equation}
 
 \subsection{Modularity change after merging two communities}\label{modchange}
 
 Consider two communities $A$ and $B$ and denote with $k_A$ and $k_B$ the total degree of communities $A$ and $B$ respectively \cite{Albert2016}. The change in modularity after merging the two communities is calculated as follows (using Eq. (\ref{Qfin})) \cite{Albert2016}
 \begin{equation}\label{Q_AB}
-	\Delta Q_{AB} = \bigg[\frac{L_{AB}}{L} - \bigg(\frac{k_{AB}}{2L} \bigg)^2 \bigg] - \bigg[\frac{L_A}{L} - \bigg(\frac{k_A}{2L} \bigg)^2 + \frac{L_B}{2L} - \bigg(\frac{k_B}{2L} \bigg)^2 \bigg]
+	\Delta Q_{AB} = \bigg[\frac{L_{AB}}{L} - \bigg(\frac{k_{AB}}{2L} \bigg)^2 \bigg] - \bigg[\frac{L_A}{L} - \bigg(\frac{k_A}{2L} \bigg)^2 + \frac{L_B}{2L} - \bigg(\frac{k_B}{2L} \bigg)^2 \bigg] \ ,
 \end{equation}
 where $L_{AB} = L_A + L_B + l_{AB}$ is the total number of edges in the merged community; $L_A$ and $L_B$ are the number of edges in communities $A$ and $B$ respectively and $l_{AB}$ is the number of direct edges between communities $A$ and $B$ \cite{Albert2016}. $k_{AB} = k_A + k_B$ is the total degree of nodes in the merged community \cite{Albert2016}. Inserting the formulas for $L_{AB}$ and $k_{AB}$ in Eq. (\ref{Q_AB}) gives
 \begin{equation}
-	\Delta Q_{AB} = \frac{l_{AB}}{L} - \frac{k_Ak_B}{2L^2}
+	\Delta Q_{AB} = \frac{l_{AB}}{L} - \frac{k_Ak_B}{2L^2} \ .
 \end{equation}
 
 \chapter{Network models: Derivations}
@@ -910,15 +909,15 @@ where $L_{AB} = L_A + L_B + l_{AB}$ is the total number of edges in the merged c
 \subsection{Degree distribution}\label{degdis}
 The probability that a node is connected to $k$ other nodes and not to the $N-1-k$ others is given by
 \begin{equation}
-	p^k (1-p)^{N-1-k}
+	p^k (1-p)^{N-1-k} \ .
 \end{equation}
 The number of ways to choose the $k$ nodes among the $N-1$ possible candidates is given by the binomial coefficient
 \begin{equation}
-	\binom{N-1}{k} = \frac{(N-1)!}{k!(N-1-k)!}
+	\binom{N-1}{k} = \frac{(N-1)!}{k!(N-1-k)!} \ ,
 \end{equation}
 and the probability of being connected to exactly $k$ other nodes becomes
 \begin{equation}
-	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k}
+	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k} \ .
 \end{equation}
 We thus derived the degree distribution of a random network.
 
@@ -927,25 +926,25 @@ The expected mean degree is given by \cite{Hopcroft2006}
 \begin{equation}\label{avDegr}
 \begin{split}
 	\left<k\right> &= \sum_{k=0}^{N-1} k\  p_k  \\
-&= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k}
+&= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k} \ .
 \end{split}
 \end{equation}
 In order to simplify this equation we can make use of the following formula \cite{Hopcroft2006}
 \begin{equation} 
-	(p+q)^n = \sum_{k=0}^n \binom{n}{k} p^k q^{n-k}
+	(p+q)^n = \sum_{k=0}^n \binom{n}{k} p^k q^{n-k} \ .
 \end{equation}
 Differentiating both sides of this equation (with respect to $p$) gives us \cite{Hopcroft2006}
 \begin{equation}
 \begin{split}
 	n(p+q)^{n-1} &= \sum_{k=0}^n \binom{n}{k} k p^{k-1} q^{n-k} \\
-	&= \frac{1}{p} \sum_{k=0}^n \binom{n}{k} k p^{k} q^{n-k}
+	&= \frac{1}{p} \sum_{k=0}^n \binom{n}{k} k p^{k} q^{n-k} \ .
 \end{split}
 \end{equation}
 Finally, by substituting $q = 1-p$, we get \cite{Hopcroft2006}
 \begin{equation}
 \begin{split}
 	n (p+(1-p))^{n-1} &= \frac{1}{p} \sum_{k=0}^n \binom{n}{k} k p^{k} (1-p)^{n-k} \\
-	np &= \sum_{k=0}^n \binom{n}{k} k p^{k} (1-p)^{n-k}
+	np &= \sum_{k=0}^n \binom{n}{k} k p^{k} (1-p)^{n-k} \ ,
 \end{split}
 \end{equation}
 where the right hand side is equal to Equation (\ref{avDegr}) with $n = N-1$ and we thus obtain $\left<k\right> = (N-1)p$.
@@ -953,53 +952,53 @@ where the right hand side is equal to Equation (\ref{avDegr}) with $n = N-1$ and
 \subsection{Poisson form of the degree distribution}\label{poiss}
 We begin with the exact binomial distribution (Eq.(\ref{degDistRan}))
 \begin{equation}\label{pk}
-	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k}
+	p_k = \binom{N-1}{k}p^k (1-p)^{N-1-k} \ ,
 \end{equation}
 which characterizes a random graph. In the case $k \ll N$, we can simplify the binomial in the following way \cite{Albert2014}
 \begin{equation}\label{bin}
-	\binom{N-1}{k} = \frac{(N-1)(N-1-1)...(N-1-k+1)}{k!} \approx \frac{(N-1)^k}{k!}
+	\binom{N-1}{k} = \frac{(N-1)(N-1-1)...(N-1-k+1)}{k!} \approx \frac{(N-1)^k}{k!} \ .
 \end{equation}
 We also note the following equality \cite{Albert2014}
 \begin{equation}
-	\ln[(1-p)^{N-1-k}] = (N-1-k)\ln\bigg(1 - \frac{\left<k\right>}{N-1} \bigg)
+	\ln[(1-p)^{N-1-k}] = (N-1-k)\ln\bigg(1 - \frac{\left<k\right>}{N-1} \bigg) \ ,
 \end{equation}
 where we made use of the fact that $\left<k\right> = (N-1)p$. Using the series expansion \cite{Albert2014}
 \begin{equation}
-	\ln(1+x) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}x^n = x - \frac{x^2}{2} + \frac{x^3}{3} - ...  \qquad \forall \ |x| \leqslant 1
+	\ln(1+x) = \sum_{n=1}^{\infty}\frac{(-1)^{n+1}}{n}x^n = x - \frac{x^2}{2} + \frac{x^3}{3} - ... \ ,  \qquad \forall \ |x| \leqslant 1 \ ,
 \end{equation}
 we get \cite{Albert2014}
 \begin{equation}
-	\ln[(1-p)^{N-1-k}] \approx (N-1-k) \frac{\left<k\right>}{N-1} = - \left<k\right>\bigg(1 - \frac{\left<k\right>}{N-1} \bigg) \approx - \left<k\right>
+	\ln[(1-p)^{N-1-k}] \approx (N-1-k) \frac{\left<k\right>}{N-1} = - \left<k\right>\bigg(1 - \frac{\left<k\right>}{N-1} \bigg) \approx - \left<k\right> \ ,
 \end{equation}
 which is valid if $k \ll N$. We thus find \cite{Albert2014}
 \begin{equation}\label{e}
-	(1-p)^{N-1-k} = \mathrm{e}^{-\left<k\right>}
+	(1-p)^{N-1-k} = \mathrm{e}^{-\left<k\right>} \ .
 \end{equation}
 Substituting Eq. (\ref{e}) and Eq. (\ref{bin}) in Eq. (\ref{pk}) and using $\left<k\right> = (N-1)p$, we finally obtain the Poisson form of the degree distribution \cite{Albert2014}
 \begin{equation}
 \begin{split}
 	p_k &= \binom{N-1}{k}p^k (1-p)^{N-1-k} = \frac{(N-1)^k}{k!} p^k \mathrm{e}^{-\left<k\right>} \\
 &= \frac{(N-1)^k}{k!} \bigg(\frac{\left<k\right>}{N-1} \bigg)^k \mathrm{e}^{-\left<k\right>}\\
-&= \mathrm{e}^{-\left<k\right>}\frac{\left<k\right>^k}{k!}
+&= \mathrm{e}^{-\left<k\right>}\frac{\left<k\right>^k}{k!} \ .
 \end{split}
 \end{equation}
 
 \subsection{Diameter}\label{ERdist}
 The expected number of nodes at a distance $d$ from a starting node is \cite{Albert2014}
 \begin{equation}\label{dist}
-	N(d) = 1 + \left<k\right> + \left<k\right>^2 + ... + \left<k\right>^d = \frac{\left<k\right>^{d+1} - 1}{\left<k\right> - 1}
+	N(d) = 1 + \left<k\right> + \left<k\right>^2 + ... + \left<k\right>^d = \frac{\left<k\right>^{d+1} - 1}{\left<k\right> - 1} \ .
 \end{equation}
 $N(d)$ cannot exceed the number of nodes $N$ in the network. The maximum distance or diameter $d_{max}$ of the network can thus be found by setting \cite{Albert2014}
 \begin{equation}
-	N(d_{\textrm{max}}) \approx N
+	N(d_{\textrm{max}}) \approx N \ .
 \end{equation}
 If $\left<k\right> \gg 1$, we can neglect the $-1$ terms in Eq. (\ref{dist}), which gives \cite{Albert2014}
 \begin{equation}
-	N \approx \left<k\right>^{d_{\textrm{max}}}
+	N \approx \left<k\right>^{d_{\textrm{max}}} \ ,
 \end{equation}
 and thus the diameter of a random network becomes \cite{Albert2014}
 \begin{equation}
-	d_{\textrm{max}} \approx \frac{\ln{N}}{\ln{\left<k\right>}}
+	d_{\textrm{max}} \approx \frac{\ln{N}}{\ln{\left<k\right>}} \ .
 \end{equation} 
 
 \section{The Watts-Strogatz model}\label{WS}
@@ -1010,22 +1009,22 @@ and thus the diameter of a random network becomes \cite{Albert2014}
 A triangle in the regular ring lattice requires two edge traversals in the same direction and one in the opposite direction \cite{Pele2015}. In the regular ring lattice every node has a fixed degree $K$, this means that each node is connected to $K/2$ neighbors on its left and $K/2$ neighbors on its right. It is then clear that the final, backwards step can span at most $K/2$ nodes \cite{Pele2015}; otherwise we would end up at a different node from which we started, which would definitely not form a triangle.\\
 Hence, the number of triangles for a given node is given by choosing the two forward target nodes from the $K/2$ possibilities \cite{Pele2015}
 \begin{equation}\label{triangle}
-	\binom{\frac{K}{2}}{2} = \frac{1}{4} K \bigg(\frac{K}{2} - 1 \bigg)
+	\binom{\frac{K}{2}}{2} = \frac{1}{4} K \bigg(\frac{K}{2} - 1 \bigg) \ .
 \end{equation}
 The number of connected triples per node is given by choosing two nodes out of the $K$ neighbors \cite{Pele2015}
 \begin{equation}\label{triple}
-	\binom{K}{2} = \frac{1}{2} K (K-1)
+	\binom{K}{2} = \frac{1}{2} K (K-1) \ .
 \end{equation}
 Since every node in the regular ring lattice is identical, we can easily find the total number of triangles and connected triples in the network by multiplying Eq. (\ref{triangle}) and Eq. (\ref{triple}) with the number of nodes $N$. We then obtain the final result for the clustering coefficient in the regular ring lattice \cite{Pele2015}
 \begin{equation}
-	\left<C\right> = \frac{3\cdot N \frac{1}{4} K \bigg(\frac{K}{2} - 1 \bigg)}{N \frac{1}{2} K (K-1)} = \frac{3(K-2)}{4(K-1)}
+	\left<C\right> = \frac{3\cdot N \frac{1}{4} K \bigg(\frac{K}{2} - 1 \bigg)}{N \frac{1}{2} K (K-1)} = \frac{3(K-2)}{4(K-1)} \ .
 \end{equation}
 \newline
 \textbf{Average distance}\\
 \newline
 The general formula for the average distance is given by Eq. (\ref{avdist})
 \begin{equation}
-	l = \frac{1}{N(N-1)} \sum_{i \neq j} d_{ij}
+	l = \frac{1}{N(N-1)} \sum_{i \neq j} d_{ij} \ ,
 \end{equation}
 where the sum runs over the shortest path between every pair of nodes. Assume we have a regular ring lattice with $N$ nodes and each node has $K$ neighbors. Now we can calculate the distance between node $i$ and every other node in the ring lattice
 \begin{itemize}
@@ -1036,19 +1035,19 @@ where the sum runs over the shortest path between every pair of nodes. Assume we
 \end{itemize}  
 So the average distance for node $i$ becomes \cite{chap9}
 \begin{equation}
-	l_i = \frac{1}{N-1} K \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg) \approx \frac{K}{N} \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg)
+	l_i = \frac{1}{N-1} K \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg) \approx \frac{K}{N} \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg) \ ,
 \end{equation}
 where the last approximation holds for $N \gg 1$. Since every node in the regular ring lattice is identical we can easily find the average distance of the network \cite{chap9}
 \begin{equation}
-	l = \frac{1}{N} \sum_i l_i = \frac{1}{N} N l_i \approx \frac{K}{N} \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg)
+	l = \frac{1}{N} \sum_i l_i = \frac{1}{N} N l_i \approx \frac{K}{N} \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg) \ .
 \end{equation}
 Using \cite{chap9}
 \begin{equation}
-	1 + 2+ 3 +...+ x = \sum_{i = 1}^x i = \frac{x(x+1)}{2} \approx \frac{x^2}{2}
+	1 + 2+ 3 +...+ x = \sum_{i = 1}^x i = \frac{x(x+1)}{2} \approx \frac{x^2}{2} \ ,
 \end{equation}
 where the last approximation again holds for $x \gg 1$; we finally obtain \cite{chap9}
 \begin{equation}
-	l \approx \frac{K}{N} \frac{\frac{N^2}{K^2}}{2} = \frac{N}{2K}
+	l \approx \frac{K}{N} \frac{\frac{N^2}{K^2}}{2} = \frac{N}{2K} \ .
 \end{equation}
 
 \newpage
