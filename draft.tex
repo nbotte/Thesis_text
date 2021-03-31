@@ -1,4 +1,4 @@
-\documentclass[11 pt , letterpaper , oneside , openright]{book}
+\documentclass[11 pt , letterpaper , twoside , openright]{book}
 \renewcommand{\baselinestretch}{1.15} 
 \usepackage[utf8]{inputenc}
 
@@ -53,6 +53,16 @@
 \chapternumberfont{\color{NavyBlue}}
 \chaptertitlefont{\color{black}\sectionrule{3ex}{3pt}{-1ex}{1pt}}
 
+\usepackage{geometry}
+\geometry{
+ a4paper,
+ left=30mm,
+ bottom=25mm,
+ right = 20mm
+}
+
+\usepackage{emptypage}
+
 \begin{document}
 
 \frontmatter
@@ -92,7 +102,7 @@
  
 \vfill
 
-{\large \today}\\[4cm] % Date
+{\large Academic year 2020-2021}\\[4cm] % Date
 %\includegraphics[scale=0.7]{ugent_logo.png} % University/department logo - uncomment to place it
 % https://www.overleaf.com/project/605b4c033a439c5f0f15c7e5 --> copywright?
 \vfill
@@ -100,10 +110,13 @@
 \end{titlepage}
 
 \pagestyle{plain}
-
-\chapter*{Acknowledgments} 
+\renewcommand{\abstractname}{Acknowledgments}
+\begin{abstract}
 \addcontentsline{toc}{chapter}{Acknowledgments}
 
+\end{abstract}
+
+\renewcommand{\abstractname}{Abstract}
 \selectlanguage{english}
 \begin{abstract}
 \addcontentsline{toc}{chapter}{Abstract}
@@ -148,7 +161,9 @@ It is also known that some people change their opinions more easily than others,
 \newline
 One important feature of opinion dynamics on social media is the use of algorithmic personalization. Social media allow for simultaneous or asynchronous interactions between people without geographical constraints and thus allow for the spread of information at a faster pace and at an unprecedented scale \cite{Perra2019}. People are, however, still bound by temporal and cognitive constraints. In order to assure a more pleasant/convenient experience on their platforms, social media companies use algorithms to order/filter the posts on an individual's time-line according to what might be relevant to that individual \cite{Perra2019}. It is of great importance to know the possible effects of these filtering algorithms on the evolution of opinions in the population.\\  
 \newline
-Opinion dynamics models have two important layers. On one hand, we introduce social networks to describe the underlying structure of social interactions; on the other hand, we need appropriate opinion dynamics/formation models to reproduce the opinion dynamics and opinion formation processes found in real life.\\ Section \ref{complNet} gives an introduction to the first layer, namely that of complex networks. The second layer, the opinion dynamics layer, is introduced in Section \ref{Opinion}. Section \ref{statPhys} introduces concepts such as statistical and social physics. Finally, in Section \ref{goal}, the hypotheses and goals of this thesis are discussed.
+Opinion dynamics models have two important layers. On one hand, we introduce social networks to describe the underlying structure of social interactions; on the other hand, we need appropriate opinion dynamics/formation models to reproduce the opinion dynamics and opinion formation processes found in real life.\\
+\newline
+Section \ref{complNet} gives an introduction to the first layer, namely that of complex networks. The second layer, the opinion dynamics layer, is introduced in Section \ref{Opinion}. Section \ref{statPhys} introduces concepts such as statistical and social physics. Finally, in Section \ref{goal}, the hypotheses and goals of this thesis are discussed.
 
 
 \section{Complex networks}\label{complNet}
@@ -254,7 +269,7 @@ The adjacency matrix contains a lot of information such as the degree of a node.
 \begin{equation}
 	k_i = \sum_{j=1}^N A_{ij}
 \end{equation}
-In the case of a directed graph one can differentiate between the number of incoming edges $k_i^{\text{in}}$ and the number of outgoing edges $k_i^{\text{out}}$ of node $i$. These are called the in-degree and out-degree respectively and are defined as \cite{Mata2020}
+In the case of a directed graph one can differentiate between the number of incoming edges $k_i^{\textrm{in}}$ and the number of outgoing edges $k_i^{\textrm{out}}$ of node $i$. These are called the in-degree and out-degree respectively and are defined as \cite{Mata2020}
 \begin{equation}
 	k_i^{\text{in}} = \sum_{j=1}^N A_{ji} \quad \text{and} \quad k_i^{\text{out}} = \sum_{j=1}^N A_{ij}
 \end{equation}
@@ -292,7 +307,7 @@ However, the terms assortativity and disassortativity are also often used withou
 
 % talk about assortativity of social networks?? + talk about node assortativity instead of global assortativity, see Thed2014?
 
-
+\newpage
 \subsection{Network distances}
 
 % explain length, diameter, average length,...
@@ -318,7 +333,7 @@ This measurement quantifies the efficiency of the network in sending information
 \newline
 The diameter $diam(G)$ of a network $G$ is the maximum distance between any pair of nodes \cite{Goddard2010}. The eccentricity of a node is the maximum distance from that node to any other node. The radius $rad(G)$ is the minimum eccentricity among all nodes of $G$. Note that the diameter is the maximum eccentricity among all nodes in $G$ \cite{Goddard2010}.
 % finished?
-
+\newpage
 \subsection{Clustering coefficient and transitivity}
 
 The clustering coefficient is another important measure of network topology. It is a measure for the number of triangles in a network and determines the connectivity in the neighborhood of a node $i$: if a node $i$ has a high clustering coefficient, its neighbors are likely to be directly connected to each other \cite{Li2017}. \\Here a triangle is defined as a loop of length three, this is a sequence of nodes $x, y, z, x$ such that $\{x, y\}, \{y, z\}$ and $\{z, x\}$ are edges of the network. The clustering coefficient is thus a way to measure the degree to which nodes in a network tend to cluster \cite{Li2017}. The local clustering coefficient of a node $i$ is defined as
@@ -328,7 +343,7 @@ The clustering coefficient is another important measure of network topology. It 
 where $n_i$ is the number of edges that actually exist between the nodes in the neighborhood of $i$ and $k_i(k_i-1)/2$ is the maximum number of edges that could exist between them (note that this expression is only valid for an undirected graph, since for a directed graph $e_{ij} \neq e_{ji}$ and we have $k_i(k_i-1)$ possible edges between the neighbors of node i). % should give more mathimatical expression for n_i?
 The average clustering coefficient is then given as the average of the local clustering coefficients
 \begin{equation}\label{avClus}
-	\bar{C} = \frac{1}{N}\sum_{i = 1}^N C_i
+	\left<C\right> = \frac{1}{N}\sum_{i = 1}^N C_i
 \end{equation}
 where $N$ denotes, once again, the number of nodes in the network. The clustering coefficient is, beside a measure for the connectivity in the network, also linked to the robustness, or resilience against random damage,  of the network \cite{Heer2020}\cite{Iyer2013} \cite{Li2017}. \\
 \newline
@@ -350,7 +365,7 @@ where $N_{\Delta}(i)$ represents the number of triangles that involve node $i$ a
 	N_{\Delta}(i) &= \sum_{k > j} A_{ij}A_{ik}A_{jk} \\
 	N_3(i) &= \sum_{k > j} A_{ij}A_{ik}
 \end{align}
-It is not too hard to see that $N_{\Delta}(i)$ counts the number of edges between the neighbors of $i$ and that $N_3(i)$ is equal to $k_i(k_i-1)/2$, where $k_i$ is the degree of node $i$. It is then obvious that the local clustering coefficient $C_i$ (Eq. (\ref{clus})) of a node and the transitivity $T_i$ (Eq. (\ref{trans})) of a node define the same quantity \cite{F.Costa2007}. In the case of the average clustering coefficient $\bar{C}$ and the global transitivity $T$ this is, however, not the case. The difference between the two definitions is that the average of Equation (\ref{globalTrans}) gives the same weight to each triangle in the network, whereas Equation (\ref{avClus}) gives the same weight to each node. This may lead to slightly different values since nodes with a higher degree may possibly be involved in a higher number of triangles than nodes with a lower degree \cite{F.Costa2007}.
+It is not too hard to see that $N_{\Delta}(i)$ counts the number of edges between the neighbors of $i$ and that $N_3(i)$ is equal to $k_i(k_i-1)/2$, where $k_i$ is the degree of node $i$. It is then obvious that the local clustering coefficient $C_i$ (Eq. (\ref{clus})) of a node and the transitivity $T_i$ (Eq. (\ref{trans})) of a node define the same quantity \cite{F.Costa2007}. In the case of the average clustering coefficient $\left<C\right>$ and the global transitivity $T$ this is, however, not the case. The difference between the two definitions is that the average of Equation (\ref{globalTrans}) gives the same weight to each triangle in the network, whereas Equation (\ref{avClus}) gives the same weight to each node. This may lead to slightly different values since nodes with a higher degree may possibly be involved in a higher number of triangles than nodes with a lower degree \cite{F.Costa2007}.
 	
 \subsection{Network communities}
 
@@ -364,16 +379,16 @@ A clique is a complete subgraph, where a complete subgraph is defined as a set o
 \newline
 \textbf{Strong communities}\\
 \newline
-A strong community is defined such that each node inside the community has more edges to other nodes inside the same community than to nodes outside the community \cite{Albert2016}. Let us denote a community as $C$ and let $i$ be a node inside the community $C$. If we define the internal degree $k_i^{int}(C)$ as the number of edges that connect node $i$ with other nodes in $C$ and the external degree $k_i^{ext}(C)$ as the number of edges that connect node $i$ with nodes outside $C$, then we have the following condition for $C$ to be a strong community \cite{Albert2016}
+A strong community is defined such that each node inside the community has more edges to other nodes inside the same community than to nodes outside the community \cite{Albert2016}. Let us denote a community as $C$ and let $i$ be a node inside the community $C$. If we define the internal degree $k_i^{\textrm{int}}(C)$ as the number of edges that connect node $i$ with other nodes in $C$ and the external degree $k_i^{\textrm{ext}}(C)$ as the number of edges that connect node $i$ with nodes outside $C$, then we have the following condition for $C$ to be a strong community \cite{Albert2016}
 \begin{equation}
-	k_i^{int}(C) > k_i^{ext}(C) \qquad \forall i \in C
+	k_i^{\textrm{int}}(C) > k_i^{\textrm{ext}}(C) \qquad \forall i \in C
 \end{equation}
 \newline
 \textbf{Weak communities}\\
 \newline
 A weak community is a community where the sum of the internal degree of all the nodes in the community exceeds the sum of the external degree of all the nodes in the community \cite{Albert2016}. We thus have the following condition for a weak community $C$ \cite{Albert2016}
 \begin{equation}
-	\sum_{i \in C} k_i^{int}(C) > \sum_{i \in C}k_i^{ext}(C)
+	\sum_{i \in C} k_i^{\textrm{int}}(C) > \sum_{i \in C}k_i^{\textrm{ext}}(C)
 \end{equation}
 
 \subsection{Modularity}
@@ -400,7 +415,6 @@ The derivation of this formula and thus of Eq. (\ref{Qc}) can be found in Append
 \begin{itemize}
 	\item The higher the value of $Q$ is for a certain partition, the better is the corresponding community structure. This idea is used in community detection algorithms, where modularity is maximized in order to find the optimal community structure.
 	\item A modularity $Q$ equal to zero corresponds to the situation where all nodes are put in the same community, this is if the whole network is put into a single community. Then the two terms in Eq. (\ref{mod}) become equal and $Q$ vanishes.
-	\newline
 	\item If every node is put into a separate community, the first term in Eq. (\ref{mod}) vanishes and we are left with $n_c$ negative terms. Hence, this situation corresponds to a negative modularity.
 \end{itemize}
 As said before, modularity is often used in community detection algorithms. It is thus important to be aware of the limitations of modularity. One of the biggest shortcomings of modularity maximization as community detection is its resolution limit. Modularity maximization forces small communities into larger ones \cite{Albert2016}. If two communities $A$ and $B$ are merged, the modularity changes by \cite{Albert2016}
@@ -417,7 +431,7 @@ and if there is at least one edge between the two communities; even if $A$ and $
 
 % talk about what is a graph, talk about degree distribution, clustereing, average path length, etc (in different subsections), maybe things like assortativity, page rank,...
 % explain small-world (milgram), high clustering, power-law
-
+\newpage
 \section{Network models}
 \label{netModel}
 
@@ -446,8 +460,7 @@ The derivation can be found in Appendix \ref{ER}, Section \ref{degdis}. From thi
 \end{split}
 \end{equation}
 This equation can be simplified to $\left<k\right> = (N-1)p$, and for $N \gg 1$ this approximately becomes $\left<k\right> = Np$. The derivation of this result can be found in Appendix \ref{ER}, Section \ref{degree}.\\
-\newpage
-\noindent
+\newline
 Most real networks are sparse, which means that $\left<k\right> \ll N$. In this case the degree distribution of the random network is well approximated by a Poisson distribution \cite{Albert2014} 
 \begin{equation}
 	p_k = \mathrm{e}^{-\left<k\right>} \frac{\left<k\right>^k}{k!}
@@ -458,9 +471,9 @@ The derivation can be found in Appendix \ref{ER}, Section \ref{poiss}. \\
 \newline
 The average clustering coefficient (Eq. (\ref{globalTrans})) of the Erd\H{o}s-R\'{e}nyi network is given by \cite{Clauset2011}
 \begin{equation}\label{C}
-	\bar{C} = \frac{\binom{N}{3}p^3}{\binom{N}{3}p^2} = p = \frac{\left<k\right>}{N-1}
+	\left<C\right> = \frac{\binom{N}{3}p^3}{\binom{N}{3}p^2} = p = \frac{\left<k\right>}{N-1}
 \end{equation}
-This can be easily understood since choosing three nodes out of $N$ is given by $\binom{N}{3}$. The chance that they are connected by three edges is given by $p^3$, which gives the number of triangles; the chance that the are connected by two edges is $p^2$, which determines the number of connected triples (recall that this model creates random networks with no self-loops and no edge duplicates). If the average degree $\left<k\right>$ is constant, the average clustering constant goes as $\bar{C} \sim \mathcal{O}(1/N)$, which becomes very small for large networks \cite{Clauset2011}. \\
+This can be easily understood since choosing three nodes out of $N$ is given by $\binom{N}{3}$. The chance that they are connected by three edges is given by $p^3$, which gives the number of triangles; the chance that the are connected by two edges is $p^2$, which determines the number of connected triples (recall that this model creates random networks with no self-loops and no edge duplicates). If the average degree $\left<k\right>$ is constant, the average clustering constant goes as $\left<C\right> \sim \mathcal{O}(1/N)$, which becomes very small for large networks \cite{Clauset2011}. \\
 \newline
 \textbf{Diameter and average distance}\\
 \newline
@@ -498,20 +511,20 @@ In 1998, Duncan Watts and Steve Strogatz constructed a network model that genera
 	\item For each node $i$, rewire each edge that connects $i$ with its $K/2$ rightmost neighbors with a probability $\beta$. Rewiring is done in such a way that self-loops and edge duplication are avoided
 \end{enumerate}
 The probability $\beta$ allows us to tune the graph between a regular lattice ($\beta = 0$) and a random network ($\beta = 1$) \cite{Watts1998}. Usually, the following condition is required for the number of neighbors $K$: $N \gg K \gg \ln{N} \gg 1$. The first inequality assures sparse networks, whereas the second inequality guarantees that a random graph will be connected (thus the network is not so sparse that it becomes disconnected) \cite{Watts1998}.\\
-The regular ring lattice ($\beta=0$) has an average clustering coefficient $\bar{C}(0)$ and an average path length $\left<d(0)\right>$ equal to \cite{Watts1998}
+The regular ring lattice ($\beta=0$) has an average clustering coefficient $\left<C(0)\right>$ and an average path length $\left<d(0)\right>$ equal to \cite{Watts1998}
 \begin{align}\label{C0}
-	\bar{C}(0) = \frac{3(K-2)}{4(K-1)} \approx \frac{3}{4} \ \text{for}\ K \gg 1 && \left<d(0)\right> \approx \frac{N}{2K}
+	\left<C(0)\right> = \frac{3(K-2)}{4(K-1)} \approx \frac{3}{4} \ \text{for}\ K \gg 1 && \left<d(0)\right> \approx \frac{N}{2K}
 \end{align}
 The derivations of these formulas can be found in Appendix \ref{WS}, Section \ref{ringclus}. The regular ring lattice thus has a high clustering coefficient and an average path length that grows linearly with the system size $N$. \\
-The random network ($\beta = 1$) on the other hand has a low clustering coefficient $\bar{C}(1)$ and a small average path length $\left<d(1)\right>$ (see Eq. (\ref{C}) and Eq. (\ref{d})) \cite{Watts1998}
+The random network ($\beta = 1$) on the other hand has a low clustering coefficient $\left<C(1)\right>$ and a small average path length $\left<d(1)\right>$ (see Eq. (\ref{C}) and Eq. (\ref{d})) \cite{Watts1998}
 \begin{align}
-	\bar{C}(1) \approx \frac{K}{N} \ll 1 && \left<d(1)\right> \approx \frac{\ln{N}}{\ln{K}}
+	\left<C(1)\right> \approx \frac{K}{N} \ll 1 && \left<d(1)\right> \approx \frac{\ln{N}}{\ln{K}}
 \end{align}
 Watts and Strogatz then showed by numerical simulation that the average distance for the networks with $0 < \beta < 1$ is comparable with the average distance of a random graph (which is small), even for small $\beta$ \cite{Newman2000}. The clustering coefficient is approximately given by   \cite{Barrat1999}
 \begin{equation}
-	\bar{C} \approx \bar{C}(0)(1-\beta)^3
+	\left<C\right> \approx \left<C(0)\right>(1-\beta)^3
 \end{equation} 
-where $\bar{C}(0)$ is given by Equation (\ref{C0}). This can be seen in the following way
+where $\left<C(0)\right>$ is given by Equation (\ref{C0}). This can be seen in the following way
 \begin{itemize}
 	\item The probability that none of the three edges of the original triangles in the regular lattice are rewired is $(1-\beta)^3$
 	\item The probability that edges are rewired back to each other is negligible
@@ -539,7 +552,8 @@ The stochastic block model can be fitted to data \cite{Clauset2017}. Given a cho
 One of the shortcomings of fitting the SBM to infer the community structure, is that real-world networks often have a heterogeneous or power-law degree distribution. Since the SBM is made of random networks inside each group and random bipartite networks between each pair of groups, the degree distribution of the full network is always a mixture of Poisson distributions \cite{Clauset2017}. The consequence of this is that if a network possesses a more skewed degree distribution, then fitting the SBM to the data will most likely give poor results \cite{Karrer2011}. The reason behind this is one of the main assumptions of the stochastic block model, namely the fact that the edge probabilities only depend  on which group the node belongs to \cite{Clauset2017}. In other words, nodes that belong to the same group are stochastically  equivalent, meaning that they have equivalent connectivity patterns to other nodes \cite{Clauset2017}. However, a network with a skewed degree distribution violates this assumption of edge independence \cite{Clauset2017}. To say it in the words of Karrer and Newman: "Just as the fitting of a straight line to intrinsically curved data is likely to miss important features of the data, so a fit of the simple stochastic block model to the structure of a complex network is likely to miss much [...]." (Karrer and Newman, p.1, reference \cite{Karrer2011}). Karrer and Newman proposed a variation of the SBM, the degree corrected SBM, that deals with this limitation. We will not discuss their variation, since that would lead us too far astray, but interested readers can find more detailed information in reference \cite{Karrer2011}. \\
 \newline
 An extension that we are going to explore a bit deeper is the stochastic Watts-Strogatz block model (SBM-WS).\\
-\newline
+\newpage
+\noindent
 \textbf{The stochastic Watts-Strogatz block model (SBM-WS)}\\
 \newline
 As said before, the stochastic block model is a very flexible model and there are many different extensions. One extension that is used in this thesis is a stochastic block model that uses the Watts-Strogatz model instead of the Erd\H{o}s-R\'{e}nyi model to construct the constituent communities. In this way, we obtain a version of the stochastic block model that has both a community structure and a high clustering coefficient.\\
@@ -607,6 +621,8 @@ Most of these studies conclude that, at the end of the opinion evolution, a comp
 \subsection{The probabilistic majority model}
 
 The probabilistic majority model is similar to the majority model, but has, as the name suggests, a more probabilistic/random nature. In this model the fraction of neighbors of user $i$ with opinion A and the fraction of neighbors with opinion B are determined. Then, the opinion of user $i$ is updated: he/she takes on opinion A (or B) with a probability equal to the fraction of his/her neighbors with opinion A (or B) \cite{Perra2019}.\\
+\newpage
+\noindent
 For example, if $70\%$ of the neighbors of user $i$ have an opinion A (and thus $30 \%$ of the neighbors have opinion B), user $i$ will update his/her opinion to opinion A with a probability 0.7 and to opinion B with a probability 0.3 \cite{Perra2019}. Thus, user $i$ no longer simply updates his/her opinion according to the majority of opinions carried by his/her neighbors, but the majority opinion still has a higher probability to be taken on by this user.\\
 This model is no longer deterministic, but has a level of randomness, which is an important component of opinion dynamics \cite{Perra2019}. 
 % https://arxiv.org/pdf/0710.3256.pdf read this (overview, discusses several models)!!
@@ -731,8 +747,7 @@ What is the impact of having stubborn/extreme people in your society? Does it ma
 
 The bounded confidence models, discussed in Section \ref{bounded}, can be easily extended to included some notion of stubbornness. Guillaume Deffuant proposed such an extension where stubbornness is correlated to extremism \cite{Deffuant2006}. The model he proposed goes as follows. Remember that in the bounded confidence models, the agents have an opinion $x_i$ (which is a real number, often between $\interval{0}{1}$ or between $\interval{-1}{1}$) and a threshold $\epsilon_i$, which determines the range of opinions that can influence agent $i$ (agents with opinions between $\interval{x_i - \epsilon_i}{x_i + \epsilon_i}$ are capable of influencing agent $i$). Guillaume Deffuant then introduced a fraction of extremists, $f_e$, which can have either the extreme opinion $-1$ or the extreme opinion $1$ \cite{Deffuant2006}. These extremists are given a threshold equal to $\epsilon_e$ \cite{Deffuant2006}. The other agents are considered to be moderate and can have opinions between $-1$ and $1$. The moderates are given a threshold $\epsilon$, with $\epsilon > \epsilon_e$ \cite{Deffuant2006}. This last condition implicitly denotes the resistance of the extremes towards other opinions in contrast to the more flexible nature of the moderates, which is again based on the idea that people with extreme opinions will be more convinced of that opinion and will be less likely to change it.\\
 Since this thesis is not concerned with bounded confidence models, we will not discuss the results of this model here. Interested readers can find them in reference \cite{Deffuant2006}. \\
-\newpage
-\noindent
+\newline
 Another example of introducing some kind of persistence towards the own opinion of the nodes is the "hardening of positions" that was briefly discussed at the end of Section \ref{classMod}.
 
 \subsection{Stubbornness in binary models}
@@ -746,7 +761,6 @@ One way of creating stubborn people in the binary model is by giving each node $
 \begin{itemize}
 	\item If $r_i = 0$, the node is not stubborn and can be easily convinced of the value of the other opinion (according to which opinion dynamics model that is implemented: majority, probabilistic majority,...)
 	\item If $r_i = 1$, the node is completely stubborn and there is no chance of convincing him/here of the other idea
-	\newline
 	\item If $0 < r_i < 1$, the node has some resistance but can still be convinced to switch to the other opinion, even though he/she will be less likely to do so. A uniform random number $f$ between 0 and 1 is drawn. If $f > r_i$, the node will update his/her opinion; if $f \leqslant r_i$, the node is not convinced and keeps his/her own opinion 
 \end{itemize}
 The resistance parameter $r_i$ can be different or the same for all nodes. One can also play around with the fraction of nodes that is stubborn, for example, there can be a fraction of nodes that is completely stubborn ($r = 1$) and a remaining fraction that is not stubborn at all ($r = 0$). Many other possibilities can be found according to how the stubborn people are distributed and according to how stubborn they are made. This makes the model very flexible.\\
