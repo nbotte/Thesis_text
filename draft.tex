@@ -41,6 +41,7 @@
 \usepackage[colorlinks,citecolor=NavyBlue,linkcolor=NavyBlue% 
 ,urlcolor=NavyBlue,linktocpage=true,bookmarks=false,hypertexnames=true]{hyperref} 
 \usepackage[noend]{algpseudocode}
+\usepackage[labelfont=bf]{caption}
 \usepackage{subcaption}
 \usepackage{xfrac}
 \floatname{algorithm}{Algoritme}
@@ -125,7 +126,10 @@
 The past decade, the rise of social media has become undeniable. More and more people are getting engaged on some type of social media platform and hence, it is probably not wrong to say that nowadays most of us have, beside our real life, a virtual life on social media. This rapidly increased engagement on social media undoubtedly has many advantages. However, every upside has a downside and social media is no different. This thesis deals with the impact of social media on the formation and evolution of opinions in society.\\ 
 Social media allows for the spread of information at a faster pace and at an unprecedented scale. However, people are still bounded by time- and cognitive constraints. In order to handle the information overflow, social media companies design filtering algorithms that can fine-tune and individualize the information someone is exposed to. This filtering and individualizing of information may have some potentially dangerous downfalls in the sense that people might get trapped in "echo chambers" that confirm their own beliefs. It is important to know the effects of such algorithmic personalization on the appearance and formation of phenomena such as polarization, spread of extremism, formation of echo chambers, etc.\\
 People are, however, more than sheep that thoughtlessly follow their shepherd (contrary to what some books might lead us to believe). They are capable of critical thinking and may be hesitant to change their current opinion. This aspect of potential stubbornness should not be ignored.\\
-In this thesis toy models are designed to investigate the interplay between network structure, filtering algorithms and individual resistance to change in the evolution of two competing opinions. We will investigate whether network properties such as community structure and clustering coefficient may enhance or hamper the formation of echo chambers. We will use some basic filtering algorithms to determine their possible effects on the appearance of echo chambers and we will investigate the impact of individual stubbornness. Beside that, we will also pay some attention to the possible ways of distributing the opinions; we will compare randomly distributed cases to cases where entire communities are given one single opinion.
+In this thesis toy models are designed to investigate the interplay between network structure, filtering algorithms and individual resistance to change in the evolution of two competing opinions.\\
+We will investigate whether network properties such as community structure and clustering coefficient may enhance or hamper the formation of echo chambers. We will use some basic filtering algorithms to determine their possible effects on the appearance of echo chambers and we will investigate the impact of individual stubbornness. \\
+Beside that, we will also pay some attention to the possible ways of distributing the opinions and the stubborn people and how this may effect the opinion dynamics in the system. \\
+Finally, we will test the model on real-world networks.
 % definetely not finished!! --> add some type of conclusions or not? talk about running model on real world networks?
 \end{abstract}
 
@@ -797,7 +801,7 @@ Note that the above examples are only a handful of the possible ways to include 
 \chapter{Materials and methods in this thesis}
 
 The previous two chapters, Chapter \ref{chap2} and \ref{chap3}, gave a broad introduction/overview of networks and opinion dynamics models respectively. In this chapter we will summarize the specific networks and opinion dynamics models that are used in this thesis. \\
-Section \ref{networkmodel} gives an overview of the network models that are used in this thesis. In chapter \ref{chap2}, Section \ref{netModel} we already discussed their main properties; here we will mainly discuss why we use these networks. Which of their properties are of interest in this thesis? What are there benefits and possible shortcomings regarding to the goals of this thesis?\\
+Section \ref{networkmodel} gives an overview of the network models that are used in this thesis. In chapter \ref{chap2}, Section \ref{netModel} we already discussed their main properties; here we will mainly discuss why we use these networks. Which of their properties are of interest in this thesis? What are there benefits and possible shortcomings regarding to our goals?\\
 In section \ref{realnetwork}, we will discuss the real-world networks used in this thesis.\\ % + explain where they come from etc?
 Finally, Section \ref{opinionmodel} discusses the opinion dynamics model that is implemented in this thesis. Again we will give some focus on possible advantages and disadvantages of the model.
 
@@ -838,8 +842,9 @@ The stochastic Watts-Strogatz block model is used as a model that has both a hig
 All the above models have a homogeneous degree distribution. In this thesis, we didn't focus on network models which generate networks with a heterogeneous degree distribution such as the Barab\'{a}si-Albert model. It might, however, be an interesting extension to investigate such types of models as well.\\
 \newline
 The above models obviously have their added value and benefits. One of their most important plus points is their simplicity. They are the most simple network models that one can create and each of them have characteristics and topologies that can be easily tuned (clustering for WS, community structure for SBM). This makes it really easy to investigate the effect of different network topologies (clustering, community structure) without the need of taking the interplay with other possible complex network features and topologies into account.\\
-This plus side is, however, also one of the possible downsides. Real networks aren't simple networks with single, isolated characteristics, but are instead complex networks where many different characteristics and topologies may each play a role. In other words, network models may lack many features of real-world networks. It is thus always a bit tricky, and sometimes even incorrect, to extrapolate the results that are obtained by using network models to real-world networks.\\
+This plus side is, however, also one of the possible downsides. Real networks aren't simple networks with single, isolated characteristics, but are instead complex networks where many different characteristics and topologies may each play a role. In other words, network models may lack many features of real-world networks. It is thus always a bit tricky, and sometimes even incorrect, to extrapolate the results that are obtained by using network models to real-world situations.\\
 The fact that all the above models have a homogeneous degree distribution may also be a drawback, since most real-world networks have a heterogeneous degree distribution.\\
+\newline
 The conclusion of this section is that all the network models used in this thesis serve a goal and have specific topologies that are of interest in this thesis. But, it must always be kept in mind that, as the name itself already says, these models are just models of the real world. Results that are obtained from them should not be thoughtlessly extrapolated to real-world networks.
 
 
@@ -848,6 +853,17 @@ The conclusion of this section is that all the network models used in this thesi
 % use pseudo code here??
 
 \chapter{Results}
+
+TEST FIGURE!!
+
+\begin{figure}[h]
+\centerline{\includegraphics[width=14cm, height=10cm]{echo_chamber_vs_stubbornness_SBM_WS_fracStubb_PR.png}}
+\caption{This is an image from a text that uses color to teach music. Make really really long caption, as long as textwidth}
+\captionsetup{width=\textwidth, labelfont=bf}
+\label{fig}
+\end{figure}
+\noindent
+The conclusion of this section is that all the network models used in this thesis serve a goal and have specific topologies that are of interest in this thesis. But, it must always be kept in mind that, as the name itself already says, these models are just models of the real world. Results that are obtained from them should not be thoughtlessly extrapolated to real-world networks.
 
 \chapter{Discussion}
 
