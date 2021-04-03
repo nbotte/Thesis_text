@@ -129,7 +129,8 @@ People are, however, more than sheep that thoughtlessly follow their shepherd (c
 In this thesis toy models are designed to investigate the interplay between network structure, filtering algorithms and individual resistance to change in the evolution of two competing opinions.\\
 We will investigate whether network properties such as community structure and clustering coefficient may enhance or hamper the formation of echo chambers. We will use some basic filtering algorithms to determine their possible effects on the appearance of echo chambers and we will investigate the impact of individual stubbornness. \\
 Beside that, we will also pay some attention to the possible ways of distributing the opinions and the stubborn people and how this may effect the opinion dynamics in the system. \\
-Finally, we will test the model on real-world networks.
+Finally, we will test the model on real-world networks. Some question that may arise are: Do the results agree with those obtained from the network models? What are the similarities or differences in the results? What are the possible underlying reason/structures for these similarities/differences?\\
+
 % definetely not finished!! --> add some type of conclusions or not? talk about running model on real world networks?
 \end{abstract}
 
@@ -187,6 +188,8 @@ One of the goals of this thesis is to investigate/determine the role of the unde
 % to do: read links 19, 21, 22, 23, 24 of https://arxiv.org/pdf/0711.3199.pdf
 
 % talk about difference between simple networks and complex network??
+
+% talk about using real-world networks to compare against network models??
 
 \section{Opinion dynamics}\label{Opinion}
 
@@ -802,7 +805,7 @@ Note that the above examples are only a handful of the possible ways to include 
 
 The previous two chapters, Chapter \ref{chap2} and \ref{chap3}, gave a broad introduction/overview of networks and opinion dynamics models respectively. In this chapter we will summarize the specific networks and opinion dynamics models that are used in this thesis. \\
 Section \ref{networkmodel} gives an overview of the network models that are used in this thesis. In chapter \ref{chap2}, Section \ref{netModel} we already discussed their main properties; here we will mainly discuss why we use these networks. Which of their properties are of interest in this thesis? What are there benefits and possible shortcomings regarding to our goals?\\
-In section \ref{realnetwork}, we will discuss the real-world networks used in this thesis.\\ % + explain where they come from etc?
+In section \ref{realnetwork}, we will discuss the real-world networks used in this thesis. The reasons of choosing these specific networks will be explained, together with there possible strengths and weaknesses.\\ % + explain where they come from etc?
 Finally, Section \ref{opinionmodel} discusses the opinion dynamics model that is implemented in this thesis. Again we will give some focus on possible advantages and disadvantages of the model.
 
 
@@ -849,6 +852,12 @@ The conclusion of this section is that all the network models used in this thesi
 
 
 \section{Real-world networks}\label{realnetwork}
+% talk about reasons why you chose the networks you chose: eg. size (computation time),...
+
+Ideally, we would test the opinion dynamics model that was used throughout this thesis on network data directly obtained from social network companies. However, most of these companies are not to keen on sharing any form of data. This makes it very hard to find accurate and complete social media network data. Hence, we chose to test the model on other types of social networks, either on-line or off-line. Some possibilities are any form of friendship networks, e-mail networks, collaboration networks, etc. \\
+\newline
+One of the decisive properties of the real-world networks that were eventually used, was there size. The main, and actually only, reason for this was the computation time. If the networks would be to large, it would take weeks, sometimes even months before there would be any kind of results.\\
+The size of the network models that were used, was around a thousand nodes. So for the real-world networks, we also used networks with a size of magnitude of thousand. This obviously benefits the computation time; it is, however, unknown how the network size affects the results. It is therefore recommended to test the model on larger network models and on larger real-world networks in future researches on this topic.  
 \section{Opinion dynamics models}\label{opinionmodel}
 % use pseudo code here??
 
@@ -866,6 +875,10 @@ TEST FIGURE!!
 The conclusion of this section is that all the network models used in this thesis serve a goal and have specific topologies that are of interest in this thesis. But, it must always be kept in mind that, as the name itself already says, these models are just models of the real world. Results that are obtained from them should not be thoughtlessly extrapolated to real-world networks.
 
 \chapter{Discussion}
+
+% put here: be carefull with extrapolating data/results to real world cases, need for more real data to compare with (eg data from role of facebook in elections in US), this lack of comparison between real data and network model data/analytical work = one of the downfalls/backsides of social physics??
+% relevance to society of knowing the impact of social media on opinion dynamics 
+% important to know the limits of the model, may be intuitive, but intuition maybe misleading (learned in physics) --> why we need experimental data to compare with!
 
 \chapter{Conclusions and outlook}
 
