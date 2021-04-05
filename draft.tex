@@ -863,16 +863,35 @@ The size of the network models that were used, was around a thousand nodes. So f
 
 \chapter{Results}
 
-TEST FIGURE!!
+\section{Impact of network structure}
 
-\begin{figure}[h]
-\centerline{\includegraphics[width=14cm, height=10cm]{echo_chamber_vs_stubbornness_SBM_WS_fracStubb_PR.png}}
-\caption{This is an image from a text that uses color to teach music. Make really really long caption, as long as textwidth}
-\captionsetup{width=\textwidth, labelfont=bf}
-\label{fig}
+\subsection{Evolution of opinions}
+% write explanation here! Also mention all model parameters (eg Q=10, etc)!!
+\begin{figure}[h!]
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_001_50-50_PR_REC.png}
+    \caption{ER}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_50-50_PR_REC.png}
+    \caption{WS}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR_REC.png}
+    \caption{SBM}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_10x100_10-001-0001_50-50_PR_REC.png}
+    \caption{SBM-WS}
+  \end{subfigure}
+  \caption{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ distribution. Four different network models are used (each with an average degree around 10 and a total number of nodes equal to 1000): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS), $K = 10$, two slightly different values of the clustering coefficient are used ($\left<C\right> \sim 0.55$ and $\left<C\right> \sim 0.60$); \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100 ($10\times100$), a high modularity case ($p_{cl} = 0.1,\ p_{add} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{cl} = 0.03,\ p_{add} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100 ($10\times100$), each community has the following WS parameters: $K = 10,\ \beta = 0.01$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. Each figure is the result of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}%more explanation?
 \end{figure}
-\noindent
-The conclusion of this section is that all the network models used in this thesis serve a goal and have specific topologies that are of interest in this thesis. But, it must always be kept in mind that, as the name itself already says, these models are just models of the real world. Results that are obtained from them should not be thoughtlessly extrapolated to real-world networks.
+\newpage
+\subsection{Echo chambers}
+
+\section{Impact of stubborn people}
+
+\section{Random versus community distributed opinions/stubborn agents}
 
 \chapter{Discussion}
 
