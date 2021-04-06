@@ -381,54 +381,57 @@
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {5.1}Impact of network structure}{37}{section.5.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Evolution of opinions}{37}{subsection.5.1.1}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ distribution. Four different network models are used (each with an average degree around 10 and a total number of nodes equal to 1000): \textbf  {(a)} Erd\H {o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf  {(b)} Watts-Strogatz model (WS), $K = 10$, two slightly different values of the clustering coefficient are used ($\left <C\right > \sim 0.55$ and $\left <C\right > \sim 0.60$); \textbf  {(c)} Stochastic block model (SBM) with 10 communities of size 100 ($10\times 100$), a high modularity case ($p_{cl} = 0.1,\ p_{add} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{cl} = 0.03,\ p_{add} = 0.008,\ Q \sim 0.2$) are depicted; \textbf  {(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100 ($10\times 100$), each community has the following WS parameters: $K = 10,\ \beta = 0.01$, $\left <C\right > \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. Each figure is the result of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.\relax }}{38}{figure.caption.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Echo chambers}{39}{subsection.5.1.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Impact of stubborn people}{39}{section.5.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Random versus community distributed opinions/stubborn agents}{39}{section.5.3}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{41}{chapter.6}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ distribution. Four different network models are used (each with an average degree around 10 and a total number of nodes $N = 10^3$): \textbf  {(a)} Erd\H {o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf  {(b)} Watts-Strogatz model (WS), $K = 10$, two slightly different values of the clustering coefficient are used ($\left <C\right > \sim 0.55$ and $\left <C\right > \sim 0.60$); \textbf  {(c)} Stochastic block model (SBM) with 10 communities of size 100 ($10\times 100$), a high modularity case ($p_{\text  {cl}} = 0.1,\ p_{\text  {add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text  {cl}} = 0.03,\ p_{\text  {add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf  {(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100 ($10\times 100$), each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text  {add}} = 0.001$, $\left <C\right > \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.\relax }}{38}{figure.caption.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ distribution. Four different network models are used (each with an average degree around 10 and a total number of nodes $N = 10^3$): \textbf  {(a)} Erd\H {o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf  {(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left <C\right > \sim 0.55$; \textbf  {(c)} Stochastic block model (SBM) with 10 communities of size 100 ($10\times 100$), a high modularity case ($p_{\text  {cl}} = 0.1,\ p_{\text  {add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text  {cl}} = 0.03,\ p_{\text  {add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf  {(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100 ($10\times 100$), each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text  {add}} = 0.001$, $\left <C\right > \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.\relax }}{39}{figure.caption.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Echo chambers}{40}{subsection.5.1.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t = 500$. The distribution is normalized by dividing for the same quantity computed at $t=0$. \textbf  {(a)} Results for the REC method; \textbf  {(b)} Results for the PR method. Four different network models are used, each with a total number of nodes $N = 10^3$ and an average degree around 10: The Erd\H {o}s-R\'{e}nyi model (ER) with $p = 0.01$; The stochastic block model (SBM) with 10 communities of size 100 ($10\times 100$), a high modularity case ($p_{\text  {cl}} = 0.1,\ p_{\text  {add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text  {cl}} = 0.03,\ p_{\text  {add}} = 0.008,\ Q \sim 0.2$) are depicted; The stochastic Watts-Strogatz model (SBM-WS) with 10 communities of size 100 ($10\times 100$), each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text  {add}} = 0.001$, $\left <C\right > \sim 0.55$ and $Q \sim 0.9$; The Watts-Strogatz model (WS) with $K = 10$, two slightly different values of the clustering coefficient are used ($\left <C\right > \sim 0.55$ and $\left <C\right > \sim 0.60$). The starting conditions are $P_0(0) = 0.5$ and $P_1(0) = 0.5$. Each plot is the average of $10^2$ independent simulations.\relax }}{40}{figure.caption.4}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t = 500$. The distribution is normalized by dividing for the same quantity computed at $t=0$. Four different network models are used, each with a total number of nodes $N = 10^3$ and an average degree around 10: \textbf  {(a)} Erd\H {o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf  {(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left <C\right > \sim 0.55$; \textbf  {(c)} Stochastic block model (SBM) with 10 communities of size 100 ($10\times 100$), a high modularity case ($p_{\text  {cl}} = 0.1,\ p_{\text  {add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text  {cl}} = 0.03,\ p_{\text  {add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf  {(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100 ($10\times 100$), each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text  {add}} = 0.001$, $\left <C\right > \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. The starting conditions are $P_0(0) = 0.2$ and $P_1(0) = 0.8$. Each plot is the average of $10^2$ independent simulations.\relax }}{41}{figure.caption.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Impact of stubborn people}{42}{section.5.2}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Random versus community distributed opinions/stubborn agents}{42}{section.5.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{43}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions and outlook}{43}{chapter.7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions and outlook}{45}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{Appendices}{44}{section*.3}}
+\@writefile{toc}{\contentsline {chapter}{Appendices}{46}{section*.6}}
 \citation{Albert2016}
 \citation{Albert2016}
 \citation{Albert2016}
 \citation{Albert2016}
 \citation{Albert2016}
 \citation{Albert2016}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Network measurements: Derivations}{45}{appendix.A}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Network measurements: Derivations}{47}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Modularity}{45}{section.A.1}}
-\newlabel{modul}{{A.1}{45}{Modularity}{section.A.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Simple form of network modularity}{45}{subsection.A.1.1}}
-\newlabel{simplemod}{{A.1.1}{45}{Simple form of network modularity}{subsection.A.1.1}{}}
-\newlabel{modnetw}{{A.3}{45}{Simple form of network modularity}{equation.A.1.3}{}}
-\newlabel{1}{{A.4}{45}{Simple form of network modularity}{equation.A.1.4}{}}
-\newlabel{2}{{A.5}{45}{Simple form of network modularity}{equation.A.1.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Modularity}{47}{section.A.1}}
+\newlabel{modul}{{A.1}{47}{Modularity}{section.A.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Simple form of network modularity}{47}{subsection.A.1.1}}
+\newlabel{simplemod}{{A.1.1}{47}{Simple form of network modularity}{subsection.A.1.1}{}}
+\newlabel{modnetw}{{A.3}{47}{Simple form of network modularity}{equation.A.1.3}{}}
+\newlabel{1}{{A.4}{47}{Simple form of network modularity}{equation.A.1.4}{}}
+\newlabel{2}{{A.5}{47}{Simple form of network modularity}{equation.A.1.5}{}}
 \citation{Albert2016}
 \citation{Albert2016}
 \citation{Albert2016}
 \citation{Albert2016}
-\newlabel{Qfin}{{A.6}{46}{Simple form of network modularity}{equation.A.1.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Modularity change after merging two communities}{46}{subsection.A.1.2}}
-\newlabel{modchange}{{A.1.2}{46}{Modularity change after merging two communities}{subsection.A.1.2}{}}
-\newlabel{Q_AB}{{A.7}{46}{Modularity change after merging two communities}{equation.A.1.7}{}}
+\newlabel{Qfin}{{A.6}{48}{Simple form of network modularity}{equation.A.1.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Modularity change after merging two communities}{48}{subsection.A.1.2}}
+\newlabel{modchange}{{A.1.2}{48}{Modularity change after merging two communities}{subsection.A.1.2}{}}
+\newlabel{Q_AB}{{A.7}{48}{Modularity change after merging two communities}{equation.A.1.7}{}}
 \citation{Hopcroft2006}
 \citation{Hopcroft2006}
 \citation{Hopcroft2006}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Network models: Derivations}{47}{appendix.B}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Network models: Derivations}{49}{appendix.B}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {B.1}The Erd\H {o}s-R\'{e}nyi model}{47}{section.B.1}}
-\newlabel{ER}{{B.1}{47}{The Erd\H {o}s-R\'{e}nyi model}{section.B.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.1}Degree distribution}{47}{subsection.B.1.1}}
-\newlabel{degdis}{{B.1.1}{47}{Degree distribution}{subsection.B.1.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.2}Average degree}{47}{subsection.B.1.2}}
-\newlabel{degree}{{B.1.2}{47}{Average degree}{subsection.B.1.2}{}}
-\newlabel{avDegr}{{B.4}{47}{Average degree}{equation.B.1.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.1}The Erd\H {o}s-R\'{e}nyi model}{49}{section.B.1}}
+\newlabel{ER}{{B.1}{49}{The Erd\H {o}s-R\'{e}nyi model}{section.B.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.1}Degree distribution}{49}{subsection.B.1.1}}
+\newlabel{degdis}{{B.1.1}{49}{Degree distribution}{subsection.B.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.2}Average degree}{49}{subsection.B.1.2}}
+\newlabel{degree}{{B.1.2}{49}{Average degree}{subsection.B.1.2}{}}
+\newlabel{avDegr}{{B.4}{49}{Average degree}{equation.B.1.4}{}}
 \citation{Hopcroft2006}
 \citation{Albert2014}
 \citation{Albert2014}
@@ -436,11 +439,11 @@
 \citation{Albert2014}
 \citation{Albert2014}
 \citation{Albert2014}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.3}Poisson form of the degree distribution}{48}{subsection.B.1.3}}
-\newlabel{poiss}{{B.1.3}{48}{Poisson form of the degree distribution}{subsection.B.1.3}{}}
-\newlabel{pk}{{B.8}{48}{Poisson form of the degree distribution}{equation.B.1.8}{}}
-\newlabel{bin}{{B.9}{48}{Poisson form of the degree distribution}{equation.B.1.9}{}}
-\newlabel{e}{{B.13}{48}{Poisson form of the degree distribution}{equation.B.1.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.3}Poisson form of the degree distribution}{50}{subsection.B.1.3}}
+\newlabel{poiss}{{B.1.3}{50}{Poisson form of the degree distribution}{subsection.B.1.3}{}}
+\newlabel{pk}{{B.8}{50}{Poisson form of the degree distribution}{equation.B.1.8}{}}
+\newlabel{bin}{{B.9}{50}{Poisson form of the degree distribution}{equation.B.1.9}{}}
+\newlabel{e}{{B.13}{50}{Poisson form of the degree distribution}{equation.B.1.13}{}}
 \citation{Albert2014}
 \citation{Albert2014}
 \citation{Albert2014}
@@ -449,20 +452,20 @@
 \citation{Pele2015}
 \citation{Pele2015}
 \citation{Pele2015}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.4}Diameter}{49}{subsection.B.1.4}}
-\newlabel{ERdist}{{B.1.4}{49}{Diameter}{subsection.B.1.4}{}}
-\newlabel{dist}{{B.15}{49}{Diameter}{equation.B.1.15}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B.2}The Watts-Strogatz model}{49}{section.B.2}}
-\newlabel{WS}{{B.2}{49}{The Watts-Strogatz model}{section.B.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.2.1}The regular ring lattice}{49}{subsection.B.2.1}}
-\newlabel{ringclus}{{B.2.1}{49}{The regular ring lattice}{subsection.B.2.1}{}}
-\newlabel{triangle}{{B.19}{49}{The regular ring lattice}{equation.B.2.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.4}Diameter}{51}{subsection.B.1.4}}
+\newlabel{ERdist}{{B.1.4}{51}{Diameter}{subsection.B.1.4}{}}
+\newlabel{dist}{{B.15}{51}{Diameter}{equation.B.1.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.2}The Watts-Strogatz model}{51}{section.B.2}}
+\newlabel{WS}{{B.2}{51}{The Watts-Strogatz model}{section.B.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.2.1}The regular ring lattice}{51}{subsection.B.2.1}}
+\newlabel{ringclus}{{B.2.1}{51}{The regular ring lattice}{subsection.B.2.1}{}}
+\newlabel{triangle}{{B.19}{51}{The regular ring lattice}{equation.B.2.19}{}}
 \citation{Pele2015}
 \citation{chap9}
 \citation{chap9}
 \citation{chap9}
 \citation{chap9}
-\newlabel{triple}{{B.20}{50}{The regular ring lattice}{equation.B.2.20}{}}
+\newlabel{triple}{{B.20}{52}{The regular ring lattice}{equation.B.2.20}{}}
 \bibstyle{abbrv}
 \bibdata{references}
 \bibcite{chap9}{1}

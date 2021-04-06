@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  5 APR 2021 16:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  6 APR 2021 12:57
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2972,27 +2972,27 @@ t>
 File: fraction_of_opinions_ER_001_50-50_PR_REC.png Graphic file (type png)
 <use fraction_of_opinions_ER_001_50-50_PR_REC.png>
 Package pdftex.def Info: fraction_of_opinions_ER_001_50-50_PR_REC.png  used on 
-input line 872. on input line 872.
+input line 874. on input line 874.
 Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
-e 872.
+e 874.
 
-Overfull \hbox (4.55478pt too wide) in paragraph at lines 872--873
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 874--875
 [][] 
  []
 
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 10.0pt on input line 873.
+(Font)              scaled to size 10.0pt on input line 875.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
-(Font)              scaled to size 10.0pt on input line 873.
+(Font)              scaled to size 10.0pt on input line 875.
 <fraction_of_opinions_WS_50-50_PR_REC.png, id=761, 227.50597pt x 199.03159pt>
 File: fraction_of_opinions_WS_50-50_PR_REC.png Graphic file (type png)
 <use fraction_of_opinions_WS_50-50_PR_REC.png>
 Package pdftex.def Info: fraction_of_opinions_WS_50-50_PR_REC.png  used on inpu
-t line 876. on input line 876.
+t line 878. on input line 878.
 Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
-e 876.
+e 878.
 
-Overfull \hbox (4.55478pt too wide) in paragraph at lines 876--877
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 878--879
 [][] 
  []
 
@@ -3002,11 +3002,11 @@ File: fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR_REC.png Graphic
  file (type png)
 <use fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR_REC.png>
 Package pdftex.def Info: fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50
-_PR_REC.png  used on input line 880. on input line 880.
+_PR_REC.png  used on input line 882. on input line 882.
 Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
-e 880.
+e 882.
 
-Overfull \hbox (4.55478pt too wide) in paragraph at lines 880--881
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 882--883
 [][] 
  []
 
@@ -3016,77 +3016,250 @@ File: fraction_of_opinions_SBM-WS_10x100_10-001-0001_50-50_PR_REC.png Graphic f
 ile (type png)
 <use fraction_of_opinions_SBM-WS_10x100_10-001-0001_50-50_PR_REC.png>
 Package pdftex.def Info: fraction_of_opinions_SBM-WS_10x100_10-001-0001_50-50_P
-R_REC.png  used on input line 884. on input line 884.
+R_REC.png  used on input line 886. on input line 886.
 Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
-e 884.
+e 886.
 
-Overfull \hbox (4.55478pt too wide) in paragraph at lines 884--885
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 886--887
 [][] 
  []
 
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 10000) in paragraph at lines 869--890
 
-[37]
+ []
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [38 <./fraction_of_opinions_ER_001_50-50_PR_REC.png> <./fraction_of_opinions_W
-S_50-50_PR_REC.png> <./fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_P
-R_REC.png> <./fraction_of_opinions_SBM-WS_10x100_10-001-0001_50-50_PR_REC.png>]
- [39]
-[40
+ [37]
+[38 <./fraction_of_opinions_ER_001_50-50_PR_REC.png> <./fraction_of_opinions_WS
+_50-50_PR_REC.png> <./fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR
+_REC.png> <./fraction_of_opinions_SBM-WS_10x100_10-001-0001_50-50_PR_REC.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 892--895
 
-]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 892--895
+
+ []
+
+<fraction_of_opinions_ER_001_50-50_PR_REC_20-80_8x7.png, id=780, 227.50597pt x 
+199.03159pt>
+File: fraction_of_opinions_ER_001_50-50_PR_REC_20-80_8x7.png Graphic file (type
+ png)
+<use fraction_of_opinions_ER_001_50-50_PR_REC_20-80_8x7.png>
+Package pdftex.def Info: fraction_of_opinions_ER_001_50-50_PR_REC_20-80_8x7.png
+  used on input line 898. on input line 898.
+Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
+e 898.
+
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 898--899
+[][] 
+ []
+
+<fraction_of_opinions_WS_10-006_PR_REC_20-80_8x7.png, id=781, 227.50597pt x 199
+.03159pt>
+File: fraction_of_opinions_WS_10-006_PR_REC_20-80_8x7.png Graphic file (type pn
+g)
+<use fraction_of_opinions_WS_10-006_PR_REC_20-80_8x7.png>
+Package pdftex.def Info: fraction_of_opinions_WS_10-006_PR_REC_20-80_8x7.png  u
+sed on input line 902. on input line 902.
+Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
+e 902.
+
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 902--903
+[][] 
+ []
+
+File: fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR_REC.png Graphic
+ file (type png)
+<use fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR_REC.png>
+Package pdftex.def Info: fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50
+_PR_REC.png  used on input line 906. on input line 906.
+Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
+e 906.
+
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 906--907
+[][] 
+ []
+
+<fraction_of_opinions_SBM-WS_10-001-0001_PR_REC_20-80_8x7.png, id=782, 227.5059
+7pt x 199.03159pt>
+File: fraction_of_opinions_SBM-WS_10-001-0001_PR_REC_20-80_8x7.png Graphic file
+ (type png)
+<use fraction_of_opinions_SBM-WS_10-001-0001_PR_REC_20-80_8x7.png>
+Package pdftex.def Info: fraction_of_opinions_SBM-WS_10-001-0001_PR_REC_20-80_8
+x7.png  used on input line 910. on input line 910.
+Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
+e 910.
+
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 910--911
+[][] 
+ []
+
+<echo_chambers_no_stubb_50-50_REC.png, id=783, 227.50597pt x 199.03159pt>
+File: echo_chambers_no_stubb_50-50_REC.png Graphic file (type png)
+<use echo_chambers_no_stubb_50-50_REC.png>
+Package pdftex.def Info: echo_chambers_no_stubb_50-50_REC.png  used on input li
+ne 921. on input line 921.
+Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
+e 921.
+
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 921--922
+[][] 
+ []
+
+<echo_chambers_no_stubb_50-50_PR.png, id=784, 227.50597pt x 199.03159pt>
+File: echo_chambers_no_stubb_50-50_PR.png Graphic file (type png)
+<use echo_chambers_no_stubb_50-50_PR.png>
+Package pdftex.def Info: echo_chambers_no_stubb_50-50_PR.png  used on input lin
+e 925. on input line 925.
+Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
+e 925.
+
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 925--926
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 917--929
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 917--929
+
+ []
+
+
+Underfull \vbox (badness 8113) has occurred while \output is active []
+
+ [39 <./fraction_of_opinions_ER_001_50-50_PR_REC_20-80_8x7.png> <./fraction_of_
+opinions_WS_10-006_PR_REC_20-80_8x7.png> <./fraction_of_opinions_SBM-WS_10-001-
+0001_PR_REC_20-80_8x7.png>] [40 <./echo_chambers_no_stubb_50-50_REC.png> <./ech
+o_chambers_no_stubb_50-50_PR.png>]
+<echo_chambers_no_stubb_ER_001_20-80_PR_REC.png, id=801, 227.50597pt x 199.0315
+9pt>
+File: echo_chambers_no_stubb_ER_001_20-80_PR_REC.png Graphic file (type png)
+<use echo_chambers_no_stubb_ER_001_20-80_PR_REC.png>
+Package pdftex.def Info: echo_chambers_no_stubb_ER_001_20-80_PR_REC.png  used o
+n input line 935. on input line 935.
+Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
+e 935.
+
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 935--936
+[][] 
+ []
+
+<echo_chambers_no_stubb_WS_10_006_20-80_PR_REC_8x7.png, id=802, 227.50597pt x 1
+99.03159pt>
+File: echo_chambers_no_stubb_WS_10_006_20-80_PR_REC_8x7.png Graphic file (type 
+png)
+<use echo_chambers_no_stubb_WS_10_006_20-80_PR_REC_8x7.png>
+Package pdftex.def Info: echo_chambers_no_stubb_WS_10_006_20-80_PR_REC_8x7.png 
+ used on input line 939. on input line 939.
+Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
+e 939.
+
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 939--940
+[][] 
+ []
+
+File: fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR_REC.png Graphic
+ file (type png)
+<use fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR_REC.png>
+Package pdftex.def Info: fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50
+_PR_REC.png  used on input line 943. on input line 943.
+Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
+e 943.
+
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 943--944
+[][] 
+ []
+
+<echo_chambers_no_stubb_SBM-WS_10_001_0001_10x100_20-80_PR_REC_8x7.png, id=803,
+ 227.50597pt x 199.03159pt>
+File: echo_chambers_no_stubb_SBM-WS_10_001_0001_10x100_20-80_PR_REC_8x7.png Gra
+phic file (type png)
+<use echo_chambers_no_stubb_SBM-WS_10_001_0001_10x100_20-80_PR_REC_8x7.png>
+Package pdftex.def Info: echo_chambers_no_stubb_SBM-WS_10_001_0001_10x100_20-80
+_PR_REC_8x7.png  used on input line 947. on input line 947.
+Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
+e 947.
+
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 947--948
+[][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 931--951
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [41 <./echo_chambers_no_stubb_ER_001_20-80_PR_REC.png> <./echo_chambers_no_stu
+bb_WS_10_006_20-80_PR_REC_8x7.png> <./echo_chambers_no_stubb_SBM-WS_10_001_0001
+_10x100_20-80_PR_REC_8x7.png>] [42]
 Chapter 6.
-[41] [42
+[43
+
+] [44
 
 ]
 Chapter 7.
-[43] [44
+[45] [46
 
 ]
 Appendix A.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [45]
-[46]
+ [47]
+[48]
 Appendix B.
-[47
+[49
 
 ]
 Underfull \vbox (badness 2351) has occurred while \output is active []
 
- [48]
-Underfull \hbox (badness 10000) in paragraph at lines 1055--1059
+ [50]
+Underfull \hbox (badness 10000) in paragraph at lines 1116--1120
 
  []
 
-[49]
-Underfull \hbox (badness 10000) in paragraph at lines 1069--1074
+[51]
+Underfull \hbox (badness 10000) in paragraph at lines 1130--1135
 
  []
 
-[50] [51] [52
+[52] [53] [54
 
-] (./draft.bbl [53
+] (./draft.bbl [55
 
-] [54])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1109.
- [55] [56]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1109.
+] [56])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1170.
+ [57] [58]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1170.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1109.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1109.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1170.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1170.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 24548 strings out of 492990
- 421466 string characters out of 6135004
- 521555 words of memory out of 5000000
- 27489 multiletter control sequences out of 15000+600000
+ 24598 strings out of 492990
+ 423787 string characters out of 6135004
+ 522237 words of memory out of 5000000
+ 27526 multiletter control sequences out of 15000+600000
  641204 words of font info for 98 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 40i,14n,79p,10402b,633s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 40i,14n,79p,10402b,634s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_naooyc.enc}{/us
 r/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/usr/shar
 e/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/share/texl
@@ -3096,20 +3269,23 @@ st/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/public/bbold-type1/bbold10.pfb></usr/share/texlive/texmf-dist/fon
-ts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/typ
-e1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
-lic/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
-fonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.
-pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texli
-ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (66 pages, 810041 bytes).
+ts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
+fonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/symbols/msam10.pfb>
+Output written on draft.pdf (68 pages, 1432099 bytes).
 PDF statistics:
- 1053 PDF objects out of 1200 (max. 8388607)
- 952 compressed objects within 10 object streams
- 263 named destinations out of 1000 (max. 500000)
- 21 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1094 PDF objects out of 1200 (max. 8388607)
+ 972 compressed objects within 10 object streams
+ 268 named destinations out of 1000 (max. 500000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 
