@@ -143,7 +143,8 @@ Finally, we will test the model on real-world networks. Some question that may a
 \selectlanguage{english}
 \tableofcontents
 \addcontentsline{toc}{chapter}{Table of Contents}
-%\listoffigures
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
 
 % DON'T FORGET: popular text somewhere!!
 
@@ -493,11 +494,11 @@ This can be easily understood since choosing three nodes out of $N$ is given by 
 \newline
 A heuristic derivation of the diameter of a random network goes as follows. Consider a random network with average degree $\left<k\right>$, then a node in this network has on average \cite{Albert2014}
 \begin{itemize}
-	\item $\left<k\right>$ nodes at distance one $(d=1)$
-	\item $\left<k\right>^2$ nodes at distance two $(d=2)$
-	\item $\left<k\right>^3$ nodes at distance three $(d=3)$
-	\item ...
-	\item $\left<k\right>^d$ nodes at distance $d$
+	\item $\left<k\right>$ nodes at distance one $(d=1)$,
+	\item $\left<k\right>^2$ nodes at distance two $(d=2)$,
+	\item $\left<k\right>^3$ nodes at distance three $(d=3)$,
+	\item ...,
+	\item $\left<k\right>^d$ nodes at distance $d$.
 \end{itemize}
 The number of nodes at a distance $d$ cannot exceed the number of nodes $N$ in the network. We thus obtain the following equation from which the maximum distance or diameter $d_{\textrm{max}}$ can be obtained
 \begin{equation}
@@ -521,8 +522,8 @@ Real social networks, however, usually display the "small world phenomenon" and 
 
 In 1998, Duncan Watts and Steve Strogatz constructed a network model that generates random networks with small world properties, such as high clustering and short average distances. Their model achieves this by interpolating between a regular ring lattice and a random network \cite{Watts1998}. The construction goes as follows \cite{Watts1998}
 \begin{enumerate}
-	\item Start with a regular ring lattice with $N$ nodes, each connected to $K = 2m$ neighbors ($m$ on each side)
-	\item For each node $i$, rewire each edge that connects $i$ with its $K/2$ rightmost neighbors with a probability $\beta$. Rewiring is done in such a way that self-loops and edge duplication are avoided
+	\item Start with a regular ring lattice with $N$ nodes, each connected to $K = 2m$ neighbors ($m$ on each side).
+	\item For each node $i$, rewire each edge that connects $i$ with its $K/2$ rightmost neighbors with a probability $\beta$. Rewiring is done in such a way that self-loops and edge duplication are avoided.
 \end{enumerate}
 The probability $\beta$ allows us to tune the graph between a regular lattice ($\beta = 0$) and a random network ($\beta = 1$) \cite{Watts1998}. Usually, the following condition is required for the number of neighbors $K$: $N \gg K \gg \ln{N} \gg 1$. The first inequality assures sparse networks, whereas the second inequality guarantees that a random graph will be connected (thus the network is not so sparse that it becomes disconnected) \cite{Watts1998}.\\
 The regular ring lattice ($\beta=0$) has an average clustering coefficient $\left<C(0)\right>$ and an average path length $\left<d(0)\right>$ equal to \cite{Watts1998}
@@ -540,8 +541,8 @@ Watts and Strogatz then showed by numerical simulation that the average distance
 \end{equation} 
 where $\left<C(0)\right>$ is given by Equation (\ref{C0}). This can be seen in the following way
 \begin{itemize}
-	\item The probability that none of the three edges of the original triangles in the regular lattice are rewired is $(1-\beta)^3$
-	\item The probability that edges are rewired back to each other is negligible
+	\item The probability that none of the three edges of the original triangles in the regular lattice are rewired is $(1-\beta)^3$.
+	\item The probability that edges are rewired back to each other is negligible.
 \end{itemize}
 For rather small values of $\beta$, the clustering coefficient remains high. The model of Watts and Strogatz is thus able to generate random networks with a high clustering coefficient and short average distances.
 
@@ -553,9 +554,9 @@ The stochastic block model (SBM) is another random graph model that is able to p
 \newline
 The stochastic block model in its most simple form is defined by the following parameters \cite{Clauset2017}
 \begin{itemize}
-	\item The number of nodes $N$ 
-	\item A partition of the node set $\{1, 2, ..., N\}$ into $k$ disjoint subsets $C_1, ..., C_k$; these groups are the communities
-	\item A symmetric $k\times k$ matrix $M$; the diagonal elements $M_{ii}$, $i = 1, ..., k$, represent the edge probabilities inside the community $C_i$ and the off-diagonal elements $M_{ij}$, $i, j = 1, ..., k$ with $i \neq j$, give the edge probabilities between nodes in community $C_i$ and nodes in community $C_j$
+	\item The number of nodes $N$, 
+	\item A partition of the node set $\{1, 2, ..., N\}$ into $k$ disjoint subsets $C_1, ..., C_k$; these groups are the communities,
+	\item A symmetric $k\times k$ matrix $M$; the diagonal elements $M_{ii}$, $i = 1, ..., k$, represent the edge probabilities inside the community $C_i$ and the off-diagonal elements $M_{ij}$, $i, j = 1, ..., k$ with $i \neq j$, give the edge probabilities between nodes in community $C_i$ and nodes in community $C_j$.
 \end{itemize}
 There are no real restrictions on the edge probabilities, which makes the stochastic block model a very general model that is capable of reproducing many different network structures \cite{Karrer2011}. However, the edge probabilities inside a community are often taken to be bigger than the probabilities between communities ($M_{ii} > M_{ij}$, $i \neq j$). In this way, the stochastic block model generates a network with a clear community structure. A stochastic block model that fulfills this condition is called an assortative SBM \cite{Lee2019}. A disassortative stochastic block model refers to the case where the edge probabilities between the communities are higher than those inside the communities ($M_{ii} < M_{ij}$, $i \neq j$) \cite{Gribel2020}.\\
 \newline
@@ -719,18 +720,18 @@ On-line social platforms use algorithms to order and filter the posts that appea
 The backside of such algorithmic filtering is that it fine-tunes the information it shows based on the user. Even two users with the same friends may then be exposed to different content, based on their previous activities and history \cite{Bozdag2013}. This may lead to the formation of echo chambers in which users get `trapped' in content that confirms their own mindset \cite{Bozdag2013}. \\
 It is thus important to know and be aware of the possible impacts of algorithmic personalization on the formation and evolution of opinions. Prof. Nicola Perra and prof. Luis E.C. Rocha already partly investigated the role of such algorithms on the dynamics of opinions in several networks in one of their previous papers, \textit{"Modelling opinion dynamics in the age of algorithmic personalization"} (see reference \cite{Perra2019}). Since filtering algorithms are often not transparently shared by social media companies, they proposed several personalization algorithms based on three simple ways of filtering \cite{Perra2019}
 \begin{itemize}
-	\item Popularity filtering: promoting content that is popular across the platform
-	\item Semantic filtering: promoting posts that are similar to previous consumed posts
-	\item Collaborative filtering: promoting content that people similar or close to us consume
+	\item Popularity filtering: promoting content that is popular across the platform,
+	\item Semantic filtering: promoting posts that are similar to previous consumed posts,
+	\item Collaborative filtering: promoting content that people similar or close to us consume.
 \end{itemize} 
 The following paragraph briefly reviews the filtering algorithms that prof. Nicola Perra and prof. Luis E.C. Rocha proposed. \\
 \newline
 At every time $t$ each platform user has a hidden list $L_i(t)$ that contains all the opinions/posts that he/she received from his/her friends \cite{Perra2019}. The filtering algorithm then selects $S$ items from this list and shows them on the user's time-line (this is the fundamental idea behind algorithmic personalization: only showing a fraction of the possible posts \cite{Perra2019}); the following selection methods are used \cite{Perra2019}
 \begin{itemize}
-	\item The reference method (REF): this method randomly selects $S$ items from the list $L_i(t)$
-	\item The old method (OLD): the $S$ oldest post in $L_i(t)$ are displayed on the time-line of the user
-	\item The recent method (REC): shows the $S$ most recent items from $L_i(t)$
-	\item The preference method (PR): sorts the hidden list $L_i(t)$ according to the current opinion of the user and then selects the first $S$ elements. This filtering method is based on the semantic filtering explained above
+	\item The reference method (REF): this method randomly selects $S$ items from the list $L_i(t)$.
+	\item The old method (OLD): the $S$ oldest post in $L_i(t)$ are displayed on the time-line of the user.
+	\item The recent method (REC): shows the $S$ most recent items from $L_i(t)$.
+	\item The preference method (PR): sorts the hidden list $L_i(t)$ according to the current opinion of the user and then selects the first $S$ elements. This filtering method is based on the semantic filtering explained above.
 \end{itemize}
 Prof. Nicola Perra and prof. Luis E.C. Rocha showed that the REF, OLD and REC methods behave similar in many cases and that the PR method often displays different behavior (such as a larger formation of echo chambers compared to the other three methods) \cite{Perra2019}. In this thesis the REC and REF methods are mainly used as a reference/benchmark method and the PR method is used as the main filtering algorithm.
 
@@ -773,9 +774,9 @@ One small remark must be made here: previously, the link between stubbornness an
 \newline
 One way of creating stubborn people in the binary model is by giving each node $i$ a stubbornness/resistance parameter $r_i$. This resistance parameter can have values between 0 and 1, $0 \leqslant r_i \leqslant 1$. 
 \begin{itemize}
-	\item If $r_i = 0$, the node is not stubborn and can be easily convinced of the value of the other opinion (according to which opinion dynamics model that is implemented: majority, probabilistic majority,...)
-	\item If $r_i = 1$, the node is completely stubborn and there is no chance of convincing him/here of the other idea
-	\item If $0 < r_i < 1$, the node has some resistance but can still be convinced to switch to the other opinion, even though he/she will be less likely to do so. A uniform random number $f$ between 0 and 1 is drawn. If $f > r_i$, the node will update his/her opinion; if $f \leqslant r_i$, the node is not convinced and keeps his/her own opinion 
+	\item If $r_i = 0$, the node is not stubborn and can be easily convinced of the value of the other opinion (according to which opinion dynamics model that is implemented: majority, probabilistic majority,...).
+	\item If $r_i = 1$, the node is completely stubborn and there is no chance of convincing him/here of the other idea.
+	\item If $0 < r_i < 1$, the node has some resistance but can still be convinced to switch to the other opinion, even though he/she will be less likely to do so. A uniform random number $f$ between 0 and 1 is drawn. If $f > r_i$, the node will update his/her opinion; if $f \leqslant r_i$, the node is not convinced and keeps his/her own opinion.
 \end{itemize}
 The resistance parameter $r_i$ can be different or the same for all nodes. One can also play around with the fraction of nodes that is stubborn, for example, there can be a fraction of nodes that is completely stubborn ($r = 1$) and a remaining fraction that is not stubborn at all ($r = 0$). Many other possibilities can be found according to how the stubborn people are distributed and according to how stubborn they are made. This makes the model very flexible.\\
 \newline
@@ -785,9 +786,9 @@ In the threshold model one introduces a notion of stubbornness by introducing a 
 \newline
 There are different possibilities of implementing this kind of model. One way, which makes use of the majority model, is as follows. First the fraction of friends with opinion A and opinion B, $p_A$ and $p_B$ respectively, are determined; then the following rules are used to update the opinion
 \begin{itemize}
-	\item If $p_A > p_B$ and $p_A > T$, opinion A is adopted
-	\item If $p_B > p_A$ and $p_B > T$, opinion B is adopted
-	\item In all other cases, the current opinion of the node is not changed
+	\item If $p_A > p_B$ and $p_A > T$, opinion A is adopted,
+	\item If $p_B > p_A$ and $p_B > T$, opinion B is adopted,
+	\item In all other cases, the current opinion of the node is not changed.
 \end{itemize}
 If $T = 0$, this model reduces to the pure majority model described in Section \ref{majModel}. If $T = 1$, the nodes don't change their opinion. For $0 < T < 1$, the model is a majority model, but the nodes are a bit more persistent towards their own opinion and need a larger fraction of friends to convince them to switch to the other viewpoint.\\
 % Talk about probabilistic implementation? + talk about fact that nothing happens for T < 0.5???
@@ -813,12 +814,12 @@ Finally, Section \ref{opinionmodel} discusses the opinion dynamics model that is
 
 This thesis uses three main network models, namely
 \begin{itemize}
-	\item The Erd\H{o}s-R\'{e}nyi model (ER)
-	\item The Watts-Strogatz model (WS)
+	\item The Erd\H{o}s-R\'{e}nyi model (ER),
+	\item The Watts-Strogatz model (WS),
 	\item The stochastic block model, of which two types are implemented
 		\begin{itemize}
-			\item[\tiny$\bullet$] The regular stochastic block model (SBM)
-			\item[\tiny$\bullet$] The stochastic Watts-Strogatz block model (SBM-WS)
+			\item[\tiny$\bullet$] The regular stochastic block model (SBM),
+			\item[\tiny$\bullet$] The stochastic Watts-Strogatz block model (SBM-WS).
 		\end{itemize}
 \end{itemize}
 Each of these networks serve specific goals which will shortly be discussed in the following paragraphs.\\
@@ -867,24 +868,28 @@ The size of the network models that were used, was around a thousand nodes. So f
 
 In this section we will discuss some results related to the network structure and network topologies of the different network models that we used. We will mainly focus on the effect of a high clustering coefficient and a community structure. Two different opinion distributions are investigated
 \begin{itemize}
-	\item An initial $50/50$ opinion distribution: the initial fraction of nodes with opinion 0 is equal to $P_0(0) = 0.5$ and the initial fraction of nodes with opinion 1 is equal to $P_1(0) = 0.5$
-	\item An initial $20/80$ opinion distribution: the initial fraction of nodes with opinion 0 is equal to $P_0(0) = 0.2$ and the initial fraction of nodes with opinion 1 is equal to $P_1(0) = 0.8$
+	\item An initial $50/50$ opinion distribution: the initial fraction of nodes with opinion 0 is equal to $P_0(0) = 0.5$ and the initial fraction of nodes with opinion 1 is equal to $P_1(0) = 0.5$.
+	\item An initial $20/80$ opinion distribution: the initial fraction of nodes with opinion 0 is equal to $P_0(0) = 0.2$ and the initial fraction of nodes with opinion 1 is equal to $P_1(0) = 0.8$. Hence, we are dealing with a minority and a majority opinion.
 \end{itemize}
-For both opinion distributions we investigate the evolution of the opinion fractions with time and the formation of echo chambers.
+For both opinion distributions we investigate the evolution of the opinion fractions with time and the formation of echo chambers.\\
+\newline
+Before sharing the results, a quick disclaimer: Some of the results that are shared in this section, were already obtained by prof. Nicola Perra and prof. Luis E.C. Rocha in their paper \textit{"Modelling opinion dynamics in the age of algorithmic personalization"} (see reference \cite{Perra2019}). These results include the effect of a high clustering coefficient (Watts-Strogatz model) and a random network model. Similar results (albeit with a different network size and average degree) are included in this section to give a complete overview and to be able to compare a community structure to a high clustering coefficient. 
 
 \subsection{Starting conditions $\bm{P_0(0) = 0.5}$ and $\bm{P_1(0)=0.5}$}
 We start with the following opinion distribution: a fraction of nodes with opinion 0 equal to 0.5 ($P_0(0) = 0.5$) and a fraction of nodes with opinion 1 equal to 0.5 ($P_1(0) = 0.5$). The opinions are randomly distributed over the network. The opinion dynamics model discussed in Chapter \ref{chap4}, Section \ref{opinionmodel} % correct section??
 is used. We set the activation probability equal to $p_{\text{act}} = 0.1$ and the actual time-line of each user has a maximum length equal to $S=20$.\\
+\newpage
+\noindent
 Four different network models are implemented, each with a total number of nodes equal to $N = 10^3$ and an average degree around 10
 \begin{itemize}
-	\item The Erd\H{o}s-R\'{e}nyi model (ER) with edge probability $p = 0.01$
-	\item The Watts-Strogatz model (WS) with mean degree $K=10$; two different values of the rewire probability $\beta$ are used, each of them has a slightly different value of the average clustering coefficient, namely $\beta = 0.01$ with $\left<C\right> \sim 0.60$ and $\beta = 0.06$ with $\left<C\right> \sim 0.55$. This model is used to investigate the effect of clustering
+	\item The Erd\H{o}s-R\'{e}nyi model (ER) with edge probability $p = 0.01$.
+	\item The Watts-Strogatz model (WS) with mean degree $K=10$; two different values of the rewire probability $\beta$ are used, each of them has a slightly different value of the average clustering coefficient, namely $\beta = 0.01$ with $\left<C\right> \sim 0.60$ and $\beta = 0.06$ with $\left<C\right> \sim 0.55$. This model is used to investigate the effect of clustering.
 	\item The stochastic block model with 10 communities of size 100; two networks with different modularities $Q$ are investigated: a high modularity network ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity network ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$). This model is used to investigate the effect of a community structure.
-	\item The stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100. Each community has the following Watts-Strogatz parameters: mean degree $K =10$ and rewire probability $\beta = 0.01$. Edges are added between communities with a probability $p_{\text{add}} = 0.001$. This is a network with both a high clustering ($\left<C\right> \sim 0.55$) and a high modularity ($Q \sim 0.9$)
+	\item The stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100. Each community has the following Watts-Strogatz parameters: mean degree $K =10$ and rewire probability $\beta = 0.01$. Edges are added between communities with a probability $p_{\text{add}} = 0.001$. This is a network with both a high clustering ($\left<C\right> \sim 0.55$) and a high modularity ($Q \sim 0.9$).
 \end{itemize}
 \textbf{Evolution of the opinion fractions}\\
 \newline
-Figure \ref{ev_op_50_50} shows the results for the evolution of the fraction of opinion 0 over time. Two different filtering algorithms are compared to each other, namely the PR method and the REC method (see Chapter \ref{chap3}, Section \ref{filter} for a detailed explanation). None of the network topologies, nor the filtering algorithms, is able to break the initial $50/50$ opinion distribution. Having a high clustering or a clear community structure has no impact on the prevalence of the opinions. The status quo is maintained and the system is not pushed towards a different equilibrium.
+Figure \ref{ev_op_50_50} shows the results for the evolution of the fraction of opinion 0 over time, together with the standard deviation $\sigma$. Two different filtering algorithms are compared to each other, namely the PR method and the REC method (see Chapter \ref{chap3}, Section \ref{filter} for a detailed explanation). None of the network topologies, nor the filtering algorithms, is able to break the initial $50/50$ opinion distribution. Having a high clustering or a clear community structure has no impact on the prevalence of the opinions. The status quo is maintained and the system is not pushed towards a different equilibrium.
 \newpage
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
@@ -904,7 +909,7 @@ Figure \ref{ev_op_50_50} shows the results for the evolution of the fraction of 
     \caption{SBM-WS}
   \end{subfigure}
   \captionsetup{format=plain}
-  \caption{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ distribution. Four different network models are used (each with an average degree around 10 and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS), $K = 10$, two slightly different values of the clustering coefficient are used ($\left<C\right> \sim 0.55$ and $\left<C\right> \sim 0.60$); \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}%more explanation?
+  \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ opinion distribution]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ distribution. Four different network models are used (each with an average degree around 10 and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS), $K = 10$, two slightly different values of the clustering coefficient are used ($\left<C\right> \sim 0.55$ and $\left<C\right> \sim 0.60$); \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}%more explanation?
 \label{ev_op_50_50}
 \end{figure}
 \newpage
@@ -917,16 +922,39 @@ Figure \ref{ev_op_50_50} shows the results for the evolution of the fraction of 
     \caption{REC}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-  	\includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_50-50_PR.png}
+  	\includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_50-50_PR_8x7.png}
     \caption{PR}
   \end{subfigure}
   \captionsetup{format=plain}
-  \caption{Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t = 500$. The distribution is normalized by dividing for the same quantity computed at $t=0$. \textbf{(a)} Results for the REC method; \textbf{(b)} Results for the PR method. Four different network models are used, each with a total number of nodes $N = 10^3$ and an average degree around 10: The Erd\H{o}s-R\'{e}nyi model (ER) with $p = 0.01$; The stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; The stochastic Watts-Strogatz model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$; The Watts-Strogatz model (WS) with $K = 10$, two slightly different values of the clustering coefficient are used ($\left<C\right> \sim 0.55$ and $\left<C\right> \sim 0.60$). The starting conditions are $P_0(0) = 0.5$ and $P_1(0) = 0.5$. Each plot is the average of $10^2$ independent simulations.}%more explanation?
+  \caption[Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t=500$, $\left<P_1^{\text{nn}}\right>$, for an initial $50/50$ opinion distribution]{Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t = 500$. The distribution is normalized by dividing for the same quantity computed at $t=0$. \textbf{(a)} Results for the REC method; \textbf{(b)} Results for the PR method. Four different network models are used, each with a total number of nodes $N = 10^3$ and an average degree around 10: The Erd\H{o}s-R\'{e}nyi model (ER) with $p = 0.01$; The stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; The stochastic Watts-Strogatz model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$; The Watts-Strogatz model (WS) with $K = 10$, two slightly different values of the clustering coefficient are used ($\left<C\right> \sim 0.55$ and $\left<C\right> \sim 0.60$). The starting conditions are $P_0(0) = 0.5$ and $P_1(0) = 0.5$. Each plot is the average of $10^2$ independent simulations.}
+\label{echo_50_50}
 \end{figure}
+\noindent
+Figure \ref{echo_50_50} shows the distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t=500$, $\left<P_1^{\text{nn}}\right>$. The value shown on the $y$-axis, $F_N(\left<P_1^{\text{nn}}\right>)$, is the result of dividing the average distribution of opinions in each neighborhood at $t=500$ by its corresponding value at $t=0$. The region on the $x$-axis close to zero describes neighborhoods in which none, or very few users, adopt opinion 1 (these are thus neighborhoods in which most users adopt opinion 0). Conversely, the region on the $x$-axis close to one describes neighborhoods in which a majority of the users adopt opinion 1. The distribution is obtained by imposing ten equispaced bins, $\Delta x = 0.1$ \cite{Perra2019}. Error bars are omitted for the sake of an improved visualization.\\
+These types of plots are perfectly suited to investigate the formation of opinion clusters (echo chambers) and effects such as polarization in the system under study.\\
+In Figure \ref{echo_50_50} two different filtering algorithms are compared, the REC and the PR method. The results for both filtering algorithms look qualitatively the same. The main difference is that the formation of echo chambers, using the PR method, is about ten times as big compared to the formation of echo chambers using the REC method. \\
+The Erd\H{o}s-R\'{e}nyi model (ER) showns no, or a very limited, sign of echo chambers, for both the REC method and the PR method. Networks with a high clustering (WS and SBM-WS), on the other hand, show a clear sign of polarization and formation of echo chambers (visible in the two spikes, one around zero and one around one). Going to slightly higher values of the clustering coefficient ($\left<C\right> \sim 0.55$ to $\left<C\right> \sim 0.60$) in the Watts-Strogatz model results in significantly larger echo chambers. This suggests that the formation of echo chambers is really sensitive to changes in the clustering coefficient. The stochastic block model (SBM) with a high modularity, hence, a clear community structure, does show an appearance of polarization (mainly when using the PR filtering algorithm), however, the formation of echo chambers is significantly smaller than compared to networks with a high clustering. The stochastic block model with a low modularity has no, or very limited, echo chambers, similar as for the Erd\H{o}s-R\'{e}nyi   
+model. This is to be expected, since a stochastic block model with a low modularity, and hence a very blurred, almost non-existing community structure, strongly resembles an Erd\H{o}s-R\'{e}nyi network. The stochastic Watts-Strogatz block model (SBM-WS) has both a community structure and a high average clustering. The formation of echo chambers when using this model is approximately of the same size compared to the formation of echo chambers in a Watts-Strogatz model with a similar average clustering. This suggests that it is mainly the high clustering that drives the system to form echo chambers, while the community structure plays a less important role. However, as said before, the stochastic block model with a high modularity also has a (smaller) formation of echo chambers, so having a clear and strong community structure definitely plays some role in phenomena such as polarization and the formation of opinion clusters. \\
+Note that for an initial $50/50$ opinion distribution none of the network models, nor the filtering algorithms could break this status quo (see Figure \ref{ev_op_50_50}). Despite this preserving of the balanced opinion distribution, the interplay of filtering algorithms and network structure can potentially lead to polarization and formation of echo chambers.
 
 \subsection{Starting conditions $\bm{P_0(0) = 0.2}$ and $\bm{P_1(0)=0.8}$}
+
+The initial fraction of nodes with opinion 0 is now equal to $P_0(0) = 0.2$, opinion 0 thus becomes the minority opinion. The initial fraction of nodes with opinion 1 is equal to $P_1(0) = 0.8$, hence this is the majority opinion. The opinions are, initially, randomly distributed over the system. Again, the opinion dynamics model of Chapter \ref{chap4}, Section \ref{opinionmodel} is implemented; the activation probability is set equal to $p_{\text{act}} = 0.1$ and the actual time-line of each user has a maximum length $S = 20$.\\
+\newline
+Once again, we look at four different network models each with a total number of nodes equal to $N = 10^3$ and an average degree around $10$
+\begin{itemize}
+	\item The Erd\H{o}s-R\'{e}nyi model (ER) with edge probability $p = 0.01$.
+	\item The Watts-Strogatz model (WS) with mean degree $K=10$ and rewire probability $\beta = 0.06$. The value of the average clustering coefficient is equal to $\left<C\right> \sim 0.55$. This model is used to investigate the effect of clustering.
+	\item The stochastic block model with 10 communities of size 100; two networks with different modularities $Q$ are investigated: a high modularity network ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity network ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$). This model is used to investigate the effect of a community structure.
+	\item The stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100. Each community has the following Watts-Strogatz parameters: mean degree $K =10$ and rewire probability $\beta = 0.01$. Edges are added between communities with a probability $p_{\text{add}} = 0.001$. This is a network with both a high clustering ($\left<C\right> \sim 0.55$) and a high modularity ($Q \sim 0.9$).
+\end{itemize}
 \textbf{Evolution of the opinion fractions}\\
 \newline
+Figure \ref{ev_op_20_80} shows the results for the evolution of the fraction of nodes with opinion 0, which is the minority opinion in this case, over time, together with the standard deviation $\sigma$. For each network model two filtering algorithms are compared, namely the REC filtering algorithm and the PR filtering algorithm. \\
+The REC method is not able to break the prevalence of opinion 0 over time for neither of the four different network models. When using the PR method, the results look very different. The prevalence of the minority opinion, $P_0(t)$, decreases over time. This decrease is a direct consequence of the PR filtering algorithm. Since the PR method orders the posts according to the users' preferences, nodes with the majority opinion 1 will mainly get to see posts with the similar opinion 1 on their time-line, which limits the chance of changing their opinion to the minority opinion. Nodes with the minority opinion 0, on the other hand, will obviously see posts with opinion 0 on their time-line when using the PR method. However, since there are more nodes with opinion 1 than nodes with opinion 0, the nodes with the minority opinion 0 will also get to see a significant number of posts with the majority opinion 1 on their time-line. The conclusion is that, when using the PR method, there is an imbalance in which opinion can switch to which: nodes with the minority opinion 0 have a chance of switching to the majority opinion 1, whereas nodes with the majority opinion 1 have (almost) no chance of switching to the minority opinion 0. This imbalance leads to the decrease of the minority opinion 0. 
+
+% Talk about effect network topologies?? See paper + simulation with N = 10.000 and N = 100.000 --> mention possible discrepancies and effect of network size??. Having a high clustering coefficient and/or a clear community structure plays no role in the e
+
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_001_50-50_PR_REC_20-80_8x7.png}
@@ -945,7 +973,8 @@ Figure \ref{ev_op_50_50} shows the results for the evolution of the fraction of 
     \caption{SBM-WS}
   \end{subfigure}
   \captionsetup{format=plain}
-  \caption{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ distribution. Four different network models are used (each with an average degree around 10 and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}
+  \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ opinion distribution]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ distribution. Four different network models are used (each with an average degree around 10 and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}
+\label{ev_op_20_80}
 \end{figure}
 \textbf{Echo chambers}\\
 \newline
@@ -967,8 +996,19 @@ Figure \ref{ev_op_50_50} shows the results for the evolution of the fraction of 
     \caption{SBM-WS}
   \end{subfigure}
   \captionsetup{format=plain}
-  \caption{Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t = 500$. The distribution is normalized by dividing for the same quantity computed at $t=0$. Four different network models are used, each with a total number of nodes $N = 10^3$ and an average degree around 10: \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. The starting conditions are $P_0(0) = 0.2$ and $P_1(0) = 0.8$. Each plot is the average of $10^2$ independent simulations.}
+  \caption[Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t=500$, $\left<P_1^{\text{nn}}\right>$, for an initial $20/80$ opinion distribution]{Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t = 500$. The distribution is normalized by dividing for the same quantity computed at $t=0$. Four different network models are used, each with a total number of nodes $N = 10^3$ and an average degree around 10: \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. The starting conditions are $P_0(0) = 0.2$ and $P_1(0) = 0.8$. Each plot is the average of $10^2$ independent simulations.}
+\label{echo_20_80}
 \end{figure}
+
+\subsection{Relation between formation of echo chambers and community structure}
+
+\begin{figure}[H]
+	\includegraphics[width=12cm, height=10cm]{echo_chamber_vs_modularity_edge_prob_same_deg_PR_REC_12x10}
+	\label{echo_vs_mod}
+	\captionsetup{format=plain}
+	\caption[Relation between the formation of echo chambers and community structure (modularity)]{The relation between the formation of echo chambers and the community structure, represented by the modularity $Q$, for both the PR and REC filtering algorithms. The $y$-axis shows the average of the normalized fraction of nodes with all neighbors having opinion 0 and the normalized fraction of nodes with all neighbors having opinion 1. This value represents the formation of echo chambers in the system (denoted with echo chamber size in the figure). The initial opinion distribution is $50/50$. The data point with $Q = 0$ is the result for an ER network with $N = 10^3$, $p = 0.01$ and an average degree around 10. The other four data points are the results for SBM's with 10 communities of size 100 (total number of nodes $N = 10^3$), each with a different modularity (the modularity is changed by changing the edge probabilities) and an average degree around 10. Each data point is the result of $10^2$ independent simulations.}
+\end{figure}
+% mention that error bars represent standard error + reason + mention values for p_cl and p_add together with modularity, maybe clustering
 
 \section{Impact of stubborn people}
 
