@@ -766,6 +766,7 @@ Since this thesis is not concerned with bounded confidence models, we will not d
 Another example of introducing some kind of persistence towards the own opinion of the nodes is the "hardening of positions" that was briefly discussed at the end of Section \ref{classMod}.
 
 \subsection{Stubbornness in binary models}
+\label{stubbBin}
 % not finished!!
 Playing around with the threshold $\epsilon_i$ of the agents to include a notion of stubbornness, such as one can do for the bounded confidence models, is obviously not possible for binary/discrete models. There are, however, many other ways to include some kind of stubborn people in these models. In the following, two different possibilities will be discussed. \\
 One small remark must be made here: previously, the link between stubbornness and extremism was often made and it was often assumed that the more extreme somebodies opinions are, the more persistent that somebody is towards those opinions. In binary models, however, there are only two possible opinions that can be taken on and in that sense it is less useful to talk about extreme and moderate opinions. However, we can still have people that rather keep their own opinion than be convinced by friends to switch to the other opinion. Whether this resistance is a sign of critical thinking or ignorance/being convinced that you know it best, is up to the reader to decide. The models simply introduce some type of resistance and make no distinction between possible underlying reasons for this resistance.\\
@@ -864,6 +865,13 @@ The size of the network models that were used, was around a thousand nodes. So f
 
 \chapter{Results}
 
+In this chapter the results are shared and discussed. The chapter in subdivided into three main sections
+\begin{itemize}
+	\item The impact of network structure: the effect of different network topologies on the evolution of the opinions and the formation of echo chambers is reviewed. Main focus lies on networks with a high clustering coefficient and/or a community structure.
+	\item The impact of stubborn people: stubborn people are introduced in the system; in this section the effects of those stubborn people on the evolution of opinions and the formation of echo chambers will be discussed.
+	\item Random versus community distributed opinions/stubborn agents: this section investigates different ways of distributing the opinions and/or the stubborn agents in a network model with a community structure (SBM).
+\end{itemize}
+
 \section{Impact of network structure}
 
 In this section we will discuss some results related to the network structure and network topologies of the different network models that we used. We will mainly focus on the effect of a high clustering coefficient and a community structure. Two different opinion distributions are investigated
@@ -876,10 +884,10 @@ For both opinion distributions we investigate the evolution of the opinion fract
 Before sharing the results, a quick disclaimer: Some of the results that are shared in this section, were already obtained by prof. Nicola Perra and prof. Luis E.C. Rocha in their paper \textit{"Modelling opinion dynamics in the age of algorithmic personalization"} (see reference \cite{Perra2019}). These results include the effect of a high clustering coefficient (Watts-Strogatz model) and a random network model. Similar results (albeit with a different network size and average degree) are included in this section to give a complete overview and to be able to compare a community structure to a high clustering coefficient. 
 
 \subsection{Starting conditions $\bm{P_0(0) = 0.5}$ and $\bm{P_1(0)=0.5}$}
+\label{50-50}
 We start with the following opinion distribution: a fraction of nodes with opinion 0 equal to 0.5 ($P_0(0) = 0.5$) and a fraction of nodes with opinion 1 equal to 0.5 ($P_1(0) = 0.5$). The opinions are randomly distributed over the network. The opinion dynamics model discussed in Chapter \ref{chap4}, Section \ref{opinionmodel} % correct section??
 is used. We set the activation probability equal to $p_{\text{act}} = 0.1$ and the actual time-line of each user has a maximum length equal to $S=20$.\\
-\newpage
-\noindent
+\newline
 Four different network models are implemented, each with a total number of nodes equal to $N = 10^3$ and an average degree around 10
 \begin{itemize}
 	\item The Erd\H{o}s-R\'{e}nyi model (ER) with edge probability $p = 0.01$.
@@ -915,7 +923,6 @@ Figure \ref{ev_op_50_50} shows the results for the evolution of the fraction of 
 \newpage
 \noindent
 \textbf{Echo chambers}\\
-\newline
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_50-50_REC.png}
@@ -945,6 +952,7 @@ Once again, we look at four different network models each with a total number of
 \begin{itemize}
 	\item The Erd\H{o}s-R\'{e}nyi model (ER) with edge probability $p = 0.01$.
 	\item The Watts-Strogatz model (WS) with mean degree $K=10$ and rewire probability $\beta = 0.06$. The value of the average clustering coefficient is equal to $\left<C\right> \sim 0.55$. This model is used to investigate the effect of clustering.
+	\newpage
 	\item The stochastic block model with 10 communities of size 100; two networks with different modularities $Q$ are investigated: a high modularity network ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity network ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$). This model is used to investigate the effect of a community structure.
 	\item The stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100. Each community has the following Watts-Strogatz parameters: mean degree $K =10$ and rewire probability $\beta = 0.01$. Edges are added between communities with a probability $p_{\text{add}} = 0.001$. This is a network with both a high clustering ($\left<C\right> \sim 0.55$) and a high modularity ($Q \sim 0.9$).
 \end{itemize}
@@ -954,7 +962,7 @@ Figure \ref{ev_op_20_80} shows the results for the evolution of the fraction of 
 The REC method is not able to break the prevalence of opinion 0 over time for neither of the four different network models. When using the PR method, the results look very different. The prevalence of the minority opinion, $P_0(t)$, decreases over time. This decrease is a direct consequence of the PR filtering algorithm. Since the PR method orders the posts according to the users' preferences, nodes with the majority opinion 1 will mainly get to see posts with the similar opinion 1 on their time-line, which limits the chance of changing their opinion to the minority opinion. Nodes with the minority opinion 0, on the other hand, will obviously see posts with opinion 0 on their time-line when using the PR method. However, since there are more nodes with opinion 1 than nodes with opinion 0, the nodes with the minority opinion 0 will also get to see a significant number of posts with the majority opinion 1 on their time-line. The conclusion is that, when using the PR method, there is an imbalance in which opinion can switch to which: nodes with the minority opinion 0 have a chance of switching to the majority opinion 1, whereas nodes with the majority opinion 1 have (almost) no chance of switching to the minority opinion 0. This imbalance leads to the decrease of the minority opinion 0. 
 
 % Talk about effect network topologies?? See paper + simulation with N = 10.000 and N = 100.000 --> mention possible discrepancies and effect of network size??. Having a high clustering coefficient and/or a clear community structure plays no role in the e
-
+\newpage
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_001_50-50_PR_REC_20-80_8x7.png}
@@ -976,8 +984,19 @@ The REC method is not able to break the prevalence of opinion 0 over time for ne
   \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ opinion distribution]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ distribution. Four different network models are used (each with an average degree around 10 and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}
 \label{ev_op_20_80}
 \end{figure}
+\newpage
+\noindent
 \textbf{Echo chambers}\\
 \newline
+Figure \ref{echo_20_80} shows the distribution of the fraction of friends of node $i$ with the same opinion 1 at $t=500$ for the four network models. For each network, the REC and PR method are compared to each other. The interpretation of the figure is the same as was described in Subsection \ref{50-50}, the echo chamber paragraph.\\
+The results for the Erd\H{o}s-R\'{e}nyi model and the stochastic block model (both the high and low modularity) look qualitatively the same. Similarly, the results for the Watts-Strogatz model and the stochastic Watts-Strogatz model agree with each other as well. This difference in results between ER/SBM (negligible clustering) and WS/SBM-WS (high clustering) suggests that it is mainly the clustering that drives these differences.\\
+There is no visible effect for having a clear community structure. This can be clearly seen in Figure \ref{sbm} where the results for a stochastic block model with a high modularity (clear community structure) and a low modularity (negligible community structure) are compared. There is (almost) no difference in the results for a high and a low modularity.\\
+\newline
+Lets first discuss the results for the Erd\H{o}s-R\'{e}nyi model and the stochastic block model. When using the REC method, the formation of echo chambers around the majority opinion 1 is hampered. This is somewhat surprising, since $80\%$ of the nodes carry this opinion and is probably a consequence of the absence of clustering and the presence of short average path lengths in these models. There is even a little spike around $\left<P_1^{\text{nn}}\right> = 0.1$, which indicates an increase in the fraction of nodes with the majority of their neighbors carrying the minority opinion 0. From figure \ref{ev_op_20_80} it was already concluded that the REC method doesn't break the prevalence of the opinions. The opinion distribution is however shifted from the case where the minority opinion 0 is more or less randomly distributed over the network to the case where the minority opinion 0 groups together in opinion clusters. \\
+The PR method shows a completely different tendency. There is an increase in the fraction of nodes with (almost) all their neighbors carrying the majority opinion 1. This is a consequence from the fact that the PR method reduces the visibility of the minority opinion 0 in the neighborhood of nodes with the majority opinion 1. \\
+\newline
+Networks with a high clustering coefficient (WS and SBM-WS) behave completely different. For both the REC and PR method the high clustering enhances the formation of echo chambers around the minority opinion 0 (clearly visible in the spike around $\left<P_1^{\text{nn}}\right> = 0$ in both Figure \ref{ws} and Figure \ref{sbm-ws}). 
+
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_ER_001_20-80_PR_REC.png}
@@ -986,14 +1005,17 @@ The REC method is not able to break the prevalence of opinion 0 over time for ne
   \begin{subfigure}[b]{0.49\textwidth}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_WS_10_006_20-80_PR_REC_8x7.png}
     \caption{WS}
+    \label{ws}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
     \includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_SBM_01-0001_003-0008_10x100_20-80_PR_REC_8x7.png}
     \caption{SBM}
+  	\label{sbm}    
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
     \includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_SBM-WS_10_001_0001_10x100_20-80_PR_REC_8x7.png}
     \caption{SBM-WS}
+    \label{sbm-ws}
   \end{subfigure}
   \captionsetup{format=plain}
   \caption[Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t=500$, $\left<P_1^{\text{nn}}\right>$, for an initial $20/80$ opinion distribution]{Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t = 500$. The distribution is normalized by dividing for the same quantity computed at $t=0$. Four different network models are used, each with a total number of nodes $N = 10^3$ and an average degree around 10: \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm. The starting conditions are $P_0(0) = 0.2$ and $P_1(0) = 0.8$. Each plot is the average of $10^2$ independent simulations.}
@@ -1004,13 +1026,65 @@ The REC method is not able to break the prevalence of opinion 0 over time for ne
 
 \begin{figure}[H]
 	\includegraphics[width=12cm, height=10cm]{echo_chamber_vs_modularity_edge_prob_same_deg_PR_REC_12x10}
-	\label{echo_vs_mod}
 	\captionsetup{format=plain}
 	\caption[Relation between the formation of echo chambers and community structure (modularity)]{The relation between the formation of echo chambers and the community structure, represented by the modularity $Q$, for both the PR and REC filtering algorithms. The $y$-axis shows the average of the normalized fraction of nodes with all neighbors having opinion 0 and the normalized fraction of nodes with all neighbors having opinion 1. This value represents the formation of echo chambers in the system (denoted with echo chamber size in the figure). The initial opinion distribution is $50/50$. The data point with $Q = 0$ is the result for an ER network with $N = 10^3$, $p = 0.01$ and an average degree around 10. The other four data points are the results for SBM's with 10 communities of size 100 (total number of nodes $N = 10^3$), each with a different modularity (the modularity is changed by changing the edge probabilities) and an average degree around 10. Each data point is the result of $10^2$ independent simulations.}
+\label{echo_vs_mod}
 \end{figure}
-% mention that error bars represent standard error + reason + mention values for p_cl and p_add together with modularity, maybe clustering
 
+
+Now, lets look a bit closer to the relation between the formation of echo chambers and the community structure, which is quantified by the modularity $Q$. In Figure \ref{echo_vs_mod}, the size of the echo chambers versus the modularity is depicted. The $y$-axis represents the average of the normalized fraction of nodes with all neighbors carrying opinion 0 and the normalized fraction of nodes with all neighbors carrying opinion 1 (with normalized we mean that the computed value for the fraction of nodes with all neighbors having opinion 0 or all neighbors having opinion 1 at $t=500$ is divided by the corresponding value at $t=0$). This is a measure for the formation of echo chambers (opinion clusters) in the system. The data points represent the value of the echo chamber size in networks with a different modularity. The initial opinion distribution was always $50/50$. 
+\newpage
+\noindent
+In increasing order of modularity, the used network models are (all with a total number of nodes $N = 10^3$ and an average degree around 10)
+\begin{itemize}
+	\item $Q=0 \rightarrow$ Erd\H{o}s-R\'{e}nyi model with edge probability $p=0.01$,
+	\item $Q \sim 0.2 \rightarrow$ SBM with 10 communities of size 100; the edge probability inside the communities is $p_{\text{cl}} = 0.03$ and the edge probability between communities is $p_{\text{add}} = 0.008$,
+	\item $Q \sim 0.47 \rightarrow$ SBM with 10 communities of size 100; the edge probability inside the communities is $p_{\text{cl}} = 0.05$ and the edge probability between communities is $p_{\text{add}} = 0.005$,
+	\item $Q \sim 0.6 \rightarrow$ SBM with 10 communities of size 100; the edge probability inside the communities is $p_{\text{cl}} = 0.07$ and the edge probability between communities is $p_{\text{add}} = 0.004$,
+	\item $Q \sim 0.9 \rightarrow$ SBM with 10 communities of size 100; the edge probability inside the communities is $p_{\text{cl}} = 0.1$ and the edge probability between communities is $p_{\text{add}} = 0.001$.
+\end{itemize}
+The data points are shown together with the standard error $SE = \sigma /\sqrt{N}$. The standard error $SE$ is chosen here instead of the standard deviation $\sigma$. This is because the standard deviation is quite large. Each data point is the average of $10^2$ independent simulations. The dispersion/variation, which is measured by the standard deviation, in the set of the $10^2$ obtained values is quite large. However, if we run the $10^2$ simulations over and over again, each time calculating the average, the obtained value of the average is always more or less the same. This suggests that the value of the calculated average lies close to the real average. Since we are mostly interested in the correctness of the value of the average, which is quantified by the standard error, we chose to depict the results together with this standard error.\\
+\newline
+The PR filtering algorithm is compared to the REC filtering algorithm. For most values of the modularity, the REC method produces almost no echo chambers. If the modularity becomes high enough we start to see a very small increase in the formation of echo chambers, however even for $Q \sim 0.9$, the size of the echo chambers remains smaller than 2, which means that after 500 time steps there are less than two times as much echo chambers than in the beginning at $t=0$.\\
+For the PR method, the increase in the size of the echo chambers with increasing modularity is much more significant. From a modularity approximately equal to $Q \sim 0.5$, we can see a sharp increase in the formation of echo chambers. For modularity values smaller than $Q \sim 0.5$, the formation of echo chambers remains very small, even when using the PR method.\\
+These results strongly suggest that a community structure enhances the formation of echo chambers in the system, mostly when using the PR filtering algorithm. A quite clear community structure, represented by a high modularity, is however needed to really see the effect of this community structure on the formation of opinion clusters.
+
+\newpage
 \section{Impact of stubborn people}
+In this section, the impact of introducing stubborn people will be reviewed. We focus on two different models, both are thoroughly discussed in Chapter \ref{chap3}, Section \ref{stubbBin}
+\begin{itemize}
+	\item Including a stubbornness parameter: these results are discussed in Section \ref{stubbpar},
+	\item The majority threshold model: results for this model are given in Section \ref{majThres}.
+\end{itemize}
+
+\subsection{Including a stubbornness parameter}
+\label{stubbpar}
+Here, we review the results of introducing stubborn people by including a stubbornness parameter $r_i$. We look at two slightly different case
+\begin{itemize}
+	\item Making a fraction of the nodes (going from none of the nodes to all the nodes) completely stubborn ($r_i = 1$),
+	\item Making all nodes partly stubborn (going from not stubborn at all, $r_i = 0$ to completely stubborn, $r_i = 1$).
+\end{itemize}
+For both cases we will look at both the evolution of the opinions and the formation of echo chambers. \\
+We will again implement four different network models in order to investigate the possible interplay between network structure and stubbornness, these models are (each with a total number of nodes $N = 10^3$ and an average degree around 10)
+\begin{itemize}
+	\item The Erd\H{o}s-R\'{e}nyi model (ER) with edge probability $p = 0.01$.
+	\item The Watts-Strogatz model (WS) with mean degree $K=10$ and rewire probability $\beta = 0.06$, with $\left<C\right> \sim 0.55$. This model is used to investigate the effect of clustering.
+	\item The stochastic block model with 10 communities of size 100; two networks with different modularities $Q$ are investigated: a high modularity network ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity network ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$). This model is used to investigate the effect of a community structure.
+	\item The stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100. Each community has the following Watts-Strogatz parameters: mean degree $K =10$ and rewire probability $\beta = 0.01$. Edges are added between communities with a probability $p_{\text{add}} = 0.001$. This is a network with both a high clustering ($\left<C\right> \sim 0.55$) and a high modularity ($Q \sim 0.9$).
+\end{itemize}
+For each network model, we compare the REF, REC and PR method to each other to analyze the possible interplay between stubbornness and filtering algorithm.\\
+\newline
+\textbf{Making a fraction of the nodes completely stubborn}\\
+\newline
+nsdjk\\
+\newline
+\textbf{Making all nodes partly stubborn}\\
+\newline
+jsqnbd\\
+
+
+\subsection{The majority threshold model}
+\label{majThres}
 
 \section{Random versus community distributed opinions/stubborn agents}
 
@@ -1021,7 +1095,7 @@ The REC method is not able to break the prevalence of opinion 0 over time for ne
 % important to know the limits of the model, may be intuitive, but intuition maybe misleading (learned in physics) --> why we need experimental data to compare with!
 
 \chapter{Conclusions and outlook}
-
+% also discuss need to investigate effect of changing N, S and p_act
 \newpage
 
 \pagestyle{fancy}

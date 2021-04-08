@@ -366,6 +366,7 @@
 \newlabel{stubb}{{3.5}{30}{The presence of stubborn people}{section.3.5}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.1}Stubbornness in bounded confidence models}{30}{subsection.3.5.1}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {3.5.2}Stubbornness in binary models}{31}{subsection.3.5.2}}
+\newlabel{stubbBin}{{3.5.2}{31}{Stubbornness in binary models}{subsection.3.5.2}{}}
 \citation{Perra2019}
 \citation{Perra2019}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Materials and methods in this thesis}{33}{chapter.4}}
@@ -383,7 +384,8 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{toc}{\contentsline {section}{\numberline {5.1}Impact of network structure}{37}{section.5.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Starting conditions $\bm  {P_0(0) = 0.5}$ and $\bm  {P_1(0)=0.5}$}{37}{subsection.5.1.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Starting conditions $\bm  {P_0(0) = 0.5}$ and $\bm  {P_1(0)=0.5}$}{38}{subsection.5.1.1}}
+\newlabel{50-50}{{5.1.1}{38}{Starting conditions $\bm {P_0(0) = 0.5}$ and $\bm {P_1(0)=0.5}$}{subsection.5.1.1}{}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ opinion distribution}}{39}{figure.caption.3}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{ev_op_50_50}{{5.1}{39}{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ opinion distribution}{figure.caption.3}{}}
@@ -393,57 +395,67 @@
 \@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Starting conditions $\bm  {P_0(0) = 0.2}$ and $\bm  {P_1(0)=0.8}$}{41}{subsection.5.1.2}}
 \@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ opinion distribution}}{43}{figure.caption.5}}
 \newlabel{ev_op_20_80}{{5.3}{43}{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ opinion distribution}{figure.caption.5}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t=500$, $\left <P_1^{\text  {nn}}\right >$, for an initial $20/80$ opinion distribution}}{44}{figure.caption.6}}
-\newlabel{echo_20_80}{{5.4}{44}{Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t=500$, $\left <P_1^{\text {nn}}\right >$, for an initial $20/80$ opinion distribution}{figure.caption.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Relation between formation of echo chambers and community structure}{45}{subsection.5.1.3}}
-\newlabel{echo_vs_mod}{{\caption@xref {echo_vs_mod}{ on input line 1007}}{45}{Relation between formation of echo chambers and community structure}{figure.caption.7}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Relation between the formation of echo chambers and community structure (modularity)}}{45}{figure.caption.7}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}Impact of stubborn people}{45}{section.5.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Random versus community distributed opinions/stubborn agents}{45}{section.5.3}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{47}{chapter.6}}
+\newlabel{ws}{{5.4b}{45}{WS\relax }{figure.caption.6}{}}
+\newlabel{sub@ws}{{b}{45}{WS\relax }{figure.caption.6}{}}
+\newlabel{sbm}{{5.4c}{45}{SBM\relax }{figure.caption.6}{}}
+\newlabel{sub@sbm}{{c}{45}{SBM\relax }{figure.caption.6}{}}
+\newlabel{sbm-ws}{{5.4d}{45}{SBM-WS\relax }{figure.caption.6}{}}
+\newlabel{sub@sbm-ws}{{d}{45}{SBM-WS\relax }{figure.caption.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t=500$, $\left <P_1^{\text  {nn}}\right >$, for an initial $20/80$ opinion distribution}}{45}{figure.caption.6}}
+\newlabel{echo_20_80}{{5.4}{45}{Distribution of the fraction of friends (nearest neighbors, nn) of node $i$ with the same opinion 1 at $t=500$, $\left <P_1^{\text {nn}}\right >$, for an initial $20/80$ opinion distribution}{figure.caption.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Relation between formation of echo chambers and community structure}{46}{subsection.5.1.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.5}{\ignorespaces Relation between the formation of echo chambers and community structure (modularity)}}{46}{figure.caption.7}}
+\newlabel{echo_vs_mod}{{5.5}{46}{Relation between the formation of echo chambers and community structure (modularity)}{figure.caption.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Impact of stubborn people}{48}{section.5.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Including a stubbornness parameter}{48}{subsection.5.2.1}}
+\newlabel{stubbpar}{{5.2.1}{48}{Including a stubbornness parameter}{subsection.5.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}The majority threshold model}{49}{subsection.5.2.2}}
+\newlabel{majThres}{{5.2.2}{49}{The majority threshold model}{subsection.5.2.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Random versus community distributed opinions/stubborn agents}{49}{section.5.3}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Discussion}{51}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions and outlook}{49}{chapter.7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Conclusions and outlook}{53}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {chapter}{Appendices}{50}{section*.8}}
+\@writefile{toc}{\contentsline {chapter}{Appendices}{54}{section*.8}}
 \citation{Albert2016}
 \citation{Albert2016}
 \citation{Albert2016}
 \citation{Albert2016}
 \citation{Albert2016}
 \citation{Albert2016}
-\@writefile{toc}{\contentsline {chapter}{\numberline {A}Network measurements: Derivations}{51}{appendix.A}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {A}Network measurements: Derivations}{55}{appendix.A}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {A.1}Modularity}{51}{section.A.1}}
-\newlabel{modul}{{A.1}{51}{Modularity}{section.A.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Simple form of network modularity}{51}{subsection.A.1.1}}
-\newlabel{simplemod}{{A.1.1}{51}{Simple form of network modularity}{subsection.A.1.1}{}}
-\newlabel{modnetw}{{A.3}{51}{Simple form of network modularity}{equation.A.1.3}{}}
-\newlabel{1}{{A.4}{51}{Simple form of network modularity}{equation.A.1.4}{}}
-\newlabel{2}{{A.5}{51}{Simple form of network modularity}{equation.A.1.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A.1}Modularity}{55}{section.A.1}}
+\newlabel{modul}{{A.1}{55}{Modularity}{section.A.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.1}Simple form of network modularity}{55}{subsection.A.1.1}}
+\newlabel{simplemod}{{A.1.1}{55}{Simple form of network modularity}{subsection.A.1.1}{}}
+\newlabel{modnetw}{{A.3}{55}{Simple form of network modularity}{equation.A.1.3}{}}
+\newlabel{1}{{A.4}{55}{Simple form of network modularity}{equation.A.1.4}{}}
+\newlabel{2}{{A.5}{55}{Simple form of network modularity}{equation.A.1.5}{}}
 \citation{Albert2016}
 \citation{Albert2016}
 \citation{Albert2016}
 \citation{Albert2016}
-\newlabel{Qfin}{{A.6}{52}{Simple form of network modularity}{equation.A.1.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Modularity change after merging two communities}{52}{subsection.A.1.2}}
-\newlabel{modchange}{{A.1.2}{52}{Modularity change after merging two communities}{subsection.A.1.2}{}}
-\newlabel{Q_AB}{{A.7}{52}{Modularity change after merging two communities}{equation.A.1.7}{}}
+\newlabel{Qfin}{{A.6}{56}{Simple form of network modularity}{equation.A.1.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1.2}Modularity change after merging two communities}{56}{subsection.A.1.2}}
+\newlabel{modchange}{{A.1.2}{56}{Modularity change after merging two communities}{subsection.A.1.2}{}}
+\newlabel{Q_AB}{{A.7}{56}{Modularity change after merging two communities}{equation.A.1.7}{}}
 \citation{Hopcroft2006}
 \citation{Hopcroft2006}
 \citation{Hopcroft2006}
-\@writefile{toc}{\contentsline {chapter}{\numberline {B}Network models: Derivations}{53}{appendix.B}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {B}Network models: Derivations}{57}{appendix.B}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\@writefile{toc}{\contentsline {section}{\numberline {B.1}The Erd\H {o}s-R\'{e}nyi model}{53}{section.B.1}}
-\newlabel{ER}{{B.1}{53}{The Erd\H {o}s-R\'{e}nyi model}{section.B.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.1}Degree distribution}{53}{subsection.B.1.1}}
-\newlabel{degdis}{{B.1.1}{53}{Degree distribution}{subsection.B.1.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.2}Average degree}{53}{subsection.B.1.2}}
-\newlabel{degree}{{B.1.2}{53}{Average degree}{subsection.B.1.2}{}}
-\newlabel{avDegr}{{B.4}{53}{Average degree}{equation.B.1.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.1}The Erd\H {o}s-R\'{e}nyi model}{57}{section.B.1}}
+\newlabel{ER}{{B.1}{57}{The Erd\H {o}s-R\'{e}nyi model}{section.B.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.1}Degree distribution}{57}{subsection.B.1.1}}
+\newlabel{degdis}{{B.1.1}{57}{Degree distribution}{subsection.B.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.2}Average degree}{57}{subsection.B.1.2}}
+\newlabel{degree}{{B.1.2}{57}{Average degree}{subsection.B.1.2}{}}
+\newlabel{avDegr}{{B.4}{57}{Average degree}{equation.B.1.4}{}}
 \citation{Hopcroft2006}
 \citation{Albert2014}
 \citation{Albert2014}
@@ -451,11 +463,11 @@
 \citation{Albert2014}
 \citation{Albert2014}
 \citation{Albert2014}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.3}Poisson form of the degree distribution}{54}{subsection.B.1.3}}
-\newlabel{poiss}{{B.1.3}{54}{Poisson form of the degree distribution}{subsection.B.1.3}{}}
-\newlabel{pk}{{B.8}{54}{Poisson form of the degree distribution}{equation.B.1.8}{}}
-\newlabel{bin}{{B.9}{54}{Poisson form of the degree distribution}{equation.B.1.9}{}}
-\newlabel{e}{{B.13}{54}{Poisson form of the degree distribution}{equation.B.1.13}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.3}Poisson form of the degree distribution}{58}{subsection.B.1.3}}
+\newlabel{poiss}{{B.1.3}{58}{Poisson form of the degree distribution}{subsection.B.1.3}{}}
+\newlabel{pk}{{B.8}{58}{Poisson form of the degree distribution}{equation.B.1.8}{}}
+\newlabel{bin}{{B.9}{58}{Poisson form of the degree distribution}{equation.B.1.9}{}}
+\newlabel{e}{{B.13}{58}{Poisson form of the degree distribution}{equation.B.1.13}{}}
 \citation{Albert2014}
 \citation{Albert2014}
 \citation{Albert2014}
@@ -464,20 +476,20 @@
 \citation{Pele2015}
 \citation{Pele2015}
 \citation{Pele2015}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.4}Diameter}{55}{subsection.B.1.4}}
-\newlabel{ERdist}{{B.1.4}{55}{Diameter}{subsection.B.1.4}{}}
-\newlabel{dist}{{B.15}{55}{Diameter}{equation.B.1.15}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {B.2}The Watts-Strogatz model}{55}{section.B.2}}
-\newlabel{WS}{{B.2}{55}{The Watts-Strogatz model}{section.B.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {B.2.1}The regular ring lattice}{55}{subsection.B.2.1}}
-\newlabel{ringclus}{{B.2.1}{55}{The regular ring lattice}{subsection.B.2.1}{}}
-\newlabel{triangle}{{B.19}{55}{The regular ring lattice}{equation.B.2.19}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1.4}Diameter}{59}{subsection.B.1.4}}
+\newlabel{ERdist}{{B.1.4}{59}{Diameter}{subsection.B.1.4}{}}
+\newlabel{dist}{{B.15}{59}{Diameter}{equation.B.1.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B.2}The Watts-Strogatz model}{59}{section.B.2}}
+\newlabel{WS}{{B.2}{59}{The Watts-Strogatz model}{section.B.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.2.1}The regular ring lattice}{59}{subsection.B.2.1}}
+\newlabel{ringclus}{{B.2.1}{59}{The regular ring lattice}{subsection.B.2.1}{}}
+\newlabel{triangle}{{B.19}{59}{The regular ring lattice}{equation.B.2.19}{}}
 \citation{Pele2015}
 \citation{chap9}
 \citation{chap9}
 \citation{chap9}
 \citation{chap9}
-\newlabel{triple}{{B.20}{56}{The regular ring lattice}{equation.B.2.20}{}}
+\newlabel{triple}{{B.20}{60}{The regular ring lattice}{equation.B.2.20}{}}
 \bibstyle{abbrv}
 \bibdata{references}
 \bibcite{chap9}{1}
