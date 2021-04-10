@@ -999,6 +999,7 @@ Lets first discuss the results for the Erd\H{o}s-R\'{e}nyi model and the stochas
 The PR method shows a completely different tendency. There is an increase in the fraction of nodes with (almost) all their neighbors carrying the majority opinion 1. This is a consequence from the fact that the PR method reduces the visibility of the minority opinion 0 in the neighborhood of nodes with the majority opinion 1. \\
 \newline
 Networks with a high clustering coefficient (WS and SBM-WS) behave completely different. For both the REC and PR method the high clustering enhances the formation of echo chambers around the minority opinion 0 (clearly visible in the spike around $\left<P_1^{\text{nn}}\right> = 0$ in both Figure \ref{ws} and Figure \ref{sbm-ws}). 
+% explain black dotted line??
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
@@ -1092,6 +1093,22 @@ The WS and SBM-WS networks are the high clustering networks and for a small frac
 	\caption[Formation of echo chambers versus fraction of completely stubborn nodes, PR]{Formation of echo chambers versus the fraction of completely stubborn nodes, fracRes, for an initial $50/50$ opinion distribution and using the PR filtering algorithm. The $y$-axis shows the average of the normalized fraction of nodes with all neighbors having opinion 0 and the normalized fraction of nodes with all neighbors having opinion 1. This value represents the formation of echo chambers in the system (denoted with echo chamber size in the figure). Results are shown for four different network models, each with a total number of nodes $N=10^3$ and an average degree around 10: WS network with $K =10,\ \beta = 0.06$ and $\left<C\right> \sim 0.55$; SBM-WS network with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$; SBM network with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; ER network with $p= 0.01$.}
 \label{echo_vs_frac_complStubb}
 \end{figure}
+	
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_stubbornness_frac_compl_stubb_REF_8x7.png}
+    \caption{REF}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_stubbornness_frac_compl_stubb_REC_8x7.png}
+    \caption{REC}
+    \label{ws}
+  \end{subfigure}
+  \captionsetup{format=plain}
+  \caption[Formation of echo chambers versus fraction of completely stubborn nodes, REF and REC]{Formation of echo chambers versus the fraction of completely stubborn nodes, fracRes, for an initial $50/50$ opinion distribution. \textbf{(a)} Using the REF filtering algorithm; \textbf{(b)} Using the REC filtering algorithm. The $y$-axis shows the average of the normalized fraction of nodes with all neighbors having opinion 0 and the normalized fraction of nodes with all neighbors having opinion 1. This value represents the formation of echo chambers in the system (denoted with echo chamber size in the figure). Results are shown for four different network models, each with a total number of nodes $N=10^3$ and an average degree around 10: WS network with $K =10,\ \beta = 0.06$ and $\left<C\right> \sim 0.55$; SBM-WS network with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$; SBM network with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; ER network with $p= 0.01$.}
+\label{echo_vs_frac_complStubb_REF-REC}
+\end{figure}
+% eplain REC/REF figure!!
 \noindent
 \textbf{Making all nodes partly stubborn}\\
 \newline
