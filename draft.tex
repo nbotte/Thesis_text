@@ -1025,7 +1025,7 @@ Networks with a high clustering coefficient (WS and SBM-WS) behave completely di
 \label{echo_20_80}
 \end{figure}
 
-\subsection{Relation between formation of echo chambers and community structure}
+\subsection{Relation between formation of echo chambers and community structure}\label{echoVSmod}
 
 \begin{figure}[H]
 	\includegraphics[width=12cm, height=10cm]{echo_chamber_vs_modularity_edge_prob_same_deg_PR_REC_12x10}
@@ -1076,11 +1076,23 @@ We will again implement four different network models in order to investigate th
 	\item The stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100. Each community has the following Watts-Strogatz parameters: mean degree $K =10$ and rewire probability $\beta = 0.01$. Edges are added between communities with a probability $p_{\text{add}} = 0.001$. This is a network with both a high clustering ($\left<C\right> \sim 0.55$) and a high modularity ($Q \sim 0.9$).
 \end{itemize}
 For each network model, we compare the REF, REC and PR method to each other to analyze the possible interplay between stubbornness and filtering algorithm.\\
-\newline
+\newpage
+\noindent
 \textbf{Making a fraction of the nodes completely stubborn}\\
 \newline
-We start by making a fraction of the nodes (fracRes) completely stubborn ($r_i = 1$). We go from no stubborn nodes, fracRes $=0$, to all the nodes are stubborn, fracRes $=1$.\\
+We start by making a fraction of the nodes (fracRes) completely stubborn ($r_i = 1$). We go from no stubborn nodes, fracRes $=0$, to all the nodes are stubborn, fracRes $=1$. In all cases, the stubborn nodes are randomly distributed over the network.\\
 \newline
+Figure \ref{echo_vs_frac_complStubb} shows the formation of echo chambers in the system versus the fraction of completely stubborn nodes, fracRes, when using the PR filtering algorithm. The $y$-axis represents the formation of echo chambers in the same way as was explained for Figure \ref{echo_vs_mod} in Section \ref{echoVSmod}. Data points are again shown together with their standard error, $SE$, for the same reasons as explained in Section \ref{echoVSmod}.\\
+The Erd\H{o}s-R\'{e}nyi model (ER) shows no appearance of echo chambers. Introducing a fraction of completely stubborn nodes doesn't change this behavior. The stochastic block model with a low modularity behaves similar as the Erd\H{o}s-R\'{e}nyi model (no formation of echo chambers). Note that the data points for the SBM with a low modularity are not visible in Figure \ref{echo_vs_frac_complStubb}, since they lie behind the ER data points.\\
+The other three networks (WS, SBM-WS and SBM with a high modularity) all show qualitatively the same behavior. If an increasing fraction of completely stubborn nodes is introduced, the formation of echo chambers decreases with this increasing fraction of stubborn people. This can be explained as follows. Having a fraction of completely stubborn nodes, reduces the effective number of neighbors that can change their opinion. This in turn leads to the hampering of the formation of echo chambers.\\
+The WS and SBM-WS networks are the high clustering networks and for a small fraction of stubborn people they show the largest echo chambers. The stochastic block model with a high modularity has smaller echo chambers than the high clustering networks, but still has some formation of echo chambers for a fraction of stubborn nodes smaller than fracRes $\leqslant 0.1$. This leads us to make the same conclusion as before: a community structure enhances the formation of echo chambers compared to a random network, however not as significant as networks with a high clustering coefficient. 
+\begin{figure}[H]
+	\includegraphics[width=12cm, height=10cm]{echo_chamber_vs_stubbornness_SBM_frac_compl_stubb_PR_12x10.png}
+	\captionsetup{format=plain}
+	\caption[Formation of echo chambers versus fraction of completely stubborn nodes, PR]{Formation of echo chambers versus the fraction of completely stubborn nodes, fracRes, for an initial $50/50$ opinion distribution and using the PR filtering algorithm. The $y$-axis shows the average of the normalized fraction of nodes with all neighbors having opinion 0 and the normalized fraction of nodes with all neighbors having opinion 1. This value represents the formation of echo chambers in the system (denoted with echo chamber size in the figure). Results are shown for four different network models, each with a total number of nodes $N=10^3$ and an average degree around 10: WS network with $K =10,\ \beta = 0.06$ and $\left<C\right> \sim 0.55$; SBM-WS network with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$; SBM network with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; ER network with $p= 0.01$.}
+\label{echo_vs_frac_complStubb}
+\end{figure}
+\noindent
 \textbf{Making all nodes partly stubborn}\\
 \newline
 jsqnbd\\
