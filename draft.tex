@@ -1108,6 +1108,7 @@ Once again, the opinion dynamics model described in Chapter \ref{chap4}, Section
 \textbf{Making a fraction of the nodes completely stubborn}\\
 \newline
 We start by making a fraction of the nodes (fracRes) completely stubborn ($r_i = 1$). We go from no stubborn nodes, fracRes $=0$, to all the nodes are stubborn, fracRes $=1$. In all cases, the stubborn nodes are randomly distributed over the network.\\
+We will first discuss the formation of echo chambers for an initial $50/50$ opinion distribution, after which the results for the opinion evolution will be shared.
 
 \begin{figure}[H]
 	\includegraphics[width=12cm, height=10cm]{echo_chamber_vs_stubbornness_SBM_frac_compl_stubb_PR_12x10.png}
@@ -1140,14 +1141,58 @@ If the fraction of completely stubborn nodes becomes bigger than fracRes $\geqsl
 \label{echo_vs_frac_complStubb_REF-REC}
 \end{figure}
 \noindent
-Figure \ref{echo_vs_frac_complStubb_PR-REC_20-80} shows the formation of echo chambers versus the fraction of completely stubborn nodes ($r_i = 1$), fracRes, for an initial $20/80$ opinion distribution (opinion 0 is the minority opinion, opinion 1 is the majority opinion). Figure \ref{PR_frac_compl_stubb_20-80} shows the results for the PR filtering algorithm and Figure \ref{REC_frac_compl_stubb_20-80} shows those for the REC filtering algorithm. The data points are shown together with their standard error $SE$, note that these are very small and almost not visible in the figure. The interpretation of the $y$-axis is slightly different than before. In previous figures, the echo chamber size was interpreted as the average of the normalized fraction of nodes with all neighbors having opinion 0 and the normalized fraction of nodes with all neighbors having opinion 1. Thus we first normalized the echo chambers around opinion 0 and those around opinion 1 and than took the average of both. In case of a $20/80$ distribution we have a very skewed echo chamber distribution, as can be seen in Figure \ref{echo_20_80}, with normalized values going to infinity. We still want to have some average of the echo chambers around opinion 0 and those around opinion 1 to quantify the total formation of echo chambers in the system, but we want to avoid problems with those infinities. Hence, we chose for a slightly different average: first we calculate the total number of like-minded neighborhoods at $t=500$ (thus the sum of the number of echo chambers around opinion 0 and the number of echo chambers around opinion 1) and then we divide that quantity by the total number of like-minded neighborhoods at $t=0$ (hence, we first take the average and than normalize it, instead of normalizing first and then taking the average, as was done before). Note that by taking the average, we neglect the skewed echo chamber distribution. This is, however, not really a problem, since we just want a sense of the total number of echo chambers in the system and how this total number is impacted by the presence of stubborn people and are less interested in the distribution of those echo chambers. \\
+So far the results for the formation of echo chambers in the system for an initial $50/50$ opinion distribution and introducing a fraction of completely stubborn agents. But what about the evolution of the opinions over time? Are these affected by introducing stubborn people in the system? \\
 \newline
-When using the PR filtering algorithm, see Figure \ref{PR_frac_compl_stubb_20-80}, we can observe a decrease in the formation of echo chambers with an increasing fraction of stubborn nodes. This behavior is similar to the case of an initial $50/50$ opinion distribution in combination with the PR filtering algorithm as depicted in Figure \ref{echo_vs_frac_complStubb}. Note that for an initial $20/80$ distribution, in combination with the PR filtering algorithm, the formation of echo chambers in the Erd\H{o}s-R\'{e}nyi network and the stochastic block model with a low modularity is non-zero (for a fraction of completely stubborn nodes equal to fracRes $=0$), as can also be observed in Figure \ref{echo_20_80}. This behavior is a consequence of the fact that for an initial $20/80$ opinion distribution, in combination with the PR filtering algorithm, the prevalence of the majority opinion strongly increases, as was already explained for Figure \ref{echo_20_80}. The formation of echo chambers for networks with a high clustering and/or a high modularity is slightly higher. It is however not recommended to compare the formation of echo chambers between the different network models when depicting the results as the average of the echo chambers around opinion 0 and those around opinion 1 in case of an initial $20/80$ opinion distribution. The reason for this is that this average neglects the skewed echo chamber distributions as depicted in Figure \ref{echo_20_80}. When comparing the different network models, these skewed distributions should not be overlooked. The goal of this figure is to show the dependency of the formation of echo chambers in the network models on the presence of a fraction of stubborn people and not to compare the different models against each other. \\
+In Figure \ref{ev_op_50_50_stubb_REC} the evolution of the fraction of nodes with opinion 0 for an initial $50/50$ opinion distribution is shown. Data points are shown together with the standard deviation $\sigma$. This figure shows the results for the REC filtering algorithm. The four network models (ER, WS, SBM (high and low modularity) and SBM-WS) are compared to each other. For each model we look at three different fractions of completely stubborn people: no stubborn people, fracRes $=0$; a fraction of completely stubborn people equal to fracRes $=0.4$ and a fraction of completely stubborn people equal to fracRes $=0.8$. Introducing a fraction of stubborn people is not able to break the initial $50/50$ opinion distribution for neither of the network models.\\
 \newline
-% explain reason behavior REC!!
-The results for the REC filtering algorithm, depicted in Figure \ref{REC_frac_compl_stubb_20-80}, look again different than those for the PR filtering algorithm. The high clustering networks (WS and SBM-WS) show an increase in the formation of echo chambers with an increasing fraction of completely stubborn nodes, followed by a decrease. This result is very similar to the results for an initial $50/50$ distribution in combination with the REC filtering algorithm, depicted in Figure \ref{REC_frac_compl_stubb}. The stochastic block model with a high modularity doesn't really show an increase in the formation of echo chambers but remains flat for a fraction of completely stubborn nodes smaller than fracRes $\leqslant 0.2$; if the fraction of stubborn agents increases further, we can start to see a decrease in the formation of echo chambers. The Erd\H{o}s-R\'{e}nyi network and the stochastic block model with a low modularity show a tiny, tiny formation of echo chambers for a fraction of zero stubborn agents (echo chamber size around $1.2$). This very limited, almost non-significant formation of echo chambers for the ER model and the SBM with a low modularity, in combination with the REC filtering algorithm, is also visible in Figure \ref{er_echo_20-80} and Figure \ref{sbm}. For an increasing fraction of the completely stubborn people, these small echo chambers eventually converge to one, indicating a constant amount of echo chambers over time.\\
-We can conclude that the formation of echo chambers versus the fraction of completely stubborn people, for an initial $20/80$ opinion distribution, qualitatively resembles the results for an initial $50/50$ opinion distribution (decrease in formation of echo chambers with an increasing fraction of stubborn agents for the PR method versus an increase in the formation of echo chambers with an increasing fraction of stubborn people, followed by a decrease for the REC method). 
+Figure \ref{ev_op_50_50_stubb_PR} shows the results for the evolution of the fraction of opinion 0 in the system for an initial $50/50$ opinion distribution and when using the PR filtering algorithm. Data points are again represented together with the standard deviation $\sigma$. Three different fractions of stubborn people (fracRes $=0$, fracRes $=0.4$ and fracRes $=0.8$) are compared to each other for the four different network models. The results don't differ from those obtained for the REC filtering algorithm. The status-quo is maintained, the initial $50/50$ opinion distribution does not change over time when introducing stubborn people and using the PR filtering algorithm.
 
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_frac_compl_stubb_REC_8x7.png}
+    \caption{ER}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_frac_compl_stubb_REC_8x7.png}
+    \caption{WS}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_frac_compl_stubb_REC_8x7.png}
+    \caption{SBM}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_frac_compl_stubb_REC_8x7.png}
+    \caption{SBM-WS}
+  \end{subfigure}
+  \captionsetup{format=plain}
+  \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ opinion distribution, using the REC filtering algorithm and comparing three different fractions of completely stubborn people (fracRes $= 0$, fracRes $= 0.4$ and fracRes $= 0.8$)]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ distribution, using the REC filtering algorithm and comparing three different fractions of completely stubborn people (fracRes $= 0$, fracRes $= 0.4$ and fracRes $= 0.8$). Four different network models are used (each with an average degree around $\left<k\right> \sim 10$ and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}%more explanation?
+\label{ev_op_50_50_stubb_REC}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_frac_compl_stubb_PR_8x7.png}
+    \caption{ER}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_frac_compl_stubb_PR_8x7.png}
+    \caption{WS}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_frac_compl_stubb_PR_8x7.png}
+    \caption{SBM}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_frac_compl_stubb_PR_8x7.png}
+    \caption{SBM-WS}
+  \end{subfigure}
+  \captionsetup{format=plain}
+  \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ opinion distribution, using the PR filtering algorithm and comparing three different fractions of completely stubborn people (fracRes $= 0$, fracRes $= 0.4$ and fracRes $= 0.8$)]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ distribution, using the PR filtering algorithm and comparing three different fractions of completely stubborn people (fracRes $= 0$, fracRes $= 0.4$ and fracRes $= 0.8$). Four different network models are used (each with an average degree around $\left<k\right> \sim 10$ and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}%more explanation?
+\label{ev_op_50_50_stubb_PR}
+\end{figure}
+\noindent
+Up till now, we have discussed the results for the formation of echo chambers and the evolution of the opinions when introducing a fraction of completely stubborn nodes in the system for an initial $50/50$ opinion distribution. Lets now look at the results for introducing a fraction of stubborn agents when we are dealing with an unbalanced initial opinion distribution, eg. an initial $20/80$ distribution.\\
+\newline
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
@@ -1164,27 +1209,85 @@ We can conclude that the formation of echo chambers versus the fraction of compl
   \caption[Formation of echo chambers versus fraction of completely stubborn nodes for the PR and REC filtering algorithms and an initial $20/80$ opinion distribution]{Formation of echo chambers versus the fraction of completely stubborn nodes, fracRes, for an initial $20/80$ opinion distribution. \textbf{(a)} Using the PR filtering algorithm; \textbf{(b)} Using the REC filtering algorithm. The $y$-axis shows the total number of like-minded neighborhoods (sum of the number of echo chambers around opinion 0 and the number of echo chambers around opinion 1) at $t=500$ divided by the total number of like-minded neighborhoods at $t=0$. This value represents the formation of echo chambers in the system (denoted with echo chamber size in the figure). Results are shown for four different network models, each with a total number of nodes $N=10^3$ and an average degree around $\left<k\right> \sim 10$: WS network with $K =10,\ \beta = 0.06$ and $\left<C\right> \sim 0.55$; SBM-WS network with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$; SBM network with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; ER network with $p= 0.01$. Each data point is the result of $10^2$ independent simulations.}
 \label{echo_vs_frac_complStubb_PR-REC_20-80}
 \end{figure}
+\noindent
+Figure \ref{echo_vs_frac_complStubb_PR-REC_20-80} shows the formation of echo chambers versus the fraction of completely stubborn nodes ($r_i = 1$), fracRes, for an initial $20/80$ opinion distribution (opinion 0 is the minority opinion, opinion 1 is the majority opinion). Figure \ref{PR_frac_compl_stubb_20-80} shows the results for the PR filtering algorithm and Figure \ref{REC_frac_compl_stubb_20-80} shows those for the REC filtering algorithm. The data points are shown together with their standard error $SE$, note that these are very small and almost not visible in the figure. The interpretation of the $y$-axis is slightly different than before. In previous figures, the echo chamber size was interpreted as the average of the normalized fraction of nodes with all neighbors having opinion 0 and the normalized fraction of nodes with all neighbors having opinion 1. Thus we first normalized the echo chambers around opinion 0 and those around opinion 1 and than took the average of both. In case of a $20/80$ distribution we have a very skewed echo chamber distribution, as can be seen in Figure \ref{echo_20_80}, with normalized values going to infinity. We still want to have some average of the echo chambers around opinion 0 and those around opinion 1 to quantify the total formation of echo chambers in the system, but we want to avoid problems with those infinities. Hence, we chose for a slightly different average: first we calculate the total number of like-minded neighborhoods at $t=500$ (thus the sum of the number of echo chambers around opinion 0 and the number of echo chambers around opinion 1) and then we divide that quantity by the total number of like-minded neighborhoods at $t=0$ (hence, we first take the average and than normalize it, instead of normalizing first and then taking the average, as was done before). Note that by taking the average, we neglect the skewed echo chamber distribution. This is, however, not really a problem, since we just want a sense of the total number of echo chambers in the system and how this total number is impacted by the presence of stubborn people and are less interested in the distribution of those echo chambers. \\
+\newline
+When using the PR filtering algorithm, see Figure \ref{PR_frac_compl_stubb_20-80}, we can observe a decrease in the formation of echo chambers with an increasing fraction of stubborn nodes. This behavior is similar to the case of an initial $50/50$ opinion distribution in combination with the PR filtering algorithm as depicted in Figure \ref{echo_vs_frac_complStubb}. Note that for an initial $20/80$ distribution, in combination with the PR filtering algorithm, the formation of echo chambers in the Erd\H{o}s-R\'{e}nyi network and the stochastic block model with a low modularity is non-zero (for a fraction of completely stubborn nodes equal to fracRes $=0$), as can also be observed in Figure \ref{echo_20_80}. This behavior is a consequence of the fact that for an initial $20/80$ opinion distribution, in combination with the PR filtering algorithm, the prevalence of the majority opinion strongly increases, as was already explained for Figure \ref{echo_20_80}. The formation of echo chambers for networks with a high clustering and/or a high modularity is slightly higher. It is however not recommended to compare the formation of echo chambers between the different network models when depicting the results as the average of the echo chambers around opinion 0 and those around opinion 1 in case of an initial $20/80$ opinion distribution. The reason for this is that this average neglects the skewed echo chamber distributions as depicted in Figure \ref{echo_20_80}. When comparing the different network models, these skewed distributions should not be overlooked. The goal of this figure is to show the dependency of the formation of echo chambers in the network models on the presence of a fraction of stubborn people and not to compare the different models against each other. \\
+\newline
+% explain reason behavior REC!!
+The results for the REC filtering algorithm, depicted in Figure \ref{REC_frac_compl_stubb_20-80}, look again different than those for the PR filtering algorithm. The high clustering networks (WS and SBM-WS) show an increase in the formation of echo chambers with an increasing fraction of completely stubborn nodes, followed by a decrease. This result is very similar to the results for an initial $50/50$ distribution in combination with the REC filtering algorithm, depicted in Figure \ref{REC_frac_compl_stubb}. The stochastic block model with a high modularity doesn't really show an increase in the formation of echo chambers but remains flat for a fraction of completely stubborn nodes smaller than fracRes $\leqslant 0.2$; if the fraction of stubborn agents increases further, we can start to see a decrease in the formation of echo chambers. The Erd\H{o}s-R\'{e}nyi network and the stochastic block model with a low modularity show a tiny, tiny formation of echo chambers for a fraction of zero stubborn agents (echo chamber size around $1.2$). This very limited, almost non-significant formation of echo chambers for the ER model and the SBM with a low modularity, in combination with the REC filtering algorithm, is also visible in Figure \ref{er_echo_20-80} and Figure \ref{sbm}. For an increasing fraction of the completely stubborn people, these small echo chambers eventually converge to one, indicating a constant amount of echo chambers over time.\\
+\newpage
+\noindent
+We can conclude that the formation of echo chambers versus the fraction of completely stubborn people, for an initial $20/80$ opinion distribution, qualitatively resembles the results for an initial $50/50$ opinion distribution (decrease in formation of echo chambers with an increasing fraction of stubborn agents for the PR method versus an increase in the formation of echo chambers with an increasing fraction of stubborn people, followed by a decrease for the REC method). \\
+\newline
+So much for the formation of echo chambers in case of an unbalanced initial opinion distribution and introducing a fraction of stubborn people in the system. Lets now discuss the evolution of the opinions in the system. In Figure \ref{ev_op_20_80}, we already saw that for a system with no stubborn agents the REC method does not break the prevalence of the initial opinions in case of an initial $20/80$ opinion distribution. The PR filtering algorithm, on the other hand, resulted in a strong decrease of the prevalence of the minority opinion. Are these results affected by introducing stubborn agents?\\
+\newline
+Figure \ref{ev_op_20_80_stubb_REC} shows the evolution of the fraction of nodes with opinion 0 over time for an initial $20/80$ distribution and when using the REC filtering algorithm. Data point are shown together with their standard deviation $\sigma$. Four network models are compared (ER, WS, SBM (high and low modularity) and SBM-WS). For each network model we compare three different fractions of completely stubborn nodes (fracRes $=0$, fracRes $=0.4$ and fracRes $=0.8$). From this figure it becomes clear that introducing stubborn people in combination with the REC filtering algorithm is not able to break the prevalence of the initial opinions in case of an initial $20/80$ opinion distribution. None of the network topologies, nor the stubborn agents can break the status-quo. This result is similar to the case of an initial $50/50$ opinion distribution in combination with a fraction of stubborn people, as discussed for Figure \ref{ev_op_50_50_stubb_REC}.\\
+\newline
+Figure \ref{ev_op_20_80_stubb_PR} shows the results for the fraction of opinion 0 versus time in case of an unbalanced initial opinion distribution and when using the PR filtering algorithm. Data points are presented along with their standard deviation $\sigma$. Again, we compare four different network models (ER, WS, SBM (high and low modularity) and SBM-WS) and for each model we compare the results for three different fractions of stubborn people (fracRes $=0$, fracRes $=0.4$ and fracRes $=0.8$). If there are no stubborn people, the PR leads to a significant decrease in the prevalence of the minority opinion in case of an initial unbalanced opinion distribution. Introducing a fraction of stubborn agents changes this scenario. For an increasing fraction of stubborn people, the decrease of the minority opinion becomes less and less strong. This result is the same for all the different network topologies. If there are no stubborn people, the PR method forces nodes with the minority opinion to switch to the majority opinion. If we however introduce a fraction of stubborn people in the system, then we will also end up with some stubborn nodes that carry the minority opinion. These stubborn nodes with the minority opinion will not switch to the majority opinion, no matter how hard the PR filtering algorithm pushes them. The consequence is that these stubborn people with the minority opinion hamper the decrease of that minority opinion. 
 
 
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_frac_compl_stubb_REC_20-80_8x7.png}
+    \caption{ER}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_frac_compl_stubb_REC_20-80_8x7.png}
+    \caption{WS}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_frac_compl_stubb_REC_20-80_8x7.png}
+    \caption{SBM}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_frac_compl_stubb_REC_20-80_8x7.png}
+    \caption{SBM-WS}
+  \end{subfigure}
+  \captionsetup{format=plain}
+  \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ opinion distribution, using the REC filtering algorithm and comparing three different fractions of completely stubborn people (fracRes $= 0$, fracRes $= 0.4$ and fracRes $= 0.8$)]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ distribution, using the REC filtering algorithm and comparing three different fractions of completely stubborn people (fracRes $= 0$, fracRes $= 0.4$ and fracRes $= 0.8$). Four different network models are used (each with an average degree around $\left<k\right> \sim 10$ and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}%more explanation?
+\label{ev_op_20_80_stubb_REC}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_frac_compl_stubb_PR_20-80_8x7.png}
+    \caption{ER}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_frac_compl_stubb_PR_20-80_8x7.png}
+    \caption{WS}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_frac_compl_stubb_PR_20-80_8x7.png}
+    \caption{SBM}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_frac_compl_stubb_PR_20-80_8x7.png}
+    \caption{SBM-WS}
+  \end{subfigure}
+  \captionsetup{format=plain}
+  \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ opinion distribution, using the PR filtering algorithm and comparing three different fractions of completely stubborn people (fracRes $= 0$, fracRes $= 0.4$ and fracRes $= 0.8$)]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ distribution, using the PR filtering algorithm and comparing three different fractions of completely stubborn people (fracRes $= 0$, fracRes $= 0.4$ and fracRes $= 0.8$). Four different network models are used (each with an average degree around $\left<k\right> \sim 10$ and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}%more explanation?
+\label{ev_op_20_80_stubb_PR}
+\end{figure}
 % don't forget the evolution of opinions + also for 20/80, do each network, PR, REC, REF for eg. stubb 0.4 (so two fig (50-50 and 20-80) with 4 subplots (one for each network), each plot has PR, REF, REC) + if all stubb frac behaves same, explain in text, if not make extra plot!!
+\newpage
 \noindent
 \textbf{Making all nodes partly stubborn}\\
 \newline
-All the nodes are given the same stubbornness parameter $r$ and we let this stubbornness parameter vary from $r = 0$ (all the nodes are completely willing to change opinions) to $r=1$ (all the nodes are completely stubborn).\\
-\newline
-Figure \ref{echo_vs_all_frac_stubb_PR} shows the formation of echo chambers versus the stubbornness parameter of all the nodes, $r$, for an initial $50/50$ opinion distribution and using the PR filtering algorithm. The interpretation of the $y$-axis is again as explained in Section \ref{echoVSmod} and the data points are shown together with their standard error $SE$. The results look very similar to the case where a fraction of the nodes is completely stubborn and when using the PR method, which is depicted in Figure \ref{echo_vs_frac_complStubb}.\\
-The Erd\H{o}s-R\'{e}nyi model has no appearance of echo chambers, as before, and this is not changed by making the nodes more and more stubborn. The same result is obtained for the stochastic block model with a low modularity (the data points lie again behind those of the ER network).\\
-The stochastic block model with a high modularity has a (small) formation of echo chambers for $r=0$. If the nodes become more and more convinced of their own opinion ($r$ increases), the formation of echo chambers decreases.\\
-This is especially visible for the high clustering networks (WS and SBM-WS), which have the highest formation of echo chambers for $r=0$. If $r$ increases and the nodes become more and more convinced of their own beliefs, which makes them less and less willing to change that belief, the formation of echo chambers starts to decrease. If $r=1$, the nodes retain their initial opinion and the number of echo chambers before and after the time evolution remains the same. In Figure \ref{echo_vs_all_frac_stubb_PR} this is represented by an echo chamber size equal to one for $r=1$.
-
+Instead of introducing a fraction of completely stubborn people in the system, as was done before, we will now make all the nodes partly stubborn (so they still have some chance of changing their opinion, they are however less eager to do so). All the nodes are given the same stubbornness parameter $r$ and we let this stubbornness parameter vary from $r = 0$ (all the nodes are completely willing to change opinions) to $r=1$ (all the nodes are completely stubborn).\\
 \begin{figure}[H]
 	\includegraphics[width=12cm, height=10cm]{echo_chamber_vs_stubbornness_all_frac_stubb_PR_12x10.png}
 	\captionsetup{format=plain}
 	\caption[Formation of echo chambers versus the stubbornness parameter of all the nodes, $r$, for the PR filtering algorithm and an initial $50/50$ opinion distribution]{Formation of echo chambers versus the stubbornness parameter of all the nodes, $r$, for an initial $50/50$ opinion distribution and using the PR filtering algorithm. The $y$-axis shows the average of the normalized fraction of nodes with all neighbors having opinion 0 and the normalized fraction of nodes with all neighbors having opinion 1. This value represents the formation of echo chambers in the system (denoted with echo chamber size in the figure). Results are shown for four different network models, each with a total number of nodes $N=10^3$ and an average degree around $\left<k\right> \sim 10$: WS network with $K =10,\ \beta = 0.06$ and $\left<C\right> \sim 0.55$; SBM-WS network with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$; SBM network with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; ER network with $p= 0.01$. Each data point is the result of $10^2$ independent simulations.}
 \label{echo_vs_all_frac_stubb_PR}
 \end{figure}
-\newpage
 \noindent
+Figure \ref{echo_vs_all_frac_stubb_PR} shows the formation of echo chambers versus the stubbornness parameter of all the nodes, $r$, for an initial $50/50$ opinion distribution and using the PR filtering algorithm. The interpretation of the $y$-axis is again as explained in Section \ref{echoVSmod} and the data points are shown together with their standard error $SE$. The results look very similar to the case where a fraction of the nodes is completely stubborn and when using the PR method, which is depicted in Figure \ref{echo_vs_frac_complStubb}.\\
+The Erd\H{o}s-R\'{e}nyi model has no appearance of echo chambers, as before, and this is not changed by making the nodes more and more stubborn. The same result is obtained for the stochastic block model with a low modularity (the data points lie again behind those of the ER network).\\
+The stochastic block model with a high modularity has a (small) formation of echo chambers for $r=0$. If the nodes become more and more convinced of their own opinion ($r$ increases), the formation of echo chambers decreases.\\
+This is especially visible for the high clustering networks (WS and SBM-WS), which have the highest formation of echo chambers for $r=0$. If $r$ increases and the nodes become more and more convinced of their own beliefs, which makes them less and less willing to change that belief, the formation of echo chambers starts to decrease. If $r=1$, the nodes retain their initial opinion and the number of echo chambers before and after the time evolution remains the same. In Figure \ref{echo_vs_all_frac_stubb_PR} this is represented by an echo chamber size equal to one for $r=1$.\\
+\newline
 In Figure \ref{echo_vs_all_frac_stubb_REF-REC} the formation of echo chambers versus the stubbornness parameter of all the nodes, $r$, is depicted for an initial $50/50$ opinion distribution. Figure \ref{REF_all_frac_stubb} shows the results for the REF filtering algorithm and Figure \ref{REC_all_frac_stubb} shows those for the REC filtering algorithm. Data points are again displayed with their standard error $SE$.\\
 We can make similar observations as we did in the "Making a fraction of the nodes completely stubborn" paragraph. The results for the REF and REC method look qualitatively similar to each other and differ greatly from the results obtained with the PR filtering algorithm depicted in Figure \ref{echo_vs_all_frac_stubb_PR}.\\
 The formation of echo chambers in the high clustering networks (WS and SBM-WS) increases if the stubbornness of the nodes $r$ increases. For the REF method, this increases reaches a maximum around $r \sim 0.7$ and then starts to slightly decrease between $r\sim 0.7$ and $r\sim 0.9$. Between $r \sim 0.9$ and $r=1$ there is a steep drop in the formation of echo chambers (echo chamber values around 17 for $r\sim 0.9$ to echo chamber values equal to one for $r=1$). The REC method also seems to have a maximum around $r \sim 0.7$ for the WS model, the SBM-WS model on the other hand displays a continuous increase until $r \sim 0.9$. In both case we have again a sharp drop from $r \sim 0.9$ to $r=1$. If $r=1$, the nodes are completely stubborn and thus keep their initial opinion. Hence, the number of like minded neighborhoods doesn't change over time, which gives a normalized number of echo chambers equal to one. It is however remarkable that for very high levels of the stubbornness of the nodes $r$, up to $r \sim 0.9$, the formation of echo chambers is very large and even larger than if the nodes are not stubborn. We can conclude that making the nodes partly stubborn enhances the formation of echo chambers when using the REC/REF filtering algorithm in the case of networks with a high clustering coefficient. This is the complete opposite of the case where the PR method is used (which shows a decrease in the formation of echo chambers with an increasing stubbornness of the nodes). % REASON??
@@ -1231,6 +1334,95 @@ The stochastic block model with a high modularity also shows a slight increase i
   \caption[Formation of echo chambers versus the stubbornness parameter of all the nodes, $r$, for the PR and REC filtering algorithms and an initial $20/80$ opinion distribution]{Formation of echo chambers versus the stubbornness parameter of all the nodes, $r$, for an initial $20/80$ opinion distribution. \textbf{(a)} Using the PR filtering algorithm; \textbf{(b)} Using the REC filtering algorithm. The $y$-axis shows the total number of like-minded neighborhoods (sum of the number of echo chambers around opinion 0 and the number of echo chambers around opinion 1) at $t=500$ divided by the total number of like-minded neighborhoods at $t=0$. This value represents the formation of echo chambers in the system (denoted with echo chamber size in the figure). Results are shown for four different network models, each with a total number of nodes $N=10^3$ and an average degree around $\left<k\right> \sim 10$: WS network with $K =10,\ \beta = 0.06$ and $\left<C\right> \sim 0.55$; SBM-WS network with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$; SBM network with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; ER network with $p= 0.01$. Each data point is the result of $10^2$ independent simulations.}
 \label{echo_vs_all_frac_stubb_PR-REC_20-80}
 \end{figure}
+
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_all_frac_stubb_REC_8x7.png}
+    \caption{ER}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_all_frac_stubb_REC_8x7.png}
+    \caption{WS}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_all_frac_stubb_REC_8x7.png}
+    \caption{SBM}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_all_frac_stubb_REC_8x7.png}
+    \caption{SBM-WS}
+  \end{subfigure}
+  \captionsetup{format=plain}
+  \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ opinion distribution, using the REC filtering algorithm and comparing three different values of the stubbornness parameter $r$ of all the nodes ($r = 0$, $r = 0.4$ and $r = 0.8$)]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ distribution, using the REC filtering algorithm and comparing three different values of the stubbornness parameter $r$ of all the nodes ($r = 0$, $r = 0.4$ and $r = 0.8$). Four different network models are used (each with an average degree around $\left<k\right> \sim 10$ and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}%more explanation?
+\label{ev_op_50_50_all_frac_stubb_REC}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_all_frac__stubb_PR_8x7.png}
+    \caption{ER}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_all_frac_stubb_PR_8x7.png}
+    \caption{WS}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_all_frac_stubb_PR_8x7.png}
+    \caption{SBM}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_all_frac_stubb_PR_8x7.png}
+    \caption{SBM-WS}
+  \end{subfigure}
+  \captionsetup{format=plain}
+  \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ opinion distribution, using the PR filtering algorithm and comparing three different values of the stubbornness parameter $r$ of all the nodes ($r = 0$, $r = 0.4$ and $r = 0.8$)]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ distribution, using the PR filtering algorithm and comparing three different values of the stubbornness parameter $r$ of all the nodes ($r = 0$, $r = 0.4$ and $r = 0.8$). Four different network models are used (each with an average degree around $\left<k\right> \sim 10$ and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}%more explanation?
+\label{ev_op_50_50_all_frac_stubb_PR}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_all_frac_stubb_REC_20-80_8x7.png}
+    \caption{ER}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_all_frac_stubb_REC_20-80_8x7.png}
+    \caption{WS}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_all_frac_stubb_REC_20-80_8x7.png}
+    \caption{SBM}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_all_frac_stubb_REC_20-80_8x7.png}
+    \caption{SBM-WS}
+  \end{subfigure}
+  \captionsetup{format=plain}
+  \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ opinion distribution, using the REC filtering algorithm and comparing three different values of the stubbornness parameter $r$ of all the nodes ($r = 0$, $r = 0.4$ and $r = 0.8$)]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ distribution, using the REC filtering algorithm and comparing three different values of the stubbornness parameter $r$ of all the nodes ($r = 0$, $r = 0.4$ and $r = 0.8$). Four different network models are used (each with an average degree around $\left<k\right> \sim 10$ and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}%more explanation?
+\label{ev_op_20_80_all_frac_stubb_REC}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_all_frac_stubb_PR_20-80_8x7.png}
+    \caption{ER}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_all_frac_stubb_PR_20-80_8x7.png}
+    \caption{WS}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_all_frac_stubb_PR_20-80_8x7.png}
+    \caption{SBM}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_all_frac_stubb_PR_20-80_8x7.png}
+    \caption{SBM-WS}
+  \end{subfigure}
+  \captionsetup{format=plain}
+  \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ opinion distribution, using the PR filtering algorithm and comparing three different values of the stubbornness parameter $r$ of all the nodes ($r = 0$, $r = 0.4$ and $r = 0.8$)]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $20/80$ distribution, using the PR filtering algorithm and comparing three different values of the stubbornness parameter $r$ of all the nodes ($r = 0$, $r = 0.4$ and $r = 0.8$). Four different network models are used (each with an average degree around $\left<k\right> \sim 10$ and a total number of nodes $N = 10^3$): \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. Each plot is the average of $10^2$ independent simulations and data points are shown for every 50 time steps to improve visualization.}%more explanation?
+\label{ev_op_20_80_all_frac_stubb_PR}
+\end{figure}
+% explain ev of op figures + make link to those with frac compl stubb
 
 \subsection{The majority threshold model}
 \label{majThres}
