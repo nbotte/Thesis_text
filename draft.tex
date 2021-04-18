@@ -874,7 +874,7 @@ In this chapter the results are shared and discussed. The chapter is subdivided 
 	\item Real-world networks: the opinion dynamics model of this thesis will be ran on some real-world networks. This section will discuss the results and compare them to results obtained from network models with a similar average degree, clustering coefficient and/or community structure.
 \end{itemize}
 
-\section{Impact of network structure}
+\section{Impact of network structure}\label{netw_struc}
 
 In this section we will discuss some results related to the network structure and network topologies of the different network models that are used in this thesis. We will mainly focus on the effect of a high clustering coefficient and a community structure. Two different opinion distributions are investigated
 \begin{itemize}
@@ -948,7 +948,7 @@ model. This is to be expected, since a stochastic block model with a low modular
 Note that for an initial $50/50$ opinion distribution none of the network models, nor the filtering algorithms could break this status quo (see Figure \ref{ev_op_50_50}). Despite this preserving of the balanced opinion distribution, the interplay of filtering algorithms and network structure can potentially shift the initial randomly distributed opinions to a more clustered opinion distribution and thus lead to polarization and formation of echo chambers.
 
 
-\subsection{Starting conditions $\bm{P_0(0) = 0.2}$ and $\bm{P_1(0)=0.8}$}
+\subsection{Starting conditions $\bm{P_0(0) = 0.2}$ and $\bm{P_1(0)=0.8}$}\label{20-80}
 
 The initial fraction of nodes with opinion 0 is now equal to $P_0(0) = 0.2$, opinion 0 thus becomes the minority opinion. The initial fraction of nodes with opinion 1 is equal to $P_1(0) = 0.8$, hence this is the majority opinion. The opinions are, initially, randomly distributed over the system. Again, the opinion dynamics model of Chapter \ref{chap4}, Section \ref{opinionmodel} is implemented; the activation probability is set equal to $p_{\text{act}} = 0.1$ and the actual time-line of each user has a maximum length $S = 20$.\\
 \newline
@@ -1516,8 +1516,88 @@ From this figure it becomes clear that the PR method strongly hampers the conver
   \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ opinion distribution. Results for one simulation of the majority threshold model with $T=0$ ]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for an initial $50/50$ distribution. The majority threshold model is implemented with $T=0$ and results are shown for a single simulation. Four different network models are used, each with an average degree around $\left<k\right> \sim 10$ and a total number of nodes $N = 10^3$: \textbf{(a)} Erd\H{o}s-R\'{e}nyi model (ER), $p=0.01$; \textbf{(b)} Watts-Strogatz model (WS) with $K = 10$, $\beta = 0.06$ and $\left<C\right> \sim 0.55$; \textbf{(c)} Stochastic block model (SBM) with 10 communities of size 100, a high modularity case ($p_{\text{cl}} = 0.1,\ p_{\text{add}} = 0.001,\ Q \sim 0.9$) and a low modularity case ($p_{\text{cl}} = 0.03,\ p_{\text{add}} = 0.008,\ Q \sim 0.2$) are depicted; \textbf{(d)} Stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100, each community has the following WS parameters: $K = 10,\ \beta = 0.01$ and $p_{\text{add}} = 0.001$, $\left<C\right> \sim 0.55$ and $Q \sim 0.9$. For each model two different filtering algorithms are compared to each other: the REC and the PR filtering algorithm.}
 \label{ev_op_majT_one_sim}
 \end{figure}
-
+\newpage
 \section{Random versus community distributed opinions/stubborn agents}
+
+This section is devoted to results regarding the way the opinions and/or the stubborn people are distributed over the network. In all the previous results, the two opinions and the stubborn people (in case there were stubborn people introduced in the system) were, initially, always randomly distributed across the system. It might however be more realistic if people with the same opinion are more or less grouped together initially. We did introduce a network model with a community structure (the SBM) to represent the group structures found in real-life systems. But we haven't yet distributed the opinions according to those groups. In subsection \ref{groupVSrandom} we will discuss some results for distributing the opinions in communities versus randomly distributing them.
+
+\subsection{Distributing opinions in communities versus a random opinion distribution}\label{groupVSrandom}
+
+In this subsection, we will look at the stochastic block model (SBM) and we will give a fraction of the communities a single opinion, namely opinion 0. The remaining communities are given a $50/50$ opinion distribution. This situation may, in an idealized way, represent the situation in which you have groups of people following the same idea together with groups where the two ideas coexist. The total opinion distribution over the entire network is no longer $50/50$, but instead opinion 0 becomes the majority opinion (hence, opinion 1 becomes the minority opinion). The higher the fraction of single opinion 0 communities, the bigger the difference between this majority and minority opinion becomes. The results will always be compared to the corresponding case in which the total opinion distribution is randomly given to each community. Thus, eg. if we have 10 communities of size 100 and we make a fraction equal to $0.1$ of those communities single opinion 0 communities while the others get a $50/50$ distribution, the total initial opinion distribution would be $55/45$. This situation would then be compared to the case in which this $55/45$ distribution is randomly distributed over each community.\\ 
+We will look at a network with a high modularity, representing the case of more or less isolated communities, and at a network with a low modularity, representing a more blended community structure in which there is a lot of communication between the different communities. More specifically, the two stochastic block models that are implemented are (both models have a total number of nodes equal to $N = 10^3$ and an average degree around $\left<k\right> \sim 10$)
+\begin{itemize}
+	\item A stochastic block model with 10 communities of size 100. The edge probability inside the communities is $p_{\text{cl}} = 0.1$ and the edge probability between communities is $p_{\text{add}} = 0.001$. This is the high modularity network.
+	\item A stochastic block model with 10 communities of size 100. The edge probability inside the communities is $p_{\text{cl}} = 0.03$ and the edge probability between communities is $p_{\text{add}} = 0.008$. This is the low modularity network.
+\end{itemize} 
+The opinion dynamics model that is implemented is described in Chapter \ref{chap4}, Section \ref{opinionmodel}. The activation probability is set equal to $p_{\text{act}} = 0.1$ and the maximum length of the actual time-line is $S=20$. % look both at PR and REC??
+\\
+Both the results for the evolution of the opinions in the system and the formation of echo chambers will be discussed.\\
+\newpage
+\noindent
+\textbf{Evolution of the opinion fractions}\\
+\newline
+Lets first discuss how the evolution of the opinions are (potentially) impacted by distributing the opinions in communities instead of randomly distributing them.\\
+\newline
+Figure \ref{commOp0_01_other_50-50} shows the results for the fraction of nodes with opinion 0 versus time for the case in which a fraction equal to $0.1$ of the communities is given a single opinion, namely opinion 0, while the other communities get an initial $50/50$ opinion distribution. The results are compared to the random case in which each community initially gets the corresponding total opinion distribution ($55/45$ in case of a fraction of $0.1$ single opinion 0 communities). The figure shows the results for both the high and the low modularity case. For each modularity the REC and PR filtering algorithms are compared to each other.\\
+In case of the REC filtering algorithm there is no difference between distributing the opinions randomly versus distributing them in communities. The prevalence of the majority opinion 0 remains unchanged over time. This result is the same for both the high and low modularity case, see Figures \ref{high_mod_rec} and \ref{low_mod_rec}.\\
+The PR filtering algorithm leads to an increase of the majority opinion (and thus a decrease of the minority opinion) in case of unbalanced initial opinions, if the opinions are randomly distributed. This is a result that was already found in Section \ref{netw_struc}, Subsection \ref{20-80}, see eg. Figure \ref{ev_op_20_80}. % continue: talk about how comm distr affect this result + compare to low mod + add figures/data to correct Figure file
+
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0=01_other=50-50_REC_high_mod_8x7.png}
+    \caption{High modularity, REC}
+    \label{high_mod_rec}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0=01_other=50-50_PR_high_mod_8x7.png}
+    \caption{High modularity, PR}
+    \label{high_mod_pr}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0=01_other=50-50_REC_low_mod_8x7.png}
+   \caption{Low modularity, REC}
+    \label{low_mod_rec}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0=01_other=50-50_PR_low_mod_8x7.png}
+    \caption{Low modularity, PR}
+    \label{low_mod_pr}
+  \end{subfigure}
+  \captionsetup{format=plain}
+  \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for making a fraction equal to $0.1$ of the communities single opinion 0 communities, while the others get an initial $50/50$ opinion distribution. Results are compared to the case where the total initial opinion distribution ($55/45$ in this case) is randomly distributed over each community.]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for making a fraction equal to $0.1$ of the communities single opinion 0 communities, while the others get an initial $50/50$ opinion distribution. Results are compared to the case where the total initial opinion distribution ($55/45$ in this case) is randomly distributed over each community. The stochastic block model is implemented with two different modularities. The average degree is always around $\left<k\right> \sim 10$ and the total number of nodes is equal to $N = 10^3$. \textbf{(a)} High modularity ($p_{\text{cl}} = 0.1$, $p_{\text{add}} = 0.001$), REC; \textbf{(b)} High modularity, PR; \textbf{(c)} Low modularity ($p_{\text{cl}} = 0.03$, $p_{\text{add}} = 0.008$), REC; \textbf{(d)} Low modularity, PR. Each plot is the result of $10^2$ independent simulations and data points are shown every 50 time steps to improve visualization.}
+\label{commOp0_01_other_50-50}
+\end{figure}
+
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0=05_other=50-50_REC_high_mod_8x7.png}
+    \caption{High modularity, REC}
+    \label{high_mod_rec}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+  	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0=05_other=50-50_PR_high_mod_8x7.png}
+    \caption{High modularity, PR}
+    \label{high_mod_pr}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0=05_other=50-50_REC_low_mod_8x7.png}
+   \caption{Low modularity, REC}
+    \label{low_mod_rec}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0=05_other=50-50_PR_low_mod_8x7.png}
+    \caption{Low modularity, PR}
+    \label{low_mod_pr}
+  \end{subfigure}
+  \captionsetup{format=plain}
+  \caption[Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for making a fraction equal to $0.5$ of the communities single opinion 0 communities, while the others get an initial $50/50$ opinion distribution. Results are compared to the case where the total initial opinion distribution ($75/25$ in this case) is randomly distributed over each community.]{Evolution of the fraction of nodes with opinion 0 ($P_0(t)$) over time for making a fraction equal to $0.5$ of the communities single opinion 0 communities, while the others get an initial $50/50$ opinion distribution. Results are compared to the case where the total initial opinion distribution ($75/25$ in this case) is randomly distributed over each community. The stochastic block model is implemented with two different modularities. The average degree is always around $\left<k\right> \sim 10$ and the total number of nodes is equal to $N = 10^3$. \textbf{(a)} High modularity ($p_{\text{cl}} = 0.1$, $p_{\text{add}} = 0.001$), REC; \textbf{(b)} High modularity, PR; \textbf{(c)} Low modularity ($p_{\text{cl}} = 0.03$, $p_{\text{add}} = 0.008$), REC; \textbf{(d)} Low modularity, PR. Each plot is the result of $10^2$ independent simulations and data points are shown every 50 time steps to improve visualization.}
+\label{commOp0_05_other_50-50}
+\end{figure}
+\noindent
+\textbf{Echo chambers}\\
+\newline
+njd
+ 
 
 \section{Real-world networks}
 
