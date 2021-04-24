@@ -44,7 +44,7 @@
 \usepackage[labelfont=bf]{caption}
 \usepackage{subcaption}
 \usepackage{xfrac}
-\floatname{algorithm}{Algoritme}
+\floatname{algorithm}{Algorithm}
 
 
 \addto\captionsenglish{\renewcommand{\contentsname}{Table of Contents}
@@ -612,23 +612,20 @@ The following updating rule is then imposed on the network: each agent/individua
 \newline
 Several studies have been performed on this kind of model, searching for answers on several questions such as: what are the conditions that drive the system to converge to unanimity; and, does an opinion, that is initially a majority opinion, remain a majority opinion in the final state \cite{Nguyen2020}? \\
 Most of these studies conclude that, at the end of the opinion evolution, a complete consensus state is obtained where all the agents adopt the same opinion \cite{Nguyen2020}. This is even the case when the opinions are equally and randomly distributed in an Erd\H{o}s-R\'{e}nyi network (with the side note that the degree needs to be high enough), as was shown by Benjamini, Chan, O'Donnell, Tamuz and Tan \cite{Benjamini2016} (also note that even when the opinions are equally distributed, there may still be a slight imbalance due to the random assignement of an opinion to each node; instead of a perfect 50/50 distribution, one may end up with a eg. 49.8/50.2 distribution; in this sense there is still some kind of notion of `minority' and `majority' opinion). It is also found that the rate of convergence increases with increasing edge density and that if the network is sparse enough, consensus will not be reached and the two opinions coexist \cite{Nguyen2020}. This can be explained by the fact that if the network is sparse enough, we may have disconnected parts; each of these disconnected groups may then evolve to a different consensus opinion, so that over the entire network different opinions coexist \cite{Nguyen2020}.
-% https://arxiv.org/pdf/0710.3256.pdf Contains a mean field mathimatical description, interesting?
 
-\subsection{The probabilistic majority model}
+\subsection{The probabilistic majority model}\label{probMaj}
 
 The probabilistic majority model is similar to the majority model, but has, as the name suggests, a more probabilistic/random nature. In this model the fraction of neighbors of user $i$ with opinion A and the fraction of neighbors with opinion B are determined. Then, the opinion of user $i$ is updated: he/she takes on opinion A (or B) with a probability equal to the fraction of his/her neighbors with opinion A (or B) \cite{Perra2019}.\\
 \newpage
 \noindent
 For example, if $70\%$ of the neighbors of user $i$ have an opinion A (and thus $30 \%$ of the neighbors have opinion B), user $i$ will update his/her opinion to opinion A with a probability equal to $0.7$ and to opinion B with a probability equal to $0.3$ \cite{Perra2019}. Thus, user $i$ no longer simply updates his/her opinion according to the majority of opinions carried by his/her neighbors, but the majority opinion still has a higher probability to be taken on by this user.\\
 This model is no longer deterministic, but has a level of randomness, which is an important component of opinion dynamics \cite{Perra2019}. 
-% https://arxiv.org/pdf/0710.3256.pdf read this (overview, discusses several models)!!
 
 \subsection{The voter model}
 
 Another extremely simple binary model, maybe even simpler than the majority model, is the voter model. The model works as follows: each agent in the network has a binary opinion (A or B); at each time step, an agent is randomly selected along with one of its neighbors and, subsequently, the agent adopts the opinion of this neighbor \cite{Castellano2009}. The agent thus mimics its neighbor \cite{Castellano2009}. \\
 The pressure of the majority in only felt in an averaged way, in the sense that a neighbor that carries the majority opinion has more chance to be randomly selected \cite{Castellano2009}.\\
-Lots of studies have been performed on this model. In this thesis, however, we will not make use of the voter model. Hence, we will not go into further detail. Interested readers are referred to references \cite{Castellano2009}, \cite{Fernandez2014} and related references therein.% cite papers that have done studies on this model??
-
+Lots of studies have been performed on this model. In this thesis, however, we will not make use of the voter model. Hence, we will not go into further detail. Interested readers are referred to references \cite{Castellano2009}, \cite{Fernandez2014} and related references therein.
 
 \section{Continuous models}\label{Con}
 
@@ -654,7 +651,6 @@ A possible time variant extension is \cite{Krause2002}
 	x(t+1) = W(t)x(t) \ ,
 \end{equation}
 where now the weights are time dependent. This model can be used for situations in which so called ``hardening of positions'' occur \cite{Krause2002}. This means that, over time, the agents put more and more weight on their own opinion and less weight on the opinion of others \cite{Krause2002}. 
-% talk about extension http://jasss.soc.surrey.ac.uk/5/3/2/2.pdf
 
 \subsection{Bounded confidence models}\label{bounded}
 
@@ -663,7 +659,7 @@ The two most popular bounded confidence models are the Deffuant model and the He
 \newline
 \textbf{The Deffuant model}\\
 \newline
-Assume we have a population of $N$ agents, each with an opinion $x_i$ that takes real values in the interval $\interval{0}{1}$ \cite{Castellano2009}. Furthermore, the threshold $\epsilon$ is the same for all the agents. At each time step, an agent $i$ is randomly selected together with one of its neighbors $j$ (which is also randomly selected) \cite{Castellano2009}. If the opinions of the two nodes $i$ and $j$ are too far apart nothing happens; this is the case if $\abs{x_i(t) - x_j(t)} \geqslant \epsilon$. If instead $\abs{x_i(t) - x_j(t)} < \epsilon$, then the opinions are updated to \cite{Castellano2009}
+Assume we have a population of $N$ agents, each with an opinion $x_i$ that takes real values in the interval $\interval{0}{1}$ \cite{Castellano2009}. Furthermore, the threshold $\epsilon$ is the same for all the agents. At each time step, an agent $i$ is randomly selected together with one of its neighbors $j$ (which is also randomly selected) \cite{Castellano2009}. If the opinions of the two nodes $i$ and $j$ are too far apart nothing happens; this is the case if $\abs{x_i(t) - x_j(t)} \geqslant \epsilon$. If instead $\abs{x_i(t) - x_j(t)} < \epsilon$, then the opinions are updated to \cite{Castellano2009}\cite{Deffuant2000}
 \begin{equation}
 \begin{split}
 	x_i(t+1) &= x_i(t) + \mu [x_j(t) - x_i(t)] \ ,\\
@@ -684,15 +680,8 @@ where $A_{ij}$ are the elements of the adjacency matrix. This model thus takes t
 The dynamics of this model is similar to the Deffuant model and the final state is also characterized by a number of stationary opinion clusters \cite{Castellano2009}. The number of clusters decreases if $\epsilon$ increased and above a critical value $\epsilon_c$ of the threshold, there can only be one cluster \cite{Castellano2009}.\\
 \newline
 There are, of course, many other variations of the bounded confidence model. As mentioned earlier, the threshold $\epsilon$ can be different for each node, so that each node has an opinion $x_i$ and a threshold $\epsilon_i$ or the confidence interval can be made asymmetric $\interval{x_i - \epsilon_l}{x_i + \epsilon_r}$ with $\epsilon_l \neq
-\epsilon_r$ \cite{Krause2002}.
-% talk about relative agreement model?? http://jasss.soc.surrey.ac.uk/9/3/8.html and http://jasss.soc.surrey.ac.uk/5/4/1.html
-
-
-
-% https://arxiv.org/pdf/0710.3256.pdf, bounded confidence methods
-% https://www.researchgate.net/publication/235737446_Mixing_Beliefs_Among_Interacting_Agents defuant model
-% http://jasss.soc.surrey.ac.uk/5/3/2/2.pdf
-% http://jasss.soc.surrey.ac.uk/9/3/8.html
+\epsilon_r$ \cite{Krause2002}.\\
+Another extension is the relative agreement interaction model. Interested readers are referred to references \cite{Deffuant2006} and \cite{Deffuant2002}.
 
 \section{Algorithmic personalization}\label{filter}
 
@@ -733,7 +722,7 @@ It is important to note that what somebody sees on his/her time-line is the cons
 \newpage
 \section{The presence of stubborn people}\label{stubb}
 
-It is well known that in real life, you can find people that are really persistent towards their own opinion and that are not open to opinions of others. They are convinced that they carry the truth with them and that other people, with different world-views, are not capable of giving them any new and useful insights. They are close-minded in contrast to people with an open-mind that are willing to learn from others and to reconsider their beliefs. Of course this is put a bit simplistic and there are many shades of gray between this black and white statement. However, there are groups in society, often with more extreme opinions, that are know to be really inflexible towards changing that (extreme) opinion (note here that being stubborn and being extreme doesn't need to go hand in hand, you can obviously be stubborn without being extreme and vice versa; however, it is often widely accepted that there is some kind of correlation/link between people with extreme opinions and being more persistent towards these opinions compared to people with more moderate beliefs; this idea of correlating extreme people with a more stubborn character is also often used in models, see for example \cite{Deffuant2006}\cite{Turner}) (also note that having some resistance to change your opinion to any other opinion doesn't necessarily need to be a bad thing, it can be seen as a form of critical thinking and as a form of taking things with a grain of salt).\\ 
+It is well known that in real life, you can find people that are really persistent towards their own opinion and that are not open to opinions of others. They are convinced that they carry the truth with them and that other people, with different world-views, are not capable of giving them any new and useful insights. They are close-minded in contrast to people with an open-mind that are willing to learn from others and to reconsider their beliefs. Of course this is put a bit simplistic and there are many shades of gray between this black and white statement. However, there are groups in society, often with more extreme opinions, that are know to be really inflexible towards changing that (extreme) opinion (note here that being stubborn and being extreme doesn't need to go hand in hand, you can obviously be stubborn without being extreme and vice versa; however, it is often widely accepted that there is some kind of correlation/link between people with extreme opinions and being more persistent towards these opinions compared to people with more moderate beliefs; this idea of correlating extreme people with a more stubborn character is also often used in models, see for example \cite{Deffuant2006}\cite{Deffuant2002}\cite{Turner}) (also note that having some resistance to change your opinion to any other opinion doesn't necessarily need to be a bad thing, it can be seen as a form of critical thinking and as a form of taking things with a grain of salt).\\ 
 \newline
 Knowing the impact of such stubborn groups on the opinions of others is of great importance, especially with the rise of social media which makes the reach of such extreme and persistent groups a lot bigger. Before the era of social media, one could maybe argue that these extreme and stubborn groups are often isolated and therefore wouldn't reach too many people. So their impact could only be of a minor nature (note that this is only a statement that could have been given, there are of course plenty of examples throughout human history that contradict this argument; to only mention a few: Nazism in the 1930s and 1940s, the Ku Klux Klan in the late 19th and begin 20th century, the rise of communism in the 20th century, etc, all examples of groups that can be considered extreme and that have had a wide reach and a significant impact on society). Today, this possible argument is no longer valid; social media enables the contact with all sorts of beliefs and all sorts of people with almost no (time and spatial) constraints. Extreme and stubborn groups that may have been isolated before no longer need to be so and this may have huge, and largely unknown, impacts. \\
 \newline
@@ -748,7 +737,7 @@ Another example of introducing some kind of persistence towards the own opinion 
 
 \subsection{Stubbornness in binary models}
 \label{stubbBin}
-% not finished!!
+
 Playing around with the threshold $\epsilon_i$ of the agents to include a notion of stubbornness, such as one can do for the bounded confidence models, is obviously not possible for binary/discrete models. There are, however, many other ways to include some kind of stubborn people in these models. In the following, two different possibilities will be discussed. \\
 One small remark must be made here: previously, the link between stubbornness and extremism was often made and it was often assumed that the more extreme somebodies opinions are, the more persistent that somebody is towards those opinions. In binary models, however, there are only two possible opinions that can be taken on and in that sense it is less useful to talk about extreme and moderate opinions. However, we can still have people that rather keep their own opinion than be convinced by friends to switch to the other opinion. Whether this resistance is a sign of critical thinking or ignorance/being convinced that you know it best, is up to the reader to decide. The models simply introduce some type of resistance and make no distinction between possible underlying reasons for this resistance.\\
 \newline
@@ -773,15 +762,8 @@ There are different possibilities of implementing this kind of model. One way, w
 	\item In all other cases, the current opinion of the node is not changed.
 \end{itemize}
 If $T = 0$, this model reduces to the pure majority model described in Section \ref{majModel}. If $T = 1$, the nodes don't change their opinion. For $0 < T < 1$, the model is a majority model, but the nodes are a bit more persistent towards their own opinion and need a larger fraction of friends to convince them to switch to the other viewpoint.\\
-% Talk about probabilistic implementation? + talk about fact that nothing happens for T < 0.5???
 \newline
 Note that the above examples are only a handful of the possible ways to include some notion of stubbornness in the model under study, many more exist or can be invented.
-
-
-%\section{The opinion dynamics model used in this thesis}\label{thesisOp}
-
-
-% https://arxiv.org/pdf/0710.3256.pdf Talk about agent-based models??
 
 % NOTE: maybe make somewhere in thesis link to real-world examples; for example the election system in USA: formation of echo chambers, different states voting for a different party
 \chapter{Materials and methods in this thesis}\label{chap4}
@@ -811,7 +793,6 @@ Each of these networks serve specific goals which will shortly be discussed in t
 The Erd\H{o}s-R\'{e}nyi model is mainly used as a benchmark model. In this thesis we focus intensively on two network features/topologies that may impact the formation of echo chambers, namely a high clustering coefficient and a community structure. It is therefore necessary to have a model that lacks both of these features to compare the results with. The Erd\H{o}s-R\'{e}nyi model is one of the most simple random network models that doesn't display both of these features and is hence the perfect comparison model. \\
 It is expected that the random nature of the model and the lack of a high clustering and a community structure will result in the absence of echo chambers.\\
 The Erd\H{o}s-R\'{e}nyi model is also used in the regular stochastic block model to construct the constituent communities.\\
-% talk about expected behaviour?? 
 \newline
 \textbf{The Watts-Strogatz model}\\
 \newline
@@ -840,10 +821,56 @@ The conclusion of this section is that all the network models used in this thesi
 Ideally, we would test the opinion dynamics model that was used throughout this thesis on network data directly obtained from social network companies. However, most of these companies are not to keen on sharing any form of data. This makes it very hard to find accurate and complete social media network data. Hence, we chose to test the model on other types of social networks, either on-line or off-line. Some possibilities are any form of friendship networks, e-mail networks, collaboration networks, etc. \\
 \newline
 One of the decisive properties of the real-world networks that were eventually used, was there size. The main, and actually only, reason for this was the computation time. If the networks would be to large, it would take weeks, sometimes even months before there would be any kind of results.\\
-The size of the network models that were used, was around a thousand nodes. So for the real-world networks, we also used networks with a size of magnitude of thousand. This obviously benefits the computation time; it is, however, unknown how the network size affects the results. It is therefore recommended to test the model on larger network models and on larger real-world networks in future researches on this topic.  
-\section{Opinion dynamics models}\label{opinionmodel}
-% use pseudo code here??
-% explain the main model and state that this is used in thesis unless specified otherwise
+The size of the network models that were used, was around a thousand nodes. So for the real-world networks, we also used networks with a size of magnitude of thousand. This obviously benefits the computation time; it is, however, unknown how the network size affects the results. It is therefore recommended to test the model on larger network models and on larger real-world networks in future researches on this topic. 
+
+% Discuss actual networks we used!! + reference them??
+ 
+\section{Opinion dynamics model}\label{opinionmodel}
+
+In Chapter \ref{chap3} we already discussed quite a bit of opinion dynamics models and related topics such as algorithmic personalization, activation mechanisms and stubbornness. The goal of this section is to put every thing together and summarize the opinion dynamics model of this thesis.\\
+\newline
+This thesis follows the opinion dynamics model that was designed by prof. Perra and prof. Rocha in their paper \textit{``Modelling opinion dynamics in the age of algorithmic personalization''}, see reference \cite{Perra2019}. \\
+We start with a network with $N$ users. Initially, each user is given one of the two opinions 0 or 1. Each time step a random fraction equal to $p= 0.1$ of these users becomes active, where $p$ is the activation probability. As discussed in Chapter \ref{chap3}, Section \ref{actMech}, this thesis makes use of a constant activation probability. Every time step, all active users update their opinion synchronously. This updating is done as follows. First, the active user sends his current opinion to all his neighbors (active or not). Then, he updates his own opinion according to the opinions on his time-line. This updating follows the probabilistic majority model, as explained in Chapter \ref{chap3}, Section \ref{probMaj}. If another model instead of the probabilistic majority model is used, eg. the majority model, this will be explicitly stated. If not, one can assume that the probabilistic majority model is implemented. It is important to realize that what an active user sees on his/her time-line is only a selection of all the posts that his/her friends have posted. Remember from Chapter \ref{chap3}, Section \ref{actMech} that each user has a hidden time-line $L_i(t)$. This hidden time-line contains the time-line of the user at the last time he/she was active ($t_{\text{last}}$) plus all the post that his/her friends posted from $t_{\text{last}}$ until the user becomes active again at time $t$. If a user becomes active, the filtering algorithm (REF, REC or PR), discussed in Chapter \ref{chap3}, Section \ref{filter}, selects $S$ items from this hidden time-line and shows them on the actual time-line of the user. We will usually set $S = 20$, which quantifies the maximum length of the actual time-line.\\
+
+\begin{algorithm}
+\caption{Updating the opinions of the active nodes at time $t$}
+\label{alg:update}
+\begin{algorithmic}[1]
+	\State \(L \leftarrow \text{hidden time-line}\)
+	\State \(T \leftarrow \text{actual time-line}\)
+	\State \(S \leftarrow 20\) \Comment{Maximum length of time-line $T$}
+	\State \(r\) \Comment{Stubbornness parameter of each node, takes values between $0$ and $1$}
+	\ForAll{active user}
+		\State \(\text{op} \leftarrow \text{current opinion}\)
+		\ForAll{neighbor} \Comment{Add opinion of active user to hidden time-line of each neighbor}
+			\State \(L.\textsc{add}\text{(op)}\)
+		\EndFor
+		\State \(f \leftarrow \text{rand(0, 1)}\) \Comment{Draw random number between $0$ and $1$}
+		\If{$f > r$}
+			\State \(\text{op} \leftarrow \Call{Update opinion}{L}\) \Comment{Update opinion of active user}
+		\Else
+			\State \(\text{op} \leftarrow \text{current opinion}\) \Comment{Don't update opinion of active user}
+		\EndIf
+	\EndFor
+	
+	\Function{Update opinion}{$L$}
+		\State \(\textsc{Order}(L)\) \Comment{Order hidden time-line according to REF, REC or PR filtering}
+		\If{$\text{len}(L) > S$}
+			\State \(T \leftarrow L.\textsc{resize}(S)\) \Comment{Time-line $T$ = $S$ first elements of ordered hidden time-line}
+		\EndIf
+		\State \(\text{op} \leftarrow \textsc{probMaj}(T)\) \Comment{Update opinion according to probabilistic majority model}
+	\State \Return op \Comment{Return updated opinion}
+	\EndFunction
+\end{algorithmic}
+\end{algorithm}
+\noindent
+If we want to introduce some kind of stubbornness in the model we will mainly use the stubbornness parameter, as was explained in Chapter \ref{chap3}, Section \ref{stubbBin}. Lets briefly summarize this concept of stubbornness. Each node is given a stubbornness parameter $r_i$, with $0 \leqslant r_i \leqslant 1$; $r_i = 0$ means not stubborn and $r_i = 1$ means completely stubborn. For all intermediate values of $r_i$, a random number $f$ between zero and one is drawn; if $f > r_i$ the node can update his opinion, if $f \leqslant r_i$ the node will keep his current opinion.\\
+Some results for the majority threshold model, also explained in Chapter \ref{chap3}, Section \ref{stubbBin}, will be shared as well. This is, however, not the main stubbornness model that we will focus on. If this model is used, this will be explicitly stated. Otherwise one can assume that we are making use of the stubbornness parameter.\\
+In Algorithm \ref{alg:update}, the pseudo-code for updating the opinions of the active nodes in case of using a stubbornness parameter $r$ at time step $t$ is displayed. \\
+\newline
+This model is a very simple one, since it only allows for two different opinions in the system. The designed filtering algorithms are very simple and intuitive as well. It also introduces some randomness by using the probabilistic majority model instead of the classic majority model. This might make the model a bit more realistic. This simpleness combined with the touch of randomness to give the model a more realistic vibe are definitely some strong points of using this model compared to other, more complex models. A simple model is more tractable and allows for a better understanding of what is going on in the dynamics. However, this might be a downside as well. Real-world opinion dynamics are, probably, far from simple. People don't update their opinion according to a simple probabilistic opinion dynamics model. Beside that, the cases where people have to choose between only two opinions are rather limited. Filtering algorithms, used by real social media companies, are unfortunately not publicly shared. We can however assume that they are not as simple as the ones we used in this thesis. Trying to model these far more complex systems by our very simple model, might lead to the fact that a lot of the dynamics might be missed or not well captured by our model. This downside of trying to model real-world social behavior with simple, tractable models is really a call for the urgent need for more real-world data to which the results obtained from simple models can be compared and which can help make the models capable of generating more realistic results. \\
+This doesn't mean that simple models should be thrown away. Definitely not! They might still be capable of capturing a lot of the dynamics that are seen in the real world. Not because a system appears very complex, that it cannot be modeled by something far more simple. This has been proven by physics research over and over again. Beside that, if you don't know the dynamics/underlying processes of complex phenomena yet, the best thing you can do is try to model it with the most simple model that comes to mind. There is no need to make things too complex if simple works too. There is however a need to compare data from (computational) models to experimental, real-world data. A need for critical thinking and careful analyzing of results can also not be denied.
+% put this section here?? Reference?? 
 
 \chapter{Results}
 
