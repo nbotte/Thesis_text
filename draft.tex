@@ -948,7 +948,7 @@ This does not mean that simple models should be thrown away. They might still be
 
 \chapter{Results}
 
-This chapter is subdivided into four main sections. We first discuss the impact of the network structure on the evolution of the prevalence of the opinions and the formation of echo chambers. Then, we introduce some kind of stubbornness in the system. The impact of how the opinions are initially distributed in a network with community structure (SBM) will be discussed afterwards. Finally, we will run the opinion dynamics model of this thesis on some real-world networks. We will discuss the results and compare them to results obtained from network models with a similar average degree, clustering coefficient and/or community structure.
+This chapter is subdivided into four main sections. We first discuss the impact of the network structure on the evolution of the prevalence of the opinions and the formation of echo chambers. Then, we introduce some kind of stubbornness in the system. The impact of how the opinions are initially distributed in a network with community structure (SBM) will be discussed afterwards. Finally, we will run the opinion dynamics model of this thesis on some real-world networks. We will discuss the results and compare them to results obtained from network models with a similar average degree, clustering coefficient and/or modularity.
 
 \section{Network structure}\label{netw_struc}
 
@@ -1578,9 +1578,9 @@ The results of the two real-world networks: (i) the Last.fm on-line social netwo
 
 \subsection{The Last.fm on-line social network}
 
-The formation of echo chambers versus the fraction of completely stubborn actors, fracRes, in the Last.fm on-line social network is studied. The results are compared to corresponding results from network models, all with $N = 8003$: (i) the Watts-Strogatz model with $\left<k\right> = 4$, $\beta = 0.15$ and $\left<cc\right> = 0.317 \pm 0.004$; (ii) the stochastic block model with 53 communities of size 151, $p_\text{cl} = 0.023$, $p_\text{add} = 0.0001$, $\left<k\right> = 4.24 \pm 0.03$ and $Q = 0.811 \pm 0.004$; (iii) the stochastic Watts-Strogatz block model with 53 communities of size 151, each community has the following Watts-Strogatz parameters: $\left<k\right> = 4$, $\beta = 0.025$; edges are added between communities with probability $p_\text{add} = 0.0001$, $\left<k\right> = 4.77 \pm 0.01$, $\left<cc\right> = 0.344 \pm 0.002$ and $Q = 0.833 \pm 0.003$. The results for the PR and REC filtering algorithm are shown in Fig. \ref{echo_vs_fracRes_real}.\\
+The formation of echo chambers versus the fraction of completely stubborn actors, fracRes, in the Last.fm on-line social network is studied. The results are compared to corresponding results from network models, all with $N = 8003$: (i) the Watts-Strogatz model with $\left<k\right> = 4$, $\beta = 0.15$ and $\left<cc\right> = 0.317 \pm 0.004$; (ii) the stochastic block model with 53 communities of size 151, $p_\text{cl} = 0.023$, $p_\text{add} = 0.0001$, $\left<k\right> = 4.24 \pm 0.03$ and $Q = 0.811 \pm 0.004$; (iii) the stochastic Watts-Strogatz block model with 53 communities of size 151, each community has the following Watts-Strogatz parameters: $\left<k\right> = 4$, $\beta = 0.025$; edges are added between communities with probability $p_\text{add} = 0.0001$, $\left<k\right> = 4.77 \pm 0.01$, $\left<cc\right> = 0.344 \pm 0.002$ and $Q = 0.833 \pm 0.003$. The results for the PR and REC filtering algorithms are shown in Fig. \ref{echo_vs_fracRes_real}.\\
 \newline
-The PR filtering algorithm shows a decrease in the formation of echo chambers with an increasing fraction of stubborn actors. This is valid for both the real-world network and the network models. The stochastic Watts-Strogatz block model has similar clustering and community structure as the Last.fm network. The Last.fm network has, however, a smaller formation of echo chambers than the SBM-WS. This suggests that it is not only clustering and/or community structure that drives the formation of echo chambers. Other topologies must play a role as well. The biggest difference between the real-world Last.fm network and the stochastic Watts-Strogatz block model lies in the degree distribution: the Last.fm network has a heterogeneous degree distribution instead of a homogeneous degree distribution. It is probably this heterogeneous contact pattern that hampers the formation of echo chambers in the real-world network compared to a network model with similar clustering and modularity, but with a homogeneous degree distribution. This agrees with the result that Perra and Rocha \cite{Perra2019} found: a heterogeneous contact pattern hampers the formation of echo chambers. Another difference between the Last.fm and the SBM and SBM-WS network is the community structure. The Last.fm network has a community structure where the community sizes follow a heterogeneous distribution: plenty of small communities and a few large ones. The stochastic block model and stochastic Watts-Strogatz block model, that we used, only have communities of a single size. This does, however, not play a significant role in the formation of echo chambers, as can be seen in Fig. \ref{power_vs_single}. In this figure, the distribution of echo chambers in the Last.fm network is compared to those in the SBM-WS network with similar clustering and modularity. The SBM-WS is modeled in two ways: (i) the communities all have a fixed size; (ii) the communities have the same heterogeneous sizes as in the Last.fm network. The PR and REC filtering algorithms are compared.\\ % add parameters of SBM-WS power??
+The PR filtering algorithm shows a decrease in the formation of echo chambers with an increasing fraction of stubborn actors. This is valid for both the real-world network and the network models. The stochastic Watts-Strogatz block model has similar clustering and modularity as the Last.fm network. The Last.fm network has, however, a smaller formation of echo chambers than the SBM-WS. This suggests that it is not only clustering and/or modularity that drives the formation of echo chambers. Other topologies must play a role as well. The biggest difference between the real-world Last.fm network and the stochastic Watts-Strogatz block model lies in the degree distribution: the Last.fm network has a heterogeneous degree distribution instead of a homogeneous degree distribution. It is probably this heterogeneous contact pattern that hampers the formation of echo chambers in the real-world network compared to a network model with similar clustering and modularity, but with a homogeneous degree distribution. This agrees with the result that Perra and Rocha \cite{Perra2019} found: a heterogeneous contact pattern hampers the formation of echo chambers. Another difference between the Last.fm and the SBM and SBM-WS network is the community structure. The Last.fm network has a community structure where the community sizes follow a heterogeneous distribution: plenty of small communities and a few large ones. The stochastic block model and stochastic Watts-Strogatz block model, that we used, only have communities of a single size. This does, however, not play a significant role in the formation of echo chambers, as can be seen in Fig. \ref{power_vs_single}. In this figure, the distribution of echo chambers in the Last.fm network is compared to those in the SBM-WS network with similar clustering and modularity. The SBM-WS is modeled in two ways: (i) the communities all have a fixed size; (ii) the communities have the same heterogeneous sizes as in the Last.fm network. The PR and REC filtering algorithms are compared.\\ % add parameters of SBM-WS power??
 \newpage
 \noindent
 The results for the Watts-Strogatz model are similar to those for the stochastic Watts-Strogatz block model. The formation of echo chambers seems to be slightly smaller in the WS than in the SBM-WS network. It may be tempting to attribute this to the lack of community structure in the WS model. It must however be noted that the implemented WS model has a slightly smaller clustering coefficient ($\left<cc\right> = 0.317 \pm 0.004$) than the SBM-WS ($\left<cc\right> = 0.344 \pm 0.002$), which may also explain the somewhat smaller formation of echo chambers. Furthermore, it is interesting to notice that the Last.fm on-line social network coincides with the SBM with a similar modularity. It seems that the hampering of the formation of echo chambers due to a heterogeneous contact pattern is of the same size as the hampering due to a lack of high clustering. % talk about coincidence??
@@ -1601,7 +1601,7 @@ The results for the Watts-Strogatz model are similar to those for the stochastic
 \label{echo_vs_fracRes_real}
 \end{figure}
 \noindent
-The REC filtering algorithm enforces an increase in the formation of echo chambers when a small fraction of stubborn actors is introduced. If this fraction is further increased, the formation of echo chambers starts to decrease again. The increase is the strongest for the high clustering network models (WS, SBM-WS). Even though the Last.fm network has a similar clustering as these high clustering models, the formation of echo chambers and the corresponding increase in that formation are significantly smaller. As for the PR filtering algorithm, this is probably a consequence of the heterogeneous degree pattern of the Last.fm network. The results for the Last.fm network coincide with those of the SBM. As for the PR filtering algorithm, this seems to suggest that the hampering in the formation of echo chambers due to a heterogeneous degree distribution is of a similar size as the corresponding hampering due to the lack of high clustering. 
+The REC filtering algorithm enforces an increase in the formation of echo chambers when a small fraction of stubborn actors is introduced. If this fraction is further increased, the formation of echo chambers starts to decrease. The increase is the strongest for the high clustering network models (WS, SBM-WS). Even though the Last.fm network has a similar clustering as these high clustering models, the formation of echo chambers and the corresponding increase in that formation are significantly smaller. As for the PR filtering algorithm, this is probably a consequence of the heterogeneous degree pattern of the Last.fm network. The results for the Last.fm network coincide with those of the SBM. As for the PR filtering algorithm, this seems to suggest that the hampering in the formation of echo chambers due to a heterogeneous degree distribution is of a similar size as the corresponding hampering due to the lack of high clustering. 
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
@@ -1625,7 +1625,7 @@ Results for the PGP trust network are compared to results for network models wit
 
 \chapter{Discussion}
 
-We made use of simple toy models of real social media platforms to generate results regarding the evolution of the prevalence of the opinions and formation of echo chambers. These toy models consist of several layers, including a network layer and an opinion dynamics layer. Simple filtering algorithms were implemented to replicate and simulate the content curation used by real social media companies. Furthermore, a notion of stubbornness was introduced to investigate the interplay between individual resistance to change, network structure and filtering algorithm. For simplicity we only allowed two competing opinions (A and B).\\
+We made use of simple toy models of real social media platforms to generate results regarding the evolution of the prevalence of the opinions and formation of echo chambers. These toy models consist of several layers, including a network layer and an opinion dynamics layer. Simple filtering algorithms were implemented to replicate and simulate the content curation used by real social media companies. Furthermore, a notion of stubbornness was introduced to investigate the interplay between individual resistance to change, network structure and filtering algorithm. For simplicity we only allowed two competing opinions (A and B). Furthermore, we studied two different settings: balanced starting conditions and unbalanced starting conditions.\\
 \newline
 We investigated the effect of the network structure on the dynamics of the opinions in the system. The main focus was put on the difference between networks with a high clustering coefficient and no community structure (WS) compared to networks with a clear community structure and a low clustering coefficient (SBM). It was found that a clear community structure enhances the formation of echo chambers (mainly when using the PR filtering algorithm) compared to a random network. This enhancement is however not as strong as for networks with a high clustering coefficient. Networks that have both a high clustering coefficient and a high modularity (clear community structure) (SBM-WS) behave similar as the high clustering networks (WS). This indicates that it is mainly the high clustering that drives the formation of echo chambers. There is a correlation between modularity and formation of echo chambers: a higher modularity results in a larger formation of echo chambers (in case of the PR filtering algorithm). The enhancement is just not as strong as the enhancement in the formation of echo chambers introduced by a high clustering. \\
 % also talk about evolution of opinions??
@@ -1657,11 +1657,6 @@ It must be emphasized that there are limitations to our model and methods. As al
 \newline
 Some future investigation paths, linked to limitations of our model, were given in the previous paragraph. Other future directions may be: (i) investigating the distribution of the stubborn actors (community distributed versus random); (ii) making one opinion more stubborn than the other; (iii) investigating the effect of the activation mechanism: what happens if we switch to the heterogeneous activation mechanism (see Section \ref{actMech})? and (iv) making the network temporal in the sense that it becomes possible to add and remove friends. Sasahara et al. investigated a model in which social influence was combined with social rewiring (unfriending) \cite{Sasahara2020}. Their findings were that these processes of influence and unfriending enhanced the formation of echo chambers \cite{Sasahara2020}. It might be interesting to incorporate their model features into our model with algorithmic personalization and stubbornness. 
 
-
-% put here: be carefull with extrapolating data/results to real world cases, need for more real data to compare with (eg data from role of facebook in elections in US), this lack of comparison between real data and network model data/analytical work = one of the downfalls/backsides of social physics??
-% relevance to society of knowing the impact of social media on opinion dynamics 
-% important to know the limits of the model, may be intuitive, but intuition maybe misleading (learned in physics) --> why we need experimental data to compare with!
-
 \chapter{Conclusions and outlook}
 % also discuss need to investigate effect of changing N, S and p_act
 \newpage
@@ -1691,13 +1686,13 @@ we can write the modularity of the whole network as \cite{Albert2016}
 \begin{equation}\label{modnetw}
 	Q = \frac{1}{2L}\sum_{i, j = 1}^N \bigg(A_{ij} - \frac{k_ik_j}{2L}\bigg) \delta_{c_i, c_j} \ ,
 \end{equation}
-where $c_i$ represents the community to which node $i$ belongs and where the Dirac-delta function $\delta_{c_i, c_j}$ expresses the fact that only pairs of nodes that belong to the same community are taken into account. We can then rewrite the first term as a sum over communities \cite{Albert2016}
+where $c_i$ represents the community to which node $i$ belongs and the Dirac-delta function $\delta_{c_i, c_j}$ expresses the fact that only pairs of nodes that belong to the same community are taken into account. We can then rewrite the first term as a sum over communities \cite{Albert2016}
 \begin{equation}\label{1}
-	\frac{1}{2L}\sum_{i, j = 1}^N A_{ij}\delta_{c_i, c_j} = \sum_{c=1}^{n_c}\frac{1}{2L}\sum_{i, j \in C_c} A_{ij} = \sum_{c=1}^{n_c}\frac{L_c}{L} \ ,
+	\frac{1}{2L}\sum_{i, j = 1}^N A_{ij}\delta_{c_i, c_j} = \sum_{c=1}^{n_c}\frac{1}{2L}\sum_{(i, j) \in C_c} A_{ij} = \sum_{c=1}^{n_c}\frac{L_c}{L} \ ,
 \end{equation}
 where $L_c$ is the number of edges in community $C_c$ and the factor 2 disappears because each edge is counted twice in $A_{ij}$. Similarly, the second term in Eq. (\ref{modnetw}) can be rewritten as \cite{Albert2016}
 \begin{equation}\label{2}
-	\frac{1}{2L}\sum_{i, j = 1}^N \frac{k_ik_j}{2L} \delta_{c_i, c_j} = \sum_{c=1}^{n_c}\frac{1}{(2L)^2}\sum_{i, j \in C_c} k_ik_j = \sum_{c=1}^{n_c}\frac{k_c^2}{4L^2} \ ,
+	\frac{1}{2L}\sum_{i, j = 1}^N \frac{k_ik_j}{2L} \delta_{c_i, c_j} = \sum_{c=1}^{n_c}\frac{1}{(2L)^2}\sum_{(i, j) \in C_c} k_ik_j = \sum_{c=1}^{n_c}\frac{k_c^2}{4L^2} \ ,
 \end{equation}
 where $k_c$ is the total degree of the nodes in community $C_c$. Combining Eq. (\ref{1}) and Eq. (\ref{2}) gives the final result \cite{Albert2016}
 \begin{equation}\label{Qfin}
@@ -1708,9 +1703,9 @@ where $k_c$ is the total degree of the nodes in community $C_c$. Combining Eq. (
 
 Consider two communities $A$ and $B$ and denote with $k_A$ and $k_B$ the total degree of communities $A$ and $B$ respectively \cite{Albert2016}. The change in modularity after merging the two communities is calculated as follows (using Eq. (\ref{Qfin})) \cite{Albert2016}
 \begin{equation}\label{Q_AB}
-	\Delta Q_{AB} = \bigg[\frac{L_{AB}}{L} - \bigg(\frac{k_{AB}}{2L} \bigg)^2 \bigg] - \bigg[\frac{L_A}{L} - \bigg(\frac{k_A}{2L} \bigg)^2 + \frac{L_B}{2L} - \bigg(\frac{k_B}{2L} \bigg)^2 \bigg] \ ,
+	\Delta Q_{AB} = \bigg[\frac{L_{AB}}{L} - \bigg(\frac{k_{AB}}{2L} \bigg)^2 \bigg] - \bigg[\frac{L_A}{L} - \bigg(\frac{k_A}{2L} \bigg)^2 + \frac{L_B}{L} - \bigg(\frac{k_B}{2L} \bigg)^2 \bigg] \ ,
 \end{equation}
-where $L_{AB} = L_A + L_B + l_{AB}$ is the total number of edges in the merged community; $L_A$ and $L_B$ are the number of edges in communities $A$ and $B$ respectively and $l_{AB}$ is the number of direct edges between communities $A$ and $B$ \cite{Albert2016}. $k_{AB} = k_A + k_B$ is the total degree of nodes in the merged community \cite{Albert2016}. Inserting the formulas for $L_{AB}$ and $k_{AB}$ in Eq. (\ref{Q_AB}) gives
+where $L_{AB} = L_A + L_B + l_{AB}$ is the total number of edges in the merged community; $L_A$ and $L_B$ are the number of edges in communities $A$ and $B$ respectively and $l_{AB}$ is the number of direct edges between communities $A$ and $B$ \cite{Albert2016}. $k_{AB} = k_A + k_B$ is the total degree of nodes in the merged community; $k_A$ and $k_B$ are the total degree of the nodes in community $A$ and $B$ respectively \cite{Albert2016}. Inserting the formulas for $L_{AB}$ and $k_{AB}$ in Eq. (\ref{Q_AB}) gives
 \begin{equation}
 	\Delta Q_{AB} = \frac{l_{AB}}{L} - \frac{k_Ak_B}{2L^2} \ .
 \end{equation}
@@ -1758,7 +1753,7 @@ Finally, by substituting $q = 1-p$, we get \cite{Hopcroft2006}
 	np &= \sum_{k=0}^n \binom{n}{k} k p^{k} (1-p)^{n-k} \ ,
 \end{split}
 \end{equation}
-where the right hand side is equal to Equation (\ref{avDegr}) with $n = N-1$ and we thus obtain $\left<k\right> = (N-1)p$.
+where the right hand side is equal to Eq. (\ref{avDegr}) with $n = N-1$ and we obtain $\left<k\right> = (N-1)p$.
 
 \subsection{Poisson form of the degree distribution}\label{poiss}
 We begin with the exact binomial distribution (Eq.(\ref{degDistRan}))
@@ -1779,7 +1774,7 @@ where we made use of the fact that $\left<k\right> = (N-1)p$. Using the series e
 \end{equation}
 we get \cite{Albert2014}
 \begin{equation}
-	\ln[(1-p)^{N-1-k}] \approx (N-1-k) \frac{\left<k\right>}{N-1} = - \left<k\right>\bigg(1 - \frac{\left<k\right>}{N-1} \bigg) \approx - \left<k\right> \ ,
+	\ln[(1-p)^{N-1-k}] \approx -(N-1-k) \frac{\left<k\right>}{N-1} = - \left<k\right>\bigg(1 - \frac{\left<k\right>}{N-1} \bigg) \approx - \left<k\right> \ ,
 \end{equation}
 which is valid if $k \ll N$. We thus find \cite{Albert2014}
 \begin{equation}\label{e}
@@ -1818,6 +1813,7 @@ and thus the diameter of a random network becomes \cite{Albert2014}
 \textbf{Clustering coefficient}\\
 \newline
 A triangle in the regular ring lattice requires two edge traversals in the same direction and one in the opposite direction \cite{Pele2015}. In the regular ring lattice every node has a fixed degree $K$, this means that each node is connected to $K/2$ neighbors on its left and $K/2$ neighbors on its right. It is then clear that the final, backwards step can span at most $K/2$ nodes \cite{Pele2015}; otherwise we would end up at a different node from which we started, which would definitely not form a triangle.\\
+\newline
 Hence, the number of triangles for a given node is given by choosing the two forward target nodes from the $K/2$ possibilities \cite{Pele2015}
 \begin{equation}\label{triangle}
 	\binom{\frac{K}{2}}{2} = \frac{1}{4} K \bigg(\frac{K}{2} - 1 \bigg) \ .
@@ -1826,39 +1822,34 @@ The number of connected triples per node is given by choosing two nodes out of t
 \begin{equation}\label{triple}
 	\binom{K}{2} = \frac{1}{2} K (K-1) \ .
 \end{equation}
-Since every node in the regular ring lattice is identical, we can easily find the total number of triangles and connected triples in the network by multiplying Eq. (\ref{triangle}) and Eq. (\ref{triple}) with the number of nodes $N$. We then obtain the final result for the clustering coefficient in the regular ring lattice \cite{Pele2015}
+Since every node in the regular ring lattice is identical, we can easily find the total number of triangles and connected triples in the network by multiplying Eq. (\ref{triangle}) and Eq. (\ref{triple}) by the number of nodes $N$. We then obtain the final result for the clustering coefficient in the regular ring lattice \cite{Pele2015}
 \begin{equation}
-	\left<cc\right> = \frac{3\cdot N \frac{1}{4} K \bigg(\frac{K}{2} - 1 \bigg)}{N \frac{1}{2} K (K-1)} = \frac{3(K-2)}{4(K-1)} \ .
+	\left<cc\right> = \frac{3\cdot N \frac{1}{4} K \big(\frac{K}{2} - 1 \big)}{N \frac{1}{2} K (K-1)} = \frac{3(K-2)}{4(K-1)} \ .
 \end{equation}
 \newline
 \textbf{Average distance}\\
 \newline
 The general formula for the average distance is given by Eq. (\ref{avdist})
 \begin{equation}
-	l = \frac{1}{N(N-1)} \sum_{i \neq j} d_{ij} \ ,
+	\left<d\right> = \frac{1}{N(N-1)} \sum_{i \neq j} d_{ij} \ ,
 \end{equation}
-where the sum runs over the shortest path between every pair of nodes. Assume we have a regular ring lattice with $N$ nodes and each node has $K$ neighbors. Now we can calculate the distance between node $i$ and every other node in the ring lattice
-\begin{itemize}
-	\item There are $K$ nodes adjacent to node $i$, so there are $K$ nodes with a distance $d_{ij} = 1$
-	\item There are $K$ nodes that are neighbors of the neighbors of node $i$, so there are $K$ nodes with a distance $d_{ij} = 2$
-	\item ...
-	\item There are $K$ nodes that have a distance $d_{ij} = \frac{N}{K}$ between them and node $i$; its easy to see that these are the nodes that are the furthest away from node $i$ 
-\end{itemize}  
+where the sum runs over the shortest path between every pair of nodes. Assume we have a regular ring lattice with $N$ nodes and each node has $K$ neighbors. We can then calculate the distance between node $i$ and every other node in the ring lattice as follows: (i) There are $K$ nodes adjacent to node $i$, so there are $K$ nodes with a distance $d_{ij} = 1$; (ii) There are $K$ nodes that are neighbors of the neighbors of node $i$, so there are $K$ nodes with a distance $d_{ij} = 2$; (iii) ...; and (iv) There are $K$ nodes that have a distance $d_{ij} = \frac{N}{K}$ between them and node $i$; its easy to see that these are the nodes that are the furthest away from node $i$.\\
+\newline
 So the average distance for node $i$ becomes \cite{chap9}
 \begin{equation}
-	l_i = \frac{1}{N-1} K \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg) \approx \frac{K}{N} \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg) \ ,
+	d_i = \frac{1}{N-1} K \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg) \approx \frac{K}{N} \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg) \ ,
 \end{equation}
 where the last approximation holds for $N \gg 1$. Since every node in the regular ring lattice is identical we can easily find the average distance of the network \cite{chap9}
 \begin{equation}
-	l = \frac{1}{N} \sum_i l_i = \frac{1}{N} N l_i \approx \frac{K}{N} \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg) \ .
+	\left<d\right> = \frac{1}{N} \sum_i d_i = \frac{1}{N} N d_i \approx \frac{K}{N} \bigg(1 + 2 + 3 + ... + \frac{N}{K} \bigg) \ .
 \end{equation}
 Using \cite{chap9}
 \begin{equation}
 	1 + 2+ 3 +...+ x = \sum_{i = 1}^x i = \frac{x(x+1)}{2} \approx \frac{x^2}{2} \ ,
 \end{equation}
-where the last approximation again holds for $x \gg 1$; we finally obtain \cite{chap9}
+where the last approximation holds for $x \gg 1$; we finally obtain \cite{chap9}
 \begin{equation}
-	l \approx \frac{K}{N} \frac{\frac{N^2}{K^2}}{2} = \frac{N}{2K} \ .
+	\left<d\right> \approx \frac{K}{N} \frac{\frac{N^2}{K^2}}{2} = \frac{N}{2K} \ .
 \end{equation}
 
 \newpage
