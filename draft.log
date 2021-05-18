@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  14 MAY 2021 08:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.12.28)  18 MAY 2021 09:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2584,41 +2584,7 @@ l.34 ...}The majority model}{24}{subsection.3.1.1}
 \tf@toc=\write3
 \openout3 = `draft.toc'.
 
- [7]
-*geometry* verbose mode - [ newgeometry ] result:
-* driver: pdftex
-* paper: a4paper
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: twoside 
-* h-part:(L,W,R)=(71.70166pt, 418.25368pt, 107.55254pt)
-* v-part:(T,H,B)=(56.9055pt, 717.00946pt, 71.13188pt)
-* \paperwidth=597.50787pt
-* \paperheight=845.04684pt
-* \textwidth=418.25368pt
-* \textheight=717.00946pt
-* \oddsidemargin=-0.56833pt
-* \evensidemargin=35.28255pt
-* \topmargin=-48.83829pt
-* \headheight=13.6pt
-* \headsep=19.8738pt
-* \topskip=11.0pt
-* \footskip=27.46295pt
-* \marginparwidth=116.0pt
-* \marginparsep=7.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidetrue
-* \@mparswitchtrue
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
- [8
-
+ [7] [8
 
 ]
 (./draft.lof
@@ -2626,34 +2592,7 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 8.0pt on input line 12.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
 (Font)              scaled to size 6.0pt on input line 12.
-
-Overfull \hbox (1.3573pt too wide) in paragraph at lines 22--22
- [][] []\T1/LinuxLibertineT-TLF/m/n/10.95 Formation of echo cham-bers ver-sus t
-he stub-born-ness pa-ram-e-ter of all the nodes, 
- []
-
-
-Overfull \hbox (1.3573pt too wide) in paragraph at lines 23--23
- [][] []\T1/LinuxLibertineT-TLF/m/n/10.95 Formation of echo cham-bers ver-sus t
-he stub-born-ness pa-ram-e-ter of all the nodes, 
- []
-
-
-Overfull \hbox (1.3573pt too wide) in paragraph at lines 24--24
- [][] []\T1/LinuxLibertineT-TLF/m/n/10.95 Formation of echo cham-bers ver-sus t
-he stub-born-ness pa-ram-e-ter of all the nodes, 
- []
-
-
-Underfull \vbox (badness 2922) has occurred while \output is active []
-
- [9]
-Overfull \hbox (0.11476pt too wide) in paragraph at lines 28--28
- \T1/LinuxLibertineT-TLF/m/n/10.95 opin-ion dis-tri-bu-tion. Re-sults for one s
-im-u-la-tion of the ma-jor-ity thresh-old model 
- []
-
-)
+ [9])
 \tf@lof=\write4
 \openout4 = `draft.lof'.
 
@@ -2664,7 +2603,6 @@ im-u-la-tion of the ma-jor-ity thresh-old model
  [11
 
 ] [12
-
 
 ]
 Chapter 1.
@@ -3447,7 +3385,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 875--879
 [35]
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 10.0pt on input line 886.
-<lastfm_degree_distribution_8x7.png, id=887, 227.50597pt x 199.03159pt>
+<lastfm_degree_distribution_8x7.png, id=889, 227.50597pt x 199.03159pt>
 File: lastfm_degree_distribution_8x7.png Graphic file (type png)
 <use lastfm_degree_distribution_8x7.png>
 Package pdftex.def Info: lastfm_degree_distribution_8x7.png  used on input line
@@ -3459,7 +3397,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 887--889
 [][]
  []
 
-<PGP_degree_distribution_8x7.png, id=889, 227.50597pt x 199.03159pt>
+<PGP_degree_distribution_8x7.png, id=891, 227.50597pt x 199.03159pt>
 File: PGP_degree_distribution_8x7.png Graphic file (type png)
 <use PGP_degree_distribution_8x7.png>
 Package pdftex.def Info: PGP_degree_distribution_8x7.png  used on input line 89
@@ -3531,7 +3469,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 961--968
 [39
 
 ]
-<fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR_REC.png, id=937, 227
+<fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR_REC.png, id=939, 227
 .50597pt x 199.03159pt>
 File: fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR_REC.png Graphic
  file (type png)
@@ -3545,7 +3483,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 972--974
 [][]
  []
 
-<fraction_of_opinions_SBM-WS_10x100_10-001-0001_50-50_PR_REC.png, id=938, 227.5
+<fraction_of_opinions_SBM-WS_10x100_10-001-0001_50-50_PR_REC.png, id=940, 227.5
 0597pt x 199.03159pt>
 File: fraction_of_opinions_SBM-WS_10x100_10-001-0001_50-50_PR_REC.png Graphic f
 ile (type png)
@@ -3571,7 +3509,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 984--990
 
 [40 <./fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR_REC.png> <./fr
 action_of_opinions_SBM-WS_10x100_10-001-0001_50-50_PR_REC.png>]
-<echo_chambers_no_stubb_50-50_REC.png, id=949, 227.50597pt x 199.03159pt>
+<echo_chambers_no_stubb_50-50_REC.png, id=951, 227.50597pt x 199.03159pt>
 File: echo_chambers_no_stubb_50-50_REC.png Graphic file (type png)
 <use echo_chambers_no_stubb_50-50_REC.png>
 Package pdftex.def Info: echo_chambers_no_stubb_50-50_REC.png  used on input li
@@ -3583,7 +3521,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 994--995
 [][] 
  []
 
-<echo_chambers_no_stubb_50-50_PR_8x7.png, id=950, 227.50597pt x 199.03159pt>
+<echo_chambers_no_stubb_50-50_PR_8x7.png, id=952, 227.50597pt x 199.03159pt>
 File: echo_chambers_no_stubb_50-50_PR_8x7.png Graphic file (type png)
 <use echo_chambers_no_stubb_50-50_PR_8x7.png>
 Package pdftex.def Info: echo_chambers_no_stubb_50-50_PR_8x7.png  used on input
@@ -3640,7 +3578,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1015--1028
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [43]
-<fraction_of_opinions_ER_001_50-50_PR_REC_20-80_8x7.png, id=981, 227.50597pt x 
+<fraction_of_opinions_ER_001_50-50_PR_REC_20-80_8x7.png, id=983, 227.50597pt x 
 199.03159pt>
 File: fraction_of_opinions_ER_001_50-50_PR_REC_20-80_8x7.png Graphic file (type
  png)
@@ -3654,7 +3592,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1032--1033
 [][] 
  []
 
-<fraction_of_opinions_WS_10-006_PR_REC_20-80_8x7.png, id=982, 227.50597pt x 199
+<fraction_of_opinions_WS_10-006_PR_REC_20-80_8x7.png, id=984, 227.50597pt x 199
 .03159pt>
 File: fraction_of_opinions_WS_10-006_PR_REC_20-80_8x7.png Graphic file (type pn
 g)
@@ -3668,7 +3606,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1036--1038
 [][]
  []
 
-<fraction_of_opinions_SBM_01-0001_003-0008_PR_REC_20-80_8x7.png, id=983, 227.50
+<fraction_of_opinions_SBM_01-0001_003-0008_PR_REC_20-80_8x7.png, id=985, 227.50
 597pt x 199.03159pt>
 File: fraction_of_opinions_SBM_01-0001_003-0008_PR_REC_20-80_8x7.png Graphic fi
 le (type png)
@@ -3682,7 +3620,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1041--1042
 [][] 
  []
 
-<fraction_of_opinions_SBM-WS_10-001-0001_PR_REC_20-80_8x7.png, id=984, 227.5059
+<fraction_of_opinions_SBM-WS_10-001-0001_PR_REC_20-80_8x7.png, id=986, 227.5059
 7pt x 199.03159pt>
 File: fraction_of_opinions_SBM-WS_10-001-0001_PR_REC_20-80_8x7.png Graphic file
  (type png)
@@ -3696,7 +3634,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1045--1047
 [][]
  []
 
-<fraction_of_opinions_WS_1000-6_PR_20-80_8x7.png, id=985, 227.50597pt x 199.031
+<fraction_of_opinions_WS_1000-6_PR_20-80_8x7.png, id=987, 227.50597pt x 199.031
 59pt>
 File: fraction_of_opinions_WS_1000-6_PR_20-80_8x7.png Graphic file (type png)
 <use fraction_of_opinions_WS_1000-6_PR_20-80_8x7.png>
@@ -3709,7 +3647,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1056--1058
 [][]
  []
 
-<fraction_of_opinions_WS_10000-6_PR_20-80_8x7.png, id=986, 227.50597pt x 199.03
+<fraction_of_opinions_WS_10000-6_PR_20-80_8x7.png, id=988, 227.50597pt x 199.03
 159pt>
 File: fraction_of_opinions_WS_10000-6_PR_20-80_8x7.png Graphic file (type png)
 <use fraction_of_opinions_WS_10000-6_PR_20-80_8x7.png>
@@ -3742,7 +3680,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1068--1076
 
 [45 <./fraction_of_opinions_WS_1000-6_PR_20-80_8x7.png> <./fraction_of_opinions
 _WS_10000-6_PR_20-80_8x7.png>]
-<echo_chambers_no_stubb_ER_001_20-80_PR_REC.png, id=1006, 227.50597pt x 199.031
+<echo_chambers_no_stubb_ER_001_20-80_PR_REC.png, id=1008, 227.50597pt x 199.031
 59pt>
 File: echo_chambers_no_stubb_ER_001_20-80_PR_REC.png Graphic file (type png)
 <use echo_chambers_no_stubb_ER_001_20-80_PR_REC.png>
@@ -3755,7 +3693,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1080--1082
 [][]
  []
 
-<echo_chambers_no_stubb_WS_10_006_20-80_PR_REC_8x7.png, id=1007, 227.50597pt x 
+<echo_chambers_no_stubb_WS_10_006_20-80_PR_REC_8x7.png, id=1009, 227.50597pt x 
 199.03159pt>
 File: echo_chambers_no_stubb_WS_10_006_20-80_PR_REC_8x7.png Graphic file (type 
 png)
@@ -3770,7 +3708,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1085--1087
  []
 
 <echo_chambers_no_stubb_SBM_01-0001_003-0008_10x100_20-80_PR_REC_8x7.png, id=10
-08, 227.50597pt x 199.03159pt>
+10, 227.50597pt x 199.03159pt>
 File: echo_chambers_no_stubb_SBM_01-0001_003-0008_10x100_20-80_PR_REC_8x7.png G
 raphic file (type png)
 <use echo_chambers_no_stubb_SBM_01-0001_003-0008_10x100_20-80_PR_REC_8x7.png>
@@ -3783,7 +3721,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1090--1092
 [][]
  []
 
-<echo_chambers_no_stubb_SBM-WS_10_001_0001_10x100_20-80_PR_REC_8x7.png, id=1009
+<echo_chambers_no_stubb_SBM-WS_10_001_0001_10x100_20-80_PR_REC_8x7.png, id=1011
 , 227.50597pt x 199.03159pt>
 File: echo_chambers_no_stubb_SBM-WS_10_001_0001_10x100_20-80_PR_REC_8x7.png Gra
 phic file (type png)
@@ -3829,7 +3767,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1116--1121
  []
 
 [48]
-<echo_chamber_vs_modularity_edge_prob_same_deg_PR_REC_10x8.png, id=1044, 284.45
+<echo_chamber_vs_modularity_edge_prob_same_deg_PR_REC_10x8.png, id=1046, 284.45
 473pt x 227.50597pt>
 File: echo_chamber_vs_modularity_edge_prob_same_deg_PR_REC_10x8.png Graphic fil
 e (type png)
@@ -3884,7 +3822,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1163--1174
  []
 
 [50]
-<echo_chamber_vs_stubbornness_SBM_frac_compl_stubb_PR_10x8.png, id=1061, 284.45
+<echo_chamber_vs_stubbornness_SBM_frac_compl_stubb_PR_10x8.png, id=1063, 284.45
 473pt x 227.50597pt>
 File: echo_chamber_vs_stubbornness_SBM_frac_compl_stubb_PR_10x8.png Graphic fil
 e (type png)
@@ -3893,7 +3831,7 @@ Package pdftex.def Info: echo_chamber_vs_stubbornness_SBM_frac_compl_stubb_PR_1
 0x8.png  used on input line 1176. on input line 1176.
 Package pdftex.def Info: Requested size: 284.54083pt x 227.62689pt on input lin
 e 1176.
-<echo_chamber_vs_stubbornness_frac_compl_stubb_REF_8x7.png, id=1066, 227.50597p
+<echo_chamber_vs_stubbornness_frac_compl_stubb_REF_8x7.png, id=1068, 227.50597p
 t x 199.03159pt>
 File: echo_chamber_vs_stubbornness_frac_compl_stubb_REF_8x7.png Graphic file (t
 ype png)
@@ -3907,7 +3845,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1192--1193
 [][] 
  []
 
-<echo_chamber_vs_stubbornness_frac_compl_stubb_REC_8x7.png, id=1067, 227.50597p
+<echo_chamber_vs_stubbornness_frac_compl_stubb_REC_8x7.png, id=1069, 227.50597p
 t x 199.03159pt>
 File: echo_chamber_vs_stubbornness_frac_compl_stubb_REC_8x7.png Graphic file (t
 ype png)
@@ -3961,7 +3899,7 @@ er_vs_stubbornness_frac_compl_stubb_REC_8x7.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [53]
-<echo_chamber_vs_frac_compl_stubb_PR_20-80_8x7.png, id=1085, 227.50597pt x 199.
+<echo_chamber_vs_frac_compl_stubb_PR_20-80_8x7.png, id=1087, 227.50597pt x 199.
 03159pt>
 File: echo_chamber_vs_frac_compl_stubb_PR_20-80_8x7.png Graphic file (type png)
 
@@ -3975,7 +3913,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1218--1220
 [][]
  []
 
-<echo_chamber_vs_frac_compl_stubb_REC_20-80_8x7.png, id=1086, 227.50597pt x 199
+<echo_chamber_vs_frac_compl_stubb_REC_20-80_8x7.png, id=1088, 227.50597pt x 199
 .03159pt>
 File: echo_chamber_vs_frac_compl_stubb_REC_20-80_8x7.png Graphic file (type png
 )
@@ -4017,7 +3955,7 @@ Underfull \vbox (badness 1454) has occurred while \output is active []
 
  [55 <./echo_chamber_vs_frac_compl_stubb_PR_20-80_8x7.png> <./echo_chamber_vs_f
 rac_compl_stubb_REC_20-80_8x7.png>]
-<fraction_of_opinions_ER_frac_compl_stubb_PR_20-80_8x7.png, id=1106, 227.50597p
+<fraction_of_opinions_ER_frac_compl_stubb_PR_20-80_8x7.png, id=1108, 227.50597p
 t x 199.03159pt>
 File: fraction_of_opinions_ER_frac_compl_stubb_PR_20-80_8x7.png Graphic file (t
 ype png)
@@ -4031,7 +3969,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1245--1246
 [][] 
  []
 
-<fraction_of_opinions_WS_frac_compl_stubb_PR_20-80_8x7.png, id=1107, 227.50597p
+<fraction_of_opinions_WS_frac_compl_stubb_PR_20-80_8x7.png, id=1109, 227.50597p
 t x 199.03159pt>
 File: fraction_of_opinions_WS_frac_compl_stubb_PR_20-80_8x7.png Graphic file (t
 ype png)
@@ -4045,7 +3983,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1249--1250
 [][] 
  []
 
-<fraction_of_opinions_SBM_frac_compl_stubb_PR_20-80_8x7.png, id=1108, 227.50597
+<fraction_of_opinions_SBM_frac_compl_stubb_PR_20-80_8x7.png, id=1110, 227.50597
 pt x 199.03159pt>
 File: fraction_of_opinions_SBM_frac_compl_stubb_PR_20-80_8x7.png Graphic file (
 type png)
@@ -4059,7 +3997,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1253--1254
 [][] 
  []
 
-<fraction_of_opinions_SBM-WS_frac_compl_stubb_PR_20-80_8x7.png, id=1109, 227.50
+<fraction_of_opinions_SBM-WS_frac_compl_stubb_PR_20-80_8x7.png, id=1111, 227.50
 597pt x 199.03159pt>
 File: fraction_of_opinions_SBM-WS_frac_compl_stubb_PR_20-80_8x7.png Graphic fil
 e (type png)
@@ -4123,7 +4061,7 @@ b_PR_20-80_8x7.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [58]
-<echo_chamber_vs_stubbornness_all_frac_stubb_PR_10x8.png, id=1132, 284.45473pt 
+<echo_chamber_vs_stubbornness_all_frac_stubb_PR_10x8.png, id=1134, 284.45473pt 
 x 227.50597pt>
 File: echo_chamber_vs_stubbornness_all_frac_stubb_PR_10x8.png Graphic file (typ
 e png)
@@ -4134,7 +4072,7 @@ Package pdftex.def Info: Requested size: 284.54083pt x 227.62689pt on input lin
 e 1283.
 
 [59 <./echo_chamber_vs_stubbornness_all_frac_stubb_PR_10x8.png>]
-<echo_chamber_vs_stubbornness_all_frac_stubb_REF_8x7.png, id=1141, 227.50597pt 
+<echo_chamber_vs_stubbornness_all_frac_stubb_REF_8x7.png, id=1143, 227.50597pt 
 x 199.03159pt>
 File: echo_chamber_vs_stubbornness_all_frac_stubb_REF_8x7.png Graphic file (typ
 e png)
@@ -4148,7 +4086,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1294--1296
 [][]
  []
 
-<echo_chamber_vs_stubbornness_all_frac_stubb_REC_8x7.png, id=1142, 227.50597pt 
+<echo_chamber_vs_stubbornness_all_frac_stubb_REC_8x7.png, id=1144, 227.50597pt 
 x 199.03159pt>
 File: echo_chamber_vs_stubbornness_all_frac_stubb_REC_8x7.png Graphic file (typ
 e png)
@@ -4194,7 +4132,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1306--1321
 
 [60 <./echo_chamber_vs_stubbornness_all_frac_stubb_REF_8x7.png> <./echo_chamber
 _vs_stubbornness_all_frac_stubb_REC_8x7.png>]
-<echo_chamber_vs_all_frac_stubb_PR_20-80_8x7.png, id=1159, 227.50597pt x 199.03
+<echo_chamber_vs_all_frac_stubb_PR_20-80_8x7.png, id=1161, 227.50597pt x 199.03
 159pt>
 File: echo_chamber_vs_all_frac_stubb_PR_20-80_8x7.png Graphic file (type png)
 <use echo_chamber_vs_all_frac_stubb_PR_20-80_8x7.png>
@@ -4207,7 +4145,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1325--1327
 [][]
  []
 
-<echo_chamber_vs_all_frac_stubb_REC_20-80_8x7.png, id=1160, 227.50597pt x 199.0
+<echo_chamber_vs_all_frac_stubb_REC_20-80_8x7.png, id=1162, 227.50597pt x 199.0
 3159pt>
 File: echo_chamber_vs_all_frac_stubb_REC_20-80_8x7.png Graphic file (type png)
 <use echo_chamber_vs_all_frac_stubb_REC_20-80_8x7.png>
@@ -4230,7 +4168,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1337--1341
 
 [62 <./echo_chamber_vs_all_frac_stubb_PR_20-80_8x7.png> <./echo_chamber_vs_all_
 frac_stubb_REC_20-80_8x7.png>]
-<fraction_of_opinions_ER_all_frac_stubb_PR_20-80_8x7.png, id=1175, 227.50597pt 
+<fraction_of_opinions_ER_all_frac_stubb_PR_20-80_8x7.png, id=1177, 227.50597pt 
 x 199.03159pt>
 File: fraction_of_opinions_ER_all_frac_stubb_PR_20-80_8x7.png Graphic file (typ
 e png)
@@ -4244,7 +4182,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1345--1346
 [][] 
  []
 
-<fraction_of_opinions_WS_all_frac_stubb_PR_20-80_8x7.png, id=1176, 227.50597pt 
+<fraction_of_opinions_WS_all_frac_stubb_PR_20-80_8x7.png, id=1178, 227.50597pt 
 x 199.03159pt>
 File: fraction_of_opinions_WS_all_frac_stubb_PR_20-80_8x7.png Graphic file (typ
 e png)
@@ -4258,7 +4196,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1349--1350
 [][] 
  []
 
-<fraction_of_opinions_SBM_all_frac_stubb_PR_20-80_8x7.png, id=1177, 227.50597pt
+<fraction_of_opinions_SBM_all_frac_stubb_PR_20-80_8x7.png, id=1179, 227.50597pt
  x 199.03159pt>
 File: fraction_of_opinions_SBM_all_frac_stubb_PR_20-80_8x7.png Graphic file (ty
 pe png)
@@ -4272,7 +4210,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1353--1354
 [][] 
  []
 
-<fraction_of_opinions_SBM-WS_all_frac_stubb_PR_20-80_8x7.png, id=1178, 227.5059
+<fraction_of_opinions_SBM-WS_all_frac_stubb_PR_20-80_8x7.png, id=1180, 227.5059
 7pt x 199.03159pt>
 File: fraction_of_opinions_SBM-WS_all_frac_stubb_PR_20-80_8x7.png Graphic file 
 (type png)
@@ -4295,7 +4233,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1363--1367
 opinions_WS_all_frac_stubb_PR_20-80_8x7.png> <./fraction_of_opinions_SBM_all_fr
 ac_stubb_PR_20-80_8x7.png> <./fraction_of_opinions_SBM-WS_all_frac_stubb_PR_20-
 80_8x7.png>]
-<echo_chamber_vs_threshold_PR_10x8.png, id=1199, 284.45473pt x 227.50597pt>
+<echo_chamber_vs_threshold_PR_10x8.png, id=1201, 284.45473pt x 227.50597pt>
 File: echo_chamber_vs_threshold_PR_10x8.png Graphic file (type png)
 <use echo_chamber_vs_threshold_PR_10x8.png>
 Package pdftex.def Info: echo_chamber_vs_threshold_PR_10x8.png  used on input l
@@ -4328,7 +4266,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1371--1388
  []
 
 [64] [65 <./echo_chamber_vs_threshold_PR_10x8.png>]
-<echo_chamber_vs_threshold_REF_8x7.png, id=1212, 227.50597pt x 199.03159pt>
+<echo_chamber_vs_threshold_REF_8x7.png, id=1214, 227.50597pt x 199.03159pt>
 File: echo_chamber_vs_threshold_REF_8x7.png Graphic file (type png)
 <use echo_chamber_vs_threshold_REF_8x7.png>
 Package pdftex.def Info: echo_chamber_vs_threshold_REF_8x7.png  used on input l
@@ -4340,7 +4278,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1395--1397
 [][]
  []
 
-<echo_chamber_vs_threshold_REC_8x7.png, id=1213, 227.50597pt x 199.03159pt>
+<echo_chamber_vs_threshold_REC_8x7.png, id=1215, 227.50597pt x 199.03159pt>
 File: echo_chamber_vs_threshold_REC_8x7.png Graphic file (type png)
 <use echo_chamber_vs_threshold_REC_8x7.png>
 Package pdftex.def Info: echo_chamber_vs_threshold_REC_8x7.png  used on input l
@@ -4364,7 +4302,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1407--1413
 
 [66 <./echo_chamber_vs_threshold_REF_8x7.png> <./echo_chamber_vs_threshold_REC_
 8x7.png>]
-<fraction_of_opinions_ER_majT=0_one_sim_8x7.png, id=1224, 227.50597pt x 199.031
+<fraction_of_opinions_ER_majT=0_one_sim_8x7.png, id=1226, 227.50597pt x 199.031
 59pt>
 File: fraction_of_opinions_ER_majT=0_one_sim_8x7.png Graphic file (type png)
 <use fraction_of_opinions_ER_majT=0_one_sim_8x7.png>
@@ -4377,7 +4315,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1417--1419
 [][]
  []
 
-<fraction_of_opinions_WS_majT=0_one_sim_8x7.png, id=1225, 227.50597pt x 199.031
+<fraction_of_opinions_WS_majT=0_one_sim_8x7.png, id=1227, 227.50597pt x 199.031
 59pt>
 File: fraction_of_opinions_WS_majT=0_one_sim_8x7.png Graphic file (type png)
 <use fraction_of_opinions_WS_majT=0_one_sim_8x7.png>
@@ -4390,7 +4328,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1422--1424
 [][]
  []
 
-<fraction_of_opinions_SBM_majT=0_one_sim_8x7.png, id=1226, 227.50597pt x 199.03
+<fraction_of_opinions_SBM_majT=0_one_sim_8x7.png, id=1228, 227.50597pt x 199.03
 159pt>
 File: fraction_of_opinions_SBM_majT=0_one_sim_8x7.png Graphic file (type png)
 <use fraction_of_opinions_SBM_majT=0_one_sim_8x7.png>
@@ -4403,7 +4341,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1427--1429
 [][]
  []
 
-<fraction_of_opinions_SBM-WS_majT=0_one_sim_8x7.png, id=1227, 227.50597pt x 199
+<fraction_of_opinions_SBM-WS_majT=0_one_sim_8x7.png, id=1229, 227.50597pt x 199
 .03159pt>
 File: fraction_of_opinions_SBM-WS_majT=0_one_sim_8x7.png Graphic file (type png
 )
@@ -4451,7 +4389,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1454--1457
  []
 
 [69]
-<fraction_of_opinions_SBM_commOp0=01_other=50-50_REC_high_mod_8x7.png, id=1250,
+<fraction_of_opinions_SBM_commOp0=01_other=50-50_REC_high_mod_8x7.png, id=1252,
  227.50597pt x 199.03159pt>
 File: fraction_of_opinions_SBM_commOp0=01_other=50-50_REC_high_mod_8x7.png Grap
 hic file (type png)
@@ -4465,7 +4403,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1461--1463
 [][]
  []
 
-<fraction_of_opinions_SBM_commOp0=01_other=50-50_PR_high_mod_8x7.png, id=1251, 
+<fraction_of_opinions_SBM_commOp0=01_other=50-50_PR_high_mod_8x7.png, id=1253, 
 227.50597pt x 199.03159pt>
 File: fraction_of_opinions_SBM_commOp0=01_other=50-50_PR_high_mod_8x7.png Graph
 ic file (type png)
@@ -4479,7 +4417,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1466--1468
 [][]
  []
 
-<fraction_of_opinions_SBM_commOp0=01_other=50-50_REC_low_mod_8x7.png, id=1252, 
+<fraction_of_opinions_SBM_commOp0=01_other=50-50_REC_low_mod_8x7.png, id=1254, 
 227.50597pt x 199.03159pt>
 File: fraction_of_opinions_SBM_commOp0=01_other=50-50_REC_low_mod_8x7.png Graph
 ic file (type png)
@@ -4493,7 +4431,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1471--1473
 [][]
  []
 
-<fraction_of_opinions_SBM_commOp0=01_other=50-50_PR_low_mod_8x7.png, id=1253, 2
+<fraction_of_opinions_SBM_commOp0=01_other=50-50_PR_low_mod_8x7.png, id=1255, 2
 27.50597pt x 199.03159pt>
 File: fraction_of_opinions_SBM_commOp0=01_other=50-50_PR_low_mod_8x7.png Graphi
 c file (type png)
@@ -4534,7 +4472,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1484--1494
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [71]
-<fraction_of_opinions_SBM_commOp0_other=50-50_REC_8x7.png, id=1280, 227.50597pt
+<fraction_of_opinions_SBM_commOp0_other=50-50_REC_8x7.png, id=1282, 227.50597pt
  x 199.03159pt>
 File: fraction_of_opinions_SBM_commOp0_other=50-50_REC_8x7.png Graphic file (ty
 pe png)
@@ -4548,7 +4486,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1498--1500
 [][]
  []
 
-<fraction_of_opinions_SBM_commOp0_other=50-50_PR_8x7.png, id=1281, 227.50597pt 
+<fraction_of_opinions_SBM_commOp0_other=50-50_PR_8x7.png, id=1283, 227.50597pt 
 x 199.03159pt>
 File: fraction_of_opinions_SBM_commOp0_other=50-50_PR_8x7.png Graphic file (typ
 e png)
@@ -4592,7 +4530,7 @@ _opinions_SBM_commOp0_other=50-50_PR_8x7.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [73]
-<echo_chambers_SBM_comm01_distr_REC_8x7.png, id=1305, 227.50597pt x 199.03159pt
+<echo_chambers_SBM_comm01_distr_REC_8x7.png, id=1307, 227.50597pt x 199.03159pt
 >
 File: echo_chambers_SBM_comm01_distr_REC_8x7.png Graphic file (type png)
 <use echo_chambers_SBM_comm01_distr_REC_8x7.png>
@@ -4605,7 +4543,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1528--1530
 [][]
  []
 
-<echo_chambers_SBM_comm01_distr_PR_8x7.png, id=1306, 227.50597pt x 199.03159pt>
+<echo_chambers_SBM_comm01_distr_PR_8x7.png, id=1308, 227.50597pt x 199.03159pt>
 
 File: echo_chambers_SBM_comm01_distr_PR_8x7.png Graphic file (type png)
 <use echo_chambers_SBM_comm01_distr_PR_8x7.png>
@@ -4658,7 +4596,7 @@ distr_PR_8x7.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [75]
-<echo_chambers_SBM_comm05_distr_REC_8x7.png, id=1336, 227.50597pt x 199.03159pt
+<echo_chambers_SBM_comm05_distr_REC_8x7.png, id=1338, 227.50597pt x 199.03159pt
 >
 File: echo_chambers_SBM_comm05_distr_REC_8x7.png Graphic file (type png)
 <use echo_chambers_SBM_comm05_distr_REC_8x7.png>
@@ -4671,7 +4609,7 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1561--1563
 [][]
  []
 
-<echo_chambers_SBM_comm05_distr_PR_8x7.png, id=1337, 227.50597pt x 199.03159pt>
+<echo_chambers_SBM_comm05_distr_PR_8x7.png, id=1339, 227.50597pt x 199.03159pt>
 
 File: echo_chambers_SBM_comm05_distr_PR_8x7.png Graphic file (type png)
 <use echo_chambers_SBM_comm05_distr_PR_8x7.png>
@@ -4686,144 +4624,189 @@ Overfull \hbox (4.55478pt too wide) in paragraph at lines 1566--1568
 
 [76 <./echo_chambers_SBM_comm05_distr_REC_8x7.png> <./echo_chambers_SBM_comm05_
 distr_PR_8x7.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 1581--1584
+Underfull \hbox (badness 10000) in paragraph at lines 1581--1586
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1581--1584
+Underfull \hbox (badness 10000) in paragraph at lines 1581--1586
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1581--1586
 
  []
 
 [77]
-<echo_chamber_vs_fracRes_PR_real_network_8x7.png, id=1353, 227.50597pt x 199.03
+<echo_chamber_vs_fracRes_PR_real_network_8x7.png, id=1355, 227.50597pt x 199.03
 159pt>
 File: echo_chamber_vs_fracRes_PR_real_network_8x7.png Graphic file (type png)
 <use echo_chamber_vs_fracRes_PR_real_network_8x7.png>
 Package pdftex.def Info: echo_chamber_vs_fracRes_PR_real_network_8x7.png  used 
-on input line 1591. on input line 1591.
+on input line 1593. on input line 1593.
 Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
-e 1591.
+e 1593.
 
-Overfull \hbox (4.55478pt too wide) in paragraph at lines 1591--1593
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 1593--1595
 [][]
  []
 
-<echo_chamber_vs_fracRes_REC_real_network_8x7.png, id=1354, 227.50597pt x 199.0
+<echo_chamber_vs_fracRes_REC_real_network_8x7.png, id=1356, 227.50597pt x 199.0
 3159pt>
 File: echo_chamber_vs_fracRes_REC_real_network_8x7.png Graphic file (type png)
 <use echo_chamber_vs_fracRes_REC_real_network_8x7.png>
 Package pdftex.def Info: echo_chamber_vs_fracRes_REC_real_network_8x7.png  used
- on input line 1596. on input line 1596.
+ on input line 1598. on input line 1598.
 Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
-e 1596.
+e 1598.
 
-Overfull \hbox (4.55478pt too wide) in paragraph at lines 1596--1598
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 1598--1600
 [][]
  []
 
 [78 <./echo_chamber_vs_fracRes_PR_real_network_8x7.png> <./echo_chamber_vs_frac
 Res_REC_real_network_8x7.png>]
-<echo_chambers_SBM_powerlaw_vs_regular_REC.png, id=1361, 227.50597pt x 199.0315
+<echo_chambers_SBM_powerlaw_vs_regular_REC.png, id=1363, 227.50597pt x 199.0315
 9pt>
 File: echo_chambers_SBM_powerlaw_vs_regular_REC.png Graphic file (type png)
 <use echo_chambers_SBM_powerlaw_vs_regular_REC.png>
 Package pdftex.def Info: echo_chambers_SBM_powerlaw_vs_regular_REC.png  used on
- input line 1609. on input line 1609.
+ input line 1611. on input line 1611.
 Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
-e 1609.
+e 1611.
 
-Overfull \hbox (4.55478pt too wide) in paragraph at lines 1609--1611
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 1611--1613
 [][]
  []
 
-<echo_chambers_SBM_powerlaw_vs_regular_PR.png, id=1362, 227.50597pt x 199.03159
+<echo_chambers_SBM_powerlaw_vs_regular_PR.png, id=1364, 227.50597pt x 199.03159
 pt>
 File: echo_chambers_SBM_powerlaw_vs_regular_PR.png Graphic file (type png)
 <use echo_chambers_SBM_powerlaw_vs_regular_PR.png>
 Package pdftex.def Info: echo_chambers_SBM_powerlaw_vs_regular_PR.png  used on 
-input line 1614. on input line 1614.
+input line 1616. on input line 1616.
 Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
-e 1614.
+e 1616.
 
-Overfull \hbox (4.55478pt too wide) in paragraph at lines 1614--1616
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 1616--1618
 [][]
  []
 
-[79 <./echo_chambers_SBM_powerlaw_vs_regular_REC.png> <./echo_chambers_SBM_powe
-rlaw_vs_regular_PR.png>] [80
 
-]
+Underfull \hbox (badness 10000) in paragraph at lines 1626--1633
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1626--1633
+
+ []
+
+[79 <./echo_chambers_SBM_powerlaw_vs_regular_REC.png> <./echo_chambers_SBM_powe
+rlaw_vs_regular_PR.png>]
+<echo_chamber_vs_fracRes_PR_real_network_PGP_8x7.png, id=1374, 227.50597pt x 19
+9.03159pt>
+File: echo_chamber_vs_fracRes_PR_real_network_PGP_8x7.png Graphic file (type pn
+g)
+<use echo_chamber_vs_fracRes_PR_real_network_PGP_8x7.png>
+Package pdftex.def Info: echo_chamber_vs_fracRes_PR_real_network_PGP_8x7.png  u
+sed on input line 1637. on input line 1637.
+Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
+e 1637.
+
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 1637--1639
+[][]
+ []
+
+<echo_chamber_vs_fracRes_REC_real_network_PGP_8x7.png, id=1375, 227.50597pt x 1
+99.03159pt>
+File: echo_chamber_vs_fracRes_REC_real_network_PGP_8x7.png Graphic file (type p
+ng)
+<use echo_chamber_vs_fracRes_REC_real_network_PGP_8x7.png>
+Package pdftex.def Info: echo_chamber_vs_fracRes_REC_real_network_PGP_8x7.png  
+used on input line 1642. on input line 1642.
+Package pdftex.def Info: Requested size: 227.62689pt x 199.18294pt on input lin
+e 1642.
+
+Overfull \hbox (4.55478pt too wide) in paragraph at lines 1642--1644
+[][]
+ []
+
+[80 <./echo_chamber_vs_fracRes_PR_real_network_PGP_8x7.png> <./echo_chamber_vs_
+fracRes_REC_real_network_PGP_8x7.png>]
 Chapter 6.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1628--1659
+Underfull \hbox (badness 10000) in paragraph at lines 1652--1683
 
  []
 
 
 Underfull \vbox (badness 2478) has occurred while \output is active []
 
- [81]
+ [81
+
+]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [82]
@@ -4833,12 +4816,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [84]
 Chapter 7.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1662--1668
+Underfull \hbox (badness 10000) in paragraph at lines 1686--1692
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1662--1668
+Underfull \hbox (badness 10000) in paragraph at lines 1686--1692
 
  []
 
@@ -4860,22 +4843,22 @@ Appendix B.
 Underfull \vbox (badness 2351) has occurred while \output is active []
 
  [90]
-Underfull \hbox (badness 10000) in paragraph at lines 1819--1824
+Underfull \hbox (badness 10000) in paragraph at lines 1843--1848
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1819--1824
+Underfull \hbox (badness 10000) in paragraph at lines 1843--1848
 
  []
 
 [91]
-Underfull \hbox (badness 10000) in paragraph at lines 1834--1839
+Underfull \hbox (badness 10000) in paragraph at lines 1858--1863
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 1841--1845
+Underfull \hbox (badness 10000) in paragraph at lines 1865--1869
 
  []
 
@@ -4894,18 +4877,18 @@ File: t1zi4.fd 2016/12/29 T1/zi4 (Inconsolata)
 LaTeX Font Info:    Font shape `T1/zi4/m/n' will be
 (Font)              scaled to size 10.95pt on input line 107.
  [94] [95] [96])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1869.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1893.
  [97]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1869.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1893.
  (./draft.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1869.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1869.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1893.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1893.
  ) 
 Here is how much of TeX's memory you used:
- 25244 strings out of 492990
- 442438 string characters out of 6135004
- 547164 words of memory out of 5000000
- 28004 multiletter control sequences out of 15000+600000
+ 25260 strings out of 492990
+ 443096 string characters out of 6135004
+ 547630 words of memory out of 5000000
+ 28017 multiletter control sequences out of 15000+600000
  663509 words of font info for 119 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  40i,14n,87p,10402b,629s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4932,10 +4915,10 @@ exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fon
 ts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type
 1/public/amsfonts/symbols/msam10.pfb>
-Output written on draft.pdf (114 pages, 4210839 bytes).
+Output written on draft.pdf (114 pages, 4327600 bytes).
 PDF statistics:
- 1723 PDF objects out of 1728 (max. 8388607)
- 1461 compressed objects within 15 object streams
- 368 named destinations out of 1000 (max. 500000)
- 281 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1732 PDF objects out of 2073 (max. 8388607)
+ 1466 compressed objects within 15 object streams
+ 369 named destinations out of 1000 (max. 500000)
+ 291 words of extra memory for PDF output out of 10000 (max. 10000000)
 
