@@ -232,7 +232,7 @@ It is known that individuals not only form their opinions through self-reflectio
 \newline
 It is also known that some people change their opinions more easily than others, that is, once in a while you encounter somebody that is really stubborn and persistent towards its own opinion. It is important to understand the effects of individual resistance on the formation and evolution of opinions. When designing models of opinion dynamics on social networks, this individual stubbornness should not be ignored.\\
 \newline
-One important feature of opinion dynamics on social media is the use of algorithmic personalization. Social media allow for simultaneous or asynchronous interactions between people without geographical constraints and thus allow for the spread of information at a faster pace and at an unprecedented scale \cite{Perra2019}. People are, however, still bound by temporal and cognitive constraints. In order to assure a more pleasant and convenient experience on their platforms, social media companies use algorithms to order and filter the posts on an individual's time-line according to what might be relevant to that individual \cite{Perra2019}. It is of great importance to know the possible effects of these filtering algorithms on the evolution of opinions in the population.\\  
+One important feature of opinion dynamics on social media is the use of algorithmic personalization. Social media allow for simultaneous or asynchronous interactions between people without geographical constraints and thus allow for the spread of information at a faster pace and at an unprecedented scale \cite{Perra2019}. People are, however, still bound by temporal and cognitive constraints. In order to assure a more pleasant and convenient experience on their platforms, social media companies use algorithms to order and filter the posts on an individual's time-line according to what might be relevant to that individual \cite{Perra2019}. It is of importance to know the possible effects of these filtering algorithms on the evolution of opinions in the population.\\  
 \newline
 Opinion dynamics models have two important layers. On one hand, we introduce social networks to describe the underlying structure of social interactions; on the other hand, we need appropriate models to reproduce the opinion dynamics and opinion formation processes found in real life.\\
 \newline
@@ -242,7 +242,7 @@ Section \ref{statPhys} introduces concepts such as statistical and social physic
 
 An important tool in the study of opinion dynamics in large groups of people is the use of statistical physics. This branch of physics offers a framework that relates microscopic properties of atoms and molecules to macroscopic observed behavior and has a wide range of applications inside and outside physics. The observation that large number of people display collective, `macroscopic' behavior begged for the use of the concepts and insights developed in statistical physics \cite{Sirbu2016}. The application of the theory of statistical physics on social phenomena is referred to as social physics \cite{Castellano2009}\cite{Galam2008}\cite{Galam1982}\cite{Stauffer2012}. The `microscopic' constituents are now individual humans who interact with a limited number of other individuals and in that way form complex, `macroscopic' groups such as human societies. These `macroscopic' groups display regularities, transitions from disorder to order, the emergence of consensus, universality \cite{Buchanan2007}. The statistical physics approach of these social systems tries to explain the regularities at large scale as collective effects of the interactions among individuals \cite{Sirbu2016}.\\
 \newline
-The statistical approach of social phenomena has one difficulty compared to the description of gases and other physical phenomena. In physics, the microscopic constituents are atoms or molecules, whose dynamics and interactions with each other are often well known and can be put in relatively simple laws with only a few parameters \cite{Castellano2009}. Humans, on the other hand, are far from simple entities and the dynamics of a single individual are far from known \cite{Castellano2009}. Even if the dynamics of individuals would be well know, the interactions between them would still be complicated and it would be hard to describe them with simple laws and only a few parameters \cite{Castellano2009}. Hence, extracting useful and qualitative information out of social models is a challenging task \cite{Castellano2009}. The use of statistical physics may, however, offer a way out. In statistical physics it is found that different systems behave qualitatively the same and are governed by the same laws near the critical point \cite{Hu2018}\cite{Kadanoff2010}. This lead to the concept of universality: many different microscopic problems have the same macroscopic manifestation \cite{Gug2015}\cite{Kadanoff2015}. This idea may then be extended to social systems \cite{Hu2018}: we should not take the unique character of every individual into account, instead these individual characteristics can be incorporated in a sort of averaged way \cite{Gug2015}. One can then proceed to build models of social behavior where only the most important properties of single individuals and their interactions are taken into account \cite{Castellano2009}. An important factor herein is the comparison with empirical data to investigate whether the trends seen in real life are compatible with the outputs generated by the models \cite{Castellano2009}\cite{Pawel}. This interplay between theory, model, experiment and real-life data is not only an important factor in social physics, but also in physical research and science in general.
+The statistical approach of social phenomena has one difficulty compared to the description of gases and other physical phenomena. In physics, the microscopic constituents are atoms or molecules, whose dynamics and interactions with each other are often well known and can be put in relatively simple laws with only a few parameters \cite{Castellano2009}. Humans, on the other hand, are far from simple entities and the dynamics of a single individual are far from known \cite{Castellano2009}. Even if the dynamics of individuals would be well know, the interactions between them would still be complicated and it would be hard to describe them with simple laws and only a few parameters \cite{Castellano2009}. Hence, extracting useful and qualitative information out of social models is a challenging task \cite{Castellano2009}. The use of statistical physics may, however, offer a way out. In statistical physics different systems behave qualitatively the same and are governed by the same laws near the critical point \cite{Hu2018}\cite{Kadanoff2010}. This lead to the concept of universality: many different microscopic problems have the same macroscopic manifestation \cite{Gug2015}\cite{Kadanoff2015}. This idea may then be extended to social systems \cite{Hu2018}: we should not take the unique character of every individual into account, instead these individual characteristics can be incorporated in a sort of averaged way \cite{Gug2015}. One can then proceed to build models of social behavior where only the most important properties of single individuals and their interactions are taken into account \cite{Castellano2009}. An important factor herein is the comparison with empirical data to investigate whether the trends seen in real life are compatible with the outputs generated by the models \cite{Castellano2009}\cite{Pawel}. This interplay between theory, model, experiment and real-life data is not only an important factor in social physics, but also in physical research and science in general.
 \newpage
 \noindent
 \section{Complex networks}\label{complNet}
@@ -256,7 +256,7 @@ Representing a complex system as a network makes the system appear simpler and t
 \newline
 The advantage of working with network models is that they reduce the level of complexity encountered in the real world, so that one can treat these systems in a more practical way. However, we still want our models to display properties similar to the ones seen in real systems \cite{Mata2020}. Since many real systems are not static but evolve in time, this means that we do not only need to deal with static networks but also with temporal networks. Temporal networks are networks where the edges are not always active, but instead become active for some periods of time \cite{Holme2012}. In temporal networks time becomes an explicit element in the network representation \cite{Holme2012}. Static networks have been widely studied and are often convenient for their analytic tractability, whereas temporal networks are, in some cases, more realistic \cite{Mata2020}.\\
 \newline
-Some other important concepts in network theory are the degree distribution, clustering, community structure and connectivity. These concepts will be explained in depth in Chapter \ref{chap2}, Section \ref{netDef}, but let us already anticipate on the case of social networks. It is found that many real-life social systems have a power-law degree distribution \cite{Muchnik2013}. This heterogeneous or scale-free degree distribution represents one of the three general properties of social networks. The other two are short distances and high clustering, also referred to as ``small world phenomenon'' (note that in the literature the term ``small world'' sometimes only refers to the property of short distances, however, in this thesis, we will use it to indicate both a high clustering and short distances) \cite{Muchnik2013}. Ideally, our theoretical network should exhibit these three properties. Some theoretical networks, that are thoroughly studied, do not possess all of them. However, they might still be used, because of their simplicity and ability to produce analytic results. When using these models one must always bear in mind their limitations to reproduce some properties encountered in real social systems. \\
+Some other important concepts in network theory are the degree distribution, clustering, community structure and connectivity. These concepts will be explained in depth in Chapter \ref{chap2}, Section \ref{netDef}, but let us already anticipate on the case of social networks. Many real-life social systems have a power-law degree distribution \cite{Muchnik2013}. This heterogeneous or scale-free degree distribution represents one of the three general properties of social networks. The other two are short distances and high clustering, also referred to as ``small world phenomenon'' (note that in the literature the term ``small world'' sometimes only refers to the property of short distances, however, in this thesis, we will use it to indicate both a high clustering and short distances) \cite{Muchnik2013}. Ideally, our theoretical network should exhibit these three properties. Some theoretical networks, that are thoroughly studied, do not possess all of them. However, they might still be used, because of their simplicity and ability to produce analytic results. When using these models one must always bear in mind their limitations to reproduce some properties encountered in real social systems. \\
 \newline
 The theoretical network models used in this thesis are the Erd\H{o}s-R\'{e}nyi network, the stochastic block model and the Watts-Strogatz model. These will be explained thoroughly in Chapter \ref{chap2}, Section \ref{netModel}. 
 
@@ -266,7 +266,7 @@ The formation of an individual's opinion is the result of the interplay of many 
 \newline
 The basic idea of all opinion dynamics models is that the nodes or actors in a social network have a variable that represents their opinion and that is updated according to some predefined rules. These models are a simplification of real-world opinion dynamics. It is however shown that they display aspects of real opinion formation such as agreement, transitions between order (consensus) and disorder (fragmentation), polarization and formation of echo chambers (clusters of people with the same opinion) \cite{Sirbu2016}. \\
 \newline
-The opinion of the actors in the model can be either discrete or continuous. This thesis deals with models where each actor can have one of the two opinions, A or B, and thus only deals with the case of discrete opinions. This might come across as a simplification of the real-world complexity of opinion formation, but also in real life people often have to choose between two competing opinions (e.g. republicans or democrats, renting or buying a house). \\
+The opinion of the actors in the model can be either discrete or continuous. This thesis deals with models where each actor can have one of two opinions, A or B, and thus only deals with the case of discrete opinions. This might come across as a simplification of the real-world complexity of opinion formation, but also in real life people often have to choose between two competing opinions (e.g. republicans or democrats, renting or buying a house). \\
 \newline
 The rules that determine how an actor updates his or her opinion can include many different aspects. They can, for example, be as simple as a majority rule (i.e. the majority model: if the majority of your neighbors have a certain opinion, you adopt that opinion as well) or can include a probabilistic way of updating. An overview of possible opinion dynamics models is given in Chapter \ref{chap3}, Section \ref{Bin} and Section \ref{Con}. \\
 \newline
@@ -411,14 +411,14 @@ A measure that is closely related to the clustering coefficient is the transitiv
 \newline
 A connected triple is defined as a set of three nodes with at least two edges between them, so that each node can be reached from the other two (either directly or indirectly) \cite{Newman2003}. The factor three arises from the fact that each triangle contributes to three different connected triples in the network: one centered at each node in the triangle \cite{F.Costa2007}. \\
 \newline
-Let us denote the number of triangles as $N_{\Delta}$ and the number of connected triples as $N_3$. These two numbers can be obtained from the adjacency matrix \cite{F.Costa2007}
+Let us denote the number of triangles as $N_{\Delta}$ and the number of connected triples as $N_3$. These two numbers can be obtained from the adjacency matrix
 \begin{align}
 	N_{\Delta} &= \sum_{k > j > i} A_{ij}A_{ik}A_{jk} \ , \\
 	N_3 &= \sum_{k > j > i} (A_{ij}A_{ik} + A_{ji}A_{jk} + A_{ki}A_{kj}) \ ,
 \end{align}
 \newpage
 \noindent
-where $A_{ij}$ are the elements of the adjacency matrix. It is possible to define the transitivity of one node as \cite{F.Costa2007}
+where $A_{ij}$ are the elements of the adjacency matrix \cite{F.Costa2007}. It is possible to define the transitivity of one node as
 \begin{equation}\label{trans}
 	T_i = \frac{N_{\Delta}(i)}{N_3(i)} \ ,
 \end{equation}
@@ -427,7 +427,7 @@ where $N_{\Delta}(i)$ represents the number of triangles that involve node $i$ a
 	N_{\Delta}(i) &= \sum_{k > j} A_{ij}A_{ik}A_{jk} \ , \\
 	N_3(i) &= \sum_{k > j} A_{ij}A_{ik} \ .
 \end{align}
-$N_{\Delta}(i)$ counts the number of edges between the neighbors of $i$ and $N_3(i)$ is equal to $k_i(k_i-1)/2$, where $k_i$ is the degree of node $i$. The local clustering coefficient $cc_i$ (Eq. (\ref{clus})) of a node and the transitivity $T_i$ (Eq. (\ref{trans})) of a node define the same quantity \cite{F.Costa2007}. This however not the case for the average clustering coefficient $\left<cc\right>$ and the global transitivity $T$. The difference between the two definitions is that the average of Eq. (\ref{globalTrans}) gives the same weight to each triangle in the network, whereas Eq. (\ref{avClus}) gives the same weight to each node \cite{Newman2003}. This may lead to slightly different values since nodes with a higher degree may possibly be involved in a higher number of triangles than nodes with a lower degree \cite{F.Costa2007}.
+$N_{\Delta}(i)$ counts the number of edges between the neighbors of $i$ and $N_3(i)$ is equal to $k_i(k_i-1)/2$, where $k_i$ is the degree of node $i$. The local clustering coefficient $cc_i$ (Eq. (\ref{clus})) of a node and the transitivity $T_i$ (Eq. (\ref{trans})) of a node define the same quantity \cite{F.Costa2007}. This is not the case for the average clustering coefficient $\left<cc\right>$ and the global transitivity $T$. The difference between the two definitions is that the average of Eq. (\ref{globalTrans}) gives the same weight to each triangle in the network, whereas Eq. (\ref{avClus}) gives the same weight to each node \cite{Newman2003}. This may lead to slightly different values since nodes with a higher degree may possibly be involved in a higher number of triangles than nodes with a lower degree \cite{F.Costa2007}.
 	
 \subsection{Network communities}
 
@@ -456,11 +456,11 @@ A weak community is a community where the sum of the internal degree of all the 
 
 The modularity $Q$ is a measurement that represents the quality of a particular division of a network into different communities \cite{F.Costa2007}. It was proposed after the fundamental problem arised for real networks concerning how to best divide the network into its constituent communities \cite{F.Costa2007}. Generally, no a priori information is available about the number of existing communities in real networks \cite{F.Costa2007}.\\
 \newline
-The modularity of a network with $N$ nodes and $L$ edges and partitioned into $n_c$ communities is calculated as follows. Each community has $N_c$ nodes and $L_c$ edges ($c = 1,..., n_c$) \cite{Albert2016}. The modularity of a community $Q_c$ is then calculated by measuring the difference between the network's real wiring diagram (which is given by the adjacency matrix $A_{ij}$) and the expected number of edges between $i$ and $j$ if the network is randomly wired (where $i$ and $j$ are two nodes that lie in the same community $C_c$) \cite{Albert2016}. This last quantity is given by $p_{ij}$, which is obtained by randomizing the original network while keeping the expected degree of each node unchanged \cite{Albert2016}. Hence, the modularity of a community $Q_c$ becomes \cite{Albert2016}
+The modularity of a network with $N$ nodes and $L$ edges and partitioned into $n_c$ communities is calculated as follows. Each community has $N_c$ nodes and $L_c$ edges ($c = 1,..., n_c$) \cite{Albert2016}. The modularity of a community $Q_c$ is then calculated by measuring the difference between the network's real wiring diagram (which is given by the adjacency matrix $A_{ij}$) and the expected number of edges between $i$ and $j$ if the network is randomly wired (where $i$ and $j$ are two nodes that lie in the same community $C_c$) \cite{Albert2016}. This last quantity is given by $p_{ij}$, which is obtained by randomizing the original network while keeping the expected degree of each node unchanged \cite{Albert2016}. Hence, the modularity of a community $Q_c$ becomes
 \begin{equation}
 	Q_c = \frac{1}{2L}\sum_{(i,j) \in C_c} (A_{ij} - p_{ij}) \ ,
 \end{equation}
-where the factor $\frac{1}{2L}$ is a normalization factor. If we randomly wire the network, using the degree preserving null model, we find the probability that nodes with degree $k_i$ and degree $k_j$ are connected to each other \cite{Bara2016}
+where the factor $\frac{1}{2L}$ is a normalization factor \cite{Albert2016}. If we randomly wire the network, using the degree preserving null model, we find the probability that nodes with degree $k_i$ and degree $k_j$ are connected to each other \cite{Bara2016}
 \begin{equation}\label{pij}
 	p_{ij} = \frac{k_ik_j}{2L} \ .
 \end{equation}
@@ -476,11 +476,11 @@ where $L_c$ is the total number of edges in the community $C_c$ and $k_c$ is the
 \end{equation}
 The derivation of this formula, and thus of Eq. (\ref{Qc}), can be found in Appendix \ref{modul}, Section \ref{simplemod}. The modularity $Q$ can have values in the interval $\interval{-1}{1}$ and has the following properties \cite{Albert2016}: (i) The higher the value of $Q$ for a certain partition, the better the corresponding community structure. This idea is used in community detection algorithms, where modularity is maximized in order to find the optimal community structure; (ii) A modularity $Q$ equal to zero corresponds to the situation where all nodes are put in the same community, this is, if the whole network is put into a single community. Then the two terms in Eq. (\ref{mod}) become equal and $Q$ vanishes; (iii) If every node is put into a separate community, the first term in Eq. (\ref{mod}) vanishes and we are left with $n_c$ negative terms. Hence, this situation corresponds to a negative modularity.\\
 \newline
-Modularity is often used in community detection algorithms. One of the shortcomings of modularity maximization as community detection is its resolution limit. Modularity maximization forces small communities into larger ones \cite{Albert2016}. If two communities $A$ and $B$ are merged, the modularity changes by \cite{Albert2016}
+Modularity is often used in community detection algorithms. One of the shortcomings of modularity maximization as community detection is its resolution limit. Modularity maximization forces small communities into larger ones \cite{Albert2016}. If two communities $A$ and $B$ are merged, the modularity changes by
 \begin{equation}
 	\Delta Q_{AB} = \frac{l_{AB}}{L} - \frac{k_Ak_B}{2L^2} \ ,
 \end{equation}
-where $l_{AB}$ is the number of direct edges that connect nodes in community $A$ with nodes in community $B$; $k_A$ and $k_B$ are the total degree of nodes in communities $A$ and $B$ respectively. The derivation of this formula is found in Appendix \ref{modul}, Section \ref{modchange}. If $A$ and $B$ are distinct communities, they should remain distinct when $Q$ is maximized \cite{Albert2016}. This is however not always the case. Consider the case where $\frac{k_Ak_B}{2L} < 1$ and there is at least one edge between $A$ and $B$ ($l_{AB} \geqslant 1$), then $\Delta Q_{AB} \geqslant 0$ and the modularity increases by merging the two communities \cite{Albert2016}. Assume for simplicity that $k_A = k_B = k$, then modularity is increased by merging $A$ and $B$ if
+where $l_{AB}$ is the number of direct edges that connect nodes in community $A$ with nodes in community $B$; $k_A$ and $k_B$ are the total degree of nodes in communities $A$ and $B$ respectively \cite{Albert2016}. The derivation of this formula is found in Appendix \ref{modul}, Section \ref{modchange}. If $A$ and $B$ are distinct communities, they should remain distinct when $Q$ is maximized \cite{Albert2016}. This is however not always the case. Consider the case where $\frac{k_Ak_B}{2L} < 1$ and there is at least one edge between $A$ and $B$ ($l_{AB} \geqslant 1$), then $\Delta Q_{AB} \geqslant 0$ and the modularity increases by merging the two communities \cite{Albert2016}. Assume for simplicity that $k_A = k_B = k$, then modularity is increased by merging $A$ and $B$ if
 \begin{equation}\label{reslim}
 	k \leqslant \sqrt{2L} \ ,
 \end{equation}
@@ -569,11 +569,11 @@ The random network ($\beta = 1$), on the other hand, has a low clustering coeffi
 \begin{align}
 	\left<cc(1)\right> \approx \frac{K}{N} \ll 1 \ , && \left<d(1)\right> \approx \frac{\ln{N}}{\ln{K}} \ .
 \end{align}
-Watts and Strogatz showed by numerical simulations that the average distance for the networks with $0 < \beta < 1$ is comparable with the average distance of a random network (which is small), even for small $\beta$ \cite{Newman2000}. The clustering coefficient is approximately given by \cite{Barrat1999}
+Watts and Strogatz showed by numerical simulations that the average distance for the networks with $0 < \beta < 1$ is comparable with the average distance of a random network (which is small), even for small $\beta$ \cite{Newman2000}. The clustering coefficient is approximately given by
 \begin{equation}
 	\left<cc\right> \approx \left<cc(0)\right>(1-\beta)^3 \ ,
 \end{equation} 
-where $\left<cc(0)\right>$ is given by Eq. (\ref{C0}). This can be seen in the following way: (i) The probability that none of the three edges of the original triangles in the regular lattice are rewired is $(1-\beta)^3$; (ii) The probability that edges are rewired back to each other is negligible.\\
+where $\left<cc(0)\right>$ is given by Eq. (\ref{C0}) \cite{Barrat1999}. This can be seen in the following way: (i) The probability that none of the three edges of the original triangles in the regular lattice are rewired is $(1-\beta)^3$; (ii) The probability that edges are rewired back to each other is negligible.\\
 \newline
 For small values of $\beta$, the clustering coefficient remains high. The model of Watts and Strogatz is thus able to generate random networks with a high clustering coefficient and short average distances. The Watts-Strogatz network has a homogeneous, bell shaped degree distribution with an average degree equal to $\left<k\right> = K$ \cite{Barrat1999}.
 
@@ -589,7 +589,7 @@ The stochastic block model includes the Erd\H{o}s-R\'{e}nyi model \cite{Clauset2
 \newline
 The stochastic block model can be fitted to data \cite{Clauset2017}. Given a choice of the number of communities $k$ and an observed network $G$, the stochastic block model can be used to infer the latent community structure and the edge probability matrix $M$ \cite{Clauset2017}. One of the shortcomings of fitting the SBM to infer the community structure, is that real-world networks often have a heterogeneous or power-law degree distribution. Since the SBM is made of random networks inside each group and random bipartite networks between each pair of groups, the degree distribution of the full network is always a mixture of Poisson distributions \cite{Clauset2017}. The consequence of this is that if a network possesses a more skewed degree distribution, then fitting the SBM to the data will most likely give poor results \cite{Karrer2011}. The reason behind this is one of the main assumptions of the stochastic block model: the edge probabilities only depend on which group the node belongs to \cite{Clauset2017}. In other words, nodes that belong to the same group are stochastically equivalent, meaning that they have equivalent connectivity patterns to other nodes \cite{Clauset2017}. However, a network with a skewed degree distribution violates this assumption of edge independence \cite{Clauset2017}. To say it in the words of Karrer and Newman: ``Just as the fitting of a straight line to intrinsically curved data is likely to miss important features of the data, so a fit of the simple stochastic block model to the structure of a complex network is likely to miss much [...].'' (Karrer and Newman, p.1, \cite{Karrer2011}). Karrer and Newman proposed a variation of the SBM, the degree corrected SBM, that deals with this limitation. We will not discuss their variation, since that would lead us too far astray, but interested readers can find more detailed information in \cite{Karrer2011}. \\
 \newline
-An extension that we are going to explore a bit deeper is the stochastic Watts-Strogatz block model (SBM-WS).\\
+An extension that we are going to explore deeper is the stochastic Watts-Strogatz block model (SBM-WS).\\
 \newline
 \textbf{The stochastic Watts-Strogatz block model (SBM-WS)}\\
 \newline
@@ -602,108 +602,110 @@ The construction of the model is similar to that of the regular stochastic block
 
 Many natural and man-made systems can be described with the help of complex networks. Complex networks are suited to represent almost any discrete system \cite{Costa2008}. Social networks are applications of complex networks to social systems. In social networks the nodes usually represent an individual and edges can e.g. represent friendship ties between these individuals; such a network is called a friendship network. Other examples of social networks are sexual networks, in which the edges denote sexual contacts between the individuals and email networks, in which directed edges represent an email send from individual $i$ to individual $j$ \cite{Costa2008}. There are also plenty of other real-world network such as collaboration networks, where the nodes are usually scientists and edges indicate professional ties between them; citation networks, where nodes represent scientific papers and the directed edges report citations and protein-protein interaction networks, in which nodes stand for proteins and edges indicate physical interactions between them \cite{Costa2008}. These examples of real-world networks are only a handful. A comprehensive review can be found in \cite{Costa2008}.\\
 \newline
-The models discussed in the previous sections are idealized and simplified. They may posses some of the characteristics of real-world networks, but they certainly do not always describe real-world networks appropriately. The question then arises: What are the main characteristics of real-world networks, and more specifically of real-world social networks? Another important question that can be asked is whether or not there is a significant difference between off-line social networks and on-line social networks?\\
+The models discussed in the previous sections are idealized and simplified. They may posses some of the characteristics of real-world networks, but they do not always describe real-world networks appropriately. Here, we will list some of the main  characteristics of real-world networks, and more specifically of real-world social networks. An important question that can be asked is whether there is a significant difference between off-line social networks and on-line social networks.\\
 \newline
-As discussed briefly in the introduction, it is found that real-world networks often posses three characteristic properties. These are the two properties of the ``small world phenomenon'', namely a short average distance and a high clustering coefficient, and a heterogeneous or power-law degree distribution \cite{RealWorld}. These properties are valid for both off-line and on-line social networks \cite{Zhang2014}. Lets discuss them in a bit more detail.\\
+As discussed briefly in the introduction, real-world networks often posses three characteristic properties. These are the two properties of the ``small world phenomenon'', namely a short average distance and a high clustering coefficient, and a heterogeneous or power-law degree distribution \cite{RealWorld}. These properties are valid for both off-line and on-line social networks \cite{Zhang2014}. Lets discuss them in more detail.\\
 \newline
 \textbf{Short average distance}\\
 \newline
-In the late 1960's Stanley Milgram performed a, what is now famous, experiment \cite{Newman2003}. He asked randomly selected people in Boston and Omaha to forward a letter to a distant target person. The letter could, however, only be sent to acquaintances, thought to be closer to the target person \cite{RealWorld}. The remarkable result of this experiment was that the average number of steps between the sender and the target person was only around six. This phenomenon is now often referred to as ``six degrees of separation'' \cite{RealWorld}.\\
+In the late 1960's Stanley Milgram performed a, what is now famous, experiment \cite{Newman2003}. He asked randomly selected people in Boston and Omaha to forward a letter to a distant target person. The letter could only be sent to acquaintances, thought to be closer to the target person \cite{RealWorld}. The result of this experiment was that the average number of steps between the sender and the target person was around six. This phenomenon is often referred to as ``six degrees of separation'' \cite{RealWorld}.\\
 \newline
-This phenomenon is also observed in many other real-world networks: in most real-world networks it is possible to go from one node to another node through a number of edges that is small compared to the system size \cite{RealWorld}. Such networks usually have an average distance that depends logarithmically on the system size instead of linearly \cite{Newman2003}. A short average distance facilitates a fast transmission of information \cite{Newman2003}\cite{Zhang2014}.\\
-\newpage
-\noindent
+This phenomenon is also observed in other real-world networks: in most real-world networks it is possible to go from one node to another node through a number of edges that is small compared to the system size \cite{RealWorld}. Such networks usually have an average distance that depends logarithmically on the system size instead of linearly \cite{Newman2003}. A short average distance facilitates a fast transmission of information \cite{Newman2003}\cite{Zhang2014}.\\
+\newline
 \textbf{High clustering coefficient}\\
 \newline
-In real-world social networks, one often observes the pattern that two friends of an individual are also friends of each other \cite{RealWorld}. In network terminology, this is translated into a high clustering coefficient (which quantifies a large number of triangles in the network) \cite{RealWorld}. This property is not only found in social networks, but also in a wide variety of different real-world networks \cite{RealWorld}.\\
+In real-world social networks, one often observes the pattern that two friends of an individual are also friends of each other \cite{RealWorld}. In graph terminology, this is translated into a high clustering coefficient (which quantifies a large number of triangles in the network) \cite{RealWorld}. This property is not only found in social networks, but also in a wide variety of different real-world networks \cite{RealWorld}.\\
 \newline
 \textbf{Heterogeneous or power-law degree distribution}\\
 \newline
-Many real-world networks are found to have a power-law degree distribution \cite{RealWorld}
+Many real-world networks are found to have a power-law degree distribution
 \begin{equation}
 	P(k) \sim k^{-\gamma} \ ,
 \end{equation}
-where the exponent $\gamma$ often lies between 2 and 3. Networks with a power-law degree distribution are also called heterogeneous or scale-free networks. The term scale-free refers to the fact that there is no characteristic scale in the network. Compared to the homogeneous network, where each node has a degree close to the average degree $\left<k\right>$ (hence, this average degree serves as a characteristic scale of the system), the heterogeneous network has many nodes with a low degree and a few nodes with a high degree (these nodes are referred to as hubs). If the exponent $\gamma$ is smaller or equal to two ($\gamma \leqslant 2$), the average degree diverges \cite{Newman2005}. Simple scale-free networks with an exponent smaller than two, however, cannot exist, since the largest hubs grow faster than the network size $N$ \cite{Barabasi2016}. If $2 < \gamma < 3$ (which is the case for most real-world networks), there is a finite average degree, but a diverging variance \cite{Newman2005}. A diverging variance means that the fluctuations around the average can be arbitrary large, which makes this average degree no longer a characteristic scale for the system \cite{Barabasi2016}.\\
+where the exponent $\gamma$ often lies between 2 and 3 \cite{RealWorld}. Networks with a power-law degree distribution are also called heterogeneous or scale-free networks. The term scale-free refers to the fact that there is no characteristic scale in the network: the system is invariant over different scales. Compared to the homogeneous network, where each node has a degree close to the average degree $\left<k\right>$ (hence, this average degree serves as a characteristic scale of the system), the heterogeneous network has many nodes with a low degree and a few nodes with a high degree (these nodes are referred to as hubs). If the exponent $\gamma$ is smaller or equal to two ($\gamma \leqslant 2$), the average degree diverges \cite{Newman2005}. Simple scale-free networks with an exponent smaller than two cannot exist, because the largest hubs grow faster than the network size $N$ \cite{Barabasi2016}. If $2 < \gamma < 3$ (which is the case for most real-world networks), there is a finite average degree, but a diverging variance in the limit of infinite system size ($N \rightarrow \infty$) \cite{Newman2005}. Real networks always have finite sizes, so there is always a finite average degree and variance. This variance would, however, be meaningless \cite{Newman2005}. A diverging variance means that the fluctuations around the average can be arbitrary large \cite{Barabasi2016}.\\
 \newline
-It should be noted that not all real-world networks have a heterogeneous degree distribution. And even if the degree distribution is heterogeneous or fat-tailed, it does not always need to follow a power-law. The degree distribution can e.g. also be a power-law with an exponential cut-off, a log-normal distribution or a stretched exponential \cite{Newman2005}.\\
+Not all real-world networks have a heterogeneous degree distribution. Even if the degree distribution is heterogeneous or fat-tailed, it does not always follow a power-law. The degree distribution can e.g. also be a power-law with an exponential cut-off, a log-normal distribution or a stretched exponential \cite{Newman2005}.\\
 \newline
-These three main characteristics are valid for on- and off-line social networks. Another property that is found in most on- and off-line networks is the appearance of a giant component, this is, most nodes belong to the same connected component \cite{Latapy}. They also often posses a modular structure \cite{Ferrara2012}\cite{McGlohon2011}. \\
+These three main characteristics are valid for on- and off-line social networks. Another property that is found in most on- and off-line networks is the appearance of a giant component, that is, most nodes belong to the same connected component \cite{Latapy}. They also often posses a modular structure \cite{Ferrara2012}\cite{McGlohon2011}. \\
 \newline
-There are, however, some properties that are different between on-line and off-line social networks. One of them might be the degree correlations or mixing pattern. It is commonly assumed and accepted that most real-life social networks have an assortative mixing pattern (this distinguishes them from other real-world networks, e.g. biological networks \cite{F.Costa2007}, which often have a disassortative pattern) \cite{Hu2009}\cite{Zhang2014}. For a long time, it was thought that this is also valid for on-line social networks. However, recent research has shown that a lot of on-line social networks display disassortative mixture \cite{Hu2009}\cite{Zhang2014}. This discrepancy between real-life social networks and on-line social networks may be explained as follows. In real life, `ordinary people' often want to be friends with celebrities, however, the celebrities usually prefer to stay within their own circles \cite{Hu2009}\cite{Zhang2014}. The `ordinary people' do not have access to these circles and we are left with the situation where `ordinary people' interact with `ordinary people' and celebrities hang out among other celebrities; hence, an assortative structure. In on-line social networks, `ordinary people' can easily connect with the celebrity and vice-versa, the celebrity wants to show his/her importance and influence by the number of fans \cite{Hu2009}\cite{Zhang2014}. This leads to a disassortative mixing pattern.
-% also talk about size of groups that people can maintain?
+There are, however, some properties that are different between on-line and off-line social networks. One of them is the degree correlations or mixing pattern. It is often said that most real-life social networks have an assortative mixing pattern (this would distinguish them from most other real-world networks, e.g. biological networks \cite{F.Costa2007}, which often have a disassortative pattern) \cite{Fisher2017}\cite{Hu2009}\cite{Zhang2014}. This assumption of the assortative nature of social networks has however been questioned \cite{Fisher2017}\cite{Whitney2010}. For a long time, it was thought that this assortative mixing is also valid for on-line social networks. However, recent research has shown that a number of on-line social networks display disassortative mixture \cite{Holme2004}\cite{Hu2009}\cite{Zhang2014}. This discrepancy between real-life and on-line social networks may be explained as follows. In real life, `ordinary people' often want to be friends with celebrities, however, the celebrities usually prefer to stay within their own circles \cite{Hu2009}\cite{Zhang2014}. The `ordinary people' do not have access to these circles and we are left with the situation where `ordinary people' interact with `ordinary people' and celebrities hang out among other celebrities; hence, an assortative structure. In on-line social networks, `ordinary people' can easily connect with the celebrity and vice-versa, the celebrity wants to show his or her importance and influence by the number of fans \cite{Hu2009}\cite{Zhang2014}. This leads to a disassortative mixing pattern.
+
+\section{Temporal networks}
+
+Real-life systems are often not static but evolve in time. In order to represent these systems appropriately, we need temporal networks. In temporal networks, the edges (or nodes) are not continuously active \cite{Holme2012}. Instead, edges (or nodes) become active and inactive over time and time becomes an explicit element of the network representation \cite{Holme2012}. An example of such temporal networks in real life are communication networks such as the phone network where edges represent instantaneous contacts \cite{Holme2012}. Other examples of applications of temporal networks are the application to the dynamics of functional brain connectivity \cite{Thompson2017} and the application to infrastructure networks \cite{Salama2020}.\\
+\newline
+Temporal networks require different methods for analyzing topological and temporal structures \cite{Holme2012}\cite{Holme2021}. The time ordering can e.g. influence the transitivity of edges: in a static network, if A is connected to B and B is connected to C, then A is indirectly connected to C; in temporal networks this does not need to be so, if A is connected to B at some time $t$ and B is connected to C at some time $t'$ later, then A is not indirectly connected to C \cite{Holme2012}.\\
+\newline
+Not all temporal systems should be modeled by a temporal network. Projecting a temporal system on a static network looses some information, but the analysis of temporal networks is more complex and involved. A trade-off should be made to see whether the more complex structure of temporal networks outweighs the loss of information when modeling the system as a static network \cite{Holme2012}. Another situation in which it is not necessary to model the system as a temporal network is when the dynamical system on the network is too rapid compared to the dynamics of the edges \cite{Holme2012}.\\
+\newline
+We will not go into too much detail. A review of temporal networks and related measurements is found in \cite{Holme2012} and \cite{Holme2021}.
 
 \chapter{Opinion dynamics}
 \label{chap3}
-The study of opinion dynamics in a group of people, as mentioned in the introduction, has two major layers: a network layer and an opinion dynamics layer. The network layer, which describes the underlying structure and correlations between the actors, is intensively described in the previous chapter, Chapter \ref{chap2}. The current chapter focuses on the second layer, that of the opinion dynamics models. These models need to describe, in a simplified way, how opinions are formed and how they evolve in a group of people that interact in a certain way. Hence, these opinion dynamics are the dynamics that run on the underlying network structure.\\
+The study of opinion dynamics in a group of people has two layers: a network layer and an opinion dynamics layer. The network layer, which describes the underlying structure and correlations between the actors, is described in the previous chapter, Chapter \ref{chap2}. This chapter focuses on the second layer, that of the opinion dynamics models. These models describe how opinions are formed and how they evolve in a group of people that interact socially. Hence, these opinion dynamics are the dynamics that run on the underlying network structure.\\
 \newline
-We will study models for the filtering algorithms used by social media companies (Section \ref{filter}). This is needed because this thesis deals with opinion dynamics on on-line social media, so the aspect of filtering cannot be ignored in the formation and evolution of opinions.\\
+Several opinion dynamics models have been proposed; here we will review some of the most important ones. There are two groups of opinion dynamics models, namely binary or discrete models and continuous approaches. These will be discussed in Section \ref{Bin} and Section \ref{Con}, respectively. This thesis only deals with binary opinion dynamics models; the continuous models will be reviewed in order to give a more complete overview.\\
 \newline
-We will also discuss the activation mechanism (Section \ref{actMech}). This is the mechanism that describes the timings in which content or information is exchanged between users \cite{Perra2019}. Such a mechanism changes the network from a static one to a temporal one, where actors become active and inactive over time. \\
-\newline
-Several models have been proposed; here we will review some of the most important ones, with the main focus on the models used in this thesis. There are two major groups of opinion dynamics models, namely binary or discrete models and continuous approaches. These will be discussed in Section \ref{Bin} and Section \ref{Con}, respectively. This thesis only deals with binary opinion dynamics models, so these will be thoroughly described; the continuous models will be quickly reviewed in order to give a more complete overview.\\
-\newline
-Finally, in Section \ref{stubb}, the introduction of stubborn actors is discussed.
+In section \ref{actMech}, we will pay attention to the activation mechanism. This is the mechanism that describes the timings in which information is exchanged between actors \cite{Perra2019}. Such mechanism changes the network from a static one to a temporal one, where actors become active and inactive over time. Then, in Section \ref{stubb}, the introduction of stubborn actors will be discussed. Section \ref{filter} will study filtering algorithms used by social media companies. This is needed because this thesis deals with opinion dynamics on on-line social networks, so the aspect of filtering cannot be ignored in the formation and evolution of opinions. Finally, in Section \ref{modelThesis} the opinion dynamics model and the filtering algorithms of this thesis will be summarized.
 
 \section{Binary models}\label{Bin}
 % Talk about Ising model???
 
-Binary models are models where each actor can have one of the two opinions A or B. A binary model could reflect real-life cases where there exist two competing opinions, such as a vote in an election system with two competing candidates or choosing between Windows and Linux \cite{Nguyen2020}.\\
+Binary models are models where each actor can have one of two opinions A or B. A binary model could reflect real-life where there exist two competing opinions, such as a vote in an election system with two competing candidates or choosing between Windows and Linux \cite{Nguyen2020}.\\
 \newline
-In this section, some binary models will be discussed; note, however, that the models described here are far from all the models that currently exist.
+In this section, the most important binary models will be discussed.
 
 \subsection{The majority model}\label{majModel}
 
-One of the simplest opinion dynamics models is the binary majority model. Each actor has one of the two opinions A or B. Initially, these opinions can be equally distributed or not. If the distribution is not equal, but instead e.g. $80/20$, there is a predominant opinion and a minority opinion. The following updating rule is imposed on the network: each actor adopts the majority opinion of his/her nearest neighbors \cite{Nguyen2020}. Initially each actor is assigned an opinion; then the opinions are evolved in time: each individual iteratively updates his/her opinion according to the majority opinion of his/her direct neighbors \cite{Nguyen2020}.\\
+One of the simplest opinion dynamics models is the binary majority model. Each actor has one of two opinions, A or B. Initially, these opinions can be equally distributed or not; the starting conditions can be balanced or unbalanced. Balanced starting conditions indicate the initial situation where $50 \%$ of the actors is given opinion A and $50 \%$ of the actors is given opinion B. The opinions are usually randomly assigned; this is however not necessary and opinions can e.g. also be assigned according to the community a certain actor belongs to. If the starting condition are unbalanced, we have a majority and a minority opinion. E.g. $80 \%$ of the actors can be assigned opinion A and $20 \%$ of the actors is then given opinion B. Hence, opinion A is the predominant or majority opinion and opinion B is the minority opinion. The following updating rule is imposed on the network: each actor adopts the majority opinion of its nearest neighbors \cite{Nguyen2020}. Initially each actor is assigned an opinion; then the opinions are evolved in time: each actor iteratively updates its opinion according to the majority opinion of its direct neighbors \cite{Nguyen2020}.\\
 \newline
-Several studies have been performed on this kind of model, searching for answers on several questions such as: What are the conditions that drive the system to converge to unanimity; and, Does an opinion, that is initially a majority opinion, remain a majority opinion in the final state \cite{Nguyen2020}? \\
+Several studies have been performed on this kind of model with the aim to find the conditions that drive the system to converge to unanimity or to see whether an initial majority opinion remains a majority opinion in the final state \cite{Nguyen2020}.\\
 \newline
-Most of these studies conclude that, at the end of the opinion evolution, a complete consensus state is obtained where all the actors adopt the same opinion \cite{Nguyen2020}. This is even the case when the opinions are equally and randomly distributed in an Erd\H{o}s-R\'{e}nyi network (with the side note that the degree needs to be high enough), as was shown by Benjamini et al. \cite{Benjamini2016}. It is also found that the rate of convergence increases with increasing edge density and that if the network is sparse enough, consensus will not be reached and the two opinions coexist \cite{Nguyen2020}. This can be explained by the fact that if the network is sparse enough, we may have disconnected parts; each of these disconnected groups may evolve to a different consensus opinion, so that over the entire network different opinions coexist \cite{Nguyen2020}.
+Most of these studies conclude that, in the stationary state, a consensus is obtained where all the actors adopt the same opinion \cite{Nguyen2020}. This is also the case when the opinions are equally and randomly distributed in an Erd\H{o}s-R\'{e}nyi network (with the side note that the degree needs to be high enough), as was shown by Benjamini et al. \cite{Benjamini2016}. It is also found that the rate of convergence increases with increasing edge density and that if the network is sparse enough, consensus will not be reached and the two opinions coexist \cite{Nguyen2020}. This can be explained by the fact that if the network is sparse enough, we may have disconnected parts; each of these disconnected groups may evolve to a different consensus opinion, so that over the entire network different opinions coexist \cite{Nguyen2020}.
 
 \subsection{The probabilistic majority model}\label{probMaj}
 
-The probabilistic majority model is similar to the majority model, but has, as the name suggests, a more probabilistic nature. In this model the fraction of neighbors of user $i$ with opinion A, $p_\text{A}$, and the fraction of neighbors with opinion B, $p_\text{B}$, are determined. Then, the opinion of user $i$ is updated: he/she takes on opinion A (or B) with a probability equal to $p_\text{A}$ (or $p_\text{B}$) \cite{Perra2019}.\\
+The probabilistic majority model is similar to the majority model, but has, as the name suggests, a probabilistic nature. In this model the fraction of neighbors of actor $i$ with opinion A, $p_\text{A}$, and the fraction of neighbors with opinion B, $p_\text{B}$, are determined. Then, the opinion of actor $i$ is updated: it takes on opinion A (or B) with a probability equal to $p_\text{A}$ (or $p_\text{B}$) \cite{Perra2019}.\\
 \newline
-For example, if $70\%$ of the neighbors of user $i$ have an opinion A (and thus $30 \%$ of the neighbors have opinion B), user $i$ will update his/her opinion to opinion A with a probability equal to $0.7$ and to opinion B with a probability equal to $0.3$ \cite{Perra2019}. User $i$ no longer simply updates his/her opinion according to the majority opinion carried by his/her neighbors, but the majority opinion still has a higher probability to be taken on by this user.\\
+For example, if $70\%$ of the neighbors of actor $i$ have an opinion A (and thus $30 \%$ of the neighbors have opinion B), actor $i$ will update its opinion to opinion A with a probability equal to $0.7$ and to opinion B with a probability equal to $0.3$ \cite{Perra2019}. Actor $i$ no longer updates its opinion according to the majority opinion carried by its neighbors, but the majority opinion still has a higher probability to be adopted by this actor.\\
 \newline
-This model is no longer deterministic, but has a level of randomness, which is an important component of opinion dynamics \cite{Perra2019}. 
+This model is stochastic, which is an important component of opinion dynamics \cite{Castellano2009}\cite{Perra2019}. Opinion dynamics processes are not purely deterministic; individual behavior, social influence and influence of external factors such as mass media and political campaigns may vary in an unpredictable way \cite{Castellano2009}.
 
 \subsection{The voter model}
 
 Another simple binary model is the voter model. The model works as follows: each actor in the network has a binary opinion (A or B); at each time step, an actor is randomly selected along with one of its neighbors and, subsequently, the actor adopts the opinion of this neighbor \cite{Castellano2009}. The actor thus mimics its neighbor \cite{Castellano2009}. \\
 \newline
-The pressure of the majority in only felt in an averaged way, in the sense that a neighbor that carries the majority opinion has more chance to be randomly selected \cite{Castellano2009}.\\
+The pressure of the majority in only felt in an averaged way, in the sense that a neighbor that carries the majority opinion has a higher chance to be randomly selected \cite{Castellano2009}.\\
 \newline
-Lots of studies have been performed on this model. In this thesis, however, we will not make use of the voter model. Hence, we will not go into further detail. Interested readers are referred to \cite{Castellano2009}, \cite{Fernandez2014} and related references therein.
+This model has been extensively studied. We will not use the voter model. Hence, we will not go into further detail. Interested readers are referred to \cite{Castellano2009}, \cite{Fernandez2014} and related references therein.
 
 \section{Continuous models}\label{Con}
 
 In continuous opinion dynamics models, the opinion variable of the actors in the network is no longer discrete, in contrast to binary or discrete models, but takes real values (often in the interval $\interval{0}{1}$ or $\interval{-1}{1}$).\\
 \newline
-Some concepts that are valid for the discrete models no longer apply (e.g. the concept of a majority and minority opinion or the concept of equality of opinions); hence, they require a bit of a different framework \cite{Castellano2009}. \\
+Some concepts that are valid for the discrete models no longer apply (e.g. the concept of a majority and minority opinion or equality of opinions); hence, they require a different framework \cite{Castellano2009}. \\
 \newline
-The basis of most continuous models is a set of $N$ nodes or actors, each having an opinion $x_i$ represented by a real number that takes values in some interval \cite{Castellano2009}. In contrast to discrete or binary models, all actors usually start with different opinions \cite{Castellano2009}. The possible outcomes are more complex than in the discrete models and often have opinion clusters emerging in the final states (where opinion clusters refer to clusters of actors with the same opinion) \cite{Castellano2009}. The number of opinion clusters can be one (consensus), two (polarization) or more (fragmentation) \cite{Castellano2009}. \\
-\newline
-Several models have been proposed, we will only discuss a fraction of them.
+The basis of most continuous models is a set of $N$ actors, each having an opinion $x_i$ represented by a real number that takes values in some interval \cite{Castellano2009}. In contrast to discrete or binary models, all actors usually start with different opinions \cite{Castellano2009}. The possible outcomes are more complex than in the discrete models and often have opinion clusters emerging in the final states (where opinion clusters refer to clusters of actors with the same opinion) \cite{Castellano2009}. The number of opinion clusters can be one (consensus), two (polarization) or more (fragmentation) \cite{Castellano2009}.
 
 \subsection{The classical models}\label{classMod}
 
-In the classical model, there are $N$ nodes or actors, each with an opinion $x_i$ and each actor $i$ gives a weight $w_{ij}$ to all its neighbors (with $w_{ij} \geqslant 0$; this weight may for example represent the importance or influence of the neighbors) \cite{Krause2002}. The most simple model has fixed weights $w$ and the updating rule is \cite{Krause2002}
+In the classical model, there are $N$ actors, each with an opinion $x_i$ and each actor $i$ gives a weight $w_{ij}$ to all its neighbors (with $w_{ij} \geqslant 0$; this weight may for example represent the importance or influence of the neighbors) \cite{Krause2002}. The most simple model has fixed weights $w$ and the updating rule is
 \begin{equation}\label{refMod}
 	x(t+1) = W x(t) \ ,
 \end{equation}
-where $W$ is the fixed stochastic matrix which contains the weights $w_{ij}$, $x(t)$ is the opinion profile at time $t$ (this is a $N$-dimensional vector containing the opinions $x_i$ of each actor at time $t$) and $x(t+1)$ is the opinion profile at time $t+1$.\\
+where $W$ is the fixed stochastic matrix which contains the weights $w_{ij}$, $x(t)$ is the opinion profile at time $t$ (this is a $N$-dimensional vector containing the opinions $x_i$ of each actor at time $t$) and $x(t+1)$ is the opinion profile at time $t+1$ \cite{Krause2002}.\\
 \newline
-Friedkin and Johnsen proposed a variation of this model \cite{Friedkin1990}\cite{Friedkin1999}. The model they proposed assumes that an actor $i$ adheres to its initial opinion to a certain degree $g_i$ and is influenced by others by a susceptibility of $1-g_i$ \cite{Krause2002}. This variation thus has the following updating rule (in matrix notation) \cite{Krause2002}
+Friedkin and Johnsen proposed a variation of this model \cite{Friedkin1990}\cite{Friedkin1999}. The model they proposed assumes that an actor $i$ adheres to its initial opinion to a certain degree $g_i$ and is influenced by others by a susceptibility of $1-g_i$ \cite{Krause2002}. This variation thus has the following updating rule (in matrix notation)
 \begin{equation}
 	x(t+1) = Gx(0) + (\mathbb{1}-G)Wx(t) \ ,
 \end{equation}
-where $G$ is the diagonal matrix which contains the $g_i$ and $\mathbb{1}$ is the identity matrix. If all the $g_i$ are equal to zero, we obtain the model of Eq. (\ref{refMod}) \cite{Krause2002}.\\
+where $G$ is the diagonal matrix which contains the $g_i$ and $\mathbb{1}$ is the identity matrix  \cite{Krause2002}. If all the $g_i$ are equal to zero, we obtain the model of Eq. (\ref{refMod}) \cite{Krause2002}.\\
 \newline
-A possible time variant extension is \cite{Krause2002}
+A possible time variant extension is
 \begin{equation}
 	x(t+1) = W(t)x(t) \ ,
 \end{equation}
-where now the weights are time dependent. This model can be used for situations in which so called ``hardening of positions'' occur \cite{Krause2002}. This means that, over time, the actors put more and more weight on their own opinion and less weight on the opinion of others \cite{Krause2002}. 
+where now the weights are time dependent \cite{Krause2002}. This model can be used for situations in which so called ``hardening of positions'' occur \cite{Krause2002}. This means that, over time, the actors put more and more weight on their own opinion and less weight on the opinion of others \cite{Krause2002}. 
 
 \subsection{Bounded confidence models}\label{bounded}
 
@@ -720,91 +722,131 @@ Assume we have a population of $N$ actors, each with an opinion $x_i$ that takes
 	x_j(t+1) &= x_j(t) + \mu [x_i(t) - x_j(t)] \ .
 \end{split}
 \end{equation}
-The parameter $\mu$ is called the convergence parameter; its value lies in the interval $\interval{0}{1/2}$ \cite{Castellano2009}. \\
+The parameter $\mu$ is called the convergence parameter whose value lies in the interval $\interval{0}{0.5}$ \cite{Castellano2009}. \\
 \newline
-The model is based on a compromise strategy: after some discussion and a constructive debate, the opinions of the two actors move closer to each other \cite{Castellano2009}. The final state is a situation where several opinion clusters coexist. This is because the opinions move closer and closer to each other in several clusters; once each cluster is sufficiently far apart from the others (the difference in opinions between all actors in the two clusters is larger than $\epsilon$), they no longer interact with each other \cite{Castellano2009}. Only actors inside the same cluster keep on interacting with each other, which makes the opinions inside a cluster converge to a single value \cite{Castellano2009}. Usually, the number and sizes of the clusters depends on the threshold $\epsilon$, whereas $\mu$ determines the convergence rate \cite{Castellano2009}.\\
+The model is based on a compromise strategy: after some discussion and a constructive debate, the opinions of the two actors move closer to each other \cite{Castellano2009}. The stationary state is a situation where several opinion clusters coexist. This is because the opinions move closer and closer to each other in several of such opinion clusters; once each opinion cluster is sufficiently far apart from the others (the difference in opinions between all actors in the two opinion clusters is larger than $\epsilon$), they no longer interact with each other \cite{Castellano2009}. Only actors inside the same opinion cluster keep on interacting with each other, which makes the opinions inside an opinion cluster converge to a single value \cite{Castellano2009}. Usually, the number and sizes of the opinion clusters depends on the threshold $\epsilon$, whereas $\mu$ determines the convergence rate \cite{Castellano2009}.\\
 \newline
 \textbf{The Hegselmann-Krause model}\\
 \newline
-The Hegselmann-Krause model is similar to the Deffuant model. Again, there are $N$ actors, each with an opinion $x_i$ and a constant threshold $\epsilon$ \cite{Castellano2009}. Each actor interacts with those neighbors with an opinion in the interval $\interval{x_i-\epsilon}{x_i+\epsilon}$ \cite{Castellano2009}. The difference with the Deffuant model lies in the updating rule \cite{Castellano2009}. In the Deffuant model, only the opinion of one randomly selected neighbor is taken into account, whereas the Hegselmann-Krause model considers all compatible neighbors \cite{Castellano2009}. The updating rule becomes \cite{Castellano2009}
+The Hegselmann-Krause model is similar to the Deffuant model. There are $N$ actors, each with an opinion $x_i$ and a constant threshold $\epsilon$ \cite{Castellano2009}. Each actor interacts with those neighbors with an opinion in the interval $\interval{x_i-\epsilon}{x_i+\epsilon}$ \cite{Castellano2009}. The difference with the Deffuant model lies in the updating rule \cite{Castellano2009}. In the Deffuant model, only the opinion of one randomly selected neighbor is taken into account, whereas the Hegselmann-Krause model considers all compatible neighbors \cite{Castellano2009}. The updating rule becomes \cite{Castellano2009}
 \begin{equation}
 	x_i(t+1) = \frac{\sum_{j:\abs{x_i(t) - x_j(t)}<\epsilon}A_{ij}x_j(t)}{\sum_{j:\abs{x_i(t) - x_j(t)}<\epsilon}A_{ij}} \ ,
 \end{equation}
 where $A_{ij}$ are the elements of the adjacency matrix. This model thus takes the average opinion of the compatible neighbors into account \cite{Castellano2009}.\\
 \newline
-The dynamics of this model is similar to the Deffuant model and the final state is also characterized by a number of stationary opinion clusters \cite{Castellano2009}. The number of clusters decreases if $\epsilon$ increases and above a critical value $\epsilon_c$ of the threshold, there can only be one cluster \cite{Castellano2009}.\\
+The dynamics of this model is similar to the Deffuant model and the stationary state is also characterized by a number of opinion clusters \cite{Castellano2009}. The number of clusters decreases if $\epsilon$ increases and above a critical value $\epsilon_c$ of the threshold, there can only be one cluster \cite{Castellano2009}.\\
 \newline
-There are, of course, many other variations of the bounded confidence model. As mentioned earlier, the threshold $\epsilon$ can be different for each actor, so that each actor has an opinion $x_i$ and a threshold $\epsilon_i$ or the confidence interval can be made asymmetric $\interval{x_i - \epsilon_l}{x_i + \epsilon_r}$ with $\epsilon_l \neq
-\epsilon_r$ \cite{Krause2002}. Another extension is the relative agreement interaction model. Interested readers are referred to \cite{Deffuant2006} and \cite{Deffuant2002}.
-
-\section{Algorithmic personalization}\label{filter}
-
-On-line social platforms use algorithms to order and filter the posts that appear on the time-line of an individual \cite{Perra2019}. They do this in order to make the experience on their platforms more pleasant, interesting and convenient \cite{Perra2019}. If social media companies would not use any kind of filtering, there would be too much content to handle and process for the social media user \cite{Bozdag2013}. This in turn would make the on-line social experience unpleasant and inconvenient; the user might feel overwhelmed by the number of information he/she is exposed to \cite{Bozdag2013}. The reason behind this is that people are cognitive and time constrained \cite{Perra2019}; hence, there is only a limited amount of information that humans can process \cite{Bozdag2013}.\\
-\newline
-The downside of such algorithmic filtering is that it fine-tunes the information it shows based on the user. Even two users with the same friends may then be exposed to different content, based on their previous activities and history \cite{Bozdag2013}. This may lead to the formation of echo chambers in which users get `trapped' in content that confirms their own mindset \cite{Bozdag2013}. \\
-\newline
-It is important to know and be aware of the possible impacts of algorithmic personalization on the formation and evolution of opinions. Perra and Rocha partly investigated the role of such algorithms on the dynamics of opinions in several networks in \cite{Perra2019}. Since filtering algorithms are often not transparently shared by social media companies, they proposed several personalization algorithms based on three simple ways of filtering \cite{Perra2019}: (i) Popularity filtering: promoting content that is popular across the platform; (ii) Semantic filtering: promoting posts that are similar to previous consumed posts; (iii) Collaborative filtering: promoting content that people similar or close to us consume.\\ 
-\newline
-The following paragraph briefly reviews the filtering algorithms that Perra and Rocha proposed. \\
-\newline
-At every time $t$ each platform user has a hidden list $L_i(t)$ that contains all the posts that he/she received from his/her friends \cite{Perra2019}. The filtering algorithm then selects $S$ items from this list and shows them on the user's time-line (this is the fundamental idea behind algorithmic personalization: only showing a fraction of the possible posts \cite{Perra2019}). The following selection methods are used \cite{Perra2019}: (i) the reference filtering algorithm (REF): randomly select $S$ items from the list $L_i(t)$; (ii) the old filtering algorithm (OLD): the $S$ oldest post in $L_i(t)$ are displayed on the time-line of the user; (iii) the recent filtering algorithm (REC): shows the $S$ most recent items from $L_i(t)$; and (iv) the preference filtering algorithm (PR): sorts the hidden list $L_i(t)$ according to the current opinion of the user and selects the first $S$ elements. This filtering algorithm is based on semantic filtering.\\
-\newline
-Perra and Rocha showed that the REF, OLD and REC filtering algorithms behave similar in many cases and that the PR filtering algorithm often displays different behavior (such as a larger formation of echo chambers compared to the other three filtering algorithms) \cite{Perra2019}. In this thesis the REC and REF filtering algorithms are used as a benchmark algorithm and the PR filtering algorithm is used as the main filtering algorithm.
+There are variations of the bounded confidence model. As mentioned earlier, the threshold $\epsilon$ can be different for each actor, so that each actor has an opinion $x_i$ and a threshold $\epsilon_i$ or the confidence interval can be made asymmetric $\interval{x_i - \epsilon_l}{x_i + \epsilon_r}$ with $\epsilon_l \neq
+\epsilon_r$ \cite{Krause2002}. Another extension is the relative agreement interaction model \cite{Deffuant2006}\cite{Deffuant2002}.
 
 \section{The activation mechanism: Static to temporal}\label{actMech}
 
-Most of the simple opinion dynamics models make use of a static network in which users are always active and always exchanging opinions. In this kind of model the opinion dynamics might go as follows: each time step a random user is selected after which his/her opinion is updated according to the opinion dynamics model that is implemented. Another possibility is updating all users at the same time during each time step. \\
+Most of the standard opinion dynamics models use a static network in which actors are always active and exchanging opinions. In these models the opinion dynamics might go as follows: each time step a random actor is selected after which its opinion is updated according to the opinion dynamics model that is implemented. Another possibility is updating all actors at the same time during each time step. \\
 \newline
-It might, however, be more realistic if actors or users become active/inactive over time. This would be a better representation of social media platforms, where users are active for some periods of time and then become inactive again. This kind of activation mechanism of the users gives the network a temporal character. The underlying network structure does not change (each user or actor has a fixed number of neighbors that does not change over time, so no new friends are made or, conversely, no old friends are being defriended), but by making users active and inactive the exchange of information between users becomes time dependent and depends on which users are active and which are not. Hence, this does affect the network structure in some way, because if a user, for example, does not become active for a long period of time, he/she does not participate in the exchange of information and the network structure behaves like if this user or actor is absent. This may affect the dynamics, since it may seem as if the network has a different average degree and some properties like connectivity and clustering may behave differently. \\
+It might be more realistic if actors become active/inactive over time. This would be a better representation of social media platforms, where users are active for some periods of time and then become inactive again. This kind of activation mechanism of the actors gives the network a temporal character. The underlying network structure does not change (each actor has a fixed number of neighbors that does not change over time; no new friends are made or, conversely, no old friends are being defriended). However, by making actors active and inactive the exchange of information between actors becomes time dependent on which actors are active or not. Hence, this does affect the network structure in some way, because if an actor, for example, does not become active for a long period of time, it does not participate in the exchange of information and the network structure behaves like if this actor is absent. This may affect the dynamics, since it may seem as if the network has a different average degree and some properties like connectivity and clustering may behave differently. \\
 \newline
-In this thesis we follow the same activation mechanism as was proposed in the paper of Perra and Rocha \cite{Perra2019}. Every time step users are made active with some probability $p_i$ (thus, every time step, each actor becomes active with a probability $p_i$). In this thesis the activation probability is set equal to $p = 0.1$, which is constant for all the actors. Perra and Rocha chose activation probabilities that are extracted from a power-law ($F(p) \sim p^{-1.5}$, with $p \in \interval{0.01}{1}$) \cite{Perra2019}. They did this based on the analyses of real social networks that shows that the propensity of users to start an on-line social interaction follows a heterogeneous distribution \cite{Perra2012}\cite{Perra2019}. However, they also showed that using a constant activation probability $p$ over the entire population yields results that are qualitatively similar (at least in their case) \cite{Perra2019}. \\
-\newline
-For simplicity, this thesis implements the constant activation probability variant. It might however be an interesting extension to switch to the heterogeneous activation probabilities and investigate the possible impacts on the dynamics. \\
-\newline
-If a user is active, he/she first spreads his current opinion to all his/her neighbors. Then, the active user updates his own opinion according to the opinions on his/her time-line \cite{Perra2019}. This updating goes according to the implemented opinion dynamics model (e.g. majority model, probabilistic majority model). In every time step the updating of all active actors is done simultaneously \cite{Perra2019}.
-
-% NOT FOR HERE, but maybe in section over future recommendations, ways forward: talk about need to investigate different activation mechanisms, maybe model where actors can make new friends and remove old friends (at a time rate comparable to the time rate of the opinion dynamics and also maybe based on the opinions of the friends, e.g. if a friend has an opinion far from your, you might be more likely to defriend that one and, vice versa, you might be more likely to become new friends with somebody who has an opinion close to yours)
+In this thesis, actors are made active with some probability $p_i$ every time step (thus, every time step, each actor becomes active with a probability $p_i$). The activation probability is set equal to $p = 0.1$, which is constant for all the actors. This constant activation probability is chosen for simplicity.
 
 \section{The presence of stubborn actors}\label{stubb}
 
-It is well known that in real life, you can find people that are persistent towards their own opinion and that are not open to opinions of others. They are convinced that they carry the truth with them and that other people, with different world-views, are not capable of giving them any new and useful insights. They are close-minded in contrast to people with an open-mind that are willing to learn from others and to reconsider their beliefs. Of course this is put a bit simplistic and there are many shades of gray between this black and white statement. However, there are groups in society, often with more extreme opinions, that are know to be inflexible towards changing that (extreme) opinion (being stubborn and being extreme does not need to go hand in hand, you can be stubborn without being extreme and vice versa; however, it is often widely accepted that there is some kind of correlation between people with extreme opinions and being more persistent towards these opinions compared to people with more moderate beliefs; this idea of correlating extreme people with a stubborn character is often used in models \cite{Deffuant2006}\cite{Deffuant2002}\cite{Turner}) (having some resistance to change your opinion to any other opinion does not necessarily need to be a bad thing, it can be seen as a form of critical thinking and as a form of taking things with a grain of salt).\\ 
+In real life, some people are persistent towards their own opinion and are not open to the opinions of others. They are convinced that they carry the truth with them and that other people, with different world-views, are not capable of giving them any new and useful insights. They are close-minded in contrast to people with an open-mind that are willing to learn from others and to reconsider their beliefs. This is a bit simplistic and there are shades of gray between this black and white statement. However, there are groups in society, with more extreme opinions, that are know to be inflexible towards changing that (extreme) opinion (being stubborn and being extreme does not need to go hand in hand, you can be stubborn without being extreme and vice versa; however, it is often the case that there is some correlation between people with extreme opinions and being more persistent towards these opinions compared to people with more moderate beliefs; this idea of correlating extreme people with a stubborn character is often used in models \cite{Deffuant2006}\cite{Deffuant2002}\cite{Turner}) (having some resistance to change your opinion to any other opinion does not necessarily need to be a bad thing, it can be a form of critical thinking and a form of taking things with a grain of salt).\\ 
 \newline
-Knowing the impact of stubborn groups on the opinions of others is of great importance, especially with the rise of social media which makes the reach of more extreme and persistent groups bigger. Before the era of social media, one could maybe argue that these extreme and stubborn groups are often isolated and therefore would not reach too many people. So their impact could only be of a minor nature (this is only a statement that could have been given, there are of course plenty of examples throughout human history that may contradict this argument; to only mention a few: Nazism in the 1930s and 1940s, the Ku Klux Klan in the late 19th and begin 20th century, the rise of communism in the 20th century, all examples of groups that can be considered extreme and that have had a (relatively) wide reach and a significant impact on society). Today, this possible argument is no longer valid; social media enables the contact with all sorts of beliefs and all sorts of people with almost no (time and spatial) constraints. Extreme and stubborn groups that may have been isolated before no longer need to be so and this may have (largely unknown) impacts. \\
+Knowing the impact of stubborn groups on the opinions of others is of importance, especially with the rise of social media. Social media facilitates the spread of information and ideas. This is, unfortunately, also true for extreme and persistent groups. They become capable of reaching and influencing larger groups of people. Before the era of social media, one could maybe argue that these extreme and stubborn groups were often isolated and therefore would not reach too many people. So their impact could only be minor (this is only a statement that could have been given, there are plenty of examples throughout human history that may contradict this argument; to only mention a few: Nazism in the 1930s and 1940s, the Ku Klux Klan in the late 19th and begin 20th century, communism exploited by, among other, Stalin and Mao in the 20th century, all examples of groups or regimes that can be considered extreme and that have had a (relatively) wide reach and a significant impact on society). Today, this argument is no longer valid; social media enables the contact with all sorts of beliefs and all sorts of people with almost no (time and spatial) constraints. Extreme and stubborn groups that may have been isolated before no longer need to be so and this may have unknown impact. \\
 \newline
-What is the impact of having stubborn and extreme people in your society? Does it matter if the stubborn people are grouped together or if they are distributed evenly throughout your system? Are there ways to reduce the possible impacts of stubbornness and extremism? Can these stubborn groups lead to polarization or even overtake the opinions in the system? Or is introducing some kind of stubbornness, on the other hand, a protective factor towards extremism and polarization? To answer these questions, several models have been proposed to include some kind of stubbornness in the system under study.
+Several models that include some form of stubbornness have been proposed to study the impact of stubborn and extreme groups on society. These models aim to study whether the distribution of the stubborns (clustered versus random) matters; whether stubborn groups can lead to polarization or can overtake the opinions in the system or, contrary, whether stubbornness is protective against extremism and polarization. We will review some of the most important models.
 
 \subsection{Stubbornness in bounded confidence models}
 
-The bounded confidence models, discussed in Section \ref{bounded}, can be extended to included some notion of stubbornness. Guillaume Deffuant proposed such an extension where stubbornness is correlated to extremism \cite{Deffuant2006}. The model he proposed goes as follows. In bounded confidence models, the actors have an opinion $x_i$ (which is a real number between $\interval{-1}{1}$) and a threshold $\epsilon_i$, which determines the range of opinions that can influence actor $i$ (actors with opinions between $\interval{x_i - \epsilon_i}{x_i + \epsilon_i}$ are capable of influencing actor $i$). Guillaume Deffuant then introduced a fraction of extremists, $f_e$, which can have either the extreme opinion $-1$ or the extreme opinion $1$ \cite{Deffuant2006}. These extremists are given a threshold equal to $\epsilon_e$ \cite{Deffuant2006}. The other actors are considered to be moderate and can have opinions between $-1$ and $1$. The moderates are given a threshold $\epsilon$, with $\epsilon > \epsilon_e$ \cite{Deffuant2006}. This last condition implicitly denotes the resistance of the extremes towards other opinions in contrast to the more flexible nature of the moderates, which is based on the idea that people with extreme opinions will be more convinced of that opinion and will be less likely to change it.\\
+The bounded confidence models, discussed in Section \ref{bounded}, can be extended to included stubbornness. Guillaume Deffuant proposed such an extension where stubbornness is correlated to extremism \cite{Deffuant2006}. In his model, the actors have an opinion $x_i$ (which is a real number between $\interval{-1}{1}$) and a threshold $\epsilon_i$, which determines the range of opinions that can influence actor $i$ (actors with opinions between $\interval{x_i - \epsilon_i}{x_i + \epsilon_i}$ are capable of influencing actor $i$). He then introduced a fraction of extremists, $f_e$, which can have either the extreme opinion $-1$ or $+1$ \cite{Deffuant2006}. These extremists are given a threshold equal to $\epsilon_e$ \cite{Deffuant2006}. The other actors are considered to be moderate and can have opinions between $-1$ and $1$. The moderates are given a threshold $\epsilon$, with $\epsilon > \epsilon_e$ \cite{Deffuant2006}. This last condition implicitly denotes the resistance of the extremes towards other opinions in contrast to the more flexible nature of the moderates, which is based on the idea that people with extreme opinions will be more convinced of that opinion and will be less likely to change it.\\
 \newline
-Since this thesis is not concerned with bounded confidence models, we will not discuss the results of this model here. Interested readers can find them in \cite{Deffuant2006}. \\
-\newline
-Another example of introducing some kind of persistence towards the own opinion of the actors is the ``hardening of positions'' that was briefly discussed at the end of Section \ref{classMod}. The model introduced by Friedkin and Johnsen (Section \ref{classMod}) in which each actor adheres to its initial opinion to a certain degree can also be seen as introducing a notion of stubbornness \cite{Noorazar2020}.
+Another example of introducing some kind of persistence towards the own opinion of the actors is the ``hardening of positions'' that was briefly discussed at the end of Section \ref{classMod}. The model introduced by Friedkin and Johnsen (Section \ref{classMod}) in which each actor adheres to its initial opinion to a certain degree can also be seen as introducing a form of stubbornness \cite{Noorazar2020}.
 
 \subsection{Stubbornness in binary models}
 \label{stubbBin}
 
-Playing around with the threshold $\epsilon_i$ of the actors to include a notion of stubbornness, such as one can do for the bounded confidence models, is not possible for binary or discrete models. There are, however, many other ways to include some kind of stubborn actors in these models. In the following, two different possibilities will be discussed. \\
+Playing around with the threshold $\epsilon_i$ of the actors to include a notion of stubbornness, such as one can do for the bounded confidence models, is not possible for binary or discrete models. There are, however, other ways to include stubborn actors in these models. In the following, two different possibilities will be discussed. \\
 \newline
-One remark must be made here: previously, the link between stubbornness and extremism was often made and it was often assumed that the more extreme somebodies opinions are, the more persistent that somebody is towards those opinions. In binary models, however, there are only two possible opinions and in that sense it is less useful to talk about extreme and moderate opinions. However, we can still have people that rather keep their own opinion than be convinced by friends to switch to the other opinion.\\
+In bounded confidence models, the link between stubbornness and extremism was often made and it was often assumed that the more extreme somebodies opinions are, the more persistent that somebody is towards those opinions. In binary models, however, there are only two possible opinions and in that sense it is less useful to talk about extreme and moderate opinions. However, we can still have people that rather keep their own opinion than be convinced by friends to switch to the other opinion.\\
 \newline
-\textbf{Including a resistance parameter}\\
+\textbf{Resistance parameter}\\
 \newline
-One way of creating stubborn actors in the binary model is by giving each actor $i$ a resistance parameter $r_i$. This resistance parameter can have values between 0 and 1. If $r_i = 0$, the actor is not stubborn and can be easily convinced of the value of the other opinion (according to which opinion dynamics model that is implemented: majority, probabilistic majority). If $r_i = 1$, the actor is completely stubborn and there is no chance of convincing him/here of the other idea. If $0 < r_i < 1$, the actor has some resistance but can still be convinced to switch to the other opinion, even though he/she will be less likely to do so. An uniform random number $f$ between 0 and 1 is drawn. If $f > r_i$, the actor will update his/her opinion; if $f \leqslant r_i$, the actor is not convinced and keeps his/her own opinion.\\
+One way of creating stubborn actors in the binary model is by giving each actor $i$ a resistance parameter $r_i$. This resistance parameter can have values between 0 and 1. If $r_i = 0$, the actor is not stubborn and can be easily convinced by the other opinion (according to the opinion dynamics model that is implemented: majority, probabilistic majority). If $r_i = 1$, the actor is completely stubborn and there is no chance of convincing it of the other idea. If $0 < r_i < 1$, the actor has some resistance but can still be convinced to switch to the other opinion, even though it will be less likely to do so. An uniform random number $f$ between 0 and 1 is drawn. If $f > r_i$, the actor will update its opinion; if $f \leqslant r_i$, the actor is not convinced and keeps its own opinion.\\
 \newline
-The resistance parameter $r_i$ can be different or the same for all actors. One can also play around with the fraction of actors that is stubborn, for example, there can be a fraction of actors that is completely stubborn ($r = 1$) and a remaining fraction that is not stubborn at all ($r = 0$). Many other possibilities can be found according to how the stubborn actors are distributed and according to how stubborn they are made. This makes the model flexible.\\
+The resistance parameter $r_i$ can be different or the same for all actors. One can also control the fraction of stubborn actors, for example, there can be a fraction of actors that is completely stubborn ($r = 1$), while the rest is not stubborn ($r = 0$). Other possibilities can be found according to how the stubborn actors are distributed and how stubborn they are made. This makes the model flexible.\\
 \newline
 \textbf{The threshold model}\\
 \newline
-In the threshold model one introduces a notion of stubbornness by introducing a threshold parameter $T$. This parameter can be either the same for all the actors ($T$) or can be made individual ($T_i$). The main idea is that actors can only change their opinion to the other opinion if the fraction of friends with that opinion ($p$) is bigger than $T$ ($p > T$). The idea behind this threshold model is that people are a bit hesitant to change their opinion, but if they have enough friends with the other opinion, they might get convinced of that opinion as well. The more persistent you are, the more friends you need in order to be convinced of the other idea. \\
+In the threshold model one introduces stubbornness by introducing a threshold parameter $T$. This parameter can be either the same for all the actors ($T$) or individualized ($T_i$). The main idea is that actors can only change their opinion to the other opinion if the fraction of friends with that opinion ($p$) is larger than $T$ ($p > T$). The idea behind the threshold model is that people are hesitant to change their opinion, but if they have enough friends with the other opinion, they might get convinced of that opinion as well. The more persistent you are, the more friends you need in order to be convinced of the other idea. \\
 \newline
 There are different possibilities of implementing this model. One way, which makes use of the majority model, is as follows. First the fraction of friends with opinion A and opinion B, $p_\text{A}$ and $p_\text{B}$ respectively, are determined; then the following rules are used to update the opinion: if $p_\text{A} > p_\text{B}$ and $p_\text{A} > T$, opinion A is adopted; if $p_\text{B} > p_\text{A}$ and $p_\text{B} > T$, opinion B is adopted; in all other cases, the current opinion of the actor is not changed.\\
 \newline
-If $T = 0$, this model reduces to the pure majority model described in Section \ref{majModel}. If $T = 1$, the actors do not change their opinion. For $0 < T < 1$, the model is a majority model, but the actors are more persistent towards their own opinion and need a larger fraction of friends to convince them to switch to the other viewpoint.\\
-\newline
-The above examples are only a handful of the possible ways to include some notion of stubbornness in the model, many more exist or can be invented.
+If $T = 0$, this model reduces to the pure majority model described in Section \ref{majModel}. If $T = 1$, the actors do not change their opinion. For $0 < T < 1$, the model is a majority model, but the actors are more persistent towards their own opinion and need a larger fraction of friends to convince them to switch to the other viewpoint.
 
-% NOTE: maybe make somewhere in thesis link to real-world examples; for example the election system in USA: formation of echo chambers, different states voting for a different party
+\section{Algorithmic personalization}\label{filter}
+
+People are cognitive and time constrained \cite{Perra2019}; hence, there is only a limited amount of information that humans can process \cite{Bozdag2013}. This leads to the fact that on-line social platforms use algorithms to order and filter the posts that appear on the time-line of an individual in order to make the on-line social experience more convenient \cite{Perra2019}. If social media companies would not use any kind of filtering, there would be too much content to handle for the social media user \cite{Bozdag2013}. This in turn would make the on-line social experience unpleasant and inconvenient; the user might feel overwhelmed by the number of information he or she is exposed to \cite{Bozdag2013}. \\
+\newline
+The downside of algorithmic filtering is that it fine-tunes the information it shows based on the user. Even two users with the same friends may then be exposed to different content, based on their previous activities \cite{Bozdag2013}. This may lead to the formation of echo chambers in which users get `trapped' in content that confirms their own mindset \cite{Bozdag2013}. \\
+\newline
+It is important to know and be aware of the possible impact of algorithmic personalization on the formation and evolution of opinions. Perra and Rocha partly investigated the role of such algorithms on the dynamics of opinions in several networks \cite{Perra2019}. Filtering algorithms are often not transparently shared by social media companies or social platforms. Personalization algorithms are based on three filtering strategies \cite{Perra2019}: (i) Popularity filtering: promoting content that is popular across the platform; (ii) Semantic filtering: promoting posts that are similar to previous consumed posts; (iii) Collaborative filtering: promoting content that people similar or close to us consume.\\ 
+\newline
+The following section will discuss the opinion dynamics model and filtering algorithms adopted in this thesis.
+
+\section{This thesis}\label{modelThesis}
+
+\subsection{Opinion dynamics model}
+
+% introduce dynamics of social platform under study and link to social networks from previous chapter!!
+
+This thesis follows the opinion dynamics model that was designed by Perra and Rocha \cite{Perra2019}. We start with a network with $N = 10^3$ actors.  Initially, each actor is given one of two opinions, A or B. Each time step a random fraction equal to $p= 0.1$ of these actors becomes active, where $p$ is the constant activation probability. Every time step, all active actors update their opinion synchronously. This updating is done as follows. First, the active actor broadcasts its current opinion to all its neighbors. Then, it updates its own opinion according to the opinions on its time-line $R_i(t)$. This time-line contains only a selection of all the opinions received from its friends, which is the fundamental idea behind algorithmic personalization. Each user has a hidden time-line $L_i(t)$ which contains the time-line of the actor at the last time it was active ($R_i(t_{\text{last}})$) plus all the post that its friends posted during $\interval[right open fence =), open right]{t_\text{last}}{t}$. If an actor becomes active, the filtering algorithm select $S = 20$ items from this hidden time-line $L_i(t)$. These $20$ items then form the actual time-line $R_i(t)$ of the actor. Updating is done according to the probabilistic majority model: an actor who sees $20\%$ of the posts promoting opinion A and thus $80\%$ promoting opinion B will adopt opinion A with a chance $p_\text{A} = 0.2$ and opinion B with a chance $p_\text{B} = 0.8$. If another model is used, e.g. the majority model, this will be explicitly stated.
+% Add pictorial representation of model??  
+
+\subsection{Filtering algorithms}
+
+Perra and Rocha proposed different ways of selecting the $S$ items from the hidden time-line $L_i(t)$ \cite{Perra2019}. We will implement three of their algorithms: (i) REF filtering: $S$ random items from the hidden time-line $L_i(t)$ are selected and show on the actual time-line $R_i(t)$; (ii) REC filtering: the $S$ most recent posts in the hidden time-line $L_i(t)$ are displayed on the actual time-line $R_i(t)$ and (iii) PR filtering: this way of filtering is based on semantic filtering explained in Section \ref{filter}; the post in the hidden time-line $L_i(t)$ are ordered according to the current opinion of the actor (if the actor has opinion A, the hidden time-line will be ordered as AAAA...BBB), then the $S$ first items are selected and shown on the time-line $R_i(t)$.\\
+\newline
+The base-line algorithms are the REF and REC filtering algorithms. Filtering tailored to the user's preferences is accomplished with the PR filtering algorithm.
+ 
+\subsection{Stubbornness}
+
+If we want to introduce stubbornness in the model we will mainly use the resistance parameter, as explained in Section \ref{stubbBin}. Lets briefly summarize this concept of stubbornness. Each actor is given a resistance parameter $r_i$, with $0 \leqslant r_i \leqslant 1$; $r_i = 0$ means not stubborn and $r_i = 1$ means completely stubborn. For all intermediate values of $r_i$, a random number $f$ between zero and one is drawn; if $f > r_i$, the actor can update its opinion, if $f \leqslant r_i$, the actor will keep its current opinion.\\
+\newline
+Some results for the majority threshold model, also explained in Section \ref{stubbBin}, will be shared as well. This is, however, not the main stubbornness model that we will focus on. If this model is used, this will be explicitly stated. \\
+\newline
+Some pseudo-code is given in Algorithm \ref{alg:update} to make the model more comprehensive and understandable. The pseudo-code for updating the opinions of the active actors in case of using a resistance parameter $r$ at time step $t$ is displayed. 
+
+\begin{algorithm}
+\caption{Updating the opinions of the active actors at time $t$}
+\label{alg:update}
+\begin{algorithmic}[1]
+	\State \(L_i \leftarrow \text{hidden time-line}\)
+	\State \(R_i \leftarrow \text{actual time-line}\)
+	\State \(S \leftarrow 20\) \Comment{Maximum length of time-line $R$}
+	\State \(r\) \Comment{Stubbornness parameter of each actor, takes values between $0$ and $1$}
+	\ForAll{active actor $i$}
+		\State \(\text{op} \leftarrow \text{current opinion}\)
+		\ForAll{neighbor $k$} \Comment{Add opinion of active actor $i$ to hidden time-line of each neighbor $k$}
+			\State \(L_k.\textsc{add}\text{(op)}\)
+		\EndFor
+		\State \(f \leftarrow \text{rand(0, 1)}\) \Comment{Draw random number between $0$ and $1$}
+		\If{$f > r$}
+			\State \(\text{op} \leftarrow \Call{Update opinion}{L_i}\) \Comment{Update opinion of active actor $i$}
+		\Else
+			\State \(\text{op} \leftarrow \text{current opinion}\) \Comment{Do not update opinion of active actor $i$}
+		\EndIf
+	\EndFor
+	
+	\Function{Update opinion}{$L_i$}
+		\State \(\textsc{Order}(L_i)\) \Comment{Order hidden time-line according to REF, REC or PR filtering}
+		\If{$\text{len}(L_i) > S$}
+			\State \(R_i \leftarrow L_i.\textsc{resize}(S)\) \Comment{Time-line $R_i$ = $S$ first elements of ordered hidden time-line}
+		\EndIf
+		\State \(\text{op} \leftarrow \textsc{probMaj}(R_i)\) \Comment{Update opinion according to probabilistic majority model}
+	\State \Return op \Comment{Return updated opinion}
+	\EndFunction
+\end{algorithmic}
+\end{algorithm}
+
 \chapter{Materials and methods in this thesis}\label{chap4}
 
 The previous two chapters, Chapter \ref{chap2} and \ref{chap3}, gave a broad overview of networks and opinion dynamics models respectively. In this chapter we will summarize the specific networks and opinion dynamics models that are used in this thesis. \\
@@ -824,7 +866,7 @@ Each of these networks serve specific goals which will be shortly discussed in t
 \newline
 \textbf{The Erd\H{o}s-R\'{e}nyi model}\\
 \newline
-The Erd\H{o}s-R\'{e}nyi model is used as a benchmark model. In this thesis we focus intensively on two network topologies that may impact the formation of echo chambers: a high clustering coefficient and community structure. It is therefore necessary to have a model that lacks both of these features to compare the results with. The Erd\H{o}s-R\'{e}nyi model is one of the most simple random network models that does not display both of these features and is hence the perfect comparison model. \\
+The Erd\H{o}s-R\'{e}nyi model is used as a benchmark model. In this thesis we focus on two network topologies that may impact the formation of echo chambers: a high clustering coefficient and community structure. It is therefore necessary to have a model that lacks both of these features to compare the results with. The Erd\H{o}s-R\'{e}nyi model is one of the most simple random network models that does not display both of these features and is hence the perfect comparison model. \\
 \newline
 It is expected that the random nature of the model and the lack of high clustering and community structure will result in the absence of echo chambers.\\
 \newline
@@ -848,7 +890,7 @@ The stochastic Watts-Strogatz block model is used as a model that has both high 
 \newline
 All the above models have a homogeneous degree distribution. We did not focus on network models which generate networks with a heterogeneous degree distribution such as the Barab\'{a}si-Albert model. It might, however, be an interesting extension to investigate such types of models as well.\\
 \newline
-The above models have their added value and benefits. One of their most important plus points is their simplicity. They are the most simple network models that one can create and each of them have characteristics and topologies that can be tuned (clustering for WS, community structure for SBM). This makes it really easy to investigate the effect of these different network topologies without the need to take the interplay with other possible complex network features and topologies into account. This plus side is, however, also one of the possible downsides. Real networks are not simple networks with single, isolated characteristics, but are instead complex networks where many different characteristics and topologies may each play a role. In other words, network models may lack many features of real-world networks. It is thus always a bit tricky, and sometimes even incorrect, to extrapolate the results that are obtained by using network models to real-world situations.\\
+The above models have their added value and benefits. One of their most important plus points is their simplicity. They are the most simple network models that one can create and each of them have characteristics and topologies that can be tuned (clustering for WS, community structure for SBM). This makes it really easy to investigate the effect of these different network topologies without the need to take the interplay with other possible complex network features and topologies into account. This plus side is, however, also one of the possible downsides. Real networks are not simple networks with single, isolated characteristics, but are instead complex networks where many different characteristics and topologies may each play a role. In other words, network models may lack many features of real-world networks. It is thus always tricky, and sometimes even incorrect, to extrapolate the results that are obtained by using network models to real-world situations.\\
 \newline
 The fact that all the above models have a homogeneous degree distribution may also be a drawback, since most real-world networks have a heterogeneous degree distribution.
 
@@ -875,12 +917,12 @@ with $a = 0.39604951$, $\gamma = 1.53568449$ for $k < 20$ and $a = 5.59021251$, 
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{Last.fm}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{lastfm_degree_distribution_8x7.png}
     \label{deg_distr_lastfm}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{PGP}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{PGP_degree_distribution_8x7.png}
     \label{deg_distr_pgp}
   \end{subfigure}
@@ -888,55 +930,6 @@ with $a = 0.39604951$, $\gamma = 1.53568449$ for $k < 20$ and $a = 5.59021251$, 
   \caption[Degree distribution $P(k)$ of the two real-world networks used in this thesis.]{Degree distribution $P(k)$ of the two real-world networks used in this thesis. \textbf{(a)} Last.fm on-line social network with a log-normal fit ($\mu = 1.0078272$, $\sigma = 0.95173779$); \textbf{(b)} PGP on-line trust network with two power-law fits ($a = 0.39604951$, $\gamma = 1.53568449$ for $k < 20$ and $a = 5.59021251$, $\gamma = 2.4944057$ for $k \geqslant 20$).}
 \label{deg_distr_real_network}
 \end{figure}
-
-\section{Opinion dynamics model}\label{opinionmodel}
-
-In Chapter \ref{chap3} we discussed opinion dynamics models and related topics such as algorithmic personalization, activation mechanisms and stubbornness. The goal of this section is to put everything together and summarize the opinion dynamics model of this thesis.\\
-\newline
-This thesis follows the opinion dynamics model that was designed by Perra and Rocha in \cite{Perra2019}. We start with a network with $N = 10^3$ users. Initially, each user is given one of the two opinions A or B. Each time step a random fraction equal to $p= 0.1$ of these users becomes active, where $p$ is the activation probability. As discussed in Chapter \ref{chap3}, Section \ref{actMech}, this thesis makes use of a constant activation probability. Every time step, all active users update their opinion synchronously. This updating is done as follows. First, the active user sends his current opinion to all his neighbors (active or not). Then, he updates his own opinion according to the opinions on his time-line. This updating follows the probabilistic majority model, as explained in Chapter \ref{chap3}, Section \ref{probMaj}. If another model is used, e.g. the majority model, this will be explicitly stated. If not, one can assume that the probabilistic majority model is implemented. It is important to realize that what an active user sees on his/her time-line is only a selection of all the posts that his/her friends have posted. Each user has a hidden time-line $L_i(t)$. This hidden time-line contains the time-line of the user at the last time he/she was active ($t_{\text{last}}$) plus all the post that his/her friends posted from $t_{\text{last}}$ until the user becomes active again at time $t$. If a user becomes active, the filtering algorithm (REF, REC or PR), discussed in Chapter \ref{chap3}, Section \ref{filter}, selects $S$ items from this hidden time-line and shows them on the actual time-line of the user. We will usually set $S = 20$, which quantifies the maximum length of the actual time-line.\\
-
-\begin{algorithm}
-\caption{Updating the opinions of the active actors at time $t$}
-\label{alg:update}
-\begin{algorithmic}[1]
-	\State \(L \leftarrow \text{hidden time-line}\)
-	\State \(T \leftarrow \text{actual time-line}\)
-	\State \(S \leftarrow 20\) \Comment{Maximum length of time-line $T$}
-	\State \(r\) \Comment{Stubbornness parameter of each actor, takes values between $0$ and $1$}
-	\ForAll{active user}
-		\State \(\text{op} \leftarrow \text{current opinion}\)
-		\ForAll{neighbor} \Comment{Add opinion of active user to hidden time-line of each neighbor}
-			\State \(L.\textsc{add}\text{(op)}\)
-		\EndFor
-		\State \(f \leftarrow \text{rand(0, 1)}\) \Comment{Draw random number between $0$ and $1$}
-		\If{$f > r$}
-			\State \(\text{op} \leftarrow \Call{Update opinion}{L}\) \Comment{Update opinion of active user}
-		\Else
-			\State \(\text{op} \leftarrow \text{current opinion}\) \Comment{Do not update opinion of active user}
-		\EndIf
-	\EndFor
-	
-	\Function{Update opinion}{$L$}
-		\State \(\textsc{Order}(L)\) \Comment{Order hidden time-line according to REF, REC or PR filtering}
-		\If{$\text{len}(L) > S$}
-			\State \(T \leftarrow L.\textsc{resize}(S)\) \Comment{Time-line $T$ = $S$ first elements of ordered hidden time-line}
-		\EndIf
-		\State \(\text{op} \leftarrow \textsc{probMaj}(T)\) \Comment{Update opinion according to probabilistic majority model}
-	\State \Return op \Comment{Return updated opinion}
-	\EndFunction
-\end{algorithmic}
-\end{algorithm}
-\noindent
-If we want to introduce some kind of stubbornness in the model we will mainly use the stubbornness parameter, as was explained in Chapter \ref{chap3}, Section \ref{stubbBin}. Lets briefly summarize this concept of stubbornness. Each actor is given a stubbornness parameter $r_i$, with $0 \leqslant r_i \leqslant 1$; $r_i = 0$ means not stubborn and $r_i = 1$ means completely stubborn. For all intermediate values of $r_i$, a random number $f$ between zero and one is drawn; if $f > r_i$, the actor can update his opinion, if $f \leqslant r_i$, the actor will keep his current opinion.\\
-\newline
-Some results for the majority threshold model, also explained in Chapter \ref{chap3}, Section \ref{stubbBin}, will be shared as well. This is, however, not the main stubbornness model that we will focus on. If this model is used, this will be explicitly stated. Otherwise one can assume that we are making use of the stubbornness parameter.\\
-\newline
-In Algorithm \ref{alg:update}, the pseudo-code for updating the opinions of the active actors in case of using a stubbornness parameter $r$ at time step $t$ is displayed. \\
-\newline
-This model is a simple one, since it only allows for two different opinions in the system. The designed filtering algorithms are simple and intuitive as well. Some randomness is introduced by using the probabilistic majority model instead of the classic majority model. This might make the model more realistic. This simpleness combined with the touch of randomness to give the model a more realistic vibe are definitely some strong points of using this model compared to other, more complex models. A simple model is more tractable and allows for a better understanding of what is going on in the dynamics \cite{Jed2019}. However, this might be a downside as well. Real-world opinion dynamics are, probably, far from simple. People do not update their opinion according to a simple probabilistic opinion dynamics model. Beside that, the cases where people have to choose between only two opinions are rather limited. Filtering algorithms, used by social media companies, are unfortunately not publicly shared. We can however assume that they are not as simple as the ones we used in this thesis. Trying to model these far more complex systems by our simple model, might lead to the fact that part of the dynamics might be missed or not well captured by our model. This downside of trying to model real-world social behavior with simple, tractable models is really a call for the urgent need for more real-world data to which the results obtained from simple models can be compared and which can help make the models capable of generating more realistic results \cite{Castellano2009}\cite{Pawel}. \\
-\newline
-This does not mean that simple models should be thrown away. They might still be capable of capturing the dynamics that are seen in the real world \cite{Gug2015}. Not because a system appears complex, that it cannot be modeled by something more simple \cite{Jed2019}. This has been proven by physics research over and over again \cite{Gug2015}. Beside that, if you do not know the dynamics of complex phenomena yet, the best thing you can do is try to model it with the most simple model that comes to mind. There is no need to make things too complex if simple works too. There is however a need to compare data from (computational) models to empirical, real-world data. A need for critical thinking and careful analyzing of results can also not be denied \cite{Pawel}.
-% put this section here?? Reference?? 
 
 \chapter{Results}
 
@@ -950,7 +943,7 @@ In this section we will discuss the results related to the network topologies of
 
 \subsection{Balanced starting conditions}
 \label{50-50}
-In this configuration $50 \%$ of the actors start with opinion A ($P_{\text{A}}(0) = 0.5$) and $50 \%$ of the actors start with opinion B ($P_{\text{B}}(0) = 0.5$). The opinions are randomly distributed over the network. The opinion dynamics model discussed in Chapter \ref{chap4}, Section \ref{opinionmodel} is used. We set the activation probability equal to $p_{\text{act}} = 0.1$ and the actual time-line of each user has a maximum length equal to $S=20$.\\
+In this configuration $50 \%$ of the actors start with opinion A ($P_{\text{A}}(0) = 0.5$) and $50 \%$ of the actors start with opinion B ($P_{\text{B}}(0) = 0.5$). The opinions are randomly distributed over the network. The opinion dynamics model discussed in Chapter \ref{chap4}, Section \ref{opinionmodel} is used. We set the activation probability equal to $p_{\text{act}} = 0.1$ and the actual time-line of each actor has a maximum length equal to $S=20$.\\
 \newline
 Four different network models are implemented, each with a total number of nodes $N = 10^3$ and average degree $\left<k\right> \sim 10$. The baseline model is the Erd\H{o}s-R\'{e}nyi model (ER) with an edge probability $p = 0.01$. To investigate the effect of clustering on the dynamics, we use the Watts-Strogatz model (WS). Two different values of the rewire probability $\beta$ are used, each with a slightly different value of the clustering coefficient: $\beta = 0.01$ with $\left<cc\right> = 0.648 \pm 0.003$ and $\beta = 0.06$ with $\left<cc\right> = 0.557 \pm 0.007$. The impact of community structure on the dynamics is studied with the stochastic block model (SBM) with 10 communities of size 100. Two different modularities are investigated: a high modularity, $Q = 0.908 \pm 0.005$, with an edge probability inside the communities $p_{\text{cl}} = 0.1$ and an edge probability between communities $p_{\text{add}} = 0.001$; and a low modularity, $Q = 0.220 \pm 0.007$, with $p_{\text{cl}} = 0.03$ and $p_{\text{add}} = 0.008$. Finally, the impact of both clustering and community structure is investigated with the stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100. Each community has the following Watts-Strogatz parameters: mean degree $\left<k\right> =10$ and rewire probability $\beta = 0.01$. Edges are added between communities with a probability $p_{\text{add}} = 0.001$. This is a network with both high clustering ($\left<cc\right> = 0.553 \pm 0.004$) and high modularity ($Q = 0.909 \pm 0.004$).  \\
 \newline
@@ -960,12 +953,12 @@ We start with the results for the evolution of the prevalence of the opinions in
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{SBM}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_10x100_01-0001_003-0008_50-50_PR_REC.png}
     \label{sbm_50-50}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{SBM-WS}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_10x100_10-001-0001_50-50_PR_REC.png}
     \label{sbm-ws_50-50}
   \end{subfigure}
@@ -978,15 +971,15 @@ The results for the network model with community structure (SBM, Fig. \ref{sbm_5
 \newline
 \textbf{Echo chambers}\\
 \newline
-Fig. \ref{echo_50_50} shows the distribution of the fraction of friends (nearest neighbors, nn) of actor $i$ with the same opinion B at $t=500$, $\left<P_{\text{B}}^{\text{nn}}\right>$. The value shown on the $y$-axis, $F_N(\left<P_{\text{B}}^{\text{nn}}\right>)$, is the result of dividing the average distribution of opinions in each neighborhood at $t=500$ by its corresponding value at $t=0$. The region on the $x$-axis close to zero describes neighborhoods in which none, or few users, adopt opinion B (these are thus neighborhoods in which most users adopt opinion A). Conversely, the region on the $x$-axis close to one describes neighborhoods in which a majority of the users adopt opinion B. The distribution is obtained by imposing ten equispaced bins, $\Delta x = 0.1$ \cite{Perra2019}. 
+Fig. \ref{echo_50_50} shows the distribution of the fraction of friends (nearest neighbors, nn) of actor $i$ with the same opinion B at $t=500$, $\left<P_{\text{B}}^{\text{nn}}\right>$. The value shown on the $y$-axis, $F_N(\left<P_{\text{B}}^{\text{nn}}\right>)$, is the result of dividing the average distribution of opinions in each neighborhood at $t=500$ by its corresponding value at $t=0$. The region on the $x$-axis close to zero describes neighborhoods in which none, or few actors, adopt opinion B (these are thus neighborhoods in which most actors adopt opinion A). Conversely, the region on the $x$-axis close to one describes neighborhoods in which a majority of the actors adopt opinion B. The distribution is obtained by imposing ten equispaced bins, $\Delta x = 0.1$ \cite{Perra2019}. 
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_50-50_REC.png}
       \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{PR}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_50-50_PR_8x7.png}
   \end{subfigure}
   \captionsetup{format=plain}
@@ -1004,7 +997,7 @@ For balanced starting conditions, none of the network models, nor the filtering 
 
 \subsection{Unbalanced starting conditions}\label{20-80}
 
-We will now investigate the effect of unbalanced starting conditions, that is one opinion is initially more prevalent than the other. The initial prevalence of opinion A is $P_\text{A}(0) = 0.2$, opinion A thus becomes the minority opinion. The initial prevalence of opinion B is $P_\text{B}(0) = 0.8$, hence this is the majority opinion. The opinions are, initially, randomly distributed over the system.\\ %Again, the opinion dynamics model of Chapter \ref{chap4}, Section \ref{opinionmodel} is implemented; the activation probability is set equal to $p_{\text{act}} = 0.1$ and the actual time-line of each user has a maximum length $S = 20$.\\
+We will now investigate the effect of unbalanced starting conditions, that is one opinion is initially more prevalent than the other. The initial prevalence of opinion A is $P_\text{A}(0) = 0.2$, opinion A thus becomes the minority opinion. The initial prevalence of opinion B is $P_\text{B}(0) = 0.8$, hence this is the majority opinion. The opinions are, initially, randomly distributed over the system.\\ %Again, the opinion dynamics model of Chapter \ref{chap4}, Section \ref{opinionmodel} is implemented; the activation probability is set equal to $p_{\text{act}} = 0.1$ and the actual time-line of each actor has a maximum length $S = 20$.\\
 \newline
 We study four different network models each with a total number of nodes $N = 10^3$ and average degree $\left<k\right> \sim 10$. The baseline model is the Erd\H{o}s-R\'{e}nyi model (ER) with an edge probability $p = 0.01$. To investigate the effect of clustering on the dynamics, we use the Watts-Strogatz model (WS). The rewire probability is $\beta = 0.06$, which gives a clustering coefficient equal to $\left<cc\right> = 0.557 \pm 0.007$. The impact of community structure on the dynamics is studied with the stochastic block model (SBM) with 10 communities of size 100. Two different modularities are investigated: a high modularity, $Q = 0.908 \pm 0.005$, with an edge probability inside the communities $p_{\text{cl}} = 0.1$ and an edge probability between communities $p_{\text{add}} = 0.001$; and a low modularity, $Q = 0.220 \pm 0.007$, with $p_{\text{cl}} = 0.03$ and $p_{\text{add}} = 0.008$. Finally, the impact of both clustering and community structure is investigated with the stochastic Watts-Strogatz block model (SBM-WS) with 10 communities of size 100. Each community has the following Watts-Strogatz parameters: mean degree $\left<k\right> =10$ and rewire probability $\beta = 0.01$. Edges are added between communities with a probability $p_{\text{add}} = 0.001$. This is a network with both high clustering ($\left<cc\right> = 0.553 \pm 0.004$) and high modularity ($Q = 0.909 \pm 0.004$).\\
 \newline
@@ -1012,7 +1005,7 @@ We study four different network models each with a total number of nodes $N = 10
 \newline
 Fig. \ref{ev_op_20_80} shows the results for the evolution of the prevalence of opinion A, which is the minority opinion, over time. For each network model two filtering algorithms are compared, the REC filtering algorithm and the PR filtering algorithm. \\
 \newline
-The REC filtering algorithm maintains the status quo; the prevalence of opinion A remains stable over time for the four different network models. When using the PR filtering algorithm, the results are different. The prevalence of the minority opinion, $P_\text{A}(t)$, decreases over time. This decrease is a consequence of the PR filtering algorithm. Since the PR filtering algorithm orders the posts according to the users' preferences, actors with the majority opinion B will mainly see posts with the same opinion B on their time-line, which limits the chance of changing their opinion to the minority opinion. Actors with the minority opinion A, on the other hand, will see posts with opinion A on their time-line when using the PR filtering algorithm. However, since there are more actors with opinion B than actors with opinion A, the actors with the minority opinion A will also see a significant number of posts with the majority opinion B on their time-line. When using the PR filtering algorithm, there is an imbalance in the sense that actors with the minority opinion A have a chance of switching to the majority opinion B, whereas actors with the majority opinion B have (almost) no chance of switching to the minority opinion A. This imbalance leads to the decrease of the minority opinion A.\\
+The REC filtering algorithm maintains the status quo; the prevalence of opinion A remains stable over time for the four different network models. When using the PR filtering algorithm, the results are different. The prevalence of the minority opinion, $P_\text{A}(t)$, decreases over time. This decrease is a consequence of the PR filtering algorithm. Since the PR filtering algorithm orders the posts according to the actors' preferences, actors with the majority opinion B will mainly see posts with the same opinion B on their time-line, which limits the chance of changing their opinion to the minority opinion. Actors with the minority opinion A, on the other hand, will see posts with opinion A on their time-line when using the PR filtering algorithm. However, since there are more actors with opinion B than actors with opinion A, the actors with the minority opinion A will also see a significant number of posts with the majority opinion B on their time-line. When using the PR filtering algorithm, there is an imbalance in the sense that actors with the minority opinion A have a chance of switching to the majority opinion B, whereas actors with the majority opinion B have (almost) no chance of switching to the minority opinion A. This imbalance leads to the decrease of the minority opinion A.\\
 \newline
 Fig. \ref{ev_op_20_80} shows that the minority opinion A eventually vanishes. This is the case for the low clustering networks, with $P_\text{A}(500) = 0.001 \pm 0.003$ for the ER network, $P_\text{A}(500) = 0.002 \pm 0.003$ for the SBM with a low modularity and $P_\text{A}(500) = 0.003 \pm 0.006$ for the SBM with a high modularity. The high clustering coefficient in the WS and SBM-WS networks seems to slightly hamper this vanishing of the minority opinion with an average value of $P_\text{A}(500) = 0.007 \pm 0.014$ for the SBM-WS network (Fig. \ref{sbm-ws_20-80_op}) and an average value of $P_\text{A}(500) = 0.009 \pm 0.015$ for the WS network (Fig. \ref{ws_20-80_op}).\\ 
 \newline
@@ -1020,20 +1013,20 @@ This result differs from results in \cite{Perra2019}, where the minority opinion
 
 \begin{figure}[H]
   \begin{subfigure}[t]{0.49\textwidth}
-    \subcaption{ER}
+    \subcaption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_001_50-50_PR_REC_20-80_8x7.png}
       \end{subfigure}
   \begin{subfigure}[t]{0.49\textwidth}
-    \subcaption{WS}
+    \subcaption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_10-006_PR_REC_20-80_8x7.png}
     \label{ws_20-80_op}
   \end{subfigure}
   \begin{subfigure}[t]{0.49\textwidth}    
-    \subcaption{SBM}
+    \subcaption{}
     \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_01-0001_003-0008_PR_REC_20-80_8x7.png}
   \end{subfigure}
   \begin{subfigure}[t]{0.49\textwidth}
-    \subcaption{SBM-WS}
+    \subcaption{}
     \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_10-001-0001_PR_REC_20-80_8x7.png}
     \label{sbm-ws_20-80_op}
   \end{subfigure}
@@ -1044,12 +1037,12 @@ This result differs from results in \cite{Perra2019}, where the minority opinion
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{$N = 10^3$}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_1000-6_PR_20-80_8x7.png}
     \label{ws1000}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{$N = 10^4$}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_10000-6_PR_20-80_8x7.png}
     \label{ws10000}
   \end{subfigure}
@@ -1068,22 +1061,22 @@ There are no visible effects of having a clear community structure. Fig. \ref{sb
 \newpage
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{ER}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_ER_001_20-80_PR_REC.png}
     \label{er_echo_20-80}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{WS}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_WS_10_006_20-80_PR_REC_8x7.png}
     \label{ws}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{SBM}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_SBM_01-0001_003-0008_10x100_20-80_PR_REC_8x7.png}
   	\label{sbm}    
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{SBM-WS}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{echo_chambers_no_stubb_SBM-WS_10_001_0001_10x100_20-80_PR_REC_8x7.png}
     \label{sbm-ws}
   \end{subfigure}
@@ -1180,11 +1173,11 @@ The other three networks (WS, SBM-WS and SBM with a high modularity) all show qu
 The WS and SBM-WS networks are the high clustering networks. For a small fraction of stubborn actors they show the largest echo chambers. The stochastic block model with a high modularity has smaller echo chambers than the high clustering networks, but still has some formation of echo chambers for fracRes $\leqslant 0.1$. This leads us to make the same conclusion as before: a community structure enhances the formation of echo chambers compared to a random network, however not as significant as networks with a high clustering coefficient.
 \begin{figure}[H]
   \begin{subfigure}[t]{0.49\textwidth}
-    \caption{REF}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_stubbornness_frac_compl_stubb_REF_8x7.png}
   \end{subfigure}
   \begin{subfigure}[t]{0.49\textwidth}
-    \caption{REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_stubbornness_frac_compl_stubb_REC_8x7.png}
     \label{REC_frac_compl_stubb}
   \end{subfigure}
@@ -1197,7 +1190,7 @@ Fig. \ref{echo_vs_frac_complStubb_REF-REC} shows the formation of echo chambers 
 \newline
 These results suggest that the interplay between the REF or REC filtering algorithm and the presence of a (small) fraction of stubborn actors enhances the formation of echo chambers (mainly for networks with a high clustering and/or a clear community structure). If fracRes $\geqslant 0.25$, the formation of echo chambers starts to decrease. This is probably due to the fact that too many actors become stubborn, so there are more and more actors that will not change opinions. This in turn increases the chance of having stubborn neighbors, each with different opinions, who cannot change opinions, which disables the formation of echo chambers.\\
 \newline
-This discrepancy between the results for the PR filtering algorithm and those for the REF and REC filtering algorithms in combination with a small fraction of stubborn actors can be potentially explained with the help of the following simple example. Assume we have three actors that form a triangle. Two actors initially carry opinion A and one actor carries opinion B. Lets first discuss the PR filtering algorithm and assume that none of the actors are stubborn. In case of the PR filtering algorithm this triangle has a high chance of forming an echo chamber (which is obtained if all the actors adopt the same opinion). This can be seen as follows: the one actor with opinion B is likely to switch to opinion A, since all his friends carry this opinion and hence, this opinion will be strongly pushed on his time-line (the fact that the PR filtering algorithm wants to promote posts with opinion B does not matter here, since there are no neighbors with opinion B). The two actors with opinion A will have more chance of keeping that opinion than switching to opinion B in case of the PR filtering algorithm. This is because the PR filtering algorithm will promote the posts of the friend with the same opinion A over the posts of the friend with opinion B. The end result will be that there is a high chance that all the three actors will adopt opinion A and hence, form an echo chamber. Now assume that we make the actor with opinion B stubborn. This actor is no longer capable of switching to opinion A. However, the two actors with opinion A still have more chance of keeping this opinion in case of the PR filtering algorithm, because this filtering algorithm keeps on promoting the posts of the neighbor with the same opinion A, and hence reduces the visibility of the posts of the stubborn friend with opinion B. The system will not form an echo chamber, since the stubborn actor with opinion B cannot switch to opinion A and the PR filtering algorithm reduces the chance of changing the opinion of the actors with opinion A to opinion B. The conclusion is that, in case of the PR filtering algorithm, making a fraction of the actors stubborn reduces the ability of the system to form echo chambers compared to the case where there are no stubborn actors. What happens if we use the REF or REC filtering algorithms? Again we have one actor with opinion B and two actors with opinion A in the triangle. Assume first that none of the actors are stubborn. For the PR filtering algorithm, we argued that in this case, the triangle has a high chance of evolving towards an echo chamber. For the REF and REC filtering algorithms this chance is however smaller, which can be seen as follows. The actor with opinion B still has a high chance of switching to opinion A, because all his friends (which are the two other actors in the triangle) carry this opinion. However, the two actors with opinion A will now not have a higher chance of keeping this opinion than to switch to opinion B, as was the case for the PR filtering algorithm. Instead, they have an equal chance of keeping their opinion as to change to the other opinion. This is because both the REF and REC filtering algorithms do not discriminate between the two different opinions of the friends of the actors with opinion A. Both opinion A and opinion B have an equal chance of being promoted on the time-line of the actors with opinion A. This reduced tendency of the actors with opinion A to not change their opinion (compared to using the PR filtering algorithm) hampers the ability of the triangle to form an echo chamber. This would explain why, in case of no stubborn actors, the REF and REC filtering algorithms show a lower formation of echo chambers compared to the PR filtering algorithm. Now, lets again assume that we make the actor with opinion B stubborn. In case of the PR filtering algorithm this reduced the formation of echo chambers in the triangle. For the REF and REC filtering algorithms, things are different. The stubborn actor with opinion B will not change opinion. The two actors with opinion A, on the other hand, will now have a higher chance of switching to opinion B (which was not the case when using the PR filtering algorithm). This can be seen as follows. The REF and REC filtering algorithms do not discriminate between the two different opinions of the two friends of the actors with opinion A. If the actor with opinion B is, however, stubborn it will keep on pushing that opinion on the time-lines of the two actors with opinion A. This will eventually lead to an increase of posts with opinion B, compared to posts with opinion A, on the time-lines of the two actors with opinion A. The result will then be that the actors with opinion A will have a higher chance of switching to opinion B, which enhances the formation of echo chambers in the triangle. This would explain the increase in the formation of echo chambers for a small fraction of stubborn actors when using the REF or REC filtering algorithms. If too many actors become stubborn, this increased ability of the system to form echo chambers, in case of using the REF or REC filtering algorithms, starts to decrease which can also be seen with the help of the triangle example. If the fraction of stubborn actors becomes too high, we might end up with the case where both the actor with opinion B and one of the actors with opinion A are stubborn. This strongly reduces the ability to form echo chambers in the triangle since we can no longer have a final situation in which all the three actors in the triangle carry the same opinion.\\
+This discrepancy between the results for the PR filtering algorithm and those for the REF and REC filtering algorithms in combination with a small fraction of stubborn actors can be potentially explained with the help of the following simple example. Assume we have three actors that form a triangle. Two actors initially carry opinion A and one actor carries opinion B. Lets first discuss the PR filtering algorithm and assume that none of the actors are stubborn. In case of the PR filtering algorithm this triangle has a high chance of forming an echo chamber (which is obtained if all the actors adopt the same opinion). This can be seen as follows: the one actor with opinion B is likely to switch to opinion A, since all its friends carry this opinion and hence, this opinion will be strongly pushed on its time-line (the fact that the PR filtering algorithm wants to promote posts with opinion B does not matter here, since there are no neighbors with opinion B). The two actors with opinion A will have more chance of keeping that opinion than switching to opinion B in case of the PR filtering algorithm. This is because the PR filtering algorithm will promote the posts of the friend with the same opinion A over the posts of the friend with opinion B. The end result will be that there is a high chance that all the three actors will adopt opinion A and hence, form an echo chamber. Now assume that we make the actor with opinion B stubborn. This actor is no longer capable of switching to opinion A. However, the two actors with opinion A still have more chance of keeping this opinion in case of the PR filtering algorithm, because this filtering algorithm keeps on promoting the posts of the neighbor with the same opinion A, and hence reduces the visibility of the posts of the stubborn friend with opinion B. The system will not form an echo chamber, since the stubborn actor with opinion B cannot switch to opinion A and the PR filtering algorithm reduces the chance of changing the opinion of the actors with opinion A to opinion B. The conclusion is that, in case of the PR filtering algorithm, making a fraction of the actors stubborn reduces the ability of the system to form echo chambers compared to the case where there are no stubborn actors. What happens if we use the REF or REC filtering algorithms? Again we have one actor with opinion B and two actors with opinion A in the triangle. Assume first that none of the actors are stubborn. For the PR filtering algorithm, we argued that in this case, the triangle has a high chance of evolving towards an echo chamber. For the REF and REC filtering algorithms this chance is however smaller, which can be seen as follows. The actor with opinion B still has a high chance of switching to opinion A, because all its friends (which are the two other actors in the triangle) carry this opinion. However, the two actors with opinion A will now not have a higher chance of keeping this opinion than to switch to opinion B, as was the case for the PR filtering algorithm. Instead, they have an equal chance of keeping their opinion as to change to the other opinion. This is because both the REF and REC filtering algorithms do not discriminate between the two different opinions of the friends of the actors with opinion A. Both opinion A and opinion B have an equal chance of being promoted on the time-line of the actors with opinion A. This reduced tendency of the actors with opinion A to not change their opinion (compared to using the PR filtering algorithm) hampers the ability of the triangle to form an echo chamber. This would explain why, in case of no stubborn actors, the REF and REC filtering algorithms show a lower formation of echo chambers compared to the PR filtering algorithm. Now, lets again assume that we make the actor with opinion B stubborn. In case of the PR filtering algorithm this reduced the formation of echo chambers in the triangle. For the REF and REC filtering algorithms, things are different. The stubborn actor with opinion B will not change opinion. The two actors with opinion A, on the other hand, will now have a higher chance of switching to opinion B (which was not the case when using the PR filtering algorithm). This can be seen as follows. The REF and REC filtering algorithms do not discriminate between the two different opinions of the two friends of the actors with opinion A. If the actor with opinion B is, however, stubborn it will keep on pushing that opinion on the time-lines of the two actors with opinion A. This will eventually lead to an increase of posts with opinion B, compared to posts with opinion A, on the time-lines of the two actors with opinion A. The result will then be that the actors with opinion A will have a higher chance of switching to opinion B, which enhances the formation of echo chambers in the triangle. This would explain the increase in the formation of echo chambers for a small fraction of stubborn actors when using the REF or REC filtering algorithms. If too many actors become stubborn, this increased ability of the system to form echo chambers, in case of using the REF or REC filtering algorithms, starts to decrease which can also be seen with the help of the triangle example. If the fraction of stubborn actors becomes too high, we might end up with the case where both the actor with opinion B and one of the actors with opinion A are stubborn. This strongly reduces the ability to form echo chambers in the triangle since we can no longer have a final situation in which all the three actors in the triangle carry the same opinion.\\
 % make figure 
 \newline
 So far the results for the formation of echo chambers in the system for balanced starting conditions and introducing a fraction of completely stubborn actors. But what about the evolution of the prevalence of the opinions over time? Are these affected by introducing stubborn actors in the system? The short answer is no. Introducing stubborn actors in the system does not affect the evolution of the prevalence of the opinions over time for neither the REC, nor the PR filtering algorithm. The balanced opinion distribution is maintained over time. This result is valid for all the four implemented network models (ER, WS, SBM and SBM-WS). Network topologies such as high clustering or community structure do not change this result. \\% Include figure??
@@ -1206,12 +1199,12 @@ Lets now study the situation for unbalanced starting conditions, combined with a
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{PR}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_frac_compl_stubb_PR_20-80_8x7.png}
     \label{PR_frac_compl_stubb_20-80}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_frac_compl_stubb_REC_20-80_8x7.png}
     \label{REC_frac_compl_stubb_20-80}
   \end{subfigure}
@@ -1233,19 +1226,19 @@ We can conclude that the formation of echo chambers versus the fraction of compl
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{ER}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_frac_compl_stubb_PR_20-80_8x7.png}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{WS}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_frac_compl_stubb_PR_20-80_8x7.png}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{SBM}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_frac_compl_stubb_PR_20-80_8x7.png}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{SBM-WS}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_frac_compl_stubb_PR_20-80_8x7.png}
   \end{subfigure}
   \captionsetup{format=plain}
@@ -1282,12 +1275,12 @@ In Fig. \ref{echo_vs_all_frac_stubb_REF-REC} the formation of echo chambers vers
 \newpage
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REF}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_stubbornness_all_frac_stubb_REF_8x7.png}
     \label{REF_all_frac_stubb}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_stubbornness_all_frac_stubb_REC_8x7.png}
     \label{REC_all_frac_stubb}
   \end{subfigure}
@@ -1313,12 +1306,12 @@ As was explained for Fig. \ref{echo_vs_frac_complStubb_PR-REC_20-80}, the format
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{PR}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_all_frac_stubb_PR_20-80_8x7.png}
     \label{PR_all_frac_stubb_20-80}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_all_frac_stubb_REC_20-80_8x7.png}
     \label{REC_all_frac_stubb_20-80}
   \end{subfigure}
@@ -1333,19 +1326,19 @@ The stochastic block model with a high modularity shows a slight increase in the
 \newpage
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{ER}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_all_frac_stubb_PR_20-80_8x7.png}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{WS}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_all_frac_stubb_PR_20-80_8x7.png}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{SBM}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_all_frac_stubb_PR_20-80_8x7.png}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{SBM-WS}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_all_frac_stubb_PR_20-80_8x7.png}
   \end{subfigure}
   \captionsetup{format=plain}
@@ -1360,7 +1353,7 @@ The prevalence of opinion A versus time in case of the REC filtering algorithm i
 \subsection{The majority threshold model}
 \label{majThres}
 
-In this subsection, the results of the majority threshold model are shared and discussed. This model is explained in Chapter \ref{chap3}, Section \ref{stubbBin}. We do not make use of a probabilistic majority model, but a classic majority model, as explainded in Chapter \ref{chap3}, Section \ref{majModel}, is implemented. The rest of the model (filtering algorithms, activation mechanism) is unchanged and still follows the rules as stated in Chapter \ref{chap4}, Section \ref{opinionmodel}. The activation probability is set equal to $p_{\text{act}} = 0.1$ and the maximum length of the actual time-line of the users is $S=20$. The threshold parameter $T$ is equal for all the actors and varies between $T=0$ and $T=1$.\\
+In this subsection, the results of the majority threshold model are shared and discussed. This model is explained in Chapter \ref{chap3}, Section \ref{stubbBin}. We do not use a probabilistic majority model, but a classic majority model, as explainded in Chapter \ref{chap3}, Section \ref{majModel}, is implemented. The rest of the model (filtering algorithms, activation mechanism) is unchanged and still follows the rules as stated in Chapter \ref{chap4}, Section \ref{opinionmodel}. The activation probability is set equal to $p_{\text{act}} = 0.1$ and the maximum length of the actual time-line of the actors is $S=20$. The threshold parameter $T$ is equal for all the actors and varies between $T=0$ and $T=1$.\\
 \newline
 For this model we only investigate the case of balanced starting conditions. We focus on the formation of echo chambers versus the threshold parameter $T$ and we compare three different filtering algorithms: the PR, REF and REC filtering algorithms. \\
 \newline
@@ -1383,12 +1376,12 @@ Fig. \ref{echo_vs_threshold_REF-REC} shows the formation of echo chambers versus
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REF}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_threshold_REF_8x7.png}
     \label{REF_thres}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_threshold_REC_8x7.png}
     \label{REC_thres}
   \end{subfigure}
@@ -1405,22 +1398,22 @@ The PR filtering algorithm hampers the convergence to a single opinion each inde
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{ER}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_ER_majT=0_one_sim_8x7.png}
     \label{er_majT}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{WS}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_WS_majT=0_one_sim_8x7.png}
     \label{ws_majT}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{SBM}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_majT=0_one_sim_8x7.png}
     \label{sbm_majT}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{SBM-WS}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM-WS_majT=0_one_sim_8x7.png}
     \label{sbm-ws_majT}
   \end{subfigure}
@@ -1449,22 +1442,22 @@ Fig. \ref{commOp0_01_other_50-50} shows the results for the prevalence of opinio
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{High modularity, REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0=01_other=50-50_REC_high_mod_8x7.png}
     \label{high_mod_rec}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{High modularity, PR}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0=01_other=50-50_PR_high_mod_8x7.png}
     \label{high_mod_pr}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-   \caption{Low modularity, REC}
+   \caption{}
     \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0=01_other=50-50_REC_low_mod_8x7.png}
     \label{low_mod_rec}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{Low modularity, PR}
+    \caption{}
     \includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0=01_other=50-50_PR_low_mod_8x7.png}
     \label{low_mod_pr}
   \end{subfigure}
@@ -1482,16 +1475,16 @@ The results found in Fig. \ref{commOp0_01_other_50-50} for $10 \%$ of single opi
 \newline
 The higher the fraction of single opinion A communities, the higher the initial average prevalence of opinion A. This is seen in both figures by the increase of the solid black line, which represents the initial prevalence of opinion A. In case of the REC filtering algorithm (Fig. \ref{rec_comm}) the prevalence of opinion A remains the same before and after the time evolution for a fixed fraction of single opinion A communities. Giving a fraction of the communities a single opinion, opinion A, and the others an initial $50/50$ opinion distribution does not make a difference compared to randomly distributing the same total initial opinion distribution. This result is valid for both the high and low modularity case.\\
 \newline
-The PR filtering algorithm (Fig. \ref{pr_comm}) shows an increase in the prevalence of opinion A over time for a fixed fraction of single opinion A communities. Making a fraction of the communities single opinion A communities, while the other communities get a $50/50$ opinion distribution, hampers this increase compared to the corresponding randomly distributed case, if we are dealing with a high modularity network with a clear and almost isolated community structure. The low modularity network does not exhibit this hampering. The reason for this hampering in case of the high modularity network and the absence of it for the low modularity network was explained for Fig. \ref{commOp0_01_other_50-50} and has to do with whether or not the single opinion A communities can influence the $50/50$ communities. 
+The PR filtering algorithm (Fig. \ref{pr_comm}) shows an increase in the prevalence of opinion A over time for a fixed fraction of single opinion A communities. Making a fraction of the communities single opinion A communities, while the other communities get a $50/50$ opinion distribution, hampers this increase compared to the corresponding randomly distributed case, if we are dealing with a high modularity network with a clear and almost isolated community structure. The low modularity network does not exhibit this hampering. The reason for this hampering in case of the high modularity network and the absence of it for the low modularity network was explained for Fig. \ref{commOp0_01_other_50-50} and has to do with whether the single opinion A communities can influence the $50/50$ communities. 
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0_other=50-50_REC_8x7.png}
     \label{rec_comm}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{PR}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{fraction_of_opinions_SBM_commOp0_other=50-50_PR_8x7.png}
     \label{pr_comm}
   \end{subfigure}
@@ -1516,12 +1509,12 @@ Lets first focus on the high modularity network. The randomly $55/45$ distribute
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_SBM_comm01_distr_REC_8x7.png}
     \label{rec_comm_echo}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{PR}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_SBM_comm01_distr_PR_8x7.png}
     \label{pr_comm_echo}
   \end{subfigure}
@@ -1549,12 +1542,12 @@ The high modularity, community distributed case shows an even stronger hampering
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_SBM_comm05_distr_REC_8x7.png}
     \label{rec_comm05_echo}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{PR}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_SBM_comm05_distr_PR_8x7.png}
     \label{pr_comm05_echo}
   \end{subfigure}
@@ -1581,12 +1574,12 @@ The results for the Watts-Strogatz model are similar to those for the stochastic
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{PR}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_fracRes_PR_real_network_8x7.png}
     \label{pr_real}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_fracRes_REC_real_network_8x7.png}
     \label{rec_real}
   \end{subfigure}
@@ -1599,12 +1592,12 @@ The REC filtering algorithm enforces an increase in the formation of echo chambe
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_SBM_powerlaw_vs_regular_REC.png}
     \label{pr_pow_single}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{PR}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chambers_SBM_powerlaw_vs_regular_PR.png}
     \label{rec_pow_single}
   \end{subfigure}
@@ -1625,12 +1618,12 @@ The REC filtering algorithm (Fig. \ref{rec_real_PGP}) shows an increase in the f
 
 \begin{figure}[H]
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{PR}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_fracRes_PR_real_network_PGP_8x7.png}
     \label{pr_real_PGP}
   \end{subfigure}
   \begin{subfigure}[b]{0.49\textwidth}
-    \caption{REC}
+    \caption{}
   	\includegraphics[width=8cm, height=7cm]{echo_chamber_vs_fracRes_REC_real_network_PGP_8x7.png}
     \label{rec_real_PGP}
   \end{subfigure}
@@ -1672,6 +1665,18 @@ two dominant and opposing echo chambers'' (Wang et al., p.10, \cite{Wang2020}). 
 It must be emphasized that there are limitations to our model and methods. First, the simpleness of the model, which on one hand can be seen as a strength, may also be one of the weaknesses. Real-life social behavior and opinion dynamics on social media may be far from simple. As a consequence, there may be many dynamics of real-life opinion formation that are not well-captured by our model. More empirical data is therefore needed to compare the results, obtained from our model, against. Other limitations may be the rather small system sizes that were used in our simulations ($N = 10^3$). It is unclear how the system size affects the results and it is recommended that the model is tested on both larger network models and real-world networks. Another possible shortcoming is the binary nature of the model. There are real-life cases in which people have to choose between two competing opinions. These situations, however, do not cover the complete range of possible opinion dynamics situations. It would be interesting to run the model on situations where more than two opinions are allowed or to switch to continuous opinion dynamics. We also did not differentiate between the actors in our model, except for non-stubborns versus stubborns. This combined with the homogeneous degree distribution of our networks models may be another limitation. Real-life social media platforms display a heterogeneous contact pattern, where the `hubs' are often more influential than other users, not only by their larger reach, but also by their status. This may impact the spread of opinions \cite{Fan2020}\cite{Wang2019}. We could adapt our model to mimic this social media behavior more closely. Therefore, a heterogeneous network model should be introduced, combined with an influence parameter. This parameter should be used to determine the influence of an actor on others: the opinion of a more influential actor is easier adopted by the others. In the model, the high degree nodes should then be made more influential. As a final limitation, we mention the fixed stubbornness of the actors. Even though the stubbornness parameter $r$ could be individualized to each actor, we did not include the possibility to be more stubborn towards opinions coming from one friend than from another. This idea may be linked to the influence of certain friends: somebody may adopt another viewpoint easier from certain friends than from others.\\
 \newline
 Some future investigation paths, linked to limitations of our model, were given in the previous paragraph. Other future directions may be: (i) investigating the distribution of the stubborn actors (community distributed versus random); (ii) making one opinion more stubborn than the other; (iii) investigating the effect of the activation mechanism: what happens if we switch to the heterogeneous activation mechanism (see Section \ref{actMech})? and (iv) making the network temporal in the sense that it becomes possible to add and remove friends. Sasahara et al. investigated a model in which social influence was combined with social rewiring (unfriending) \cite{Sasahara2020}. Their findings were that these processes of influence and unfriending enhanced the formation of echo chambers \cite{Sasahara2020}. It might be interesting to incorporate their model features into our model with algorithmic personalization and stubbornness. 
+
+ADD THIS IN AS LIMITATIONS/FUTURE DIRECTIONS
+ 
+''' Perra and Rocha chose activation probabilities that are extracted from a power-law ($F(p) \sim p^{-1.5}$, with $p \in \interval{0.01}{1}$) \cite{Perra2019}. They did this based on the analyses of real social networks that shows that the propensity of users to start an on-line social interaction follows a heterogeneous distribution \cite{Perra2012}\cite{Perra2019}. However, they also showed that using a constant activation probability $p$ over the entire population yields results that are qualitatively similar (at least in their case) \cite{Perra2019}. \\
+\newline
+ It might however be an interesting extension to switch to the heterogeneous activation probabilities and investigate the possible impacts on the dynamics. '''
+ 
++ ADD THIS (about opinion dynamics model)
+
+''' This model is a simple one, since it only allows for two different opinions in the system. The designed filtering algorithms are simple and intuitive as well. Some randomness is introduced by using the probabilistic majority model instead of the classic majority model. This might make the model more realistic. This simpleness combined with the touch of randomness to give the model a more realistic vibe are definitely some strong points of using this model compared to other, more complex models. A simple model is more tractable and allows for a better understanding of what is going on in the dynamics \cite{Jed2019}. However, this might be a downside as well. Real-world opinion dynamics are, probably, far from simple. People do not update their opinion according to a simple probabilistic opinion dynamics model. Beside that, the cases where people have to choose between only two opinions are rather limited. Filtering algorithms, used by social media companies, are unfortunately not publicly shared. We can however assume that they are not as simple as the ones we used in this thesis. Trying to model these far more complex systems by our simple model, might lead to the fact that part of the dynamics might be missed or not well captured by our model. This downside of trying to model real-world social behavior with simple, tractable models is really a call for the urgent need for more real-world data to which the results obtained from simple models can be compared and which can help make the models capable of generating more realistic results \cite{Castellano2009}\cite{Pawel}. \\
+\newline
+This does not mean that simple models should be thrown away. They might still be capable of capturing the dynamics that are seen in the real world \cite{Gug2015}. Not because a system appears complex, that it cannot be modeled by something more simple \cite{Jed2019}. This has been proven by physics research over and over again \cite{Gug2015}. Beside that, if you do not know the dynamics of complex phenomena yet, the best thing you can do is try to model it with the most simple model that comes to mind. There is no need to make things too complex if simple works too. There is however a need to compare data from (computational) models to empirical, real-world data. A need for critical thinking and careful analyzing of results can also not be denied \cite{Pawel}. '''
 
 \chapter{Conclusion}
 
@@ -1757,7 +1762,7 @@ The expected mean degree is given by \cite{Hopcroft2006}
 &= \sum_{k=0}^{N-1} k \binom{N-1}{k}p^k (1-p)^{N-1-k} \ .
 \end{split}
 \end{equation}
-In order to simplify this equation we can make use of the following formula \cite{Hopcroft2006}
+In order to simplify this equation we use the following formula \cite{Hopcroft2006}
 \begin{equation} 
 	(p+q)^n = \sum_{k=0}^n \binom{n}{k} p^k q^{n-k} \ .
 \end{equation}
