@@ -632,7 +632,7 @@ There are, however, some properties that are different between on-line and off-l
 
 \section{Temporal networks}
 
-Real-life systems are often not static but evolve in time. In order to represent these systems appropriately, we need temporal networks. In temporal networks, the edges (or nodes) are not continuously active \cite{Holme2012}. Instead, edges (or nodes) become active and inactive over time and time becomes an explicit element of the network representation \cite{Holme2012}. An example of such temporal networks in real life are communication networks such as the phone network where edges represent instantaneous contacts \cite{Holme2012}. Other examples of applications of temporal networks are the application to the dynamics of functional brain connectivity \cite{Thompson2017} and the application to infrastructure networks \cite{Salama2020}.\\
+Real-life systems are often not static but evolve in time. In order to represent these systems appropriately, we need temporal networks. In temporal networks, the edges (or nodes) are not continuously active \cite{Holme2012}. Instead, edges (or nodes) become active and inactive over time, which becomes an explicit element of the network representation \cite{Holme2012}. An example of temporal networks in real life are communication networks such as the phone network where edges represent instantaneous contacts \cite{Holme2012}. Other examples of applications of temporal networks are the application to the dynamics of functional brain connectivity \cite{Thompson2017} and the application to infrastructure networks \cite{Salama2020}.\\
 \newline
 Temporal networks require different methods for analyzing topological and temporal structures \cite{Holme2012}\cite{Holme2021}. The time ordering can e.g. influence the transitivity of edges: in a static network, if A is connected to B and B is connected to C, then A is indirectly connected to C; in temporal networks this does not need to be so, if A is connected to B at some time $t$ and B is connected to C at some time $t'$ later, then A is not indirectly connected to C \cite{Holme2012}.\\
 \newline
@@ -753,7 +753,7 @@ In real life, some people are persistent towards their own opinion and are not o
 \newline
 Knowing the impact of stubborn groups on the opinions of others is of importance, especially with the rise of social media. Social media facilitates the spread of information and ideas. This is, unfortunately, also true for extreme and persistent groups. They become capable of reaching and influencing larger groups of people. Before the era of social media, one could maybe argue that these extreme and stubborn groups were often isolated and therefore would not reach too many people. So their impact could only be minor (this is only a statement that could have been given, there are plenty of examples throughout human history that may contradict this argument; to only mention a few: Nazism in the 1930s and 1940s, the Ku Klux Klan in the late 19th and begin 20th century, communism exploited by, among other, Stalin and Mao in the 20th century, all examples of groups or regimes that can be considered extreme and that have had a (relatively) wide reach and a significant impact on society). Today, this argument is no longer valid; social media enables the contact with all sorts of beliefs and all sorts of people with almost no (time and spatial) constraints. Extreme and stubborn groups that may have been isolated before no longer need to be so and this may have unknown impact. \\
 \newline
-Several models that include some form of stubbornness have been proposed to study the impact of stubborn and extreme groups on society. These models aim to study whether the distribution of the stubborns (clustered versus random) matters; whether stubborn groups can lead to polarization or can overtake the opinions in the system or, contrary, whether stubbornness is protective against extremism and polarization. We will review some of the most important models.
+Several models that include some form of stubbornness have been proposed to study the impact of stubborn and extreme groups on society. These models aim to study whether the distribution of the stubborns (clustered versus random) matters; whether stubborn groups can lead to polarization or can overtake the opinions in the system or, contrary, whether stubbornness is protective against extremism and polarization. We will review the most important models.
 
 \subsection{Stubbornness in bounded confidence models}
 
@@ -812,11 +812,7 @@ The base-line algorithms are the REF and REC filtering algorithms. Filtering tai
  
 \subsection{Stubbornness}
 
-If we want to introduce stubbornness in the model we will mainly use the resistance parameter, as explained in Section \ref{stubbBin}. Lets briefly summarize this concept of stubbornness. Each actor is given a resistance parameter $r_i$, with $0 \leqslant r_i \leqslant 1$; $r_i = 0$ means not stubborn and $r_i = 1$ means completely stubborn. For all intermediate values of $r_i$, a random number $f$ between zero and one is drawn; if $f > r_i$, the actor can update its opinion, if $f \leqslant r_i$, the actor will keep its current opinion.\\
-\newline
-Some results for the majority threshold model, also explained in Section \ref{stubbBin}, will be shared as well. This is not the main stubbornness model that we will focus on. If this model is used, this will be explicitly stated. \\
-\newline
-Some pseudo-code is given in Algorithm \ref{alg:update} to make the model more comprehensive and understandable. The pseudo-code for updating the opinions of the active actors in case of using a resistance parameter $r$ at time step $t$ is displayed. 
+If we want to introduce stubbornness in the model we will mainly use the resistance parameter, as explained in Section \ref{stubbBin}. Lets briefly summarize this concept of stubbornness. Each actor is given a resistance parameter $r_i$, with $0 \leqslant r_i \leqslant 1$; $r_i = 0$ means not stubborn and $r_i = 1$ means completely stubborn. For all intermediate values of $r_i$, a random number $f$ between zero and one is drawn; if $f > r_i$, the actor can update its opinion, if $f \leqslant r_i$, the actor will keep its current opinion. 
 
 \begin{algorithm}
 \caption{Updating the opinions of the active actors at time $t$}
@@ -849,6 +845,8 @@ Some pseudo-code is given in Algorithm \ref{alg:update} to make the model more c
 	\EndFunction
 \end{algorithmic}
 \end{algorithm}
+\noindent
+Some pseudo-code is given in Algorithm \ref{alg:update} to make the model more comprehensive and understandable. The pseudo-code for updating the opinions of the active actors in case of using a resistance parameter $r$ at time step $t$ is displayed. 
 
 \chapter{Materials and methods in this thesis}\label{chap4}
 
