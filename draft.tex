@@ -549,7 +549,13 @@ A more precise calculation can be found in Appendix \ref{ER}, Section \ref{ERdis
 \begin{equation}\label{d}
 	\left<d\right> \approx \frac{\ln{N}}{\ln{\left<k\right>}} \ .
 \end{equation}
-Since for large $N$, $\ln{N} \ll N$, we find that the average distance is smaller than the size of the network. Generally, the logarithmic dependence of the average distance $\left<d\right>$ on the network size $N$ is one of the two defining properties of the ``small world phenomenon''; the other property is high clustering \cite{Easley2010}.
+Since for large $N$, $\ln{N} \ll N$, we find that the average distance is smaller than the size of the network. Generally, the logarithmic dependence of the average distance $\left<d\right>$ on the network size $N$ is one of the two defining properties of the ``small world phenomenon''; the other property is high clustering \cite{Easley2010}.\\
+\newline
+\textbf{Erd\H{o}s-R\'{e}nyi model in this thesis}\\
+\newline
+The Erd\H{o}s-R\'{e}nyi model is used as a benchmark model. We focus on two network topologies that may impact the formation of echo chambers: a high clustering coefficient and community structure. It is therefore necessary to have a model that lacks both of these features to compare the results with. The Erd\H{o}s-R\'{e}nyi model is one of the most simple random network models that does not display both of these features and is hence the appropriate comparison model. It is also used in the regular stochastic block model to construct the constituent communities.\\
+\newline
+It is expected that the random nature of the model and the lack of high clustering and community structure will result in the absence of echo chambers.
 
 \subsection{The Watts-Strogatz model}
 
@@ -861,18 +867,6 @@ Finally, Section \ref{opinionmodel} summarizes and discusses the opinion dynamic
 
 \section{Network models}\label{networkmodel}
 
-This thesis uses three network models: (i) the Erd\H{o}s-R\'{e}nyi model (ER); (ii) the Watts-Strogatz model (WS); and (iii) the stochastic block model, of which two types are implemented: the regular stochastic block model (SBM) and the stochastic Watts-Strogatz block model (SBM-WS).\\
-\newline
-Each of these networks serve specific goals which will be shortly discussed in the following paragraphs.\\
-\newline
-\textbf{The Erd\H{o}s-R\'{e}nyi model}\\
-\newline
-The Erd\H{o}s-R\'{e}nyi model is used as a benchmark model. In this thesis we focus on two network topologies that may impact the formation of echo chambers: a high clustering coefficient and community structure. It is therefore necessary to have a model that lacks both of these features to compare the results with. The Erd\H{o}s-R\'{e}nyi model is one of the most simple random network models that does not display both of these features and is hence the perfect comparison model. \\
-\newline
-It is expected that the random nature of the model and the lack of high clustering and community structure will result in the absence of echo chambers.\\
-\newline
-The Erd\H{o}s-R\'{e}nyi model is also used in the regular stochastic block model to construct the constituent communities.\\
-\newline
 \textbf{The Watts-Strogatz model}\\
 \newline
 The Watts-Strogatz model is used as a general model to investigate the effect of high clustering on the evolution of opinions and the formation of echo chambers.\\
