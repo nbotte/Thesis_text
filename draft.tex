@@ -607,8 +607,15 @@ An extension that we are going to explore deeper is the stochastic Watts-Strogat
 \newline
 The stochastic block model is a flexible model and there are many different extensions. One extension that is introduced in this thesis is a stochastic block model that uses the Watts-Strogatz model instead of the Erd\H{o}s-R\'{e}nyi model to construct the constituent communities. In this way, we obtain a version of the stochastic block model that has both a community structure and a high clustering coefficient.\\
 \newline
-The construction of the model is similar to that of the regular stochastic block model. For a SBM-WS with $n_c$ communities of specified sizes, we first construct $n_c$ Watts-Strogatz networks (for each constituent Watts-Strogatz network the rewire probability $\beta$ and the mean degree $\left<k\right>$ are specified), then edges are (with some predefined probability) randomly added between the different Watts-Strogatz communities. The result is a network that can be tuned to have both a community structure and a high clustering coefficient. This is different from the regular stochastic block model that can only account for a community structure and lacks high clustering.
-% talk about community sizes from power law??
+The construction of the model is similar to that of the regular stochastic block model. For a SBM-WS with $n_c$ communities of specified sizes, we first construct $n_c$ Watts-Strogatz networks (for each constituent Watts-Strogatz network the rewire probability $\beta$ and the mean degree $\left<k\right>$ are specified), then edges are (with some predefined probability) randomly added between the different Watts-Strogatz communities. The result is a network that can be tuned to have both a community structure and a high clustering coefficient. This is different from the regular stochastic block model that can only account for a community structure and lacks high clustering.\\
+\newline
+\textbf{The stochastic block model in this thesis}\\
+\newline
+The stochastic block model is used to generate networks with community structure. We will therefore use this model to investigate the impact of community structure on the evolution of opinions and the formation of echo chambers.\\
+\newline
+It is expected that community structure will enhance the formation of echo chambers compared to the random network case. The question remains, however, whether the influence of community structure on the formation of echo chambers is of the same caliber as that of high clustering. It is also of interest to study the possible relation between the appearance of echo chambers and the modularity of the network.\\
+\newline
+The stochastic Watts-Strogatz block model is used as a model that has both high clustering and community structure. We will check if the combination of both features displays any difference in the formation of echo chambers compared to having only a single feature (either community structure or high clustering).
 
 \section{Real-world social networks}
 
@@ -861,26 +868,6 @@ If we want to introduce stubbornness in the model we will mainly use the resista
 Some pseudo-code is given in Algorithm \ref{alg:update} to make the model more comprehensive and understandable. The pseudo-code for updating the opinions of the active actors in case of using a resistance parameter $r$ at time step $t$ is displayed. 
 
 \chapter{Materials and methods in this thesis}\label{chap4}
-
-The previous two chapters, Chapter \ref{chap2} and \ref{chap3}, gave a broad overview of networks and opinion dynamics models respectively. In this chapter we will summarize the specific networks and opinion dynamics models that are used in this thesis. \\
-\newline
-Section \ref{networkmodel} gives an overview of the network models that are used. In chapter \ref{chap2}, Section \ref{netModel} we discussed their main properties; here we will discuss why we use these networks. Which of their properties are of interest in this thesis? What are their benefits and possible shortcomings regarding to our goals?\\
-\newline
-In section \ref{realnetwork}, we will discuss the used real-world networks. The reasons of choosing these specific networks will be explained, together with their possible strengths and weaknesses.\\ % + explain where they come from?
-\newline
-Finally, Section \ref{opinionmodel} summarizes and discusses the opinion dynamics model that is implemented. We will focus on possible advantages and disadvantages of the model.
-
-
-\section{Network models}\label{networkmodel}
-
-\textbf{The stochastic block model}\\
-\newline
-One of the main features of the stochastic block model is the ability to generate networks with community structure. We will therefore use this model to investigate the impact of community structure on the evolution of opinions and the formation of echo chambers.\\
-\newline
-It is expected that community structure will enhance the formation of echo chambers compared to the random network case. The question remains, however, whether the influence of community structure on the formation of echo chambers is of the same caliber as that of high clustering. It is also of interest to study the possible relation between the appearance of echo chambers and the modularity of the network.\\
-\newline
-The stochastic Watts-Strogatz block model is used as a model that has both high clustering and community structure. We will check if the combination of both features displays any difference in the formation of echo chambers compared to having only a single feature (either community structure or high clustering).
-
 
 \section{Real-world networks}\label{realnetwork}
 % talk about reasons why you chose the networks you chose: e.g. size (computation time),...
@@ -1654,7 +1641,7 @@ It must be emphasized that there are limitations to our model and methods. First
 \newline
 Some future investigation paths, linked to limitations of our model, were given in the previous paragraph. Other future directions may be: (i) investigating the distribution of the stubborn actors (community distributed versus random); (ii) making one opinion more stubborn than the other; (iii) investigating the effect of the activation mechanism: what happens if we switch to the heterogeneous activation mechanism (see Section \ref{actMech})? and (iv) making the network temporal in the sense that it becomes possible to add and remove friends. Sasahara et al. investigated a model in which social influence was combined with social rewiring (unfriending) \cite{Sasahara2020}. Their findings were that these processes of influence and unfriending enhanced the formation of echo chambers \cite{Sasahara2020}. It might be interesting to incorporate their model features into our model with algorithmic personalization and stubbornness. 
 
-ADD THIS IN AS LIMITATIONS/FUTURE DIRECTIONS (about activation probabilities)
+ADD THIS IN AS LIMITATIONS/FUTURE DIRECTIONS (about activation probabilities) + PAY ATTENTION TO FEEDBACK (see file)
  
 ''' Perra and Rocha chose activation probabilities that are extracted from a power-law ($F(p) \sim p^{-1.5}$, with $p \in \interval{0.01}{1}$) \cite{Perra2019}. They did this based on the analyses of real social networks that shows that the propensity of users to start an on-line social interaction follows a heterogeneous distribution \cite{Perra2012}\cite{Perra2019}. However, they also showed that using a constant activation probability $p$ over the entire population yields results that are qualitatively similar (at least in their case) \cite{Perra2019}. \\
 \newline
