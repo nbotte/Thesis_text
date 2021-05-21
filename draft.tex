@@ -1518,7 +1518,7 @@ The high modularity, community distributed case shows an even stronger hampering
 \newpage
 \section{Real-world networks}
 
-The results of the two real-world networks: (i) the Last.fm on-line social network; and (ii) the PGP trust network, discussed in Chapter \ref{chap4}, Section \ref{realnetwork}, will be shared and discussed. For each real-world network, the results will be compared to results obtained from network models with similar average degree, clustering and/or modularity. We will mainly focus on the formation of echo chambers. We will only study balanced initial conditions and we will introduce a fraction of completely stubborn actors. For both real-world networks, the REC and PR filtering algorithms will be compared.
+The results of the two real-world networks: (i) the Last.fm on-line social network; and (ii) the PGP trust network, discussed in Chapter \ref{chap4}, Section \ref{realnetwork}, will be shared and discussed. For each real-world network, the results will be compared to results obtained from network models with similar average degree, clustering or modularity. We will mainly focus on the formation of echo chambers. We will only study balanced initial conditions and we will introduce a fraction of completely stubborn actors. For both real-world networks, the REC and PR filtering algorithms will be compared.
 
 \subsection{The Last.fm on-line social network}
 
@@ -1567,7 +1567,7 @@ The REC filtering algorithm enforces an increase in the formation of echo chambe
 
 \subsection{The PGP trust network}
 
-Results for the PGP trust network are compared to results for network models with similar average degree, clustering and/or modularity. The used network models are, all with $N = 10680$: (i) the Watts-Strogatz model with $\left<k\right> = 4$, $\beta = 0.2$ and $\left<cc\right> = 0.266 \pm 0.003$; (ii) the stochastic block model with 60 communities of size 178, $p_\text{cl} = 0.02$, $p_\text{add} = 0.00005$, $\left<k\right> = 4.06 \pm 0.02$ and $Q = 0.868 \pm 0.002$; (iii) the stochastic Watts-Strogatz block model with 60 communities of size 178, each community has the following Watts-Strogatz parameters: $\left<k\right> = 4$, $\beta = 0.12$; edges are added between communities with probability $p_\text{add} = 0.00007$, $\left<k\right> = 4.74 \pm 0.01$, $\left<cc\right> = 0.263 \pm 0.003$ and $Q = 0.842 \pm 0.002$.\\
+Results for the PGP trust network are compared to results for network models with similar average degree, clustering or modularity. The used network models are, all with $N = 10680$: (i) the Watts-Strogatz model with $\left<k\right> = 4$, $\beta = 0.2$ and $\left<cc\right> = 0.266 \pm 0.003$; (ii) the stochastic block model with 60 communities of size 178, $p_\text{cl} = 0.02$, $p_\text{add} = 0.00005$, $\left<k\right> = 4.06 \pm 0.02$ and $Q = 0.868 \pm 0.002$; (iii) the stochastic Watts-Strogatz block model with 60 communities of size 178, each community has the following Watts-Strogatz parameters: $\left<k\right> = 4$, $\beta = 0.12$; edges are added between communities with probability $p_\text{add} = 0.00007$, $\left<k\right> = 4.74 \pm 0.01$, $\left<cc\right> = 0.263 \pm 0.003$ and $Q = 0.842 \pm 0.002$.\\
 \newline
 In Fig. \ref{echo_vs_fracRes_real_PGP} the formation of echo chambers versus the fraction of completely stubborn actors (fracRes) is studied for the real-world PGP trust network and for the corresponding network models. This is done for both the PR and REC filtering algorithms. \\
 \newline
