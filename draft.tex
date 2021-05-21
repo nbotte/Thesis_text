@@ -619,9 +619,9 @@ The stochastic Watts-Strogatz block model is used as a model that has both high 
 
 \section{Real-world social networks}
 
-Many natural and man-made systems can be described with the help of complex networks. Complex networks are suited to represent almost any discrete system \cite{Costa2008}. Social networks are applications of complex networks to social systems. In social networks the nodes usually represent an individual and edges can e.g. represent friendship ties between these individuals; such a network is called a friendship network. Other examples of social networks are sexual networks, in which the edges denote sexual contacts between the individuals and email networks, in which directed edges represent an email send from individual $i$ to individual $j$ \cite{Costa2008}. There are also plenty of other real-world network such as collaboration networks, where the nodes are usually scientists and edges indicate professional ties between them; citation networks, where nodes represent scientific papers and the directed edges report citations and protein-protein interaction networks, in which nodes stand for proteins and edges indicate physical interactions between them \cite{Costa2008}. These examples of real-world networks are only a handful. A comprehensive review can be found in \cite{Costa2008}.\\
+Many natural and man-made systems can be described with the help of complex networks. Complex networks are suited to represent almost any discrete system \cite{Costa2008}. Social networks are applications of complex networks to social systems. In social networks the nodes usually represent an individual and edges can e.g. represent friendship ties between these individuals; such a network is called a friendship network. Other examples of social networks are sexual networks, in which the edges denote sexual contacts between the individuals and email networks, in which directed edges represent an email send from individual $i$ to individual $j$ \cite{Costa2008}. There are also plenty of other real-world network such as collaboration networks, where the nodes are usually scientists and edges indicate professional ties between them; citation networks, where nodes represent scientific papers and the directed edges report citations and protein-protein interaction networks, in which nodes stand for proteins and edges indicate physical interactions between them \cite{Costa2008}.\\
 \newline
-The models discussed in the previous sections are idealized and simplified. They may posses some of the characteristics of real-world networks, but they do not always describe real-world networks appropriately. Here, we will list some of the main  characteristics of real-world networks, and more specifically of real-world social networks. An important question that can be asked is whether there is a significant difference between off-line social networks and on-line social networks.\\
+The models discussed in the previous sections are idealized and simplified. They may posses some of the characteristics of real-world networks, but they do not always describe real-world networks appropriately. Here, we will list some of the main characteristics of real-world networks, and more specifically of real-world social networks. An important question that can be asked is whether there is a significant difference between off-line social networks and on-line social networks.\\
 \newline
 As discussed briefly in the introduction, real-world networks often posses three characteristic properties. These are the two properties of the ``small world phenomenon'', namely a short average distance and a high clustering coefficient, and a heterogeneous or power-law degree distribution \cite{RealWorld}. These properties are valid for both off-line and on-line social networks \cite{Zhang2014}. Lets discuss them in more detail.\\
 \newline
@@ -641,13 +641,47 @@ Many real-world networks are found to have a power-law degree distribution
 \begin{equation}
 	P(k) \sim k^{-\gamma} \ ,
 \end{equation}
-where the exponent $\gamma$ often lies between 2 and 3 \cite{RealWorld}. Networks with a power-law degree distribution are also called heterogeneous or scale-free networks. The term scale-free refers to the fact that there is no characteristic scale in the network: the system is invariant over different scales. Compared to the homogeneous network, where each node has a degree close to the average degree $\left<k\right>$ (hence, this average degree serves as a characteristic scale of the system), the heterogeneous network has many nodes with a low degree and a few nodes with a high degree (these nodes are referred to as hubs). If the exponent $\gamma$ is smaller or equal to two ($\gamma \leqslant 2$), the average degree diverges \cite{Newman2005}. Simple scale-free networks with an exponent smaller than two cannot exist, because the largest hubs grow faster than the network size $N$ \cite{Barabasi2016}. If $2 < \gamma < 3$ (which is the case for most real-world networks), there is a finite average degree, but a diverging variance in the limit of infinite system size ($N \rightarrow \infty$) \cite{Newman2005}. Real networks always have finite sizes, so there is always a finite average degree and variance. This variance would, however, be meaningless \cite{Newman2005}. A diverging variance means that the fluctuations around the average can be arbitrary large \cite{Barabasi2016}.\\
+where the exponent $\gamma$ often lies between 2 and 3 \cite{RealWorld}. Networks with a power-law degree distribution are also called heterogeneous or scale-free networks. The term scale-free refers to the fact that there is no characteristic scale in the network: the system is invariant over different scales. Compared to the homogeneous network, where each node has a degree close to the average degree $\left<k\right>$ (hence, this average degree serves as a characteristic scale of the system), the heterogeneous network has many nodes with a low degree and a few nodes with a high degree (these nodes are referred to as hubs). If the exponent $\gamma$ is smaller or equal to two ($\gamma \leqslant 2$), the average degree diverges \cite{Newman2005}. Simple scale-free networks with an exponent smaller than two cannot exist, because the largest hubs grow faster than the network size $N$ \cite{Barabasi2016}. If $2 < \gamma < 3$ (which is the case for most real-world networks), there is a finite average degree, but a diverging variance in the limit of infinite system size ($N \rightarrow \infty$) \cite{Newman2005}. Real networks always have finite sizes, so they have a finite average degree and variance. This variance is, however, meaningless \cite{Newman2005}. A diverging variance means that the fluctuations around the average can be arbitrary large \cite{Barabasi2016}.\\
 \newline
 Not all real-world networks have a heterogeneous degree distribution. Even if the degree distribution is heterogeneous or fat-tailed, it does not always follow a power-law. The degree distribution can e.g. also be a power-law with an exponential cut-off, a log-normal distribution or a stretched exponential \cite{Newman2005}.\\
 \newline
 These three main characteristics are valid for on- and off-line social networks. Another property that is found in most on- and off-line networks is the appearance of a giant component, that is, most nodes belong to the same connected component \cite{Latapy}. They also often posses a modular structure \cite{Ferrara2012}\cite{McGlohon2011}. \\
 \newline
-There are, however, some properties that are different between on-line and off-line social networks. One of them is the degree correlations or mixing pattern. It is often said that most real-life social networks have an assortative mixing pattern (this would distinguish them from most other real-world networks, e.g. biological networks \cite{F.Costa2007}, which often have a disassortative pattern) \cite{Fisher2017}\cite{Hu2009}\cite{Zhang2014}. This assumption of the assortative nature of social networks has however been questioned \cite{Fisher2017}\cite{Whitney2010}. For a long time, it was thought that this assortative mixing is also valid for on-line social networks. However, recent research has shown that a number of on-line social networks display disassortative mixture \cite{Holme2004}\cite{Hu2009}\cite{Zhang2014}. This discrepancy between real-life and on-line social networks may be explained as follows. In real life, `ordinary people' often want to be friends with celebrities, however, the celebrities usually prefer to stay within their own circles \cite{Hu2009}\cite{Zhang2014}. The `ordinary people' do not have access to these circles and we are left with the situation where `ordinary people' interact with `ordinary people' and celebrities hang out among other celebrities; hence, an assortative structure. In on-line social networks, `ordinary people' can easily connect with the celebrity and vice-versa, the celebrity wants to show his or her importance and influence by the number of fans \cite{Hu2009}\cite{Zhang2014}. This leads to a disassortative mixing pattern.
+There are, however, some properties that are different between on-line and off-line social networks. One of them is the degree correlations or mixing pattern. It is often said that most real-life social networks have an assortative mixing pattern (this would distinguish them from most other real-world networks, e.g. biological networks \cite{F.Costa2007}, which often have a disassortative pattern) \cite{Fisher2017}\cite{Hu2009}\cite{Zhang2014}. This assumption of the assortative nature of social networks has however been questioned \cite{Fisher2017}\cite{Whitney2010}. For a long time, it was thought that this assortative mixing is also valid for on-line social networks. However, recent research has shown that a number of on-line social networks display disassortative mixture \cite{Holme2004}\cite{Hu2009}\cite{Zhang2014}. This discrepancy between real-life and on-line social networks may be explained as follows. In real life, `ordinary people' often want to be friends with celebrities, however, the celebrities usually prefer to stay within their own circles \cite{Hu2009}\cite{Zhang2014}. The `ordinary people' do not have access to these circles and we are left with the situation where `ordinary people' interact with `ordinary people' and celebrities hang out among other celebrities; hence, an assortative structure. In on-line social networks, `ordinary people' can easily connect with the celebrity and vice-versa, the celebrity wants to show his or her importance and influence by the number of fans \cite{Hu2009}\cite{Zhang2014}. This leads to a disassortative mixing pattern.\\
+\newline
+\textbf{Real-world social networks in this thesis}\\
+\newline
+Ideally, we would test the opinion dynamics model that was used throughout this thesis on network data directly obtained from social network companies. However, most of these companies are not to keen on sharing any form of data. This makes it hard to find accurate and complete social media network data. Hence, we chose to test the model on other types of social networks, either on-line or off-line, e.g. friendship networks, e-mail networks or collaboration networks. \\
+\newline
+We used two real-world networks. The first real-world network is an on-line friendship network among Finnish users of the social music listening and sharing website Last.fm (data from $2006$). Only the largest connected component of this on-line social network is included \cite{ICON}. This data set was originally used in \cite{Toivonen2009}. This on-line social network has size $N = 8003$; number of edges: $16824$; $Q = 0.79$; $\left<cc\right> = 0.31$; $\left<k\right> = 4.2$. The degree distribution is heterogeneous and is best fitted by a log-normal
+\begin{equation}
+	f(k) = \frac{1}{k \sigma \sqrt{2\pi}} \exp(-\frac{(\ln(k) - \mu)^2}{2 \sigma^2})\ ,
+\end{equation}
+with $\mu = 1.008$ and $\sigma = 0.95$; see Fig. \ref{deg_distr_lastfm}. Nodes indicate Finnish users of the Last.fm website, edges represent friendship ties between them.\\
+\newline
+The second real-world network that was used is the giant component of the on-line, social network of users of the Pretty-Good-Privacy (PGP) algorithm for secure information interchange (data from $2004$) \cite{Boguna2004}\cite{ICON}. This network has $N = 10680$; number of edges: $24340$; $Q = 0.85$; $\left<cc\right> = 0.27$; $\left<k\right> = 4.56$. The network has a heterogeneous degree distribution, which is best fitted by two power-laws
+\begin{equation}
+ f(k) = a k^{-\gamma} \ ,
+\end{equation}
+with $a = 0.39$, $\gamma = 1.54$ for $k < 20$ and $a = 5.59$, $\gamma = 2.49$ for $k \geqslant 20$; see Fig. \ref{deg_distr_pgp}. In this network nodes represent peers that have signed public keys of another based on trust, edges indicate links between peers that have mutually signed their keys \cite{Boguna2004}.
+
+\begin{figure}[H]
+  \begin{subfigure}[b]{0.49\textwidth}
+    \caption{}
+    \includegraphics[width=8cm, height=7cm]{lastfm_degree_distribution_8x7.png}
+    \label{deg_distr_lastfm}
+  \end{subfigure}
+  \begin{subfigure}[b]{0.49\textwidth}
+    \caption{}
+    \includegraphics[width=8cm, height=7cm]{PGP_degree_distribution_8x7.png}
+    \label{deg_distr_pgp}
+  \end{subfigure}
+  \captionsetup{format=plain}
+  \caption[Degree distribution $P(k)$ of the two real-world networks used in this thesis.]{Degree distribution $P(k)$ of the two real-world networks used in this thesis. \textbf{(a)} Last.fm on-line social network with a log-normal fit ($\mu = 1.008$, $\sigma = 0.95$); \textbf{(b)} PGP on-line trust network with two power-law fits ($a = 0.39$, $\gamma = 1.54$ for $k < 20$ and $a = 5.59$, $\gamma = 2.49$ for $k \geqslant 20$). Curves are fitted to the data with \textsc{scipy.optimize.curve$\_$fit}.}
+\label{deg_distr_real_network}
+\end{figure}
+\noindent
+One of the decisive properties of the real-world networks that were used, was their size. The main, and actually only, reason for this was the computation time. If the networks are too big, it would take weeks, sometimes even months before there would be results. The size of the network models that were implemented, was around a thousand nodes. For the real-world networks, we also used networks with a size of magnitude of thousand to ten-thousand. This benefits the computation time. 
 
 \section{Temporal networks}
 
@@ -866,45 +900,6 @@ If we want to introduce stubbornness in the model we will mainly use the resista
 \end{algorithm}
 \noindent
 Some pseudo-code is given in Algorithm \ref{alg:update} to make the model more comprehensive and understandable. The pseudo-code for updating the opinions of the active actors in case of using a resistance parameter $r$ at time step $t$ is displayed. 
-
-\chapter{Materials and methods in this thesis}\label{chap4}
-
-\section{Real-world networks}\label{realnetwork}
-% talk about reasons why you chose the networks you chose: e.g. size (computation time),...
-
-Ideally, we would test the opinion dynamics model that was used throughout this thesis on network data directly obtained from social network companies. However, most of these companies are not to keen on sharing any form of data. This makes it hard to find accurate and complete social media network data. Hence, we chose to test the model on other types of social networks, either on-line or off-line. Some possibilities are any form of friendship networks, e-mail networks or collaboration networks. \\
-\newline
-One of the decisive properties of the real-world networks that were eventually used, was their size. The main, and actually only, reason for this was the computation time. If the networks are too big, it would take weeks, sometimes even months before there would be results.\\
-\newline
-The size of the network models that were used, was around a thousand nodes. For the real-world networks, we also used networks with a size of magnitude of thousand to ten-thousand. This benefits the computation time; it is, however, unknown how the network size affects the results. It is therefore recommended to test the model on larger network models and on larger real-world networks in future researches on this topic. \\
-\newline
-We used two real-world networks. The data was obtained from \textit{The index of Complex networks} (ICON) \cite{ICON}. The first real-world network is an on-line friendship network among Finnish users of the social music listening and sharing website Last.fm (data from $2006$). Only the largest connected component of this on-line social network is included \cite{ICON}. This data set was originally used in \cite{Toivonen2009}, which describes the data set. This on-line social network has the following properties: $N = 8003$; number of edges: $16824$; $Q = 0.79$; $\left<cc\right> = 0.31$; $\left<k\right> = 4.2$. The degree distribution is heterogeneous and is best fitted by a log-normal
-\begin{equation}
-	f(k) = \frac{1}{k \sigma \sqrt{2\pi}} \exp(-\frac{(\ln(k) - \mu)^2}{2 \sigma^2})\ ,
-\end{equation}
-with $\mu = 1.0078272$ and $\sigma = 0.95173779$. The degree distribution of the Last.fm social network, together with the log-normal fit, is shown in Fig. \ref{deg_distr_lastfm}.\\
-\newline
-The second real-world network that was used is the giant component of the on-line, social network of users of the Pretty-Good-Privacy (PGP) algorithm for secure information interchange (data from $2004$) \cite{ICON}. This network was originally used in \cite{Boguna2004}, which gives a detailed description of the network data. The main properties of this network are: $N = 10680$; number of edges: $24340$; $Q = 0.85$; $\left<cc\right> = 0.27$; $\left<k\right> = 4.56$. The network has a heterogeneous degree distribution, which is best fitted by two power-laws
-\begin{equation}
- f(k) = a k^{-\gamma} \ ,
-\end{equation}
-with $a = 0.39604951$, $\gamma = 1.53568449$ for $k < 20$ and $a = 5.59021251$, $\gamma = 2.4944057$ for $k \geqslant 20$. The degree distribution for the PGP trust network, together with the power-law fits, is shown in Fig. \ref{deg_distr_pgp}. 
-
-\begin{figure}[H]
-  \begin{subfigure}[b]{0.49\textwidth}
-    \caption{}
-    \includegraphics[width=8cm, height=7cm]{lastfm_degree_distribution_8x7.png}
-    \label{deg_distr_lastfm}
-  \end{subfigure}
-  \begin{subfigure}[b]{0.49\textwidth}
-    \caption{}
-    \includegraphics[width=8cm, height=7cm]{PGP_degree_distribution_8x7.png}
-    \label{deg_distr_pgp}
-  \end{subfigure}
-  \captionsetup{format=plain}
-  \caption[Degree distribution $P(k)$ of the two real-world networks used in this thesis.]{Degree distribution $P(k)$ of the two real-world networks used in this thesis. \textbf{(a)} Last.fm on-line social network with a log-normal fit ($\mu = 1.0078272$, $\sigma = 0.95173779$); \textbf{(b)} PGP on-line trust network with two power-law fits ($a = 0.39604951$, $\gamma = 1.53568449$ for $k < 20$ and $a = 5.59021251$, $\gamma = 2.4944057$ for $k \geqslant 20$).}
-\label{deg_distr_real_network}
-\end{figure}
 
 \chapter{Results}
 
@@ -1660,6 +1655,10 @@ This does not mean that simple models should be thrown away. They might still be
 The above models have their added value and benefits. One of their most important plus points is their simplicity. They are the most simple network models that one can create and each of them have characteristics and topologies that can be tuned (clustering for WS, community structure for SBM). This makes it really easy to investigate the effect of these different network topologies without the need to take the interplay with other possible complex network features and topologies into account. This plus side is, however, also one of the possible downsides. Real networks are not simple networks with single, isolated characteristics, but are instead complex networks where many different characteristics and topologies may each play a role. In other words, network models may lack many features of real-world networks. It is thus always tricky, and sometimes even incorrect, to extrapolate the results that are obtained by using network models to real-world situations.\\
 \newline
 The fact that all the above models have a homogeneous degree distribution may also be a drawback, since most real-world networks have a heterogeneous degree distribution.'''
+
++ ADD THIS (limitations on size) --> needed? or already included?
+
+'''it is, however, unknown how the network size affects the results. It is therefore recommended to test the model on larger network models and on larger real-world networks in future researches on this topic'''
 
 \chapter{Conclusion}
 
