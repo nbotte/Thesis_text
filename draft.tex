@@ -559,7 +559,7 @@ It is expected that the random nature of the model and the lack of high clusteri
 
 \subsection{The Watts-Strogatz model}
 
-Erd\H{o}s-R\'{e}nyi networks have small average distances and thus posses one of the two defining properties of the ``small world phenomenon''. Real social networks, however, usually display the ``small world phenomenon'' and thus have both short average distances and high clustering. The question then rises: Can we construct a model that has both of these properties? The answer is yes and this is what Duncan Watts and Steve Strogatz did in 1998. They constructed a network model that generates random networks with small world properties by interpolating between a regular ring lattice and a random network \cite{Watts1998}.\\
+Erd\H{o}s-R\'{e}nyi networks have small average distances and thus posses one of the two defining properties of the ``small world phenomenon''. Real social networks, however, usually display the ``small world phenomenon'' and thus have both short average distances and high clustering. The question then rises whether we can construct a model that has both of these properties. The answer is yes and this is what Duncan Watts and Steve Strogatz did in 1998. They constructed a network model that generates random networks with small world properties by interpolating between a regular ring lattice and a random network \cite{Watts1998}.\\
 \newline
 The construction of their model goes as follows \cite{Watts1998}: (i) Start with a regular ring lattice with $N$ nodes, each connected to $K = 2m$ neighbors ($m$ on each side); (ii) For each node $i$, rewire each edge that connects $i$ with its $K/2$ rightmost neighbors with a probability $\beta$. Rewiring is done in such a way that self-loops and edge duplication are avoided.\\
 \newline
@@ -581,7 +581,13 @@ Watts and Strogatz showed by numerical simulations that the average distance for
 \end{equation} 
 where $\left<cc(0)\right>$ is given by Eq. (\ref{C0}) \cite{Barrat1999}. This can be seen in the following way: (i) The probability that none of the three edges of the original triangles in the regular lattice are rewired is $(1-\beta)^3$; (ii) The probability that edges are rewired back to each other is negligible.\\
 \newline
-For small values of $\beta$, the clustering coefficient remains high. The model of Watts and Strogatz is thus able to generate random networks with a high clustering coefficient and short average distances. The Watts-Strogatz network has a homogeneous, bell shaped degree distribution with an average degree equal to $\left<k\right> = K$ \cite{Barrat1999}.
+For small values of $\beta$, the clustering coefficient remains high. The model of Watts and Strogatz is thus able to generate random networks with a high clustering coefficient and short average distances. The Watts-Strogatz network has a homogeneous, bell shaped degree distribution with an average degree equal to $\left<k\right> = K$ \cite{Barrat1999}.\\
+\newline
+\textbf{The Watts-Strogatz model in this thesis}\\
+\newline
+The Watts-Strogatz model is used to investigate the effect of high clustering on the evolution of opinions and the formation of echo chambers.\\
+\newline
+Perra and Rocha showed that a high clustering coefficient enhances the formation of echo chambers \cite{Perra2019}. Here, we will use the Watts-Strogatz model to investigate the interplay between high clustering and the presence of stubborn actors and we will use it as a comparison for networks that posses a community structure without having a high clustering coefficient. We will investigate whether community structure behaves similar to high clustering regarding the appearance of echo chambers. The Watts-Strogatz model is also used to build the constituent communities in the stochastic Watts-Strogatz block model.
 
 \subsection{The stochastic block model}
 
@@ -867,27 +873,14 @@ Finally, Section \ref{opinionmodel} summarizes and discusses the opinion dynamic
 
 \section{Network models}\label{networkmodel}
 
-\textbf{The Watts-Strogatz model}\\
-\newline
-The Watts-Strogatz model is used as a general model to investigate the effect of high clustering on the evolution of opinions and the formation of echo chambers.\\
-\newline
-Perra and Rocha showed that a high clustering coefficient enhances the formation of echo chambers \cite{Perra2019}. Here, we will use the Watts-Strogatz model to investigate the interplay between high clustering and the presence of stubborn actors and we will use it as a comparison for networks that posses a community structure without having a high clustering coefficient. We will investigate whether community structure behaves similar to high clustering regarding the appearance of echo chambers.\\
-\newline
-Beside the above, the Watts-Strogatz model is also used to build the constituent communities in the stochastic Watts-Strogatz block model.\\
-\newline
 \textbf{The stochastic block model}\\
 \newline
 One of the main features of the stochastic block model is the ability to generate networks with community structure. We will therefore use this model to investigate the impact of community structure on the evolution of opinions and the formation of echo chambers.\\
 \newline
 It is expected that community structure will enhance the formation of echo chambers compared to the random network case. The question remains, however, whether the influence of community structure on the formation of echo chambers is of the same caliber as that of high clustering. It is also of interest to study the possible relation between the appearance of echo chambers and the modularity of the network.\\
 \newline
-The stochastic Watts-Strogatz block model is used as a model that has both high clustering and community structure. We will check if the combination of both features displays any difference in the formation of echo chambers compared to having only a single feature (either community structure or high clustering).\\
-\newline
-All the above models have a homogeneous degree distribution. We did not focus on network models which generate networks with a heterogeneous degree distribution such as the Barab\'{a}si-Albert model. It might, however, be an interesting extension to investigate such types of models as well.\\
-\newline
-The above models have their added value and benefits. One of their most important plus points is their simplicity. They are the most simple network models that one can create and each of them have characteristics and topologies that can be tuned (clustering for WS, community structure for SBM). This makes it really easy to investigate the effect of these different network topologies without the need to take the interplay with other possible complex network features and topologies into account. This plus side is, however, also one of the possible downsides. Real networks are not simple networks with single, isolated characteristics, but are instead complex networks where many different characteristics and topologies may each play a role. In other words, network models may lack many features of real-world networks. It is thus always tricky, and sometimes even incorrect, to extrapolate the results that are obtained by using network models to real-world situations.\\
-\newline
-The fact that all the above models have a homogeneous degree distribution may also be a drawback, since most real-world networks have a heterogeneous degree distribution.
+The stochastic Watts-Strogatz block model is used as a model that has both high clustering and community structure. We will check if the combination of both features displays any difference in the formation of echo chambers compared to having only a single feature (either community structure or high clustering).
+
 
 \section{Real-world networks}\label{realnetwork}
 % talk about reasons why you chose the networks you chose: e.g. size (computation time),...
@@ -1661,7 +1654,7 @@ It must be emphasized that there are limitations to our model and methods. First
 \newline
 Some future investigation paths, linked to limitations of our model, were given in the previous paragraph. Other future directions may be: (i) investigating the distribution of the stubborn actors (community distributed versus random); (ii) making one opinion more stubborn than the other; (iii) investigating the effect of the activation mechanism: what happens if we switch to the heterogeneous activation mechanism (see Section \ref{actMech})? and (iv) making the network temporal in the sense that it becomes possible to add and remove friends. Sasahara et al. investigated a model in which social influence was combined with social rewiring (unfriending) \cite{Sasahara2020}. Their findings were that these processes of influence and unfriending enhanced the formation of echo chambers \cite{Sasahara2020}. It might be interesting to incorporate their model features into our model with algorithmic personalization and stubbornness. 
 
-ADD THIS IN AS LIMITATIONS/FUTURE DIRECTIONS
+ADD THIS IN AS LIMITATIONS/FUTURE DIRECTIONS (about activation probabilities)
  
 ''' Perra and Rocha chose activation probabilities that are extracted from a power-law ($F(p) \sim p^{-1.5}$, with $p \in \interval{0.01}{1}$) \cite{Perra2019}. They did this based on the analyses of real social networks that shows that the propensity of users to start an on-line social interaction follows a heterogeneous distribution \cite{Perra2012}\cite{Perra2019}. However, they also showed that using a constant activation probability $p$ over the entire population yields results that are qualitatively similar (at least in their case) \cite{Perra2019}. \\
 \newline
@@ -1672,6 +1665,14 @@ ADD THIS IN AS LIMITATIONS/FUTURE DIRECTIONS
 ''' This model is a simple one, since it only allows for two different opinions in the system. The designed filtering algorithms are simple and intuitive as well. Some randomness is introduced by using the probabilistic majority model instead of the classic majority model. This might make the model more realistic. This simpleness combined with the touch of randomness to give the model a more realistic vibe are definitely some strong points of using this model compared to other, more complex models. A simple model is more tractable and allows for a better understanding of what is going on in the dynamics \cite{Jed2019}. However, this might be a downside as well. Real-world opinion dynamics are, probably, far from simple. People do not update their opinion according to a simple probabilistic opinion dynamics model. Beside that, the cases where people have to choose between only two opinions are rather limited. Filtering algorithms, used by social media companies, are unfortunately not publicly shared. We can however assume that they are not as simple as the ones we used in this thesis. Trying to model these far more complex systems by our simple model, might lead to the fact that part of the dynamics might be missed or not well captured by our model. This downside of trying to model real-world social behavior with simple, tractable models is really a call for the urgent need for more real-world data to which the results obtained from simple models can be compared and which can help make the models capable of generating more realistic results \cite{Castellano2009}\cite{Pawel}. \\
 \newline
 This does not mean that simple models should be thrown away. They might still be capable of capturing the dynamics that are seen in the real world \cite{Gug2015}. Not because a system appears complex, that it cannot be modeled by something more simple \cite{Jed2019}. This has been proven by physics research over and over again \cite{Gug2015}. Beside that, if you do not know the dynamics of complex phenomena yet, the best thing you can do is try to model it with the most simple model that comes to mind. There is no need to make things too complex if simple works too. There is however a need to compare data from (computational) models to empirical, real-world data. A need for critical thinking and careful analyzing of results can also not be denied \cite{Pawel}. '''
+
++ ADD THIS (limitations of network models)
+
+'''All the above models have a homogeneous degree distribution. We did not focus on network models which generate networks with a heterogeneous degree distribution such as the Barab\'{a}si-Albert model. It might, however, be an interesting extension to investigate such types of models as well.\\
+\newline
+The above models have their added value and benefits. One of their most important plus points is their simplicity. They are the most simple network models that one can create and each of them have characteristics and topologies that can be tuned (clustering for WS, community structure for SBM). This makes it really easy to investigate the effect of these different network topologies without the need to take the interplay with other possible complex network features and topologies into account. This plus side is, however, also one of the possible downsides. Real networks are not simple networks with single, isolated characteristics, but are instead complex networks where many different characteristics and topologies may each play a role. In other words, network models may lack many features of real-world networks. It is thus always tricky, and sometimes even incorrect, to extrapolate the results that are obtained by using network models to real-world situations.\\
+\newline
+The fact that all the above models have a homogeneous degree distribution may also be a drawback, since most real-world networks have a heterogeneous degree distribution.'''
 
 \chapter{Conclusion}
 
